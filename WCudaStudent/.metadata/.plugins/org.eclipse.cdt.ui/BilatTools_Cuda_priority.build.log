@@ -1,0 +1,131 @@
+13:04:16 **** Build of configuration CudaWin for project BilatTools_Cuda_priority ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Fri_Mar_14_19:30:01_PDT_2014
+Cuda compilation tools, release 6.0, V6.0.1
+
+==================================================================================
+[CBI] -> Target Name  : BilatTools_Cuda_Priority_64
+[CBI] ->
+[CBI] -> Build        : Q:/cedric.bilat/Targets/BilatTools_Cuda_Priority/bin/BilatTools_Cuda_Priority_64.dll
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : SHARED_LIB
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /openmp
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+[CBI] ->              : arch=compute_50,code=sm_50
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -shared
+
+
+StringTools.obj
+StringTools.cpp
+TabTools.obj
+TabTools.cpp
+Chronos.obj
+Chronos.cpp
+AleaTools.obj
+AleaTools.cpp
+LimitsTools.obj
+LimitsTools.cpp
+VariateurF.obj
+VariateurF.cpp
+VariateurI.obj
+VariateurI.cpp
+MathTools.obj
+MathTools.cpp
+Indice_CPU.obj
+Indice_CPU.cpp
+ColorTools_CPU.obj
+ColorTools_CPU.cpp
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/BilatTools_Cuda_Priority/bin/BilatTools_Cuda_Priority_64.dll
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lOpenCL
+[CBI] ->              : -lcublas
+[CBI] ->              : -lcublas_device
+[CBI] ->              : -lcuda
+[CBI] ->              : -lcudadevrt
+[CBI] ->              : -lcudart
+[CBI] ->              : -lcudart_static
+[CBI] ->              : -lcufft
+[CBI] ->              : -lcufftw
+[CBI] ->              : -lcurand
+[CBI] ->              : -lcusparse
+[CBI] ->              : -lnppc
+[CBI] ->              : -lnppi
+[CBI] ->              : -lnpps
+[CBI] ->              : -lnvcuvenc
+[CBI] ->              : -lnvcuvid
+
+nvcc : warning : The 'compute_10' and 'sm_10' architectures are deprecated, and may be removed in a future release.
+StringTools.obj
+TabTools.obj
+Chronos.obj
+AleaTools.obj
+LimitsTools.obj
+VariateurF.obj
+VariateurI.obj
+MathTools.obj
+Indice_CPU.obj
+ColorTools_CPU.obj
+
+==================================================================================
+[CBI] -> Target Name  : BilatTools_Cuda_Priority_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/BilatTools_Cuda_Priority/bin/BilatTools_Cuda_Priority_64.dll
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : SHARED_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 	      : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 13:04:21
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/BilatTools_Cuda_Priority_64.dll
+
+[CBI] -> BilatTools_Cuda_Priority_64   : End ALL!
+
+13:04:22 Build Finished (took 6s.78ms)
+

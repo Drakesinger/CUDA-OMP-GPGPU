@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BUILDER/makefile/private/script/api-producer/messageError.sh&apos; to &apos;message.sh&apos;" description="Rename resource &apos;messageError.sh&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="makefile/private/script/api-producer/messageError.sh" name="message.sh" stamp="1419253449487" updateReferences="true"/>
+</session>

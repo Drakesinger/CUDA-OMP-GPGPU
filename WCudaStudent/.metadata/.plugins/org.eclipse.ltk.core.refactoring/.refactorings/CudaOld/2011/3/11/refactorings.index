@@ -1,0 +1,6 @@
+1300093961228	Rename resource '13_MultipleGPU'
+1300093974682	Rename resource '10_ConstantMemory'
+1300093983600	Rename resource '11_TextureMemory'
+1300093998920	Rename resource '12_Stream'
+1300094152733	Rename resource '02_histogrammeFast.cu'
+1300094162085	Rename resource '02_histogrammeTurbo.cu'

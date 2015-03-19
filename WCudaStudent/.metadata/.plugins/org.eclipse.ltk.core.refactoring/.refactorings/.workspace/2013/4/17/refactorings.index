@@ -1,0 +1,6 @@
+1366965096377	Delete resource 'CudaImage/src/cpp/core/01_rippling/math/rippling.cu'
+1366965178168	Delete resource 'CudaImage/src/cpp/core/02_rippling/math/rippling.cu'
+1366966003332	Delete resource 'CudaImage/src/cpp/core/02_rippling/cu/rippling.cu'
+1366969123322	Delete resource 'CudaImage/src/cpp/core/03_mandelbrot/02_cuda/rippling.cu'
+1366993585149	Delete resource 'CudaImage/src/cpp/core/04_raytracing/04_common'
+1366996966665	Delete resource 'CudaImage/src/cpp/core/04_raytracing/03_math/SphereWrapper.h'

@@ -1,0 +1,133 @@
+16:01:21 **** Incremental Build of configuration MinGW for project Farmwise_05_Weeds_Finder_Didrik ****
+Info: Configuration "MinGW" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+makeMinGW.bat all 
+init make
+init API-EXT
+init API-CBI
+
+[MINGW] : all  
+
+Set MinGW environement x64
+ 
+g++ (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 4.9.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Weeds_Finder_Didrik_mingw_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/cedric.bilat/Targets/Farmwise_Weeds_Finder_Didrik/bin/libFarmwise_Weeds_Finder_Didrik_mingw_64.a
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/hearc
+[CBI] ->              : c:/Soft_API/ext/Boost/001/mingw/lib_static/x64
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -O3
+[CBI] ->              : -fgcse
+[CBI] ->              : -fomit-frame-pointer
+[CBI] ->              : -fopenmp
+[CBI] ->              : -frerun-loop-opt
+[CBI] ->              : -march=native
+[CBI] ->              : -std=c++0x
+
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/01_image_provider/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/Output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/array/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/03_weeds_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/03_weeds_consomateur/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/io/output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/row/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/05_row_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/05_row_consomateur/input/
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/hearc/tools/
+[CBI] ->              : src/cpp/epfl/cpu/facade/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/01_segmentation/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/01_segmentation/io/input/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/01_segmentation/io/output/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/02_keypointExtraction/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/02_keypointExtraction/io/array/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/02_keypointExtraction/io/input/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/02_keypointExtraction/io/output/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/02_keypointExtraction/keypoint/algo/coordinate/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/02_keypointExtraction/keypoint/algo/feature/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/02_keypointExtraction/keypoint/data/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/03_classification/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/03_classification/io/input/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/03_classification/io/output/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/04_postprocessing/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/04_postprocessing/io/input/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/04_postprocessing/io/output/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/05_gravity/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/05_gravity/io/input/
+[CBI] ->              : src/cpp/epfl/cpu/implementation/pipeline/05_gravity/io/output/
+
+[CBI] -> LIB_PATH (auto detect):
+[CBI] ->              : c:/Soft_API/ext/Boost/001/mingw/lib_static/x64/
+
+[CBI] -> API_INC :
+[CBI] ->              : c:/Soft_API/ext/Boost/001/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+
+[CBI] -> API_LIB :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/mingw/lib
+
+[CBI] -> API_BIN :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/mingw/bin
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : opencv_contrib249
+[CBI] ->              : opencv_core249
+[CBI] ->              : opencv_features2d249
+[CBI] ->              : opencv_flann249
+[CBI] ->              : opencv_highgui249
+[CBI] ->              : opencv_imgproc249
+[CBI] ->              : opencv_legacy249
+[CBI] ->              : opencv_ml249
+[CBI] ->              : opencv_nonfree249
+[CBI] ->              : opencv_objdetect249
+[CBI] ->              : opencv_ocl249
+[CBI] ->              : opencv_photo249
+[CBI] ->              : opencv_stitching249
+[CBI] ->              : opencv_superres249
+[CBI] ->              : opencv_ts249
+[CBI] ->              : opencv_video249
+[CBI] ->              : opencv_videostab249
+
+
+[Farmwise_Weeds_Finder_Didrik_mingw_64] -> g++ compiling .cpp : src/cpp/epfl/cpu/implementation/WeedsFinder_Didrik.cpp
+src/cpp/epfl/cpu/implementation/WeedsFinder_Didrik.cpp:1:29: fatal error: WeedsFinder_CPU.h: No such file or directory
+ #include "WeedsFinder_CPU.h"
+                             ^
+compilation terminated.
+../BUILDER/makefile/private/cpp/cpp.mk:305: recipe for target `Q:/cedric.bilat/Targets/Farmwise_Weeds_Finder_Didrik/obj/WeedsFinder_Didrik.obj' failed
+make: *** [Q:/cedric.bilat/Targets/Farmwise_Weeds_Finder_Didrik/obj/WeedsFinder_Didrik.obj] Error 1
+
+16:01:23 Build Finished (took 1s.954ms)
+

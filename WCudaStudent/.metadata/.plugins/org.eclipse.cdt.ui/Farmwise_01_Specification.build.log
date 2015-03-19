@@ -1,0 +1,161 @@
+16:59:26 **** Build of configuration Visual for project Farmwise_01_Specification ****
+makeVisual.bat all 
+init make
+init API-EXT
+init API-CBI
+
+[VISUAL] : all  
+
+
+Microsoft (R) C/C++ Optimizing Compiler Version 18.00.30501 for x64
+usage: cl [ option... ] filename... [ /link linkoption... ]
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Specification_visual_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/bilat/Targets/Farmwise_Specification/bin/Farmwise_Specification_visual_64.exe
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /arch:AVX
+[CBI] ->              : /nologo
+[CBI] ->              : /openmp
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : src/cpp/specification/01_image_provider/
+[CBI] ->              : src/cpp/specification/02_weeds_finder/
+[CBI] ->              : src/cpp/specification/02_weeds_finder/io/Output/
+[CBI] ->              : src/cpp/specification/02_weeds_finder/io/array/
+[CBI] ->              : src/cpp/specification/02_weeds_finder/io/input/
+[CBI] ->              : src/cpp/specification/03_weeds_consomateur/
+[CBI] ->              : src/cpp/specification/03_weeds_consomateur/input/
+[CBI] ->              : src/cpp/specification/04_row_finder/
+[CBI] ->              : src/cpp/specification/04_row_finder/io/input/
+[CBI] ->              : src/cpp/specification/04_row_finder/io/output/
+[CBI] ->              : src/cpp/specification/04_row_finder/row/
+[CBI] ->              : src/cpp/specification/05_row_consomateur/
+[CBI] ->              : src/cpp/specification/05_row_consomateur/input/
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> API_INC :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+
+[CBI] -> API_LIB :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/lib
+
+[CBI] -> API_BIN :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/bin
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : opencv_contrib249.lib
+[CBI] ->              : opencv_core249.lib
+[CBI] ->              : opencv_features2d249.lib
+[CBI] ->              : opencv_flann249.lib
+[CBI] ->              : opencv_gpu249.lib
+[CBI] ->              : opencv_highgui249.lib
+[CBI] ->              : opencv_imgproc249.lib
+[CBI] ->              : opencv_legacy249.lib
+[CBI] ->              : opencv_ml249.lib
+[CBI] ->              : opencv_nonfree249.lib
+[CBI] ->              : opencv_objdetect249.lib
+[CBI] ->              : opencv_ocl249.lib
+[CBI] ->              : opencv_photo249.lib
+[CBI] ->              : opencv_stitching249.lib
+[CBI] ->              : opencv_superres249.lib
+[CBI] ->              : opencv_ts249.lib
+[CBI] ->              : opencv_video249.lib
+[CBI] ->              : opencv_videostab249.lib
+
+[CBI] -> Create folder : Q:/bilat/Targets/Farmwise_Specification/bin
+[CBI] -> Create folder : Q:/bilat/Targets/Farmwise_Specification/obj
+
+main.cpp
+ArrayPoint2i.cpp
+WeedsIn.cpp
+WeedsOut.cpp
+WeedsData.cpp
+RowIn.cpp
+RowOut.cpp
+Row.cpp
+RowData.cpp
+
+[CBI] -> Linking to   : Q:/bilat/Targets/Farmwise_Specification/bin/Farmwise_Specification_visual_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->              : opencv_contrib249.lib
+[CBI] ->              : opencv_core249.lib
+[CBI] ->              : opencv_features2d249.lib
+[CBI] ->              : opencv_flann249.lib
+[CBI] ->              : opencv_gpu249.lib
+[CBI] ->              : opencv_highgui249.lib
+[CBI] ->              : opencv_imgproc249.lib
+[CBI] ->              : opencv_legacy249.lib
+[CBI] ->              : opencv_ml249.lib
+[CBI] ->              : opencv_nonfree249.lib
+[CBI] ->              : opencv_objdetect249.lib
+[CBI] ->              : opencv_ocl249.lib
+[CBI] ->              : opencv_photo249.lib
+[CBI] ->              : opencv_stitching249.lib
+[CBI] ->              : opencv_superres249.lib
+[CBI] ->              : opencv_ts249.lib
+[CBI] ->              : opencv_video249.lib
+[CBI] ->              : opencv_videostab249.lib
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Specification_visual_64
+[CBI] -> Location     : Q:/bilat/Targets/Farmwise_Specification/bin/Farmwise_Specification_visual_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl)
+[CBI] -> Task	      : End Compiling-Linking !
+[CBI] -> Time		  : 16:59:31
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Farmwise_Specification_visual_64.exe
+
+[CBI] -> Farmwise_Specification_visual_64 : End ALL!
+
+16:59:32 Build Finished (took 5s.774ms)
+

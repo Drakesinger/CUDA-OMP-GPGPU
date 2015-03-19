@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include "cudaTools.h"
+#include "Lock.h"
+
+#include "convolutionDevice.h" // a cause texture
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+//extern __global__ void kernelConvolution(float* ptrDevImageInput, float* ptrDevNoyau, uchar4* ptrDevImageOutput, int w, int h, int nNoyau);
+//extern __global__ void kernelConvolutionTexture(float* ptrDevNoyau, uchar4* ptrDevImageOutput, int w, int h, int nNoyau);
+//extern __global__ void kernelGray(uchar4* ptrDevImageScan, float* ptrDevImageInput, int w, int h);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+void launchConvolution(dim3& dg, dim3& db, uchar4* ptrDevImageScan, uchar4* ptrDevEcran, float* ptrDevNoyau, float* ptrDevImageInput,
+	uchar4* ptrDevImageOutput, int w, int h, int nNoyau);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+
+
+
+/**
+ * ptrDevImageScan -> ptrDevImageInput -> ptrDevImageOutput -> ptrDevPixels
+ * uchar*		float*			float*		uchar*
+ */
+void launchConvolution(dim3& dg, dim3& db, uchar4* ptrDevImageScan, uchar4* ptrDevEcran, float* ptrDevNoyau, float* ptrDevImageInput,
+	uchar4* ptrDevImageOutput, int w, int h, int nNoyau)
+    {
+    size_t size = sizeof(uchar4) * w * h;
+
+    bool IS_DEBUG = false;
+    bool IS_TEXTURE = true;
+
+    if (IS_DEBUG)
+	{
+	// affiche image originale, avec convertion BVR to RVB
+	kernelSwapChannel<<< dg, db >>>(ptrDevEcran,ptrDevImageScan, w, h);
+
+	// affiche image originale
+	//HANDLE_ERROR(cudaMemcpy(ptrDevEcran, ptrDevImageScan, size, cudaMemcpyDeviceToDevice)); // affiche image originale
+	}
+    else
+	{
+	// ptrDevImageScan -> ptrDevImageInput   (level gray and float)
+	kernelGray<<< dg, db >>>(ptrDevImageScan,ptrDevImageInput, w, h);
+	check_CUDA_Error();
+
+	if (!IS_TEXTURE)
+	    {
+	    //ptrDevImageInput + ptrDevNoyau = ptrDevImageOutput
+	    kernelConvolution<<< dg, db >>>(ptrDevImageInput,ptrDevNoyau,ptrDevImageOutput, w, h,nNoyau);
+	    check_CUDA_Error();
+	    }
+	else
+	    {
+	    size_t pitch = w * sizeof(float); //size ligne
+	    cudaChannelFormatDesc channelDesc = cudaCreateChannelDesc<float>();
+	    HANDLE_ERROR(cudaBindTexture2D(NULL, texImageInput, ptrDevImageInput, channelDesc, w, h, pitch));
+
+	    kernelConvolutionTexture<<< dg, db >>>(ptrDevNoyau,ptrDevImageOutput, w, h,nNoyau);
+	    check_CUDA_Error();
+
+	    HANDLE_ERROR(cudaUnbindTexture(texImageInput));
+	    }
+
+
+	dim3 dg=dim3(16,1,1);
+	dim3 db=dim3(32*32,1,1); // db.x puissance de 2
+	size_t sizeBlockSM=sizeof(float)*db.x;
+
+	Lock lock;
+	amplifier<<<dg,db,sizeBlockSM>>>( ptrDevImageOutput,  w,  h,lock);
+
+	// Device -> Device
+	HANDLE_ERROR(cudaMemcpy(ptrDevEcran, ptrDevImageOutput, size, cudaMemcpyDeviceToDevice));
+	}
+    }
+
+
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

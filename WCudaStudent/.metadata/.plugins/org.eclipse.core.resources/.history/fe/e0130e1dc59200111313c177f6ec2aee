@@ -1,0 +1,22 @@
+#ifndef VIDEO_CAPTURE_TOOLS_H_
+#define VIDEO_CAPTURE_TOOLS_H_
+
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ void videoCapture(const string& videoName)
+ void cameraCapture(int idCamera);
+ void printInfo(const Mat& matCapture);
+ void play(const VideoCapture& VideoCapture, const string idWindow);
+
+#endif 
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

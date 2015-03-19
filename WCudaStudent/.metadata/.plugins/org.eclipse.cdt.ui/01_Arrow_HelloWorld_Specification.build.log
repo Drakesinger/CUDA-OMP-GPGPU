@@ -1,0 +1,66 @@
+14:03:07 **** Build of configuration CudaVisual for project 01_Arrow_HelloWorld_Specification ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Fri_Mar_14_19:30:01_PDT_2014
+Cuda compilation tools, release 6.0, V6.0.1
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Specification_64
+[CBI] ->
+[CBI] -> Build        : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Specification
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Specification/bin
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Specification/obj
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Specification/cubin
+
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Specification/bin/Arrow_HelloWorld_Specification_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->
+
+nvcc : fatal error : No input files specified; use option --help for more information
+make: *** [Q:/cedric.bilat/Targets/Arrow_HelloWorld_Specification/bin/Arrow_HelloWorld_Specification_64.exe] Error -1
+../BUILDER/makefile/private/cuda/makeCudaVisual.mk:269: recipe for target `Q:/cedric.bilat/Targets/Arrow_HelloWorld_Specification/bin/Arrow_HelloWorld_Specification_64.exe' failed
+
+14:03:08 Build Finished (took 1s.140ms)
+

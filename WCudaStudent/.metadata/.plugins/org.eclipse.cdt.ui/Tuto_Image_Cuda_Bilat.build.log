@@ -1,0 +1,136 @@
+11:50:39 **** Incremental Build of configuration CudaVisual for project Tuto_Image_Cuda_Bilat ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Image_Cuda_Bilat64
+[CBI] ->
+[CBI] -> Build        : Q:/bilat/Targets/Tuto_Image_Cuda_Bilat
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_Image/INC
+[CBI] ->              : ../API_Bilat_Image/LIB/visual
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../API_FreeGlut/INC_WIN
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/INC
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_FreeGlut/INC
+[CBI] ->              : ../API_Bilat_Image_FreeGlut/LIB/visual
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_Image/INC
+[CBI] ->              : ../API_Bilat_Image/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_Cuda/INC
+[CBI] ->              : ../API_Bilat_Image_Cuda/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_FreeGlut_Cuda/INC
+[CBI] ->              : ../API_Bilat_Image_FreeGlut_Cuda/LIB/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -arch=sm_20
+[CBI] ->              : -use_fast_math
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+
+[CBI] -> cl compiling .cpp : src/cpp/gui/mainGUI.cpp
+[CBI] -> cl compiling .cpp : src/cpp/gui/01_Hello/01_imageAPI/HelloMOO.cpp
+
+[CBI] -> Linking to   : Q:/bilat/Targets/Tuto_Image_Cuda_Bilat/bin/Tuto_Image_Cuda_Bilat64.exe
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lBilat_Displayable_001_64
+[CBI] ->              : -lBilat_Image_FreeGlut_001_64
+[CBI] ->              : -lBilat_Image_FreeGlut_Cuda_55_002_64
+[CBI] ->              : -lBilat_Image_GL_002_64
+[CBI] ->              : -lBilat_Image_GL_Cuda_55_002_64
+[CBI] ->              : -lOpenCL
+[CBI] ->              : -lbilatFreeGlutTools_002_64
+[CBI] ->              : -lcublas
+[CBI] ->              : -lcublas_device
+[CBI] ->              : -lcuda
+[CBI] ->              : -lcudadevrt
+[CBI] ->              : -lcudart
+[CBI] ->              : -lcudart_static
+[CBI] ->              : -lcufft
+[CBI] ->              : -lcufftw
+[CBI] ->              : -lcurand
+[CBI] ->              : -lcusparse
+[CBI] ->              : -lgdi32
+[CBI] ->              : -lglew64
+[CBI] ->              : -lglu32
+[CBI] ->              : -lkernel32
+[CBI] ->              : -lnppc
+[CBI] ->              : -lnppi
+[CBI] ->              : -lnpps
+[CBI] ->              : -lnvcuvenc
+[CBI] ->              : -lnvcuvid
+[CBI] ->              : -lopengl32
+[CBI] ->              : -luser32
+
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Image_Cuda_Bilat64
+[CBI] -> Location     : Q:/bilat/Targets/Tuto_Image_Cuda_Bilat/bin/Tuto_Image_Cuda_Bilat64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 	      : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 11:50:44
+==================================================================================
+
+
+[CBI] -> Deploying    : Tuto_Image_Cuda_Bilat64.exe
+
+[CBI] -> Cleaning     : Cuda temp files, excepted .cubin for JCuda
+
+
+
+11:50:46 Build Finished (took 7s.83ms)
+

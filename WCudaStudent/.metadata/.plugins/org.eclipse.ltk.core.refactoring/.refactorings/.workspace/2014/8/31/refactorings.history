@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tuto_Canvas_Linux_JNI&apos; to &apos;Tuto_Canvas_Cuda_Linux_JNI&apos;" description="Rename resource &apos;Tuto_Canvas_Linux_JNI&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Tuto_Canvas_Linux_JNI" name="Tuto_Canvas_Cuda_Linux_JNI" stamp="1406887038264" updateReferences="true"/>
+</session>

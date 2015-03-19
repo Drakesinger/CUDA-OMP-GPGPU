@@ -1,0 +1,124 @@
+#include <iostream>
+
+#include "cv.h" // opencv
+#include "highgui.h" // opencv
+
+#include "cudaTools.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+
+void workGPU(uchar* ptrImage, uchar4* ptrDev0_image,uchar4* ptrDev1_image,int w, int h);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void workImage(uchar4* ptrImage, uchar4* ptrDev0_image,uchar4* ptrDev1_image,int w, int h);
+static void workCPU(uchar4* ptrImage, int w, int h);
+static uchar4* castToUChar4(uchar* ptrTab);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void)
+    {
+    int idCamera = 0;
+    VideoCapture capture(idCamera);
+
+    if (capture.isOpened())
+	{
+	Mat matCapture;
+	capture >> matCapture;
+
+	// init
+	//uchar* ptrImage = matCapture.data; // use cvtColor to change the colorSpace (HSB,GRAY,...)
+	int w = matCapture.cols;
+	int h = matCapture.rows;
+
+	int sizeImageOctet=w*h*sizeof(uchar4);
+
+	uchar4* ptrDev0_image=NULL;
+	uchar4* ptrDev1_image=NULL;
+
+	HANDLE_ERROR(cudaSetDevice(0));
+	HANDLE_ERROR(cudaDeviceEnablePeerAccess(0, 0)); // fisrt 0, deviceID
+	HANDLE_ERROR(cudaMalloc((void**) &ptrDev0_image, sizeImageOctet));
+
+	HANDLE_ERROR(cudaSetDevice(1));
+	HANDLE_ERROR(cudaDeviceEnablePeerAccess(1, 0)); // 1 deviceID
+	HANDLE_ERROR(cudaMalloc((void**) &ptrDev1_image, sizeImageOctet));
+
+	HANDLE_ERROR(cudaDeviceSynchronize());
+
+	while (true)
+	    {
+	    capture >> matCapture;
+	    cvtColor(matCapture, matCapture, CV_8U,4); // 4 ajoute la couche alpha au signal source possédant 3 channel
+
+	    uchar4*  ptrImage=castToUChar4(matCapture.data);
+
+	    workImage(ptrImage,ptrDev0_image,ptrDev1_image,w,h);
+	    }
+
+	return true;
+	}
+    else
+	{
+	cerr << "Camera Capture : failed : camera = " << idCamera << endl;
+	return false;
+	}
+
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void workImage(uchar4* ptrImage, uchar4* ptrDev0_image,uchar4* ptrDev1_image,int w, int h)
+    {
+    //cout<<(int)ptrImage[w*h-1]<<endl;
+
+    workGPU(ptrImage, ptrDev0_image,ptrDev1_image, w,  h);
+    workCPU(ptrImage,w,h);
+    }
+
+
+
+void workCPU(uchar4* ptrImage, int w, int h)
+    {
+    cout << "workCPU" << endl;
+    }
+
+uchar4* castToUChar4(uchar* ptrTab)
+    {
+    return (uchar4*)ptrTab;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

@@ -1,0 +1,224 @@
+14:01:26 **** Build of configuration CudaWin for project CudaHello ****
+make -f cudaWin.mk all 
+
+==================================================================================
+[CBI]->Target Name	: TutoCudaHello64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Src_aux 		: ../PRODUCTION/commonExt/include ../BilatToolsCPP/src/core ../BilatToolsCuda/src/core ../BilatUtilCPP/src/core ../PRODUCTION/commonExt/windows
+[CBI]->Location 	: Q:/bilat/Targets/TutoCudaHello/bin/TutoCudaHello64.exe
+[CBI]->Deploy 		: ../PRODUCTION/Deploy/bin
+[CBI]->Compilateur 	: VISUAL && nvcc
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 14:01:27
+==================================================================================
+
+main.cpp
+mainCore.cpp
+00_addVectorTools.cpp
+00_dotProdTools.cpp
+01_cublas_produitMatriciel.cpp
+01_pi_forReduction.cpp
+01_random.cpp
+02_montecarlo_pi_array_cpuGPU.cpp
+mainTest.cpp
+TestCublasJunit.cpp
+TestMatrixJunit.cpp
+TestMontecarloPiJunit.cpp
+TestIncrementerJunit.cpp
+TestMathGPUJunit.cpp
+TestDotProdJunit.cpp
+TestPinnedMemoryJunit.cpp
+TestOMPJunit.cpp
+TestPerformanceTracerJunit.cpp
+TestHistoJunit.cpp
+TestHelloJunit.cpp
+TestAddVectorJunit.cpp
+TestMapMemoryJunit.cpp
+StringTools.cpp
+Chronos.cpp
+AleaTools.cpp
+LimitsTools.cpp
+MathTools.cpp
+cudaTools.cpp
+Device.cpp
+vectorTools.cpp
+tab1DTools.cpp
+histo.cpp
+rawMajorTools.cpp
+tab2DTools.cpp
+[CBI]->compiling .cu : src/cpp/core/01_Hello/01_helloCuda.cu
+01_helloCuda.cu
+01_helloCuda.cudafe1.gpu
+01_helloCuda.cudafe2.gpu
+01_helloCuda.cu
+01_helloCuda.cudafe1.cpp
+01_helloCuda.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/01_Hello/03_helloCuda.cu
+03_helloCuda.cu
+03_helloCuda.cudafe1.gpu
+03_helloCuda.cudafe2.gpu
+03_helloCuda.cu
+03_helloCuda.cudafe1.cpp
+03_helloCuda.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/01_Hello/02_helloCuda.cu
+02_helloCuda.cu
+02_helloCuda.cudafe1.gpu
+02_helloCuda.cudafe2.gpu
+02_helloCuda.cu
+02_helloCuda.cudafe1.cpp
+02_helloCuda.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/02_Add_Vector/03_addVector_BlockThread.cu
+03_addVector_BlockThread.cu
+03_addVector_BlockThread.cudafe1.gpu
+03_addVector_BlockThread.cudafe2.gpu
+03_addVector_BlockThread.cu
+03_addVector_BlockThread.cudafe1.cpp
+03_addVector_BlockThread.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/02_Add_Vector/02_addVector_Thread.cu
+02_addVector_Thread.cu
+02_addVector_Thread.cudafe1.gpu
+02_addVector_Thread.cudafe2.gpu
+02_addVector_Thread.cu
+02_addVector_Thread.cudafe1.cpp
+02_addVector_Thread.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/02_Add_Vector/04_addVector_MultiplePassage.cu
+04_addVector_MultiplePassage.cu
+04_addVector_MultiplePassage.cudafe1.gpu
+04_addVector_MultiplePassage.cudafe2.gpu
+04_addVector_MultiplePassage.cu
+04_addVector_MultiplePassage.cudafe1.cpp
+04_addVector_MultiplePassage.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/02_Add_Vector/01_addVector_Block.cu
+01_addVector_Block.cu
+01_addVector_Block.cudafe1.gpu
+01_addVector_Block.cudafe2.gpu
+01_addVector_Block.cu
+01_addVector_Block.cudafe1.cpp
+01_addVector_Block.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/03_PerformanceTracer/02_timeout.cu
+02_timeout.cu
+02_timeout.cudafe1.gpu
+02_timeout.cudafe2.gpu
+02_timeout.cu
+02_timeout.cudafe1.cpp
+02_timeout.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/03_PerformanceTracer/01_performanceTracer.cu
+01_performanceTracer.cu
+01_performanceTracer.cudafe1.gpu
+01_performanceTracer.cudafe2.gpu
+01_performanceTracer.cu
+01_performanceTracer.cudafe1.cpp
+01_performanceTracer.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/04_Incrementer/01_incrementerVector.cu
+01_incrementerVector.cu
+01_incrementerVector.cudafe1.gpu
+01_incrementerVector.cudafe2.gpu
+01_incrementerVector.cu
+01_incrementerVector.cudafe1.cpp
+01_incrementerVector.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/05_Math/01_mathGPU.cu
+01_mathGPU.cu
+01_mathGPU.cudafe1.gpu
+01_mathGPU.cudafe2.gpu
+01_mathGPU.cu
+01_mathGPU.cudafe1.cpp
+01_mathGPU.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/06_Image/01_image_threadByPixel.cu
+01_image_threadByPixel.cu
+01_image_threadByPixel.cudafe1.gpu
+01_image_threadByPixel.cudafe2.gpu
+01_image_threadByPixel.cu
+01_image_threadByPixel.cudafe1.cpp
+01_image_threadByPixel.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/07_ThreadCooperation_sharedMemory/02_dotProd_lock.cu
+02_dotProd_lock.cu
+02_dotProd_lock.cudafe1.gpu
+02_dotProd_lock.cudafe2.gpu
+02_dotProd_lock.cu
+02_dotProd_lock.cudafe1.cpp
+02_dotProd_lock.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/07_ThreadCooperation_sharedMemory/01_dotProd.cu
+01_dotProd.cu
+01_dotProd.cudafe1.gpu
+01_dotProd.cudafe2.gpu
+01_dotProd.cu
+01_dotProd.cudafe1.cpp
+01_dotProd.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/08_AtomicOperation/02_histogrammeFast.cu
+02_histogrammeFast.cu
+02_histogrammeFast.cudafe1.gpu
+02_histogrammeFast.cudafe2.gpu
+02_histogrammeFast.cu
+02_histogrammeFast.cudafe1.cpp
+02_histogrammeFast.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/08_AtomicOperation/01_histogrammeSlow.cu
+01_histogrammeSlow.cu
+01_histogrammeSlow.cudafe1.gpu
+01_histogrammeSlow.cudafe2.gpu
+01_histogrammeSlow.cu
+01_histogrammeSlow.cudafe1.cpp
+01_histogrammeSlow.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/09_PageLockMemory/02_incrementerVectorPinnedMemory.cu
+02_incrementerVectorPinnedMemory.cu
+02_incrementerVectorPinnedMemory.cudafe1.gpu
+02_incrementerVectorPinnedMemory.cudafe2.gpu
+02_incrementerVectorPinnedMemory.cu
+02_incrementerVectorPinnedMemory.cudafe1.cpp
+02_incrementerVectorPinnedMemory.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/09_PageLockMemory/03_benchmarkPinnedMemory.cu
+03_benchmarkPinnedMemory.cu
+03_benchmarkPinnedMemory.cudafe1.gpu
+03_benchmarkPinnedMemory.cudafe2.gpu
+03_benchmarkPinnedMemory.cu
+03_benchmarkPinnedMemory.cudafe1.cpp
+03_benchmarkPinnedMemory.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/10_MapMemory/01_histogrammeTurbo.cu
+01_histogrammeTurbo.cu
+01_histogrammeTurbo.cudafe1.gpu
+01_histogrammeTurbo.cudafe2.gpu
+01_histogrammeTurbo.cu
+01_histogrammeTurbo.cudafe1.cpp
+01_histogrammeTurbo.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/21_curand/03_montecarlo_pi_live_multiGPU.cu
+03_montecarlo_pi_live_multiGPU.cu
+03_montecarlo_pi_live_multiGPU.cudafe1.gpu
+03_montecarlo_pi_live_multiGPU.cudafe2.gpu
+03_montecarlo_pi_live_multiGPU.cu
+03_montecarlo_pi_live_multiGPU.cudafe1.cpp
+03_montecarlo_pi_live_multiGPU.cu.cpp.ii
+[CBI]->compiling .cu : src/cpp/core/21_curand/03_montecarlo_pi_array_GPU.cu
+03_montecarlo_pi_array_GPU.cu
+03_montecarlo_pi_array_GPU.cudafe1.gpu
+03_montecarlo_pi_array_GPU.cudafe2.gpu
+03_montecarlo_pi_array_GPU.cu
+03_montecarlo_pi_array_GPU.cudafe1.cpp
+03_montecarlo_pi_array_GPU.cu.cpp.ii
+
+[CBI]->linking to Q:/bilat/Targets/TutoCudaHello/bin/TutoCudaHello64.exe
+
+==================================================================================
+[CBI]->Target Name	: TutoCudaHello64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Src_aux 		: ../PRODUCTION/commonExt/include ../BilatToolsCPP/src/core ../BilatToolsCuda/src/core ../BilatUtilCPP/src/core ../PRODUCTION/commonExt/windows
+[CBI]->Location 	: Q:/bilat/Targets/TutoCudaHello/bin/TutoCudaHello64.exe
+[CBI]->Deploy 		: ../PRODUCTION/Deploy/bin
+[CBI]->Compilateur 	: VISUAL && nvcc
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 14:04:16
+==================================================================================
+
+
+[CBI]->Deploying  : TutoCudaHello64.exe
+
+[CBI]->Cleaning : Cuda temp files, excepted .cubin for JCuda
+
+
+
+14:04:18 Build Finished (took 2m:51s.615ms)
+

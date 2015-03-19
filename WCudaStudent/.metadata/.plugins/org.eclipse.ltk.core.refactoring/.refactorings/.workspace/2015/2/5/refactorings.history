@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;BUILDER_API/public/postinstall/jni_image.sh&apos;" deleteContents="false" description="Delete resource &apos;BUILDER_API/public/postinstall/jni_image.sh&apos;" element1="/BUILDER_API/public/postinstall/jni_image.sh" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1422814075020"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Cuda_Image/src/cpp/core/01_rippling/glFree&apos; to &apos;moo&apos;" description="Rename resource &apos;glFree&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/01_rippling/glFree" name="moo" stamp="1410960268438" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BilatToolsOpenCV/src/core/capture/header/withoutCudaCorrector.h&apos; to &apos;cudaType.h&apos;" description="Rename resource &apos;withoutCudaCorrector.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/capture/header/withoutCudaCorrector.h" name="cudaType.h" stamp="1383657119126" updateReferences="true"/>
+</session>

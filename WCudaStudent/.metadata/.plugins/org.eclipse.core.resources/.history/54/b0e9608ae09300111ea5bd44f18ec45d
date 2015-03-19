@@ -1,0 +1,89 @@
+#include "ImageCircuit.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ImageCircuit::ImageCircuit(int cameraId) :
+	imageCapture(cameraId),imageViewer("Camera : circuit cpu-gpu-cpu")
+    {
+    isRunning = false;
+    }
+
+ImageCircuit::ImageCircuit(const string& videoName) :
+	imageCapture(videoName),imageViewer("Vide0 : circuit cpu-gpu-cpu")
+    {
+    isRunning = false;
+    }
+
+ImageCircuit::~ImageCircuit(void)
+    {
+    //rien
+    }
+
+bool ImageCircuit::start(void)
+    {
+    if (imageCapture.isOpened())
+	{
+	if (!isRunning)
+	    {
+	    isRunning = true;
+
+	    Mat mat;
+	   while(isRunning)
+		{
+		//cout<<i<<endl;
+
+	       Mat matCapture=imageCapture.capture(&mat);
+		 uchar4* ptrImage= ImageCapture::castToUChar4(&mat);
+		imageViewer.show(&matCapture);
+
+		cout<<"fps="<<imageViewer.fps()<<endl;
+
+		isRunning=!imageCapture.isStopAsked();
+		}
+
+	    }
+	return true;
+	}
+    else
+	{
+	cerr << " Capture : failed " << endl;
+	return false;
+	}
+
+    }
+
+void ImageCircuit::stop(void)
+    {
+    isRunning = false;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

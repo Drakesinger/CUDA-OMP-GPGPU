@@ -1,0 +1,55 @@
+20:43:07 **** Build of configuration MinGW for project BoostTuto ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeMinGW.bat" all 
+
+[MINGW]
+
+Set MinGW environement x64
+ 
+g++ (rubenvb-4.7.2-release) 4.7.2
+Copyright (C) 2012 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+==================================================================================
+[CBI]->Target Name	: TutoBoost64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/TutoBoost/bin/TutoBoost64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: MINGW [CXX=g++]
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 20:43:07
+==================================================================================
+
+[CBI]->compiling .cpp : src/main.cpp
+[CBI]->compiling .cpp : src/cpp/core/mainCore.cpp
+[CBI]->compiling .cpp : src/cpp/core/thread/04_thread_objet_methode.cpp
+[CBI]->compiling .cpp : src/cpp/core/thread/01_thread_procedure.cpp
+[CBI]->compiling .cpp : src/cpp/core/thread/03_thread_objet.cpp
+[CBI]->compiling .cpp : src/cpp/core/thread/02_thread_procedure_args.cpp
+
+[CBI]->linking to Q:/bilat/Targets/TutoBoost/bin/TutoBoost64.exe
+
+==================================================================================
+[CBI]->Target Name	: TutoBoost64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/TutoBoost/bin/TutoBoost64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: MINGW [CXX=g++]
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 20:43:20
+==================================================================================
+
+
+[CBI]->Deploying  : ../Deploy/bin/TutoBoost64.exe
+
+[CBI]->Q:/bilat/Targets/TutoBoost/bin/TutoBoost64.exe : End ALL!
+
+20:43:21 Build Finished (took 14s.552ms)
+

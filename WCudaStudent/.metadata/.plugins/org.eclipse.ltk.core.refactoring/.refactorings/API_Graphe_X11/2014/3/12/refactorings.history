@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;API_Graphe_X11/LIB_STATIC/gcc_static&apos; to &apos;gcc_arm&apos;" description="Rename resource &apos;gcc_static&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LIB_STATIC/gcc_static" name="gcc_arm" stamp="1395599285110" updateReferences="true"/>
+</session>

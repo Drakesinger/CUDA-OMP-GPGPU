@@ -1,0 +1,21 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+OBJ_SRCS += \
+../target/obj/ChronoOMPs.obj \
+../target/obj/Chronos.obj \
+../target/obj/aleaTools.obj \
+../target/obj/histo.obj \
+../target/obj/main.obj \
+../target/obj/mathTools.obj \
+../target/obj/matrixTools.obj \
+../target/obj/stringTools.obj \
+../target/obj/tab1DTools.obj \
+../target/obj/tab2DTools.obj \
+../target/obj/vectorTools.obj 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+

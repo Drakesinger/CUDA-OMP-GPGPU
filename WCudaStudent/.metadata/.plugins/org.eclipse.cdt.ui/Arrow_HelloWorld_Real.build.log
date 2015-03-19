@@ -1,0 +1,66 @@
+11:19:56 **** Incremental Build of configuration CudaVisual for project Arrow_HelloWorld_Real ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Real_64
+[CBI] ->
+[CBI] -> Build        : Q:/bilat/Targets/Arrow_HelloWorld_Real
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_CppTest/INC
+[CBI] ->              : ../API_CppTest/LIB_STATIC/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Real/bin
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Real/obj
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Real/cubin
+
+debug : compil cpp : nvcc -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -m64 -use_fast_math --fmad=true -Isrc -Isrc/01_specification -Isrc/01_specification/arm -Isrc/01_specification/fpga -Isrc/01_specification/gpu -Isrc/02_factory -Isrc/03_implementation -Isrc/03_implementation/gpu -Isrc/05_example_pipeline -Isrc/05_example_pipeline/01_exemple1 -I../API_CppTest/INC -I../API_CppTest/LIB_STATIC/visual -odir Q:/bilat/Targets/Arrow_HelloWorld_Real/obj -Xcompiler  /MD /Ox			    -c src/main.cpp -o Q:/bilat/Targets/Arrow_HelloWorld_Real/obj/main.obj
+[Arrow_HelloWorld_Real_64] -> cl compiling .cpp : src/main.cpp
+[Arrow_HelloWorld_Real_64] -> nvcc compiling .cu : src/03_implementation/gpu/GPU.cu
+[Arrow_HelloWorld_Real_64] -> nvcc compiling .cu : src/05_example_pipeline/01_exemple1/Pipeline1.cu
+src/02_factory\FactoryARM.h(5) : fatal error C1083: Cannot open include file: 'ARM_Bouchon.h': No such file or directory
+../BUILDER/makefile/private/cuda/makeCudaVisual.mk:269: recipe for target `Q:/bilat/Targets/Arrow_HelloWorld_Real/obj/Pipeline1.obj' failed
+make: *** [Q:/bilat/Targets/Arrow_HelloWorld_Real/obj/Pipeline1.obj] Error 2
+
+11:20:14 Build Finished (took 17s.197ms)
+

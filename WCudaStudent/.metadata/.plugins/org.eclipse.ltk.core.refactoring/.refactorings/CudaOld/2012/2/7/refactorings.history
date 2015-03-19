@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Cuda/src/cpp/core/14_CuLa/benchmark.XXXcpp&apos; to &apos;benchmark.cpp&apos;" description="Rename resource &apos;benchmark.XXXcpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/14_CuLa/benchmark.XXXcpp" name="benchmark.cpp" stamp="1329489939382" updateReferences="true"/>
+</session>

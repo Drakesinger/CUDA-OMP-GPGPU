@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Cuda/src/lib/temp.lib&apos; to &apos;temp&apos;" description="Rename resource &apos;temp.lib&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/lib/temp.lib" name="temp" stamp="1305814335502" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Cuda/src/lib/temp&apos; to &apos;temp.lib&apos;" description="Rename resource &apos;temp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/lib/temp" name="temp.lib" stamp="1305814429548" updateReferences="true"/>
+</session>

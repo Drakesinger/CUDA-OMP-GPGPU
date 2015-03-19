@@ -1,0 +1,60 @@
+#include "TestCulaJunit.h"
+"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern void helloCuda(void);
+extern bool isAddScalarGPU_Ok(void);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Constructor		*|
+ \*-------------------------------------*/
+
+TestCulaJunit::TestCulaJunit(int deviceId)
+    {
+    this->deviceId=deviceId;
+
+    TEST_ADD(TestCulaJunit::testSpectre);
+    TEST_ADD(TestCulaJunit::testSystemSolve);
+    TEST_ADD(TestCulaJunit::testVersion);
+    TEST_ADD(TestCulaJunit::testBenchmark);
+    }
+
+/*--------------------------------------*\
+ |*		Methodes		*|
+ \*-------------------------------------*/
+
+void TestCulaJunit::testSpectre(void)
+    {
+    helloCuda();
+    }
+
+void TestCulaJunit::testSystemSolve(void)
+    {
+    TEST_ASSERT(isAddScalarGPU_Ok() == true);
+    }
+
+void TestCulaJunit::testVersion(void)
+    {
+    Device::print(deviceId,"Test on device : ");
+    }
+
+void TestCulaJunit::testBenchmark(void)
+    {
+    Device::print(deviceId,"Test on device : ");
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;PRODUCTION/MANAGER/makefile/private/flags_GCC.mk&apos; to &apos;flags_GccIntel.mk&apos;" description="Rename resource &apos;flags_GCC.mk&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MANAGER/makefile/private/flags_GCC.mk" name="flags_GccIntel.mk" stamp="1330536381210" updateReferences="true"/>
+</session>

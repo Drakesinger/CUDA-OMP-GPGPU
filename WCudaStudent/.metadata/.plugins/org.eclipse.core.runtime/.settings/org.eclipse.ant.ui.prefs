@@ -1,0 +1,14 @@
+#Fri Jan 28 14:54:37 CET 2011
+problem_properties=ignore
+problem_tasks=ignore
+useQuickDiffPrefPage=true
+useAnnotationsPrefPage=true
+errorDialog=always
+anteditor.filterImportedElements=true
+problem_classpath=warning
+problem_imports=warning
+problem_security=warning
+org.eclipse.ant.ui.customtemplates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
+eclipse.preferences.version=1
+anteditor.filterProperties=true
+outline.linkWithEditor=true

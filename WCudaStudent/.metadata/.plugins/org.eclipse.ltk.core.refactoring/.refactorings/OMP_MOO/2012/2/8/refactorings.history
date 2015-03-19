@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;OpenMP/src/cpp/core/omp/01_base/02_addVector_parallelRegion.cpp&apos; to &apos;02_addVector_entrelacer.cpp&apos;" description="Rename resource &apos;02_addVector_parallelRegion.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/omp/01_base/02_addVector_parallelRegion.cpp" name="02_addVector_entrelacer.cpp" stamp="1330003767719" updateReferences="true"/>
+</session>

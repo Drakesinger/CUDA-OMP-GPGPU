@@ -1,0 +1,81 @@
+#include <iostream>
+#include <stdlib.h>
+#include <assert.h>
+
+#include "cudaTools.h"
+#include "Device.h"
+#include "ImageCircuit.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern bool useVideo(void);
+extern bool useCamera(void);
+
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void rappelTypeSize(void);
+static bool useTutoOpencv(void);
+static bool useGPUOpencv(void);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int main(void)
+    {
+    rappelTypeSize();
+
+   //return useTutoOpencv();
+    return useGPUOpencv();
+
+    }
+
+bool useTutoOpencv(void)
+    {
+    bool isOk = true;
+    isOk &= useVideo();
+    isOk &= useCamera();
+
+    return isOk ? EXIT_SUCCESS : EXIT_FAILURE;
+    }
+
+ bool useGPUOpencv(void)
+    {
+    // ImageCircuit imageCircuitVideo("example.avi");
+      ImageCircuit imageCircuitVideo("C:/Users/bilat/Desktop/nasaFHD.avi");
+     //ImageCircuit imageCircuitCamera(0);
+
+    return  imageCircuitVideo.start();
+    //return  imageCircuitCamera.start();
+    }
+
+void rappelTypeSize(void)
+    {
+    cout << endl;
+    cout << "Rappel type size (from limits.h) " << endl;
+    cout << "SHORT_MAX = " << SHRT_MAX << "      : " << sizeof(short) << " Octets" << endl;
+    cout << "INT_MAX   = " << INT_MAX << " : " << sizeof(int) << " Octets" << endl;
+    cout << "LONG_MAX  = " << LONG_MAX << " : " << sizeof(long) << " Octets" << endl;
+    cout << endl;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

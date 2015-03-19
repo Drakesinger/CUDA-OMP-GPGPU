@@ -1,0 +1,249 @@
+15:35:03 **** Build of configuration MinGW for project Farmwise_11_Use ****
+Info: Configuration "MinGW" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+makeMinGW.bat all 
+init make
+init API-EXT
+init API-CBI
+-----------------------------------------------
+
+[MINGW] : all  
+
+Set MinGW environement x64
+ 
+g++ (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 4.9.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Use_mingw_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/cedric.bilat/Targets/Farmwise_Use/bin/Farmwise_Use_mingw_64.exe
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/hearc
+[CBI] ->              : ../Farmwise_03_Row_Finder/src/cpp/eco
+[CBI] ->              : ../Farmwise_04_Row_Driver/src/cpp/eco
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/hearc
+[CBI] ->              : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/hearc
+[CBI] ->              : ../Farmwise_08_Weeds_Destroy/src/cpp/eco
+[CBI] ->              : ../Farmwise_09_Weeds_Shower/src/cpp/hearc
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/hearc
+[CBI] ->              : c:/Soft_API/ext/Boost/001/mingw/lib_static/x64
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -O3
+[CBI] ->              : -fgcse
+[CBI] ->              : -fomit-frame-pointer
+[CBI] ->              : -fopenmp
+[CBI] ->              : -frerun-loop-opt
+[CBI] ->              : -march=native
+[CBI] ->              : -std=c++0x
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/01_image_provider/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/Output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/03_weeds_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/03_weeds_consomateur/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/io/output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/row/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/05_row_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/05_row_consomateur/input/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/hearc/file/facade/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/hearc/file/implementation/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/hearc/video/facade/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/hearc/video/implementation/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/hearc/webcam/facade/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/hearc/webcam/implementation/
+[CBI] ->              : ../Farmwise_03_Row_Finder/src/cpp/eco/cpu/facade/
+[CBI] ->              : ../Farmwise_03_Row_Finder/src/cpp/eco/cpu/implementation/
+[CBI] ->              : ../Farmwise_04_Row_Driver/src/cpp/eco/cpu/facade/
+[CBI] ->              : ../Farmwise_04_Row_Driver/src/cpp/eco/cpu/implementation/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/facade/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/all/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/ext/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/hearc/cpu/facade/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/hearc/cpu/implementation/
+[CBI] ->              : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/hearc/gpu/facade/
+[CBI] ->              : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/hearc/gpu/implementation/
+[CBI] ->              : ../Farmwise_08_Weeds_Destroy/src/cpp/eco/destroyeur/facade/
+[CBI] ->              : ../Farmwise_08_Weeds_Destroy/src/cpp/eco/destroyeur/implementation/
+[CBI] ->              : ../Farmwise_09_Weeds_Shower/src/cpp/hearc/shower/facade/
+[CBI] ->              : ../Farmwise_09_Weeds_Shower/src/cpp/hearc/shower/implementation/
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/hearc/tools/
+[CBI] ->              : src/cpp/hearc/use/pipeline/
+
+[CBI] -> LIB_PATH (auto detect):
+[CBI] ->              : c:/Soft_API/ext/Boost/001/mingw/lib_static/x64/
+
+[CBI] -> API_INC :
+[CBI] ->              : c:/Soft_API/ext/Boost/001/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+
+[CBI] -> API_LIB :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/mingw/lib
+
+[CBI] -> API_BIN :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/mingw/bin
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : opencv_contrib249
+[CBI] ->              : opencv_core249
+[CBI] ->              : opencv_features2d249
+[CBI] ->              : opencv_flann249
+[CBI] ->              : opencv_highgui249
+[CBI] ->              : opencv_imgproc249
+[CBI] ->              : opencv_legacy249
+[CBI] ->              : opencv_ml249
+[CBI] ->              : opencv_nonfree249
+[CBI] ->              : opencv_objdetect249
+[CBI] ->              : opencv_ocl249
+[CBI] ->              : opencv_photo249
+[CBI] ->              : opencv_stitching249
+[CBI] ->              : opencv_superres249
+[CBI] ->              : opencv_ts249
+[CBI] ->              : opencv_video249
+[CBI] ->              : opencv_videostab249
+
+
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : src/cpp/hearc/use/main.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : src/cpp/hearc/use/pipeline/Pipeline.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/input/WeedsIn.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/Output/WeedsOut.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_01_Specification/src/cpp/hearc/specification/03_weeds_consomateur/input/WeedsData.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/io/input/RowIn.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/io/output/RowOut.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_01_Specification/src/cpp/hearc/specification/04_row_finder/row/Row.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_01_Specification/src/cpp/hearc/specification/05_row_consomateur/input/RowData.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_02_Image_Provider/src/cpp/hearc/file/facade/FactoryImageProvider_File.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_02_Image_Provider/src/cpp/hearc/file/implementation/ImageProvider_File.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_02_Image_Provider/src/cpp/hearc/video/facade/FactoryImageProvider_Video.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_02_Image_Provider/src/cpp/hearc/video/implementation/ImageProvider_Video.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_02_Image_Provider/src/cpp/hearc/webcam/facade/FactoryImageProvider_Webcam.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_02_Image_Provider/src/cpp/hearc/webcam/implementation/ImageProvider_Webcam.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_03_Row_Finder/src/cpp/eco/cpu/facade/FactoryRowFinder.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_03_Row_Finder/src/cpp/eco/cpu/implementation/RowFinder.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_04_Row_Driver/src/cpp/eco/cpu/facade/FactoryRowDriver.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_04_Row_Driver/src/cpp/eco/cpu/implementation/RowDriver.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/facade/FactoryWeedsFinder_Didrik.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/WeedsFinder_Didrik.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/all/classification.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/all/featureExtractionFunctions.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/all/segmentationFunctions.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/all/pipelineFunctions.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_05_Weeds_Finder_Didrik/src/cpp/epfl/cpu/implementation/ext/svm.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/hearc/cpu/facade/FactoryWeedsFinder_CPU.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/hearc/cpu/implementation/WeedsFinder_CPU.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/hearc/gpu/facade/FactoryWeedsFinder_GPU.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/hearc/gpu/implementation/WeedsFinder_GPU.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_08_Weeds_Destroy/src/cpp/eco/destroyeur/facade/FactoryWeedsDestroyeur.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_08_Weeds_Destroy/src/cpp/eco/destroyeur/implementation/WeedsDestroyeur.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_09_Weeds_Shower/src/cpp/hearc/shower/facade/FactoryWeedsShower.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_09_Weeds_Shower/src/cpp/hearc/shower/implementation/WeedsShower.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_10_Hearc_tools/src/cpp/hearc/tools/StringTools.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_10_Hearc_tools/src/cpp/hearc/tools/OpenCVTools.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_10_Hearc_tools/src/cpp/hearc/tools/Fps.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_10_Hearc_tools/src/cpp/hearc/tools/Chrono.cpp
+[Farmwise_Use_mingw_64] -> g++ compiling .cpp : ../Farmwise_10_Hearc_tools/src/cpp/hearc/tools/BoostTools.cpp
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/Farmwise_Use/bin/Farmwise_Use_mingw_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->              : -lboost_atomic-mgw49-mt-1_55
+[CBI] ->              : -lboost_chrono-mgw49-mt-1_55
+[CBI] ->              : -lboost_coroutine-mgw49-mt-1_55
+[CBI] ->              : -lboost_date_time-mgw49-mt-1_55
+[CBI] ->              : -lboost_exception-mgw49-mt-1_55
+[CBI] ->              : -lboost_filesystem-mgw49-mt-1_55
+[CBI] ->              : -lboost_graph-mgw49-mt-1_55
+[CBI] ->              : -lboost_iostreams-mgw49-mt-1_55
+[CBI] ->              : -lboost_locale-mgw49-mt-1_55
+[CBI] ->              : -lboost_log-mgw49-mt-1_55
+[CBI] ->              : -lboost_log_setup-mgw49-mt-1_55
+[CBI] ->              : -lboost_math_c99-mgw49-mt-1_55
+[CBI] ->              : -lboost_math_c99f-mgw49-mt-1_55
+[CBI] ->              : -lboost_math_c99l-mgw49-mt-1_55
+[CBI] ->              : -lboost_math_tr1-mgw49-mt-1_55
+[CBI] ->              : -lboost_math_tr1f-mgw49-mt-1_55
+[CBI] ->              : -lboost_math_tr1l-mgw49-mt-1_55
+[CBI] ->              : -lboost_prg_exec_monitor-mgw49-mt-1_55
+[CBI] ->              : -lboost_program_options-mgw49-mt-1_55
+[CBI] ->              : -lboost_random-mgw49-mt-1_55
+[CBI] ->              : -lboost_regex-mgw49-mt-1_55
+[CBI] ->              : -lboost_serialization-mgw49-mt-1_55
+[CBI] ->              : -lboost_signals-mgw49-mt-1_55
+[CBI] ->              : -lboost_system-mgw49-mt-1_55
+[CBI] ->              : -lboost_test_exec_monitor-mgw49-mt-1_55
+[CBI] ->              : -lboost_thread-mgw49-mt-1_55
+[CBI] ->              : -lboost_timer-mgw49-mt-1_55
+[CBI] ->              : -lboost_unit_test_framework-mgw49-mt-1_55
+[CBI] ->              : -lboost_wave-mgw49-mt-1_55
+[CBI] ->              : -lboost_wserialization-mgw49-mt-1_55
+[CBI] ->              : -lgomp
+[CBI] ->              : -lopencv_contrib249
+[CBI] ->              : -lopencv_core249
+[CBI] ->              : -lopencv_features2d249
+[CBI] ->              : -lopencv_flann249
+[CBI] ->              : -lopencv_highgui249
+[CBI] ->              : -lopencv_imgproc249
+[CBI] ->              : -lopencv_legacy249
+[CBI] ->              : -lopencv_ml249
+[CBI] ->              : -lopencv_nonfree249
+[CBI] ->              : -lopencv_objdetect249
+[CBI] ->              : -lopencv_ocl249
+[CBI] ->              : -lopencv_photo249
+[CBI] ->              : -lopencv_stitching249
+[CBI] ->              : -lopencv_superres249
+[CBI] ->              : -lopencv_ts249
+[CBI] ->              : -lopencv_video249
+[CBI] ->              : -lopencv_videostab249
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Use_mingw_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/Farmwise_Use/bin/Farmwise_Use_mingw_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : MINGW (g++)
+[CBI] -> Task	      : End Compiling-Linking !
+[CBI] -> Time		  : 15:35:48
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Farmwise_Use_mingw_64.exe
+
+[CBI] -> Farmwise_Use_mingw_64 : End ALL!
+
+15:35:49 Build Finished (took 45s.456ms)
+

@@ -1,0 +1,137 @@
+#include <iostream>
+#include <assert.h>
+#include "indiceTools.h"
+#include "cudaTools.h"
+#include "mathTools.h"
+#include "deviceTools.h"
+#include "alea.h"
+#include "vectorTools.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern void fillRandom(unsigned char* tabData, long n);
+extern bool isHistoOk(unsigned char* tabData, long n, unsigned int* tabFrequenceGPU);
+extern void histogrammeCPU(unsigned char* tabData, long n, unsigned int* tabFrequence);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isHistoFast02_Ok(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ static void histogrammeGPU(unsigned char* ptrTabData, long n, unsigned int* ptrTabFrequence);
+
+static void histogramme(unsigned char* tabData, long n, unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isHistoFast02_Ok(void)
+    {
+    cout << endl << "[Histogramme 01 : operation atomique : Fast]" << endl;
+
+    // quadro 140m : 20
+    long n = 20 * 1024 * 1024;
+    long gridDimX = getMultiprocessorCount() * 2; // Souvent bon pour performance!
+    long blockDimX = 256;
+    assert(gridDimX * blockDimX >= 256); // tid sera use pour init tabFrequenceGPU de taille 256
+
+    dim3 blockPerGrid(gridDimX, 1, 1);
+    dim3 threadPerBlock(blockDimX, 1, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    assertDimLegal(blockPerGrid, threadPerBlock);
+    cout << "n=" << n << endl;
+
+    unsigned char* tabData = new unsigned char[n];
+    unsigned int* tabFrequence = new unsigned int[256];
+
+    fillRandom(tabData, n);
+
+    histogramme(tabData, n, tabFrequence, blockPerGrid, threadPerBlock);
+
+    bool isOk = isHistoOk(tabData, n, tabFrequence);
+
+    delete[] tabData;
+    delete[] tabFrequence;
+
+    return isOk;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/**
+ * see 01_histoSlow.cu analyse and comment!
+ *
+ * Optimisation: Mettre un tabFrequenceBlock en memoire shared.
+ * 		 Ainsi seul les threads du blocks sont en concurence!
+ * 		 Reduire touts les tabFrequenceBlock dans tabFrequence en memoireGlobale
+ */
+void histogramme(unsigned char* tabData, long n, unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock)
+    {
+    unsigned char* ptrDev_data = NULL;
+    unsigned int* ptrDev_frequence = NULL;
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_data, n * sizeof(unsigned char)));
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_frequence, 256 * sizeof(unsigned int)));
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev_data, tabData, n * sizeof(unsigned char), cudaMemcpyHostToDevice));
+
+    histogrammeGPU<<<blockPerGrid,threadPerBlock>>>(ptrDev_data,n,ptrDev_frequence);
+
+    HANDLE_ERROR(cudaMemcpy(tabFrequence, ptrDev_frequence, 256 * sizeof(unsigned int), cudaMemcpyDeviceToHost));
+
+    HANDLE_ERROR(cudaFree(ptrDev_frequence));
+    HANDLE_ERROR(cudaFree(ptrDev_data));
+    }
+
+/**
+ * hyp: nbThreadCuda>=256
+ */
+__global__ void histogrammeGPU(unsigned char* tabData, long n, unsigned int* tabFrequence)
+    {
+    // version indirecte
+    //long tid=tid0();
+    //long nbThreadCuda=nbThreadTotalCuda();
+    // version directe
+    long tid = threadIdx.x + (blockDim.x * blockIdx.x);
+    long nbThreadCuda = (gridDim.x * blockDim.x);
+
+    if (tid < 256)
+	{
+	tabFrequence[tid] = 0; // TODO: necessaire?
+	}
+    __syncthreads(); // pas dans if
+
+    // Les threadCuda tid explore tabData
+    while (tid < n)
+	{
+	atomicAdd(&tabFrequence[tabData[tid]], (unsigned int) 1);
+	tid += nbThreadCuda;
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

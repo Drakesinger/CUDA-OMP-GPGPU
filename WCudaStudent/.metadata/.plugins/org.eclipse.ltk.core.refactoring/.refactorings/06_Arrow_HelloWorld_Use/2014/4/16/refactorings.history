@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;06_Arrow_HelloWorld_Use/src/05_example_pipeline&apos; to &apos;example_pipeline&apos;" description="Rename resource &apos;05_example_pipeline&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/05_example_pipeline" name="example_pipeline" stamp="1397660388717" updateReferences="true"/>
+</session>

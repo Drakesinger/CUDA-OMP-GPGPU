@@ -1,0 +1,125 @@
+#include <iostream>
+#include "ImageCapture.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ImageCapture::ImageCapture(const string& videoName):captureStream(videoName)
+    {
+    buildCommon();
+    }
+
+ImageCapture::ImageCapture(int idCamera):captureStream(idCamera)
+    {
+    buildCommon();
+    }
+
+ImageCapture::~ImageCapture(void)
+    {
+    // rien
+    }
+
+Mat ImageCapture::capture()
+    {
+
+    captureStream >> matCapture;
+
+    printInfo();
+    cvtColor(matCapture, matCapture, CV_8U, 4); // 0 keep same chanel // 4 permet par exemple d'ajouter la couche alpha à rvb (pour une video ou webcam)
+    printInfo();
+
+    return matCapture;//castToUChar4(matCapture.data);
+    }
+
+bool ImageCapture::isOpened(void)
+    {
+    return captureStream.isOpened();
+    }
+
+int ImageCapture::nbOctet()
+    {
+    return w*h*sizeof(uchar4);
+    }
+
+int ImageCapture::getW(void)
+    {
+    return w;
+    }
+
+int ImageCapture::getH(void)
+    {
+    return h;
+    }
+
+/**
+ * uchar = unsigned char
+ * uchar4 = 4 char sequentiel
+ */
+uchar4* ImageCapture::castToUChar4(uchar* ptrTab)
+    {
+    return (uchar4*) ptrTab;
+    }
+
+uchar4* ImageCapture::castToUChar4(Mat* ptrMap)
+    {
+    return castToUChar4(ptrMap->data);
+    }
+
+void ImageCapture::printInfo(void)
+    {
+    uchar* ptr = matCapture.data; // use cvtColor to change the colorSpace (HSB,GRAY,...)
+
+    bool isEmpty = matCapture.empty();
+    int type = matCapture.type();
+    //Size size = matCapture.size();
+    int nbChannel = matCapture.channels();
+
+    cout<<"Capture Info :"<<endl;
+    cout << "\t(n,m) = (" << n << "," << m << ")" << endl;
+    cout << "\tnbChannel = " << nbChannel << endl;
+//     cout << "size (width)=" << size.width << endl;
+//     cout << "size (height) =" << size.height  << endl;
+    cout << "\ttype      = " << type << endl;
+    cout << "\tisEmpty   = " << isEmpty << endl;
+
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void ImageCapture::buildCommon()
+    {
+    captureStream >> matCapture;
+
+    w = matCapture.cols;
+    h = matCapture.rows;
+    }
+
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

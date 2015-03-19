@@ -1,0 +1,6 @@
+1391347806156	Move 1 resources to 'visual'
+1391347808632	Move 1 resources to 'visual'
+1391347827274	Move 'freeglut_ext.h' to 'INC_WIN'
+1391347859175	Move 'freeglut64.lib' to 'LIB'
+1391348029369	Move 'freeglut64.lib' to 'visual'
+1391348043446	Move 'libfreeglut64dll.a' to 'mingw'

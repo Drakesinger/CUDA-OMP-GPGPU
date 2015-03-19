@@ -1,0 +1,86 @@
+#include "Indice2D.h"
+#include "cudaTools.h"
+#include "Device.h"
+
+#define FACTOR19 1/9
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+__global__ void toFlou(uchar4* ptrDev1_image, int w, int h);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static __device__ void modifyColor(int pixelI, int pixelJ, uchar4* ptrDev1_image, uchar4& color,int w,int tid);
+static __device__ bool isBord(int pixelI, int pixelJ, int w, int h);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ void toFlou(uchar4* ptrDev1_image, int w, int h)
+    {
+    int tid = Indice2D::tid();
+    int nbThread = Indice2D::nbThread();
+
+    uchar4 color;
+    color.w = 255; // alpha
+
+    int pixelI;
+    int pixelJ;
+
+    while (tid < w * h)
+	{
+	Indice2D::pixelIJ(tid, w, pixelI, pixelJ);
+
+	if (!isBord(pixelI, pixelJ, w, h))
+	    {
+	    color = ptrDev1_image[tid];
+	    modifyColor(pixelI, pixelJ, ptrDev1_image, color, w, tid);
+	    ptrDev1_image[tid] = color;
+	    }
+
+	tid += nbThread;
+	}
+    }
+
+__device__ void modifyColor(int pixelI, int pixelJ, uchar4* ptrDev1_image, uchar4& color, int w, int tid)
+    {
+    int up = pixelI + w;
+    int down = pixelI - w;
+
+    int haut=ptrDev1_image[up - 1].x+ptrDev1_image[up].x+ptrDev1_image[up + 1].x;
+    int milieu=ptrDev1_image[tid-1].x+ptrDev1_image[tid].x+ptrDev1_image[tid + 1].x;
+    int bas=0;//ptrDev1_image[down - 1].x+ptrDev1_image[down].x+ptrDev1_image[down + 1].x;
+
+    unsigned char levelGray = (int) ((haut+milieu+bas) * FACTOR19);
+
+    color.x = levelGray;
+    color.y = levelGray;
+    color.z = levelGray;
+    }
+
+__device__ bool isBord(int pixelI, int pixelJ, int w, int h)
+    {
+    return pixelJ == 0 || pixelJ == w-1 || pixelI == 0 || pixelI == h-1;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

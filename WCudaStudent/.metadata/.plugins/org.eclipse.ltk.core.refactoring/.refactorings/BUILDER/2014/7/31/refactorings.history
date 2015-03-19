@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;c++11.mk&apos; to &apos;common&apos;" description="Move &apos;c++11.mk&apos; to &apos;common&apos;" destination="makefile/private/common" element1="makefile/private/cpp/c++11.mk" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1406819046009" updateReferences="true"/>
+</session>

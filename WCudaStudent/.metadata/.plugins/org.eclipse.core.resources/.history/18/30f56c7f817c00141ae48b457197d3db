@@ -1,0 +1,711 @@
+# Version 	: 0.0.7
+# Date		: 04.03.2014
+# Author 	: Cedric.Bilat@he-arc.ch
+#
+# See 		: OptionCompilateur.txt
+#
+# Hyp		: Application that must be in path
+#				nvcc
+#				make
+#				g++
+#				gcc
+
+##############################################
+#    				Temp	       			 #
+##############################################
+
+# Hyp		: Environement Variables must be set
+#
+#				ARCHI_32_64	: 32 or 64
+
+ifndef __CPP_MK__
+__CPP_MK__=true
+
+##############################################
+#   			 Variables     				 #
+##############################################
+
+#OS:=$(shell uname)
+#MACHINE:=${shell uname -m}
+
+
+
+########
+#setfile #
+########
+
+OBJ_FILES_CPP:= $(SRC_CPP_FILES:.cpp=.$(EXTENSION_OBJ))
+OBJ_FILES_C:= $(SRC_C_FILES:.c=.$(EXTENSION_OBJ))
+
+OBJ_FILES:= ${OBJ_FILES_CPP} ${OBJ_FILES_C}
+
+##########
+# TARGET #
+##########
+
+TARGET_NAME_EXE:=$(TARGET_NAME).${EXTENSION_EXE}
+TARGET_NAME_DLL:=${LIB_PREFIXE}$(TARGET_NAME).$(EXTENSION_DLL)
+TARGET_NAME_LIB:=${LIB_PREFIXE}$(TARGET_NAME).${EXTENSION_LIB}
+
+TARGET_EXE:=${TARGET_BIN_PATH}/$(TARGET_NAME_EXE)
+TARGET_DLL:=${TARGET_BIN_PATH}/$(TARGET_NAME_DLL)
+TARGET_LIB:=${TARGET_BIN_PATH}/$(TARGET_NAME_LIB)
+TARGET_OBJ:=$(addprefix $(TARGET_OBJ_PATH)/,$(notdir $(OBJ_FILES)))
+
+#Selection de la target en fonction TARGET_MODE
+ifeq ($(TARGET_MODE),EXE)
+	TARGET:=${TARGET_EXE}
+	TARGET_DEPLOY:=$(TARGET_DEPLOY_PATH_BIN)/$(TARGET_NAME_EXE)
+endif
+
+ifeq ($(TARGET_MODE),SHARED_LIB)
+	TARGET:=${TARGET_DLL}
+	TARGET_DEPLOY:=$(TARGET_DEPLOY_PATH_BIN)/$(TARGET_NAME_DLL)
+	override LDFLAGS += $(LINK_FLAG_DLL)
+endif
+
+ifeq ($(TARGET_MODE),STATIC_LIB)
+	TARGET:=${TARGET_LIB}
+	TARGET_DEPLOY:=$(TARGET_DEPLOY_PATH_BIN)/$(TARGET_NAME_LIB)
+endif
+
+##########
+# RESSOURCES #
+##########
+
+ifeq (,$(findstring $(RESOURCES_PATH),$(wildcard $(RESOURCES_PATH) )))
+	nbFileRessources:=0
+else
+	nbFileRessources:=$(shell ls $(RESOURCES_PATH) | wc -l )
+endif
+
+##########
+# securite #
+##########
+
+VPATH := $(SRC_PATH_ALL) 
+
+
+##########
+# runtime #
+##########
+
+space:= #ne suufit pas ajoutre espaca, mais += le fait!
+space+=#
+
+ifeq (${OS},Win)
+	separateurPath:=;#	
+else
+	separateurPath:=:#
+endif
+
+API_BIN_FORMATTER:=$(subst ${space},${separateurPath},${API_BIN})
+
+ifeq (${OS},Win)	
+	override PATH:=${PATH}${separateurPath}${API_BIN_FORMATTER}#
+	export ${PATH}#
+else
+	override LD_LIBRARY_PATH:=${LD_LIBRARY_PATH}${separateurPath}${API_BIN_FORMATTER}#
+	export ${LD_LIBRARY_PATH}#fixme semble pas marcher
+endif
+
+########
+#optimisation #
+########
+
+include ${ROOT_MAKEFILE_PRIVATE_CPP}/optimisation.mk
+
+########
+#arm #
+########
+
+include ${ROOT_MAKEFILE_PRIVATE_CPP}/gcc_arm.mk
+
+##########
+# exclude #
+##########
+
+override CXXFLAGS:=$(filter-out $(CXXFLAGS_EXCLUDE),$(CXXFLAGS))
+#https://www.gnu.org/software/make/manual/make.html#Functions
+
+##########
+# unicitye #
+##########
+
+UNICITY=true
+
+ifdef UNICITY
+
+	override CXXFLAGS:=$(call uniq,${CXXFLAGS})
+	override CXXLDFLAGS:=$(call uniq,${CXXLDFLAGS})
+	override ARFLAGS:=$(call uniq,${ARFLAGS})
+	#override AR_OUT_FLAG:=$(call uniq,${AR_OUT_FLAG})#met espace apres /out, pas pour visual/intel
+
+#debug
+#${info "CXXFLAGS= "${CXXFLAGS}}#print immediately
+#${info "CXXLDFLAGS"= ${CXXLDFLAGS}}#print immediatel
+#${info "ARFLAGS= "${ARFLAGS}}#print immediatel
+#${info "AR_OUT_FLAG= "${AR_OUT_FLAG}}#print immediatel
+
+endif#UNICITY
+
+##########
+# remove space #
+##########
+
+#let a minimum of one space
+REMOVE_SPACE=true
+
+ifdef REMOVE_SPACE
+
+	override CXXFLAGS:=$(strip ${CXXFLAGS})
+	override CXXLDFLAGS:=$(strip ${CXXLDFLAGS})
+	override ARFLAGS:=$(strip ${ARFLAGS})
+	#override AR_OUT_FLAG:=$(strip ${AR_OUT_FLAG}) #pas pour mingw car enleve espace apres -r
+
+	#override CXXFLAGS:=$(subst $(space),,$(CXXFLAGS))
+
+endif#REMOVE_SPACE
+
+
+##########
+# chrono #
+##########
+
+override TIME_START:=$(shell date +%T)
+TIME_CURRENT=$(shell date +%T)
+#TIME_DELTA:=$(shell echo $(TIME_CURRENT) - $(TIME_START) | bc) #marche pas
+
+##############################################
+#      			  Rules 				     #
+##############################################
+
+# tabulation obligatoire before @
+
+TITLE:=$(TARGET_NAME)
+
+################
+#   .o->.exe   #
+################
+
+${TARGET_EXE}:$(TARGET_OBJ)
+	@echo "$(CXX) $(OUT_FILE_LINK)${TARGET_EXE} $^ $(LDFLAGS)"
+	@echo ""
+	@echo "[CBI] -> Linking to   : "$(TARGET)
+	@echo ""
+	@echo "[CBI] -> Library Link :"
+ifeq (${OS},Win)
+ifeq (${COMPILATEUR},VISUAL)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,.${EXTENSION_LIB},$(LDFLAGS))) 
+endif
+ifeq (${COMPILATEUR},INTEL)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,.${EXTENSION_LIB},$(LDFLAGS)))
+endif
+ifeq (${COMPILATEUR},MINGW)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,-${LIB_FLAG_SEPARATOR},$(LDFLAGS))) 
+endif
+else
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,-l,$(LDFLAGS))) 
+endif
+	@$(CXX) $(OUT_FILE_LINK)${TARGET_EXE} $^ $(LDFLAGS)
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI] -> Target Name  : "$(TARGET_NAME)
+	@echo "[CBI] -> Location     : "$(TARGET)
+	@echo "[CBI] -> Deploy 	  : "$(TARGET_DEPLOY_PATH_BIN)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Type	 	  : "$(TARGET_MODE)
+	@echo "[CBI] -> Arch	 	  : "$(ARCHI_32_64)
+	@echo "[CBI] -> OS	 		  : "$(OS)
+	@echo "[CBI] -> User	 	  : "$(USER)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Compilateur  : ${COMPILATEUR} (${CXX})"    
+	@echo "[CBI] -> Task	      : End Compiling-Linking !" 
+	@echo "[CBI] -> Time		  : "${TIME_CURRENT} 
+	@echo "=================================================================================="
+	@echo ""
+	
+################
+#   .o->.dll   #
+################
+
+${TARGET_DLL}:$(TARGET_OBJ)
+#@echo "$(CXX) $(OUT_FILE_LINK)${TARGET_DLL} $^ $(LDFLAGS)"
+	@echo ""
+	@echo "[$(TITLE)] -> Linking to   : "$(TARGET)
+	@echo ""
+	@echo "[$(TITLE)] -> Library Link :"
+	@echo ""
+#@echo ${LDFLAGS}
+ifeq (${OS},Win)
+ifeq (${COMPILATEUR},VISUAL)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,.${EXTENSION_LIB},$(LDFLAGS)))
+endif
+ifeq (${COMPILATEUR},INTEL)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,.${EXTENSION_LIB},$(LDFLAGS))) 
+endif
+ifeq (${COMPILATEUR},MINGW)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,-${LIB_FLAG_SEPARATOR},$(LDFLAGS)))
+endif
+else
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call containing,-l,$(LDFLAGS))) 
+endif
+	@echo ""
+	@$(CXX) $(OUT_FILE_LINK)${TARGET_DLL} $^ $(LDFLAGS)
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI] -> Target Name  : "$(TARGET_NAME)
+	@echo "[CBI] -> Location     : "$(TARGET)
+	@echo "[CBI] -> Deploy 	  : "$(TARGET_DEPLOY_PATH_BIN)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Type	 	  : "$(TARGET_MODE)
+	@echo "[CBI] -> Arch	 	  : "$(ARCHI_32_64)
+	@echo "[CBI] -> OS	 		  : "$(OS)
+	@echo "[CBI] -> User	 	  : "$(USER)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Compilateur  : ${COMPILATEUR} (${CXX})"     
+	@echo "[CBI] -> Task	      : End Compiling-Linking !" 
+	@echo "[CBI] -> Time		  : "${TIME_CURRENT} 
+	@echo "=================================================================================="
+	@echo ""
+	
+################
+#  .o->.lib    #
+################
+
+${TARGET_LIB}:$(TARGET_OBJ)
+#@echo "${AR} ${AR_OUT_FLAG}${TARGET_LIB} ${ARFLAGS} $^"
+	@echo ""
+	@${AR} ${AR_OUT_FLAG}${TARGET_LIB} ${ARFLAGS} $^
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI] -> Target Name  : "$(TARGET_NAME)
+	@echo "[CBI] -> Location     : "$(TARGET)
+	@echo "[CBI] -> Deploy 	  : "$(TARGET_DEPLOY_PATH_BIN)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Type	 	  : "$(TARGET_MODE)
+	@echo "[CBI] -> Arch	 	  : "$(ARCHI_32_64)
+	@echo "[CBI] -> OS	 		  : "$(OS)
+	@echo "[CBI] -> User	 	  : "$(USER)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Compilateur  : ${COMPILATEUR} (${CXX})" 
+	@echo "[CBI] -> Task	      : End Compiling-Archive !" 
+	@echo "[CBI] -> Time		  : "${TIME_CURRENT} 
+	@echo "=================================================================================="
+	@echo ""
+	
+################
+#   .cpp->.o   #
+################
+
+$(TARGET_OBJ_PATH)/%.$(EXTENSION_OBJ):%.cpp  
+#@echo "$(CXX) $(CXXFLAGS) $(OUT_FILE_COMPILE)$@ -c  $<" 
+#intelWin et visual affiche deja file
+ifeq (${COMPILATEUR},MINGW)
+	@echo "[$(TITLE)] -> ${CXX} compiling .cpp : "$<
+endif
+ifeq (${COMPILATEUR},g++)
+	@echo "[$(TITLE)] -> ${CXX} compiling .cpp : "$<
+endif
+ifeq (${COMPILATEUR},INTEL)
+ifeq (${OS},Linux)
+	@echo "[$(TITLE)] -> ${CXX} compiling .cpp : "$<
+endif
+endif
+	@$(CXX) $(CXXFLAGS) $(OUT_FILE_COMPILE)$@ -c  $< 
+	
+# -c = compilation
+
+################
+#   .c->.o   #
+################
+
+$(TARGET_OBJ_PATH)/%.$(EXTENSION_OBJ):%.c  
+#@echo "" $(CXX) $(CXXFLAGS) $(OUT_FILE_COMPILE)$@ -c  $< 
+#intelWin et visual affiche deja file
+ifeq (${COMPILATEUR},MINGW)
+	@echo "[$(TITLE)] -> ${CXX} compiling .c   : "$<
+endif
+ifeq (${COMPILATEUR},g++)
+	@echo "[$(TITLE)] -> ${CXX} compiling .c   : "$<
+endif
+ifeq (${COMPILATEUR},INTEL)
+ifeq (${OS},Linux)
+	@echo "[$(TITLE)] -> ${CXX} compiling .cpp : "$<
+endif
+endif
+	@$(CXX) $(CXXFLAGS) $(OUT_FILE_COMPILE)$@ -c  $< 
+	
+# -c = compilation
+
+##############################################
+#      			  TARGET 				     #
+##############################################
+
+.DEFAULT_GOAL:=all 
+all: echoing init $(TARGET) deploy
+	@echo ""
+	@echo "[CBI] -> "$(TITLE)" : End ALL!"
+
+.PHONY: version	
+version:
+	@echo ""
+	@$(VERSION_CXX)
+	@echo ""
+
+.PHONY: help
+help:
+	@echo ""
+	@$(CXX_HELP)
+	@echo ""
+
+##########
+# init   #
+##########
+
+.PHONY: init
+init:
+#create folder heirerarchy TARGET_BIN_PATH iff don't exist
+ifeq (,$(findstring $(TARGET_BIN_PATH),$(wildcard $(TARGET_BIN_PATH) )))
+	@$(shell mkdir -p $(TARGET_BIN_PATH))
+	@echo "[CBI] -> Create folder : "$(TARGET_BIN_PATH)
+endif
+#create folder heirerarchy TARGET_OBJ_PATH iff don't exist
+ifeq (,$(findstring $(TARGET_OBJ_PATH),$(wildcard $(TARGET_OBJ_PATH) )))
+	@$(shell mkdir -p $(TARGET_OBJ_PATH))
+	@echo "[CBI] -> Create folder : "$(TARGET_OBJ_PATH)
+endif
+ifeq (,$(findstring $(TARGET_DEPLOY_PATH_BIN),$(wildcard $(TARGET_DEPLOY_PATH_BIN) )))
+	@$(shell mkdir -p $(TARGET_DEPLOY_PATH_BIN))
+	@echo "[CBI] -> Create folder : "$(TARGET_DEPLOY_PATH_BIN)
+endif
+	@echo ""
+
+# -p permet de cr�er l�arborescence complete si existe pas
+
+##########
+# run    #
+##########
+
+.PHONY: run
+run: printRuntimeInfo
+	@echo ""
+	@echo "[CBI] -> Running      : "$(TARGET)  $(ARGS)
+	@echo ""
+	@echo "------------------------------------------------------------------------"
+	@echo ""
+	@echo ""
+	@$(TARGET) $(ARGS)
+#$(MAKECMDGOALS) donne liste des para de make, et ainsi les args du code en c si il y en a
+
+.PHONY: runDeploy	
+runDeploy: printRuntimeInfo 
+	@echo ""
+	@echo "[CBI] -> Running      : "$(TARGET_DEPLOY)  $(ARGS)
+	@echo ""
+	@echo "------------------------------------------------------------------------"
+	@echo ""
+	@echo ""
+	@$(TARGET_DEPLOY) $(ARGS)
+
+.PHONY: runGl
+runGl: printRuntimeInfo
+#gl is a wrapper of virtualgl
+#gl is necessary to run opengl remotely with turbovnc
+#OS : linux only
+	@echo ""
+	@echo "[CBI] -> Running remote-gl : "$(TARGET)  $(ARGS)
+	@echo ""
+	@echo ""
+	@gl $(TARGET) $(ARGS)
+
+.PHONY: runGlDeploy
+runGlDeploy: printRuntimeInfo
+#gl is a wrapper of virtualgl
+#gl is necessary to run opengl remotely with turbovnc
+#OS : linux only!
+	@echo ""
+	@echo "[CBI] -> Running remote-gl : "$(TARGET_DEPLOY)  $(ARGS)
+	@echo ""
+	@echo ""
+	@gl $(TARGET_DEPLOY) $(ARGS)
+
+
+.PHONY: printRuntimeInfo	
+printRuntimeInfo:
+	@echo "[CBI] -> API BIN      :"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh ${sort ${API_BIN}}	
+	@echo ""
+	@echo "[CBI] -> ARGS         :"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh ${sort ${ARGS}}	
+
+
+##########
+# kill   #
+##########
+
+.PHONY: killLinux		
+killLinux:
+	@echo "[CBI] -> killing : "${TARGET_NAME_EXE}
+	@killall ${TARGET_NAME_EXE}
+	@echo "[CBI] -> ..."
+	@echo "[CBI] -> done!"
+
+.PHONY: killWin
+killWin:
+	@echo "[CBI] -> killing : "${TARGET_NAME_EXE}
+	@powershell stop-process -processname ${TARGET_NAME}
+	@echo "[CBI] -> ..."
+	@echo "[CBI] -> done"!
+
+##########
+# depends #
+##########
+	
+.PHONY: dependenciesLinux
+dependenciesLinux: printRuntimeInfo
+	@echo ""
+ifeq (${TARGET_MODE},STATIC_LIB)	
+	@echo "[${TARGET_NAME}.${EXTENSION_LIB}] depends from :"
+	@echo ""
+	@ar -t ${TARGET_DEPLOY}
+else ifeq (${TARGET_MODE},SHARED_LIB)
+	@echo "[${TARGET_NAME}.${EXTENSION_DLL}] depends from :"
+	@echo ""
+	@ldd -v ${TARGET_DEPLOY}
+else
+	@echo "[${TARGET_NAME}.run] depends from :"
+	@echo ""
+	@ldd -v ${TARGET_DEPLOY}
+endif	
+	@echo ""
+
+.PHONY: dependenciesWin
+dependenciesWin:	printRuntimeInfo
+	@echo ""
+	@echo "[CBI] -> Dependencies .dll : "${TARGET_NAME_EXE}
+	@${DEPENDS_EXE} ${TARGET_DEPLOY}
+
+
+##########
+# contents #
+##########
+
+.PHONY: contentsLinux
+contentsLinux:
+	@echo ""
+ifeq (${TARGET_MODE},STATIC_LIB)	
+	@echo "[${TARGET_NAME}.${EXTENSION_LIB}] export :"
+	@echo ""
+	@ar -t ${TARGET_DEPLOY}
+else ifeq (${TARGET_MODE},SHARED_LIB)
+	@echo "[${TARGET_NAME}.${EXTENSION_DLL}] export:"
+	@echo ""
+	@echo "[CBI] -> nm"
+	@echo ""
+	@nm -D --defined-only --extern--only ${TARGET_DEPLOY}
+	@echo ""
+	@echo "[CBI] -> readelf"
+	@echo ""
+	@readelf -s ${TARGET_DEPLOY}
+endif	
+	@echo ""
+
+.PHONY: contententsWin
+contententsWin:	printRuntimeInfo
+	@echo ""
+	@echo "[CBI] -> Dependencies .dll : "${TARGET_NAME_EXE}
+	@${DEPENDS_EXE} ${TARGET_DEPLOY}
+
+##########
+# deploy #
+##########
+
+.PHONY: deploy
+deploy:
+ifdef IS_DEPLOY
+	@$(shell cp $(TARGET) $(TARGET_DEPLOY))	
+	@echo ""
+	@echo "[CBI] -> Deploying    : "$(TARGET_DEPLOY)
+ifneq ($(nbFileRessources),0)
+	@echo "[CBI] -> Copying      : "$(RESOURCES_PATH)" -> "${TARGET_DEPLOY_PATH_BIN}
+	@cp -f -r $(RESOURCES_PATH)/* $(TARGET_DEPLOY_PATH_BIN)
+endif
+endif
+
+##########
+# install #
+##########
+
+include ${ROOT_MAKEFILE_PRIVATE_CPP}/install.mk
+	
+##########
+# doc    #
+##########
+
+include ${ROOT_MAKEFILE_PRIVATE_DOC}/doxyCPP.mk
+
+##########
+# clean #
+##########
+
+.PHONY: clean	
+clean:
+	@rm -f $(TARGET_OBJ_PATH)/*.o
+	@rm -f $(TARGET_OBJ_PATH)/*.obj
+	@rm -f $(TARGET_BIN_PATH)/*.exp
+	@rm -f $(TARGET_BIN_PATH)/*.html
+	@rm -f $(TARGET_BIN_PATH)/*.lib
+	@rm -f $(TARGET_BIN_PATH)/*.a
+	@rm -f $(TARGET_BIN_PATH)/*.def
+	@rm -f $(TARGET_BIN_PATH)/*.map
+	@rm -f $(TARGET)
+	@rm -f $(TARGET_DEPLOY)
+	@rm -f $(TARGET_DOC_DEPLOY_FILE)
+	@rm -f -r $(TARGET_DOC_PATH)
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI] -> Target            : "$(TARGET_NAME)
+	@echo "[CBI] -> Task			   : DELETE"
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Delete .obj       : "$(TARGET_OBJ_PATH)
+	@echo "[CBI] -> Delete .bin       : "$(TARGET_BIN_PATH)
+	@echo "[CBI] -> Delete doc        : "$(TARGET_DOC_PATH)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Delete deploy     : "$(TARGET_DEPLOY)
+	@echo "[CBI] -> Delete deploy doc : "$(TARGET_DOC_DEPLOY_FILE)
+	@echo "=================================================================================="
+	@echo ""
+
+# -v verbose
+# -r recursif
+# -f pas d'erreur si file existe pas
+#rm -rf #serait recursif (dangereux!!)
+
+.PHONY: cleanDeploy
+cleanDeploy:
+	@rm -f ${TARGET_DEPLOY_PATH_BIN}/*.lib
+	@rm -f ${TARGET_DEPLOY_PATH_BIN}/*.so
+	@rm -f ${TARGET_DEPLOY_PATH_BIN}/*.dll
+	@rm -f ${TARGET_DEPLOY_PATH_BIN}/*.run
+	@rm -f ${TARGET_DEPLOY_PATH_BIN}/*.exe
+	@rm -f ${TARGET_DEPLOY_PATH_BIN}/*.a
+	@rm -f ${TARGET_DEPLOY_PATH_DOC}/*.gz
+	
+
+.PHONY: cleanTemp
+cleanTemp:
+	@rm -f -r ${TARGET_PATH_ROOT}
+	
+.PHONY: cleanAll	
+cleanAll: cleanTitleStart cleanDeploy cleanTemp cleanTitleEnd
+
+.PHONY: cleanTitleStart
+cleanTitleStart:
+	@echo "=================================================================================="
+	@echo "[CBI] -> Delete            : "${TARGET_DEPLOY_PATH_BIN}"/*"
+	@echo "[CBI] -> Delete            : "${TARGET_DEPLOY_PATH_DOC}"/*"
+	@echo "[CBI] -> Delete            : "${TARGET_PATH_ROOT}
+	@echo "=================================================================================="
+	@echo ""
+	@echo "[CBI] -> Please wait ..."
+	@echo "[CBI] -> Deleting    ..."
+	@echo ""
+
+.PHONY: cleanTitleEnd
+cleanTitleEnd:
+	@echo "=================================================================================="
+	@echo "[CBI] -> Delete            : finished!"
+	@echo "=================================================================================="
+	
+##########
+# echo   #
+##########
+
+.PHONY: echoing
+echoing:
+	@echo "=================================================================================="
+	@echo "[CBI] -> Target Name  : "$(TARGET_NAME)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Build     	  : "$(TARGET)
+	@echo "[CBI] -> Deploy       : "$(TARGET_DEPLOY_PATH_BIN)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Type	 	  : "$(TARGET_MODE)
+	@echo "[CBI] -> Arch	 	  : "$(ARCHI_32_64)
+	@echo "[CBI] -> OS	 		  : "$(OS)
+	@echo "[CBI] -> User	 	  : "$(USER)
+	@echo "[CBI] ->"
+	@echo "[CBI] -> Task		  : Compiling-Linking" 
+#@echo "[CBI]->Time			 : "${TIME_CURRENT} 
+	@echo "=================================================================================="
+	@echo ""
+	@echo "[CBI] -> SRC AUX (Recursif) :"
+	@echo "[CBI] ->"  
+#@echo $(SRC_AUX)  
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh  $(sort $(SRC_AUX))
+	@echo "" 
+	@echo "[CBI] -> CXXFLAGS (Partial) :"
+	@echo "[CBI] ->"   
+#@echo $(CXXFLAGS)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call not-containing,${OPTION_SEPARATOR}$(HEADER_OPTION),$(CXXFLAGS)))	
+	@echo "" 
+ifneq (${TARGET_MODE},STATIC_LIB)
+	@echo "[CBI] -> LDFLAGS (Partial) :"
+	@echo "[CBI] ->"  
+#@echo $(LDFLAGS)
+ifeq (${OS},Win)
+ifeq (${COMPILATEUR},VISUAL)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call not-containing,${LIB_PATH_SEPARATOR},$(call not-containing,.${EXTENSION_LIB},$(LDFLAGS)))) 
+endif
+ifeq (${COMPILATEUR},INTEL)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call not-containing,${LIB_PATH_SEPARATOR},$(call not-containing,.${EXTENSION_LIB},$(LDFLAGS))))
+endif
+ifeq (${COMPILATEUR},MINGW)
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call not-containing,-${LIB_FLAG_SEPARATOR},$(call not-containing,-${LIB_PATH_SEPARATOR},$(LDFLAGS)))) 
+endif
+else
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh $(sort $(call not-containing,-${LIB_FLAG_SEPARATOR},$(call not-containing,-${LIB_PATH_SEPARATOR},$(LDFLAGS)))) 
+endif
+endif
+	@echo "" 
+	@echo "[CBI] -> INC_PATH (auto detect):"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh  $(sort $(INC_PATH))
+	@echo "" 
+	@echo "[CBI] -> LIB_PATH (auto detect):"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh  $(sort $(LIB_PATH))
+	@echo "" 
+	@echo "[CBI] -> API_INC :"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh  $(sort $(API_INC))
+	@echo "" 
+	@echo "[CBI] -> API_LIB :"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh  $(sort $(API_LIB))
+	@echo "" 
+	@echo "[CBI] -> API_BIN :"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh  $(sort $(API_BIN))
+	@echo "" 
+	@echo "[CBI] -> API_LIBRARIES :"
+	@${ROOT_MAKEFILE_PRIVATE_COMMON_SCRIPT}/print.sh  $(sort $(API_LIBRARIES))
+	@echo "" 
+
+##############################################
+#       			 HELP  				     #
+##############################################
+
+# target : dependencies
+#
+# $@ = name of the target
+# $^ = all dependencie of a target
+# $< =first (unique dependency of a target) (rm, compilation,linking)
+#
+# @ = diminue verbosite commande
+#
+# Attention : tabulation obligatoire avant commande dans rule!!
+#
+# http://www.gnu.org/software/make/manual/
+
+#############################################
+#       			 END     			    #
+#############################################
+
+endif#__CPP_MK__
+

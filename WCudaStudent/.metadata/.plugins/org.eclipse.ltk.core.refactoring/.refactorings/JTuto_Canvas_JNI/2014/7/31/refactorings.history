@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;JTuto_Canvas_JNI/run.sh&apos; to &apos;runx86.sh&apos;" description="Rename resource &apos;run.sh&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="run.sh" name="runx86.sh" stamp="1406548740546" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;JTuto_Canvas_JNI/runx86.sh&apos; to &apos;run.sh&apos;" description="Rename resource &apos;runx86.sh&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="runx86.sh" name="run.sh" stamp="1406549898068" updateReferences="true"/>
+</session>

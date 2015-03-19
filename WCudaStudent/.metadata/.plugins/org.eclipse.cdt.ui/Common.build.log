@@ -1,0 +1,53 @@
+13:33:32 **** Build of configuration MinGW for project Common ****
+Info: Configuration "MinGW" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+make -f mingw.mk all 
+
+==================================================================================
+[CBI]->Target Name	: Common64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Src_aux 		: ../PRODUCTION/commonExt/include ../PRODUCTION/commonExt/windows
+[CBI]->Location 	: target/bin/Common64.exe
+[CBI]->Deploy 		: 
+[CBI]->Compilateur 	: mingw [CXX=g++]
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 13:33:33
+==================================================================================
+
+[CBI]->compiling .cpp : src/main.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/stringTools.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/vectorTools.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/tab1DTools.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/histo.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/rawMajorTools.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/Chronos.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/tab2DTools.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/aleaOMPs.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/aleaTools.cpp
+[CBI]->compiling .cpp : src/core/tools/cpp/mathTools.cpp
+[CBI]->compiling .cpp : src/test/mainTest.cpp
+[CBI]->compiling .cpp : src/test/cpp/TestTab2DJunit.cpp
+
+[CBI]->linking to target/bin/Common64.exe
+
+==================================================================================
+[CBI]->Target Name	: Common64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Src_aux 		: ../PRODUCTION/commonExt/include ../PRODUCTION/commonExt/windows
+[CBI]->Location 	: target/bin/Common64.exe
+[CBI]->Deploy 		: 
+[CBI]->Compilateur 	: mingw [CXX=g++]
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 13:33:38
+==================================================================================
+
+
+[CBI]->target/bin/Common64.exe : End ALL!
+
+13:33:39 Build Finished (took 6s.661ms)
+

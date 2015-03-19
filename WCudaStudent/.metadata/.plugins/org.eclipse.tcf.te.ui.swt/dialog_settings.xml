@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CustomTrayDialog">
+		<item value="Local Terminal" key="terminalLabel"/>
+		<section name="SettingsPanelControl">
+			<section name="Local Terminal">
+			</section>
+		</section>
+	</section>
+</section>

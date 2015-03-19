@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;BUILDER_API/linux/apibuilder_cpptest_linux_all.sh&apos;" deleteContents="false" description="Delete resource &apos;BUILDER_API/linux/apibuilder_cpptest_linux_all.sh&apos;" element1="/BUILDER_API/linux/apibuilder_cpptest_linux_all.sh" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1418125658429"/>&#x0A;<refactoring comment="Delete resource &apos;BUILDER_API/linux&apos;" deleteContents="false" description="Delete resource &apos;BUILDER_API/linux&apos;" element1="/BUILDER_API/linux" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1418125739797"/>
+</session>

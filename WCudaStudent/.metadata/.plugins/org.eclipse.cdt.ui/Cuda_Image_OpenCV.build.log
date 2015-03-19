@@ -1,0 +1,88 @@
+17:16:38 **** Incremental Build of configuration CudaWin for project Cuda_Image_OpenCV ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeCudaVisual.bat" all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI]->Target Name	  : TutoCudaImage_OpenCV_Etude64
+[CBI]
+[CBI]->Build          : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude
+[CBI]->Deploy 		  : ../Deploy/bin
+[CBI]
+[CBI]->Type	 		  : EXE
+[CBI]->Arch	 		  : 64
+[CBI]->OS	 		  : Win
+[CBI]->User	 		  : bilat
+[CBI]
+[CBI]->Task			  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (-r) :
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : ../BilatTools_OpenCV/src/core
+[CBI] ->              : ../API_Bilat_Tools/INC
+[CBI] ->              : ../API_Bilat_Tools/LIB/visual
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_Bilat_GL/INC
+[CBI] ->              : ../API_Bilat_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_Image/INC
+[CBI] ->              : ../API_Bilat_Image/LIB/visual
+[CBI] ->              : ../API_Bilat_Tools_Cuda/INC
+[CBI] ->              : ../API_Bilat_Image_Cuda/INC
+[CBI] ->              : ../API_Bilat_Image_Cuda/LIB/visual
+
+[CBI] -> CXXFLAGS     :
+[CBI] ->              : /openmp
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS   :
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS    :
+[CBI] ->              : --fmad=true
+[CBI] ->              : -arch=sm_20
+[CBI] ->              : -use_fast_math
+
+[CBI] -> NVCCLDFLAGS  :
+
+
+[CBI]->Create folder  : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/bin
+[CBI]->Create folder  : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/obj
+[CBI]->Create folder  : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/cubin
+
+[CBI]->compiling .cpp : src/cpp/main.cpp
+[CBI]->compiling .cpp : src/cpp/core/01_rendu_opencv/Animation.cpp
+[CBI]->compiling .cpp : src/cpp/core/common/cuda/noyau/noyauTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/StringTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/Chronos.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/AleaTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/LimitsTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurF.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurI.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/MathTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/cudaTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/Device.cpp
+[CBI]->compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/Capture_A.cpp
+[CBI]->compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/CaptureVideo.cpp
+[CBI]->compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/CaptureCamera.cpp
+[CBI]->compiling .cpp : ../BilatTools_OpenCV/src/core/tuto/tuto.cpp
+[CBI]->compiling .cpp : ../BilatTools_OpenCV/src/core/viewer/image/ImageViever.cpp
+[CBI]->compiling .cpp : ../BilatTools_OpenCV/src/core/viewer/sequence/SequenceViever.cpp
+[CBI]->compiling .cu  : src/cpp/core/common/cuda/ImageTransfomerGPU.cu
+[CBI]->compiling .cu  : src/cpp/core/common/cuda/kernel/toFlou33.cu
+[CBI]->compiling .cu  : src/cpp/core/common/cuda/kernel/toGray.cu
+[CBI]->compiling .cu  : src/cpp/core/common/cuda/noyau/NoyauDetourageSM.cu
+ptxas : fatal error : Unresolved extern function '_ZN5Noyau16applyDeviceNoyauEP6uchar4S1_iiPf'
+../BUILDER/makefile/private/cuda/makeCudaVisual.mk:240: recipe for target `Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/obj/NoyauDetourageSM.obj' failed
+make: *** [Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/obj/NoyauDetourageSM.obj] Error -1
+
+17:17:25 Build Finished (took 46s.740ms)
+

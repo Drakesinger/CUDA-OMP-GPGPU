@@ -1,0 +1,162 @@
+16:34:07 **** Build of configuration Visual for project Farmwise_02_Image_Provider ****
+makeVisual.bat all 
+init make
+init API-EXT
+init API-CBI
+
+[VISUAL] : all  
+
+
+Microsoft (R) C/C++ Optimizing Compiler Version 18.00.30501 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+usage: cl [ option... ] filename... [ /link linkoption... ]
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Image_Provider_visual_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/bilat/Targets/Farmwise_Image_Provider/bin/Farmwise_Image_Provider_visual_64.lib
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/tools
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /arch:AVX
+[CBI] ->              : /nologo
+[CBI] ->              : /openmp
+
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/01_image_provider/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/io/Output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/io/array/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/03_weeds_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/03_weeds_consomateur/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/io/output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/row/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/05_row_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/05_row_consomateur/input/
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/tools/
+[CBI] ->              : src/cpp/imageprovider/catalogue/facade/
+[CBI] ->              : src/cpp/imageprovider/catalogue/implementation/
+[CBI] ->              : src/cpp/imageprovider/file/facade/
+[CBI] ->              : src/cpp/imageprovider/file/implementation/
+[CBI] ->              : src/cpp/imageprovider/video/facade/
+[CBI] ->              : src/cpp/imageprovider/video/implementation/
+[CBI] ->              : src/cpp/imageprovider/webcam/facade/
+[CBI] ->              : src/cpp/imageprovider/webcam/implementation/
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> API_INC :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+
+[CBI] -> API_LIB :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/lib
+
+[CBI] -> API_BIN :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/bin
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : opencv_contrib249.lib
+[CBI] ->              : opencv_core249.lib
+[CBI] ->              : opencv_features2d249.lib
+[CBI] ->              : opencv_flann249.lib
+[CBI] ->              : opencv_gpu249.lib
+[CBI] ->              : opencv_highgui249.lib
+[CBI] ->              : opencv_imgproc249.lib
+[CBI] ->              : opencv_legacy249.lib
+[CBI] ->              : opencv_ml249.lib
+[CBI] ->              : opencv_nonfree249.lib
+[CBI] ->              : opencv_objdetect249.lib
+[CBI] ->              : opencv_ocl249.lib
+[CBI] ->              : opencv_photo249.lib
+[CBI] ->              : opencv_stitching249.lib
+[CBI] ->              : opencv_superres249.lib
+[CBI] ->              : opencv_ts249.lib
+[CBI] ->              : opencv_video249.lib
+[CBI] ->              : opencv_videostab249.lib
+
+[CBI] -> Create folder : Q:/bilat/Targets/Farmwise_Image_Provider/bin
+[CBI] -> Create folder : Q:/bilat/Targets/Farmwise_Image_Provider/obj
+
+FactoryImageProvider_Catalogue.cpp
+ImageProvider_Catalogue.cpp
+Catalogue.cpp
+FactoryImageProvider_File.cpp
+ImageProvider_File.cpp
+FactoryImageProvider_Video.cpp
+ImageProvider_Video.cpp
+FactoryImageProvider_Webcam.cpp
+ImageProvider_Webcam.cpp
+ArrayPoint2i.cpp
+WeedsIn.cpp
+WeedsOut.cpp
+WeedsData.cpp
+RowIn.cpp
+RowOut.cpp
+Row.cpp
+RowData.cpp
+StringTools.cpp
+OpenCVTools.cpp
+Fps.cpp
+Chrono.cpp
+
+Microsoft (R) Library Manager Version 12.00.30501.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Image_Provider_visual_64
+[CBI] -> Location     : Q:/bilat/Targets/Farmwise_Image_Provider/bin/Farmwise_Image_Provider_visual_64.lib
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl)
+[CBI] -> Task	      : End Compiling-Archive !
+[CBI] -> Time		  : 16:34:22
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Farmwise_Image_Provider_visual_64.lib
+
+[CBI] -> Farmwise_Image_Provider_visual_64 : End ALL!
+
+16:34:23 Build Finished (took 16s.113ms)
+

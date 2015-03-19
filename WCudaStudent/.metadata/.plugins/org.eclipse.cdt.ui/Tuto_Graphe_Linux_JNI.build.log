@@ -1,0 +1,60 @@
+15:31:55 **** Incremental Build of configuration Visual for project Tuto_Graphe_Linux_JNI ****
+makeVisual.bat all 
+
+[VISUAL] : all  
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Graph_JNI_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/cedric.bilat/Targets/Tuto_Graph_JNI/bin/Tuto_Graph_JNI_64.dll
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : SHARED_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_Bilat_Canvas_JNI/INC
+[CBI] ->              : ../API_Bilat_Canvas_JNI/LIB/visual
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_GL/INC
+[CBI] ->              : ../API_Bilat_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_Graph2D/INC
+[CBI] ->              : ../API_Bilat_Graph2D/LIB/visual
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : C:/Soft/java64/jdk/lib
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -IC:/Soft/java64/jdk/include
+[CBI] ->              : -IC:/Soft/java64/jdk/include/win32
+[CBI] ->              : /DCBI_DISPLAYABLE_DLL
+[CBI] ->              : /DCBI_GRAPH_DLL
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /nologo
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /DLL
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Tuto_Graph_JNI_64.dll
+
+[CBI] -> Tuto_Graph_JNI_64 : End ALL!
+
+15:32:00 Build Finished (took 5s.73ms)
+

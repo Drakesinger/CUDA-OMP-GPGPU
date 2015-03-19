@@ -1,0 +1,82 @@
+10:48:56 **** Build of configuration IntelWin for project BilatTools_CPP_Image ****
+makeIntelWin.bat all 
+
+[INTEL] : all  
+
+Intel(R) Parallel Studio XE 2013
+Copyright (C) 1985-2013 Intel Corporation. All rights reserved.
+Intel(R) Composer XE 2013 Update 4 (package 190)
+
+==================================================================================
+[CBI] -> Target Name  : BilatTools_CPP_Image_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/cedric.bilat/Targets/BilatTools_CPP_Image/bin/BilatTools_CPP_Image_64.exe
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /O3
+[CBI] ->              : /Qpar-threshold100
+[CBI] ->              : /Qparallel
+[CBI] ->              : /QxSSE4.1
+[CBI] ->              : /fast
+[CBI] ->              : /nologo
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+
+main.cpp
+ColorTools.cpp
+StringTools.cpp
+TabTools.cpp
+Chronos.cpp
+Indices.cpp
+AleaTools.cpp
+LimitsTools.cpp
+VariateurF.cpp
+VariateurI.cpp
+MathTools.cpp
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/BilatTools_CPP_Image/bin/BilatTools_CPP_Image_64.exe
+
+[CBI] -> Library Link :
+
+==================================================================================
+[CBI] -> Target Name  : BilatTools_CPP_Image_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/BilatTools_CPP_Image/bin/BilatTools_CPP_Image_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : INTEL (icl)
+[CBI] -> Task	      : End Compiling-Linking !
+[CBI] -> Time		  : 10:49:00
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/BilatTools_CPP_Image_64.exe
+
+[CBI] -> BilatTools_CPP_Image_64 : End ALL!
+
+10:49:01 Build Finished (took 4s.422ms)
+

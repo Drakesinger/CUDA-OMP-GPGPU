@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="33" version="2.0">
+<workbenchAdvisor/>
+<window height="780" maximized="true" width="1036" x="1018" y="462">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="191" y="22"/>
+<coolItem id="com.google.gdt.eclipse.suite.GDTPulldownToolbar" itemType="typeToolBarContribution" x="53" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.google.gdt.eclipse.suite.actionSet" itemType="typeToolBarContribution" x="107" y="22"/>
+<coolItem id="org.eclipse.cdt.make.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
+<coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="89" y="22"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="205" y="22"/>
+<coolItem id="org.eclipse.egit.ui.gitaction" itemType="typeToolBarContribution" x="161" y="22"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="122" y="22"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1295959088341" focus="true" label="Workspace - C/C++">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
+<part id="17"/>
+<part id="18"/>
+<part id="19"/>
+<part id="20"/>
+<part id="21"/>
+<part id="22"/>
+<part id="23"/>
+<part id="24"/>
+<part id="25"/>
+<part id="26"/>
+<part id="27"/>
+<part id="28"/>
+<part id="29"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="applyNoyau.cu" partName="applyNoyau.cu" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel/applyNoyau.cu" title="applyNoyau.cu" tooltip="CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel/applyNoyau.cu" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel/applyNoyau.cu"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3263" selectionTopPixel="720"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="WorkGPU.cu" partName="WorkGPU.cu" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/01_constant/WorkGPU.cu" title="WorkGPU.cu" tooltip="CudaOpenCV/src/cpp/core/02_demo/01_constant/WorkGPU.cu" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/WorkGPU.cu"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1583" selectionTopPixel="1436"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="WorkGPU.h" partName="WorkGPU.h" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/01_constant/WorkGPU.h" title="WorkGPU.h" tooltip="CudaOpenCV/src/cpp/core/02_demo/01_constant/WorkGPU.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/WorkGPU.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="15" selectionOffset="774" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="modifyImage.cu" partName="modifyImage.cu" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel/modifyImage.cu" title="modifyImage.cu" tooltip="CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel/modifyImage.cu" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel/modifyImage.cu"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1945" selectionTopPixel="180"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="dataProject.mk" partName="dataProject.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/dataProject.mk" title="dataProject.mk" tooltip="CudaOpenCV/dataProject.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/dataProject.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1087" selectionTopPixel="41"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="cudaWin.mk" partName="cudaWin.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/cudaWin.mk" title="cudaWin.mk" tooltip="CudaOpenCV/cudaWin.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/cudaWin.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="cudaLinux.mk" partName="cudaLinux.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/cudaLinux.mk" title="cudaLinux.mk" tooltip="CudaOpenCV/cudaLinux.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/cudaLinux.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="905" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="makeFileCudaLinux.mk" partName="makeFileCudaLinux.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/PRODUCTION/MANAGER/makefile/private/makeFileCudaLinux.mk" title="makeFileCudaLinux.mk" tooltip="PRODUCTION/MANAGER/makefile/private/makeFileCudaLinux.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PRODUCTION/MANAGER/makefile/private/makeFileCudaLinux.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="740" selectionTopPixel="1620"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="useTuto.cpp" partName="useTuto.cpp" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/useTuto.cpp" title="useTuto.cpp" tooltip="CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/useTuto.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/useTuto.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="686" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="videoCaptureTools.cpp" partName="videoCaptureTools.cpp" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.cpp" title="videoCaptureTools.cpp" tooltip="CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5454" selectionTopPixel="2250"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ImageCapture.cpp" partName="ImageCapture.cpp" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageCapture.cpp" title="ImageCapture.cpp" tooltip="CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageCapture.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageCapture.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="25" selectionOffset="1879" selectionTopPixel="90"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ImageCapture.h" partName="ImageCapture.h" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageCapture.h" title="ImageCapture.h" tooltip="CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageCapture.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageCapture.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="841" selectionTopPixel="180"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ImageViever.h" partName="ImageViever.h" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageViever.h" title="ImageViever.h" tooltip="CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageViever.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/tools/openCV/ImageViever.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ImageCircuit.cpp" partName="ImageCircuit.cpp" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/02_demo/01_constant/ImageCircuit.cpp" title="ImageCircuit.cpp" tooltip="CudaOpenCV/src/cpp/core/02_demo/01_constant/ImageCircuit.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/ImageCircuit.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="12" selectionOffset="1051" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="flags_GccIntel.mk" partName="flags_GccIntel.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/PRODUCTION/MANAGER/makefile/private/flags_GccIntel.mk" title="flags_GccIntel.mk" tooltip="PRODUCTION/MANAGER/makefile/private/flags_GccIntel.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PRODUCTION/MANAGER/makefile/private/flags_GccIntel.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="videoCaptureTools.h" partName="videoCaptureTools.h" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.h" title="videoCaptureTools.h" tooltip="CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.cpp" partName="main.cpp" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/CudaOpenCV/src/cpp/main.cpp" title="main.cpp" tooltip="CudaOpenCV/src/cpp/main.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CudaOpenCV/src/cpp/main.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="310" selectionOffset="1407" selectionTopPixel="446"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="cudaTools.h" partName="cudaTools.h" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/Cuda/src/cpp/core/tools/header/cudaTools.h" title="cudaTools.h" tooltip="Cuda/src/cpp/core/tools/header/cudaTools.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Cuda/src/cpp/core/tools/header/cudaTools.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="dataProject.mk" partName="dataProject.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/Cuda/dataProject.mk" title="dataProject.mk" tooltip="Cuda/dataProject.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Cuda/dataProject.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1145" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="cudaLinux.mk" partName="cudaLinux.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/Cuda/cudaLinux.mk" title="cudaLinux.mk" tooltip="Cuda/cudaLinux.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Cuda/cudaLinux.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="cudaWin.mk" partName="cudaWin.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/Cuda/cudaWin.mk" title="cudaWin.mk" tooltip="Cuda/cudaWin.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Cuda/cudaWin.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="cudaTools.cpp" partName="cudaTools.cpp" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/Cuda/src/cpp/core/tools/cpp/cudaTools.cpp" title="cudaTools.cpp" tooltip="Cuda/src/cpp/core/tools/cpp/cudaTools.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Cuda/src/cpp/core/tools/cpp/cudaTools.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="175" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="dataProject.mk" partName="dataProject.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/Common/dataProject.mk" title="dataProject.mk" tooltip="Common/dataProject.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Common/dataProject.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="28" selectionOffset="1116" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.make.editor" name="dataProject.mk" partName="dataProject.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/OpenMP/dataProject.mk" title="dataProject.mk" tooltip="OpenMP/dataProject.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/OpenMP/dataProject.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1121" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="visual.mk" partName="visual.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/OpenMP/visual.mk" title="visual.mk" tooltip="OpenMP/visual.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/OpenMP/visual.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="474" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="intelWin.mk" partName="intelWin.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/OpenMP/intelWin.mk" title="intelWin.mk" tooltip="OpenMP/intelWin.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/OpenMP/intelWin.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="476" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="flags_VisualIntel.mk" partName="flags_VisualIntel.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/PRODUCTION/MANAGER/makefile/private/flags_VisualIntel.mk" title="flags_VisualIntel.mk" tooltip="PRODUCTION/MANAGER/makefile/private/flags_VisualIntel.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PRODUCTION/MANAGER/makefile/private/flags_VisualIntel.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1727" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="flags_MinGW.mk" partName="flags_MinGW.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/PRODUCTION/MANAGER/makefile/private/flags_MinGW.mk" title="flags_MinGW.mk" tooltip="PRODUCTION/MANAGER/makefile/private/flags_MinGW.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PRODUCTION/MANAGER/makefile/private/flags_MinGW.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1061"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="mingw.mk" partName="mingw.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/OpenMP/mingw.mk" title="mingw.mk" tooltip="OpenMP/mingw.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/OpenMP/mingw.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.make.editor" name="makeFileCudaWin.mk" partName="makeFileCudaWin.mk" path="G:/CBI/HEARC/RAD/Running/CudaTuto/02_Scientifique/01_Code/WCudaMSE/PRODUCTION/MANAGER/makefile/private/makeFileCudaWin.mk" title="makeFileCudaWin.mk" tooltip="PRODUCTION/MANAGER/makefile/private/makeFileCudaWin.mk" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PRODUCTION/MANAGER/makefile/private/makeFileCudaWin.mk"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6259" selectionTopPixel="3465"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="1" currentWorkingSetName="Aggregate:common:cppTest:Cuda:OpenMP:" org.eclipse.cdt.ui.cview.groupincludes="true" org.eclipse.cdt.ui.cview.groupmacros="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="1"/>
+</view>
+<view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
+<viewState failuresOnly="false" layout="1" orientation="2" ratio="500" scroll="false" time="true"/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
+<viewState LINK_NAVIGATOR_TO_EDITOR="1" sorter="1">
+<filters>
+<filter element="*.class" isEnabled="false"/>
+<filter element=".*" isEnabled="false"/>
+</filters>
+<expanded>
+<element path="/Common"/>
+<element path="/Common/src"/>
+<element path="/Common/src/core"/>
+<element path="/Common/src/core/tools"/>
+<element path="/Common/src/core/tools/cpp"/>
+<element path="/Common/src/core/tools/header"/>
+<element path="/Common/src/test"/>
+<element path="/Cuda"/>
+<element path="/Cuda/src"/>
+<element path="/Cuda/src/cpp"/>
+<element path="/Cuda/src/cpp/core"/>
+<element path="/Cuda/src/cpp/core/tools"/>
+<element path="/Cuda/src/cpp/core/tools/cpp"/>
+<element path="/Cuda/src/cpp/core/tools/header"/>
+<element path="/Cuda/target"/>
+<element path="/CudaOpenCV"/>
+<element path="/CudaOpenCV/src"/>
+<element path="/CudaOpenCV/src/cpp"/>
+<element path="/CudaOpenCV/src/cpp/core"/>
+<element path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto"/>
+<element path="/CudaOpenCV/src/cpp/core/02_demo"/>
+<element path="/CudaOpenCV/src/cpp/core/02_demo/01_constant"/>
+<element path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel"/>
+<element path="/CudaOpenCV/src/cpp/core/02_demo/old"/>
+<element path="/CudaOpenCV/src/cpp/core/02_demo/tools"/>
+<element path="/CudaOpenCV/src/cpp/core/02_demo/tools/openCV"/>
+<element path="/CudaOpenCV/target"/>
+<element path="/CudaOpenCV/target/bin"/>
+<element path="/OpenMP"/>
+<element path="/PRODUCTION"/>
+<element path="/PRODUCTION/commonExt"/>
+<element path="/PRODUCTION/commonExt/windows"/>
+<element path="/PRODUCTION/commonExt/windows/include"/>
+<element path="/PRODUCTION/commonExt/windows/lib"/>
+<element path="/PRODUCTION/commonExt/windows/lib/mingw"/>
+<element path="/PRODUCTION/commonExt/windows/lib/mingw/bilatGLImage"/>
+<element path="/PRODUCTION/commonExt/windows/lib/visualIntel"/>
+<element path="/PRODUCTION/Deploy"/>
+<element path="/PRODUCTION/Deploy/bin"/>
+<element path="/PRODUCTION/MANAGER"/>
+<element path="/PRODUCTION/MANAGER/makefile"/>
+<element path="/PRODUCTION/MANAGER/makefile/private"/>
+</expanded>
+<selection>
+<element path="/OpenMP"/>
+</selection>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.resourceField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (5 items)"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="1056"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="1" linkWithEditor="0" rootMode="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">&#x0A;<xmlDefinedFilters>&#x0A;<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="com.google.gdt.eclipse.managedapis.ui.ManagedApiContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.mylyn.java.ui.MembersFilter" isEnabled="false"/>
+<child filterId="org.eclipse.m2e.MavenModuleFilter" isEnabled="false"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.ui.texteditor.TemplatesView" partName="Templates">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+</views>
+<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="org.eclipse.cdt.ui.CPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<alwaysOnActionSet id="org.eclipse.egit.ui.gitaction"/>
+<alwaysOnActionSet id="ecobertura.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.wb.core.ui.actionset"/>
+<alwaysOnActionSet id="com.google.gdt.eclipse.core.actionSet"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.egit.ui.team.Branch"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="org.eclipse.egit.ui.team.Reset"/>
+<hide_toolbar_item_id id="org.eclipse.egit.ui.team.Fetch"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<view id="org.eclipse.jdt.junit.ResultView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="left">&#x0A;<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@a6997" ratio="0.7532366" ratioLeft="1920" ratioRight="629" relationship="2" relative="left">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25236" ratioLeft="401" ratioRight="1188" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.78409094" ratioLeft="759" ratioRight="209" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1dbe72f" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.49896908" ratioLeft="242" ratioRight="243" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1dbe72f">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.SearchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.CElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.make.ui.makeTargetActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.buildConfigActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.NavigationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.OpenActionSet"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.CodingActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.presentation"/>
+<alwaysOnActionSet id="org.eclipse.egit.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.wb.core.ui.actionset"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.profileActionSet"/>
+<alwaysOnActionSet id="ecobertura.ui.actionSet"/>
+<alwaysOnActionSet id="com.google.gdt.eclipse.core.actionSet"/>
+<show_view_action id="org.eclipse.cdt.make.ui.views.MakeView"/>
+<show_view_action id="org.eclipse.cdt.ui.CView"/>
+<show_view_action id="org.eclipse.cdt.ui.includeBrowser"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.ConvertToMakeWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewMakeFromExisting"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewSourceFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewHeaderFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewCWizard1"/>
+<new_wizard_action id="org.eclipse.cdt.ui.wizards.NewCWizard2"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.cdt.ui.actions.NewProjectDropDown"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.egit.ui.team.Branch"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="org.eclipse.egit.ui.team.Reset"/>
+<hide_toolbar_item_id id="org.eclipse.egit.ui.team.Fetch"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.texteditor.TemplatesView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.views.ResourceNavigator" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
+<page content="org.eclipse.cdt.ui.CView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.36722606" ratioLeft="372" ratioRight="641" relationship="2" relative="topLeft"/>
+<info folder="true" part="topRight" ratio="0.8230384" ratioLeft="493" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.texteditor.TemplatesView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="Templates"/>
+<page content="org.eclipse.cdt.make.ui.views.MakeView" label="LabelNotFound"/>
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7ffeac8e" ratio="0.74981767" ratioLeft="1028" ratioRight="343" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+<hiddenWindow height="423" width="2177" x="213" y="970">
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+</hiddenWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/ImageCircuit.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/kernel/modifyImage.cu"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/useTuto.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/main.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Cuda/src/cpp/core/tools/header/cudaTools.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/Cuda/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/Cuda/cudaLinux.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/Cuda/cudaWin.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/PRODUCTION/MANAGER/makefile/private/makeFileCudaLinux.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/CudaOpenCV/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/CudaOpenCV/cudaLinux.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/CudaOpenCV/cudaWin.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Cuda/src/cpp/core/tools/cpp/cudaTools.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/Common/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/CudaOpenCV/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/core/02_demo/01_constant/ImageCircuit.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/useTuto.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/CudaOpenCV/src/cpp/main.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Cuda/src/cpp/core/tools/cpp/cudaTools.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/Cuda/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/Common/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/visual.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/intelWin.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/PRODUCTION/MANAGER/makefile/private/flags_VisualIntel.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/PRODUCTION/MANAGER/makefile/private/flags_MinGW.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/visual.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/intelWin.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/OpenMP/mingw.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/Cuda/dataProject.mk"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" path="/PRODUCTION/MANAGER/makefile/private/makeFileCudaWin.mk"/>
+</editors>
+<item historyLabel="ImageCircuit.cpp" index="0">
+<position info="not_deleted" x="1602" y="245"/>
+</item>
+<item historyLabel="modifyImage.cu" index="1">
+<position info="not_deleted" x="2118" y="0"/>
+</item>
+<item historyLabel="useTuto.cpp" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.cpp" index="3">
+<position info="not_deleted" x="1149" y="0"/>
+</item>
+<item historyLabel="useTuto.cpp" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="videoCaptureTools.cpp" index="4">
+<position info="not_deleted" x="5454" y="0"/>
+</item>
+<item historyLabel="cudaTools.h" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="cudaLinux.mk" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="cudaWin.mk" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="makeFileCudaLinux.mk" index="9">
+<position info="not_deleted" x="740" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="10">
+<position info="not_deleted" x="1517" y="0"/>
+</item>
+<item historyLabel="cudaLinux.mk" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="cudaWin.mk" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="10">
+<position info="not_deleted" x="1366" y="189"/>
+</item>
+<item historyLabel="cudaTools.h" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="cudaTools.cpp" index="13">
+<position info="not_deleted" x="129" y="24"/>
+</item>
+<item historyLabel="dataProject.mk" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="cudaLinux.mk" index="11">
+<position info="not_deleted" x="776" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="15">
+<position info="not_deleted" x="1366" y="189"/>
+</item>
+<item historyLabel="ImageCircuit.cpp" index="16">
+<position info="not_deleted" x="1602" y="245"/>
+</item>
+<item historyLabel="useTuto.cpp" index="17">
+<position info="not_deleted" x="686" y="0"/>
+</item>
+<item historyLabel="ImageCircuit.cpp" index="16">
+<position info="not_deleted" x="1817" y="30"/>
+</item>
+<item historyLabel="main.cpp" index="18">
+<position info="not_deleted" x="1149" y="0"/>
+</item>
+<item historyLabel="cudaTools.cpp" index="19">
+<position info="not_deleted" x="149" y="24"/>
+</item>
+<item historyLabel="dataProject.mk" index="20">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="21">
+<position info="not_deleted" x="1116" y="28"/>
+</item>
+<item historyLabel="dataProject.mk" index="22">
+<position info="not_deleted" x="1121" y="0"/>
+</item>
+<item historyLabel="visual.mk" index="23">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="intelWin.mk" index="24">
+<position info="not_deleted" x="211" y="0"/>
+</item>
+<item historyLabel="visual.mk" index="23">
+<position info="not_deleted" x="209" y="0"/>
+</item>
+<item historyLabel="flags_VisualIntel.mk" index="25">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="intelWin.mk" index="24">
+<position info="not_deleted" x="211" y="0"/>
+</item>
+<item historyLabel="flags_VisualIntel.mk" index="25">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="flags_MinGW.mk" index="26">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="flags_VisualIntel.mk" index="25">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="27">
+<position info="not_deleted" x="1121" y="0"/>
+</item>
+<item historyLabel="intelWin.mk" index="24">
+<position info="not_deleted" x="476" y="0"/>
+</item>
+<item historyLabel="visual.mk" index="23">
+<position info="not_deleted" x="474" y="0"/>
+</item>
+<item historyLabel="flags_VisualIntel.mk" index="25">
+<position info="not_deleted" x="1256" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="28">
+<position info="not_deleted" x="1121" y="0"/>
+</item>
+<item historyLabel="visual.mk" index="29">
+<position info="not_deleted" x="474" y="0"/>
+</item>
+<item historyLabel="intelWin.mk" index="30">
+<position info="not_deleted" x="476" y="0"/>
+</item>
+<item historyLabel="mingw.mk" index="31">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="visual.mk" index="29">
+<position info="not_deleted" x="474" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="32">
+<position info="not_deleted" x="1145" y="0"/>
+</item>
+<item historyLabel="dataProject.mk" index="28">
+<position info="not_deleted" x="1121" y="28"/>
+</item>
+<item historyLabel="dataProject.mk" index="32">
+<position info="not_deleted" x="1145" y="0"/>
+</item>
+<item historyLabel="makeFileCudaWin.mk" index="33">
+<position info="not_deleted" x="6259" y="0"/>
+</item>
+<item active="true" historyLabel="dataProject.mk" index="28">
+<position info="not_deleted" x="1121" y="28"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="com.google.gdt.eclipse.login.status.trim"/>
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="makeFileCudaWin.mk" tooltip="PRODUCTION/MANAGER/makefile/private/makeFileCudaWin.mk">
+<persistable path="/PRODUCTION/MANAGER/makefile/private/makeFileCudaWin.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="mingw.mk" tooltip="OpenMP/mingw.mk">
+<persistable path="/OpenMP/mingw.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="flags_MinGW.mk" tooltip="PRODUCTION/MANAGER/makefile/private/flags_MinGW.mk">
+<persistable path="/PRODUCTION/MANAGER/makefile/private/flags_MinGW.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="flags_VisualIntel.mk" tooltip="PRODUCTION/MANAGER/makefile/private/flags_VisualIntel.mk">
+<persistable path="/PRODUCTION/MANAGER/makefile/private/flags_VisualIntel.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="intelWin.mk" tooltip="OpenMP/intelWin.mk">
+<persistable path="/OpenMP/intelWin.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="visual.mk" tooltip="OpenMP/visual.mk">
+<persistable path="/OpenMP/visual.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="dataProject.mk" tooltip="OpenMP/dataProject.mk">
+<persistable path="/OpenMP/dataProject.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="dataProject.mk" tooltip="Common/dataProject.mk">
+<persistable path="/Common/dataProject.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="cudaTools.cpp" tooltip="Cuda/src/cpp/core/tools/cpp/cudaTools.cpp">
+<persistable path="/Cuda/src/cpp/core/tools/cpp/cudaTools.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="cudaWin.mk" tooltip="Cuda/cudaWin.mk">
+<persistable path="/Cuda/cudaWin.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="cudaLinux.mk" tooltip="Cuda/cudaLinux.mk">
+<persistable path="/Cuda/cudaLinux.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="dataProject.mk" tooltip="Cuda/dataProject.mk">
+<persistable path="/Cuda/dataProject.mk"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="cudaTools.h" tooltip="Cuda/src/cpp/core/tools/header/cudaTools.h">
+<persistable path="/Cuda/src/cpp/core/tools/header/cudaTools.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.cpp" tooltip="CudaOpenCV/src/cpp/main.cpp">
+<persistable path="/CudaOpenCV/src/cpp/main.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="videoCaptureTools.h" tooltip="CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.h">
+<persistable path="/CudaOpenCV/src/cpp/core/01_OpenCV_Tuto/videoCaptureTools.h"/>
+</file>
+</mruList>
+</workbench>

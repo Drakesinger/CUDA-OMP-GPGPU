@@ -1,0 +1,139 @@
+#include <iostream>
+#include <assert.h>
+#include "vectorTools.h"
+#include "matrixTools.h"
+#include "cudaTools.h"
+#include "deviceTools.h"
+#include "indiceTools.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isFillMatrice_Ok(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ static void fillMatrice2D(long* ptrTab, long n, long m);
+
+static bool isFillOK(long* ptrV, long n, long m);
+static void fillMatrice2D(long* ptrV, long n, long m, dim3 blockPerGrid, dim3 threadPerBlock);
+static void fillCPU(long* ptrAJuste, long n, long m);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isFillMatrice_Ok(void)
+    {
+    cout << endl << "[Fill Matrice]" << endl;
+
+    dim3 blockPerGrid(3, 3);
+    dim3 threadPerBlock(3, 3, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    assertDimLegal(blockPerGrid, threadPerBlock);
+
+    long n = 9;
+    long m = 9;
+
+    cout << "n : " << n << endl;
+    cout << "m : " << n << endl;
+
+    assert(n <= 9);
+    assert(m <= 9);
+
+    long* ptrA = new long[n * m];
+    fillMatrice2D(ptrA, n, m, blockPerGrid, threadPerBlock);
+
+    // print(ptrA, n, m, "A=(aij)=(ij)");
+
+    bool isOk = isFillOK(ptrA, n, m);
+
+    delete[] ptrA;
+
+    return isOk;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void fillMatrice2D(long* ptrA, long n, long m, dim3 blockPerGrid, dim3 threadPerBlock)
+    {
+    long* ptrDev_A = NULL;
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_A, n * m * sizeof(long)));
+    HANDLE_ERROR(cudaMemcpy(ptrDev_A, ptrA, n * m * sizeof(long), cudaMemcpyHostToDevice));
+
+    fillMatrice2D<<<blockPerGrid,threadPerBlock>>>(ptrDev_A, n,m);
+
+    HANDLE_ERROR(cudaMemcpy(ptrA, ptrDev_A, n * m * sizeof(long), cudaMemcpyDeviceToHost));
+    HANDLE_ERROR(cudaFree(ptrDev_A));
+    }
+
+bool isFillOK(long* ptrA, long n, long m)
+    {
+    assert(n <= 9);
+    assert(m <= 9);
+
+    long* ptrAJuste = new long[n * m];
+    fillCPU(ptrAJuste, n, m);
+    //print(ptrAJuste,n,m,"ptrAJuste");
+
+    bool isOk = isEgale(ptrA, ptrAJuste, n, m);
+
+    delete[] ptrAJuste;
+
+    return isOk;
+    }
+
+void fillCPU(long* ptrAJuste, long n, long m)
+    {
+    assert(n <= 9);
+    assert(m <= 9);
+
+    for (long i = 1; i <= n; i++)
+	{
+	for (long j = 1; j <= m; j++)
+	    {
+	    *ptrAJuste++ = 10 * i + j;
+	    }
+	}
+    }
+
+__global__ void fillMatrice2D(long* ptrTab, long n, long m)
+    {
+    // Version direct
+    long j = threadIdx.x + (blockDim.x * blockIdx.x); // in [0,m-1]
+    long i = threadIdx.y + (blockDim.y * blockIdx.y); // in [0,n-1]
+    long s = i * m + j; // in [0,nm-1]
+
+    // Version indirect
+//    long j = j0(); // in [0,m-1]
+//    long i = i0(); // in [0,n-1]
+//    long s = s0(i, j, m); // in [0,nm-1]
+
+    if (s < n * m)
+	{
+	ptrTab[s] = 10 * (i + 1) + (j + 1);
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

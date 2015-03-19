@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cHelpSettings>
+<project name="temp4">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+</project>
+<project name="temp3">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+</project>
+<project name="OpenMP">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="glibc library"/>
+</provider>
+</project>
+<project name="OMP_Image">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="glibc library"/>
+</provider>
+</project>
+</cHelpSettings>

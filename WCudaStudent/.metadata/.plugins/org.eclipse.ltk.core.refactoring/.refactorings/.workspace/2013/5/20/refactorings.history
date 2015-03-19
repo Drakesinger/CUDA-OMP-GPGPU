@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CudaHello&apos; to &apos;CudaHelloOld&apos;" description="Rename resource &apos;CudaHello&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CudaHello" name="CudaHelloOld" stamp="1368541994307" updateReferences="true"/>
+</session>

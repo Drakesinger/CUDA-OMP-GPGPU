@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;OpenMP_Image/src/cpp/core/01_rippling&apos; to &apos;01_Rippling&apos;" description="Rename resource &apos;01_rippling&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/01_rippling" name="01_Rippling" stamp="1380208911170" updateReferences="true"/>
+</session>

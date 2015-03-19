@@ -1,0 +1,188 @@
+#include <iostream>
+
+#include "JuliaMOO.h"
+#include "stringTools.h"
+
+using std::cout;
+using std::endl;
+using std::string;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+JuliaMOOs::JuliaMOOs(unsigned int w, unsigned int h, DomaineMaths domaineMath, double c1, double c2, int nMin, int Max) :
+	ImageFonctionelMOOs_A(w, h, domaineMath)
+    {
+    // Inputs
+    this->c1 = c1;
+    this->c2 = c2;
+
+    this->nMax = nMax; // animation
+    this->nMin = nMin; // animation
+
+    // Tools
+    this->n = nMin;
+    fillImage(domaineMath);
+    }
+
+JuliaMOOs::~JuliaMOOs(void)
+    {
+    // rien
+    }
+
+/**
+ * Called automatically by the API
+ */
+void JuliaMOOs::fillImage(const DomaineMaths& domaineMath)
+    {
+    cout << "[CBI] fillImage " << endl;
+
+    int h = getH();
+    int w = getW();
+
+//#pragma omp parallel for
+    for (int i = 1; i <= h; i++) //attention 1
+	{
+	for (int j = 1; j <= w; j++) //attention 1
+	    {
+	    setPixel(i, j, domaineMath); //c.f methode private ci-dessous!
+	    }
+	}
+    }
+
+/**
+ * Redefinition
+ */
+void JuliaMOOs::animationStep(bool& isNeedUpdateView) // Redefinition
+    {
+    cout << "[CBI] n = " << n << endl;
+
+    if (this->n == nMax)
+	{
+	this->n = nMin;
+	}
+
+    this->n++;
+
+    fillImage(getCurrentDomaine()); 	//TODO temp: enlever next version
+    }
+
+//void JuliaMOOs::paintPrimitives(Graphic2Ds& graphic2D) // redefinition
+//    {
+//    string message = toString(n);
+//    Fonts font = Fonts::TIMES_ROMAN_24;
+//    float gris = 0.5;
+//
+//    graphic2D.setColor(gris, gris, gris); // setColorRVB()
+//    graphic2D.drawTitleTop(message, font);
+//    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void JuliaMOOs::setPixel(int i, int j, const DomaineMaths& domaineMath)
+    {
+    double x;
+    double y;
+
+    toXY(i, j, x, y, domaineMath); // TODO mettre dans super classe toXY
+
+    int compteur = suite(x, y); // in [1,n]
+
+//    cout << "[CBI] compteur = " << compteur << endl;
+//    cout << "[CBI] x = " << x << endl;
+//    cout << "[CBI] y = " << y << endl;
+
+    if (compteur == n)
+	{
+	setFloatRGBA(i, j, 0, 0, 0); // noir
+	}
+    else
+	{
+	float h = (compteur - 1) / (float) n; // in [1,n]
+	setHue(i, j, h);
+	}
+    }
+
+void JuliaMOOs::toXY(int i, int j, double& x, double& y, const DomaineMaths& domaineMath)
+    {
+    static double dx = domaineMath.dx / getW();
+    static double dy = domaineMath.dy / getH();
+
+    x = domaineMath.x0 + (j - 1) * dx;
+    y = domaineMath.y0 + (i - 1) * dy;
+    }
+
+/**
+ * Suite
+ *
+ * 	z0=x+iy
+ * 	zk+1=zk*zk + c
+ *
+ * Posons
+ *
+ *  	zk=xk+iyk
+ *  	c=c1+ic2
+ *
+ * En composante, la suite devient
+ *
+ * 	xk+1=xk*xk-yk*yk +c1
+ * 	yk+1=2*xk*yk	 +c2
+ *
+ * Arret
+ *
+ * 	||zk||>2,
+ *
+ * En composante
+ *
+ * 	xk * xk + yk * yk >4
+ */
+int JuliaMOOs::suite(int x, int y)
+    {
+    double xk = x;
+    double yk = y;
+
+    double xkOld;
+
+    int compteur = 0;
+    do
+	{
+	xkOld = xk;
+
+	xk = xk * xk - yk * yk + c1;
+	yk = 2 * xkOld * yk + c2;
+
+	compteur++;
+	} while (compteur < n && !isDivergent(xk, yk));
+
+    return compteur;
+    }
+
+bool JuliaMOOs::isDivergent(double xk, double yk)
+    {
+    //return sqrt(xk * xk + yk * yk) > 2;
+    return xk * xk + yk * yk > 4;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

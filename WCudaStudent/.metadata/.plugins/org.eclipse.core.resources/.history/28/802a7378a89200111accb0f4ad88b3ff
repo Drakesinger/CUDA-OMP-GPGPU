@@ -1,0 +1,278 @@
+#include <iostream>
+#include <iomanip>
+#include <assert.h>
+#include "ChronoOMPs.h"
+#include "mathTools.h"
+#include <curand_kernel.h>
+#include "cudaTools.h"
+#include "Device.h"
+#include "Indice1D.h"
+#include "Lock.h"
+#include "omp.h"
+
+using std::cout;
+using std::endl;
+using std::setprecision;
+
+#define NB_THREAD_BLOCK 256
+//Contraintes NB_THREAD_BLOCK :
+//	(C1)	Multiple de 2 (Pour reduction block)
+//	(C2)	Constant : car size d'un tableau en shared memory
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isMontecarloPi_multiGPU_Ok(long n);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static double montecarloPI(long n);
+static long montecarloPI( long n,int deviceId);
+static double aireCible(void);
+static long oneGPU(long n, int idDevice);
+
+
+static __global__ void montecarloPI(curandState* tabStateThread, long n, long* ptrCompteur,Lock lock);
+static __global__ void setup_kernel_rand(curandState* tabStateThread,int deviceId);
+
+static __device__ void f(float x, float& y);
+static __device__ void reductionIntraBlock(long* tabCompteurBlock);
+static __device__ void reductionInterBlock(long* tabCompteurBlock,long* ptrCompteur,Lock* ptrLock);
+static __device__ long compteurThread(curandState* tabStateThread, long n);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isMontecarloPi_multiGPU_Ok(long n) // FIXME rename
+    {
+    cout << endl << "[isMontecarloPi_multiGPU_Ok running]" << endl;
+    cout << "n=" << n << endl;
+
+    ChronoOMPs chrono;
+    double piHat = montecarloPI(n);
+    cout << "Pi hat  = " << setprecision(7) << piHat << endl;
+    cout << "Pi true = " << setprecision(7) << PI << endl;
+    cout << "delta    = "<<fabs(piHat-PI)<<endl;
+    chrono.stop();
+    chrono.print("time : ");
+
+    return isEgale(piHat, PI, 1e-3);
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+double montecarloPI(long n)
+    {
+    int k = Device::getDeviceCount();
+    omp_set_num_threads(k);
+
+    long compteur = 0;
+    #pragma omp parallel for reduction (+:compteur)
+    for (int i = 1; i <= k; i++)
+	{
+	compteur += oneGPU(n / k, i - 1);
+	}
+
+    return 4 * (compteur * aireCible()) / n;
+    }
+
+
+long oneGPU(long n, int deviceId)
+    {
+    cout << "Device(" << deviceId << ") : n=" << n << endl;
+    HANDLE_ERROR(cudaSetDevice(deviceId));
+
+    long compteur = montecarloPI( n,deviceId);
+
+    // debug
+    {
+    double piHatGpu=4 * (compteur * aireCible()) / n;
+    double delta=fabs(piHatGpu-PI);
+    cout<<" Device("<<deviceId<<") : Pihat  = "<< setprecision(8)<<piHatGpu<<" delta = "<<delta<<" compteur = "<<compteur<<endl;
+    }
+
+    return compteur;
+    }
+
+
+/**
+ * #include <curand_kernel.h>
+ */
+long montecarloPI( long n,int deviceId)
+    {
+    int nbBlock=32;
+    dim3 blockPerGrid = dim3(nbBlock, 1, 1);
+    dim3 threadPerBlock = dim3(NB_THREAD_BLOCK, 1, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    Device::assertDim(blockPerGrid, threadPerBlock);
+
+    long* ptrDev_compteur = NULL;
+    HANDLE_ERROR(cudaMalloc((void**)&ptrDev_compteur,sizeof(long)));
+    HANDLE_ERROR(cudaMemset((void*)ptrDev_compteur , 0,sizeof(long))); // Goal : init ptrDev_compteur à zero!
+
+    assert(NB_THREAD_BLOCK % 2 == 0);
+
+    int nbThreadTotal=NB_THREAD_BLOCK*nbBlock;
+
+    curandState* tabStateThread;
+    HANDLE_ERROR(cudaMalloc(( void **)& tabStateThread , nbThreadTotal *sizeof (curandState)));
+    setup_kernel_rand<<<blockPerGrid,threadPerBlock>>>(tabStateThread,deviceId);
+
+    Lock lock;
+    montecarloPI<<<blockPerGrid,threadPerBlock>>>(tabStateThread,n/nbThreadTotal,ptrDev_compteur,lock);
+
+    long compteur = -1;
+    HANDLE_ERROR(cudaMemcpy(&compteur, ptrDev_compteur, sizeof(long), cudaMemcpyDeviceToHost));
+    HANDLE_ERROR(cudaFree(ptrDev_compteur));
+
+    return compteur;
+    }
+
+/**
+ * Hyp : NB_THREAD_BLOCK est une puisssance de 2
+ */
+__global__ void montecarloPI(curandState* tabStateThread, long n, long* ptrCompteur, Lock lock)
+    {
+    //int nbThreadBlock = Indice1D::nbThreadBlock();
+    int tidBlock = threadIdx.x; // in [0,nbThreadBlock[
+    //int tid=Indice1D::tid();		// in [0,nbThreadTotal[
+
+    __shared__
+    long tabCompteurBlock[NB_THREAD_BLOCK]; // __shared__ obligatoire ! Consequence : Chaque block a son instance !!
+    // Contrainte :	NB_THREAD_BLOCK constant required
+    // Important : 	Une instance de tableau pour chaque block !!
+    // Exemple:		2 block, 3 MP : on a 3 shared memory. Chacune de ces 3 shared memory contient 2 instances de tableaux.
+    //			Chaque block a son tableau !
+
+    // Chaque thread analyse une partie de (xAlea,yAlea) ,puis stocke son compteur resultat dans le tableau shared asscocié au bloc auquel le thread appartient
+    tabCompteurBlock[tidBlock] = compteurThread(tabStateThread, n); // tidBlock car une instance de tabCompteurBlock par block
+
+    __syncthreads(); // Barrier, attend que touts les threads du block aient rempli chacun leur (unique) case de tabCompteurBlock
+
+    // Reduction parallelle additive de chaque tabCompteurBlock dans tabCompteurBlock[0]
+    // hyp: NB_THREAD_BLOCK puissance de 2
+    reductionIntraBlock(tabCompteurBlock);
+
+    //  Reduction additive de tabCompteurBlock[0] de chaque block quelque soit le MP
+    reductionInterBlock(tabCompteurBlock, ptrCompteur, &lock);
+    }
+
+/**
+ *   Each thread gets same seed , a different sequence number , no offset
+ */
+__global__ void setup_kernel_rand(curandState* tabStateThread,int deviceId)
+    {
+    int tid = Indice1D::tid();
+     //int id = threadIdx.x + blockIdx.x * 64;
+
+    int deltaSeed=deviceId*10000000000;
+    int deltaSequence=deviceId*100;
+    int deltaOffset=deviceId*100;
+
+    int seed=1234+deltaSeed;// deviceId+tid;
+    int sequenceNumber=tid+deltaSequence;// + tid;
+    int offset=deltaOffset;
+
+     curand_init(seed, sequenceNumber,offset, &tabStateThread[tid]);
+    }
+
+__device__ long compteurThread(curandState* tabStateThread, long n)
+    {
+    int tid = Indice1D::tid();
+
+    float xAlea;
+    float yAlea;
+    float y;
+    long compteur = 0;
+
+    curandState localState = tabStateThread[tid]; //Copy state to local memory for efficiency
+    for (long i = 1; i <= n; i++)
+	{
+	xAlea = curand_uniform(&localState);
+	yAlea = curand_uniform(&localState);
+	f(xAlea,y);
+	if (y>= yAlea)
+	    {
+	    compteur++;
+	    }
+	}
+
+    tabStateThread[tid] = localState; //Copy state to local memory for efficiency
+
+    return compteur;
+    }
+
+/**
+ * Goal : 		Reduction additive du contenu de chacun des tabCompteurBlock dans tabCompteurBlock[0],
+ * Contrainte : 	Algo sur place,mettre le resultat en tabCompteurBlock[0]
+ * hyp: 		NB_THREAD_BLOCK est une puissance de 2
+ */
+__device__ void reductionIntraBlock(long* tabCompteurBlock)
+    {
+    //int tid=Indice1D::tid(); 		// in [0,nbThreadTotal[
+    int tidBlock = threadIdx.x; // in [0,NB_THREAD_BLOCK[
+    int midleId = blockDim.x / 2; // Hyp: NB_THREAD_BLOCK divisible par 2
+
+    while (midleId >= 1) // midleId in ... 8 4 2 1
+	{
+	if (tidBlock < midleId)
+	    {
+	    tabCompteurBlock[tidBlock] += tabCompteurBlock[tidBlock + midleId]; // tidBlock car il y a une instance de tabCompteurBlock par block
+	    }
+
+	__syncthreads(); // surtout pas dans if !!  Barrier pour les threads d'un meme block
+
+	midleId /= 2; // Hyp: NB_THREAD_BLOCK divisible par 2
+	}
+    }
+
+/**
+ * Reduction du contenu de chacun des tabCompteurBlock[0] dans ptrCompteur, et ceci quelque soit le MP sur lequel le scheduler a envoyé le block
+ */
+__device__ void reductionInterBlock(long* tabCompteurBlock, long* ptrCompteur, Lock* ptrLock)
+    {
+    if (threadIdx.x == 0)
+	{
+	ptrLock->lock(); // un seul de tous les threadIdx.x =0 de chacun des block de chacun des MP  peut accéder à la fois à la ligne suivante
+
+	// il y a une instance de tabCompteurBlock par block, quelque soit le mp surlequel le scheduler a envoyer le block
+	*ptrCompteur += tabCompteurBlock[0]; // attention ptrCompteur doit etre init a zero
+
+
+	ptrLock->unlock();
+	}
+    }
+
+__device__ void f(float x, float& y)
+    {
+    y = sqrtf(1 - x * x);
+    }
+
+double aireCible(void)
+    {
+    return 1;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

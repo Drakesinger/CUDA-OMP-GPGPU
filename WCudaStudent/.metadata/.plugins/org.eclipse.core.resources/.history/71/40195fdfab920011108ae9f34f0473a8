@@ -1,0 +1,34 @@
+#ifndef TEST_CULA_JUNIT_H
+#define TEST_CULA_JUNIT_H
+
+#include "cpptest.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+class TestCulaJunit: public Test::Suite
+    {
+    public:
+
+TestCulaJunit(int deviceId);
+
+    private:
+
+	void testSpectre(void);
+	void testSystemSolve(void);
+	void testDeviceInfo(void);
+	void testDeviceInfo(void);
+
+    private:
+
+	int deviceId;
+
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

@@ -1,0 +1,108 @@
+#include <iostream>
+#include <stdlib.h>
+#include <assert.h>
+
+#include "cudaTools.h"
+#include "Device.h"
+
+
+using std::cout;
+using std::endl;
+
+
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern int mainCore(int deviceId);
+extern int mainTest(int deviceId);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static bool work(int deviceId, bool isTest);
+static bool workALL(int nbDevice, bool isTest);
+static void rappelTypeSize(void);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int main(void)
+    {
+    rappelTypeSize();
+
+    if (Device::isCuda())
+	{
+	// Goal : Preload driver, to pratice next benchmarking!
+	//Device::loadCudaDriverDeviceAll();// Force driver to be load for all GPU
+	Device::loadCudaDriver(0); // Force only drive for device 1 to be loaded
+
+	int nbDevice = Device::getDeviceCount();
+	Device::printALL("All device available : ");
+
+	bool isTest = true;
+	bool isAll = false;
+
+	if (isAll)
+	    {
+	    return workALL(nbDevice, isTest);
+	    }
+	else
+	    {
+	    int deviceId = 0;
+	    assert(deviceId >= 0 && deviceId < nbDevice);
+
+	    return work(deviceId, isTest);
+	    }
+	}
+    else
+	{
+	return EXIT_FAILURE;
+	}
+    }
+
+bool workALL(int nbDevice, bool isTest)
+    {
+    bool isOk = true;
+
+    for (int deviceId = 0; deviceId < nbDevice; deviceId++)
+	{
+	isOk &= work(deviceId, isTest);
+	}
+
+    return isOk;
+    }
+
+bool work(int deviceId, bool isTest)
+    {
+    HANDLE_ERROR(cudaSetDevice(deviceId)); // active gpu of deviceId
+
+    return isTest ? mainTest(deviceId) : mainCore(deviceId);
+    }
+
+void rappelTypeSize(void)
+    {
+    cout<<endl;
+    cout<<"Rappel type size (from limits.h) "<<endl;
+    cout<<"SHORT_MAX = "<<SHRT_MAX<<"      : "<<sizeof(short)<<" Octets"<<endl;
+    cout<<"INT_MAX   = "<<INT_MAX<<" : "<<sizeof(int)<<" Octets"<<endl;
+    cout<<"LONG_MAX  = "<<LONG_MAX<<" : "<<sizeof(long)<<" Octets"<<endl;
+    cout<<endl;
+    }
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

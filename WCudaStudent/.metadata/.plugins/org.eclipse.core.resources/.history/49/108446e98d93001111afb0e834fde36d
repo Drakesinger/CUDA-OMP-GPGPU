@@ -1,0 +1,68 @@
+#include <iostream>
+
+#include "cv.h" // opencv
+#include "highgui.h" // opencv
+using std::cerr;
+using std::cout;
+using std::endl;
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void);
+void work(const Mat& matCapture);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void)
+    {
+    int idCamera = 0;
+    VideoCapture capture(idCamera);
+
+    if (capture.isOpened())
+	{
+	Mat matCapture;
+	while (true)
+	    {
+	    capture >> matCapture;
+	    work(matCapture);
+	    }
+	}
+    else
+	{
+	cerr << "Camera Capture : failed : camera = " << idCamera << endl;
+	return false;
+	}
+
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void work(const Mat& matCapture)
+    {
+
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

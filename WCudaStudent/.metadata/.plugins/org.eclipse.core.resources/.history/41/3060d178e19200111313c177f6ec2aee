@@ -1,0 +1,62 @@
+#include <stdlib.h>
+#include <assert.h>
+
+#include "cudaTools.h"
+#include "Device.h"
+#include "cudaTools.h"
+#include "GLUTWindowManagers.h"
+#include "cuda_gl_interop.h" // apres "GLUTWindowManagers.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern int mainCore(int deviceId);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static bool work(int deviceId);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int main(int argc, char** argv)
+    {
+    GLUTWindowManagers::init(argc, argv);
+
+    if (Device::isCuda())
+	{
+	int nbDevice = Device::getDeviceCount();
+	Device::printALL("All device available : ");
+
+	int deviceId = 0;
+	assert(deviceId<nbDevice);
+
+	work(deviceId);
+	}
+    }
+
+bool work(int deviceId)
+    {
+   // HANDLE_ERROR(cudaSetDevice(deviceId)); // active gpu of deviceId
+    HANDLE_ERROR(cudaSetDeviceFlags(cudaDeviceMapHost)); // Not all gpu allow the use of mapMemory (avant prremier appel au kernel)
+   // HANDLE_ERROR(cudaGLSetGLDevice(deviceId)); // (avant prremier appel au kernel)
+
+    return mainCore(deviceId);
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

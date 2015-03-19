@@ -1,0 +1,101 @@
+#include <iostream>
+#include "Indice2D.h"
+#include "cudaTools.h"
+#include "Device.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+//extern __global__ void toGray(uchar4* ptrDev1_image, int w, int h);
+//extern __global__ void toFlou(uchar4* ptrDev1_image, int w, int h);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+void modifyImage(uchar4* ptrDev_Image, int w, int h,cudaStream_t stream=0);// 0 stream par default
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+__device__ void modifyColor(int pixelI, int pixelJ, uchar4& color)
+    {
+    unsigned char levelGray = (color.x + color.y + color.z) / 3;
+
+    color.x = levelGray;
+    color.y = levelGray;
+    color.z = levelGray;
+    }
+
+__global__ void toGray(uchar4* ptrDev_image, int w, int h)
+    {
+    int tid = Indice2D::tid();
+    int nbThread = Indice2D::nbThread();
+
+    uchar4 color;
+    color.w = 255; // alpha
+
+    int pixelI;
+    int pixelJ;
+
+   // while(tid < w * h)
+	while(true)
+	{
+	Indice2D::pixelIJ(tid, w, pixelI, pixelJ);
+
+	color=ptrDev1_image[tid];
+	modifyColor(pixelI, pixelJ, color);
+	ptrDev1_image[tid] = color;
+
+	tid += nbThread;
+	}
+    }
+
+
+
+
+void modifyImage(uchar4* ptrDev_Image, int w, int h,cudaStream_t stream)
+    {
+    //cout<<"modifyImage"<<stream<<endl;
+
+    dim3 blockPerGrid = dim3(8, 8, 1);
+    dim3 threadPerBlock = dim3(8, 8, 1);
+
+   // print(blockPerGrid, threadPerBlock);
+   // Device::assertDim(blockPerGrid, threadPerBlock);
+
+    toGray<<<blockPerGrid,threadPerBlock>>>(ptrDev_Image, w, h);
+    //toFlou    <<<blockPerGrid,threadPerBlock,0,stream>>>(ptrDev_Image, w, h);
+
+    // paramètre 3 de <<<blockPerGrid,threadPerBlock,0,stream>>> :
+    // Goal : spécifier le nombre d'octets en mémoire partagée alloués dynamiquement par bloc en plus de la mémoire allouée statiquement; 0 valeur par defaut
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

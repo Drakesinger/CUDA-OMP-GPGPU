@@ -1,0 +1,56 @@
+18:38:57 **** Incremental Build of configuration CudaWin for project CudaImage_OpenCV ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeCudaVisual.bat" all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI]->Target Name	  : TutoCudaImage_OpenCV_Etude64
+[CBI]
+[CBI]->Build          : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude
+[CBI]->Deploy 		  : ../Deploy/bin
+[CBI]
+[CBI]->Type	 		  : EXE
+[CBI]->Arch	 		  : 64
+[CBI]->OS	 		  : Win
+[CBI]->User	 		  : bilat
+[CBI]
+[CBI]->Task			  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (-r) :
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : ../BilatTools_OpenCV/src/core
+
+[CBI] -> CXXFLAGS     :
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS   :
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS    :
+[CBI] ->              : -arch=sm_20
+[CBI] ->              : -use_fast_math
+[CBI] ->              : --fmad=true
+
+[CBI] -> NVCCLDFLAGS  :
+
+
+[CBI]->Create folder  : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/bin
+[CBI]->Create folder  : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/obj
+[CBI]->Create folder  : Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/cubin
+
+[CBI]->compiling .cpp : src/cpp/main.cpp
+../BilatTools_OpenCV/src/core/capture/header\Capture_A.h(6) : fatal error C1083: Cannot open include file: 'opencv.hpp': No such file or directory
+../BUILDER/makefile/private/cuda/makeCudaVisual.mk:197: recipe for target `Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/obj/main.obj' failed
+make: *** [Q:/bilat/Targets/TutoCudaImage_OpenCV_Etude/obj/main.obj] Error 2
+
+18:39:00 Build Finished (took 2s.566ms)
+

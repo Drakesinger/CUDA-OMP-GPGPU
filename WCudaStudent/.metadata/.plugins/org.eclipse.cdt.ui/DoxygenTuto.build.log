@@ -1,0 +1,50 @@
+20:44:43 **** Build of configuration IntelWin for project DoxygenTuto ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeIntel.bat" all 
+
+[INTEL]
+
+Intel(R) Parallel Studio XE 2013
+Copyright (C) 1985-2013 Intel Corporation. All rights reserved.
+Intel(R) Composer XE 2013 Update 2 (package 149)
+
+
+==================================================================================
+[CBI]->Target Name	: Tuto_Doxygen64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/Tuto_Doxygen/bin/Tuto_Doxygen64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: INTEL [CXX=icl]
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 20:44:43
+==================================================================================
+
+main.cpp
+Mammal.cpp
+Animals.cpp
+mainCore.cpp
+
+[CBI]->linking to Q:/bilat/Targets/Tuto_Doxygen/bin/Tuto_Doxygen64.exe
+
+==================================================================================
+[CBI]->Target Name	: Tuto_Doxygen64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/Tuto_Doxygen/bin/Tuto_Doxygen64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: INTEL [CXX=icl]
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 20:44:44
+==================================================================================
+
+
+[CBI]->Deploying  : ../Deploy/bin/Tuto_Doxygen64.exe
+
+[CBI]->Q:/bilat/Targets/Tuto_Doxygen/bin/Tuto_Doxygen64.exe : End ALL!
+
+20:44:45 Build Finished (took 2s.922ms)
+

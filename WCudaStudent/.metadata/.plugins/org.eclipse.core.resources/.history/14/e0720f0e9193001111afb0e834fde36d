@@ -1,0 +1,123 @@
+#include <iostream>
+
+#include "cv.h" // opencv
+#include "highgui.h" // opencv
+
+#include "cudaTools.h"
+#include "Device.h"
+
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void workImage(uchar* ptrImage, uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h);
+static void copyImageOnDevice1(uchar* ptrImage,  uchar* ptrDev0_image,int w, int h);
+static void modifyImageOnDevice1( uchar* ptrDev0_image,int w, int h);
+static void  transfertImageFromDevice1ToDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h);
+static void copyImageFromDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void)
+    {
+    int idCamera = 0;
+    VideoCapture capture(idCamera);
+
+    if (capture.isOpened())
+	{
+	Mat matCapture;
+	capture >> matCapture;
+
+	// init
+	uchar* ptrImage = matCapture.data; // use cvtColor to change the colorSpace (HSB,GRAY,...)
+	int w = matCapture.cols;
+	int h = matCapture.rows;
+
+	int sizeImageOctet=w*h*sizeof(uchar);
+
+	uchar* ptrDev0_image=NULL;
+	uchar* ptrDev1_image=NULL;
+
+	HANDLE_ERROR(cudaSetDevice(0));
+	HANDLE_ERROR(cudaMalloc((void**) &ptrDev0_image, sizeImageOctet));
+
+	HANDLE_ERROR(cudaSetDevice(1));
+	HANDLE_ERROR(cudaMalloc((void**) &ptrDev1_image, sizeImageOctet));
+
+	HANDLE_ERROR(cudaDeviceSynchronize());
+
+	while (true)
+	    {
+	    capture >> matCapture;
+	    workImage(ptrImage,ptrDev0_image,ptrDev1_image,w,h);
+	    }
+	}
+    else
+	{
+	cerr << "Camera Capture : failed : camera = " << idCamera << endl;
+	return false;
+	}
+
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void workImage(uchar* ptrImage, uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h)
+    {
+    //cout<<(int)ptrImage[w*h-1]<<endl;
+
+    copyImageOnDevice1( ptrImage,  w,  h);
+    modifyImageOnDevice1(  ptrDev0_image, w,  h);
+    transfertImageFromDevice1ToDevice0( ptrDev0_image, ptrDev1_image, w,  h);
+    copyImageFromDevice0( ptrDev0_image, ptrDev1_image, w,  h);
+    }
+
+void copyImageOnDevice1(uchar* ptrImage,  uchar* ptrDev0_image,int w, int h)
+    {
+
+    }
+
+void modifyImageOnDevice1( uchar* ptrDev0_image,int w, int h)
+    {
+
+    }
+
+void  transfertImageFromDevice1ToDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h)
+    {
+
+    }
+
+void copyImageFromDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h)
+    {
+
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

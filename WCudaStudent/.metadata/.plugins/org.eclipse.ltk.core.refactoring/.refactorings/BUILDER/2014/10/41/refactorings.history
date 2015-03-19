@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BUILDER/makefile/private/api/cuda/cuda_OpenCV_gpu.mk&apos; to &apos;cuda_OpenCV.mk&apos;" description="Rename resource &apos;cuda_OpenCV_gpu.mk&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="makefile/private/api/cuda/cuda_OpenCV_gpu.mk" name="cuda_OpenCV.mk" stamp="1412974909573" updateReferences="true"/>
+</session>

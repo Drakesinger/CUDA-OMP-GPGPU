@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Cuda/src/cpp/test/junit/header/TestMontecarloPIJunit.h&apos; to &apos;TestMontecarloPiJunit.h&apos;" description="Rename resource &apos;TestMontecarloPIJunit.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/test/junit/header/TestMontecarloPIJunit.h" name="TestMontecarloPiJunit.h" stamp="1333118666985" updateReferences="true"/>
+</session>

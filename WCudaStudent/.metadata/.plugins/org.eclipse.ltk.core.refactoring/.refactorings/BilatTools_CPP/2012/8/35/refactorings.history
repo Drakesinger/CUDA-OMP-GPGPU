@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Common/src/core/tools/header/ChronoOMPs.h&apos; to &apos;Chronos.h&apos;" description="Rename resource &apos;ChronoOMPs.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/tools/header/ChronoOMPs.h" name="Chronos.h" stamp="1346411595807" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Common/src/core/tools/cpp/ChronoOMPs.cpp&apos; to &apos;Chronos.cpp&apos;" description="Rename resource &apos;ChronoOMPs.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/tools/cpp/ChronoOMPs.cpp" name="Chronos.cpp" stamp="1346411608053" updateReferences="true"/>
+</session>

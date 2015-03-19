@@ -1,0 +1,99 @@
+#include "ImageCapture.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ImageCapture::ImageCapture(const string& videoName):captureStream(videoName)
+    {
+    buildCommon();
+    }
+
+ImageCapture::ImageCapture(int idCamera):captureStream(idCamera)
+    {
+    buildCommon();
+    }
+
+ImageCapture::~ImageCapture(void)
+    {
+    // rien
+    }
+
+Mat ImageCapture::capture()
+    {
+
+    captureStream >> matCapture;
+    cvtColor(matCapture, matCapture, CV_8U, 4); // 0 keep same chanel // 4 permet par exemple d'ajouter la couche alpha à rvb (pour une video ou webcam)
+
+    return matCapture;//castToUChar4(matCapture.data);
+    }
+
+bool ImageCapture::isOpened(void)
+    {
+    return captureStream.isOpened();
+    }
+
+int ImageCapture::nbOctet()
+    {
+    return w*h*sizeof(uchar4);
+    }
+
+int ImageCapture::getW(void)
+    {
+    return w;
+    }
+
+int ImageCapture::getH(void)
+    {
+    return h;
+    }
+
+/**
+ * uchar = unsigned char
+ * uchar4 = 4 char sequentiel
+ */
+uchar4* ImageCapture::castToUChar4(uchar* ptrTab)
+    {
+    return (uchar4*) ptrTab;
+    }
+
+uchar4* ImageCapture::castToUChar4(Mat* ptrMap)
+    {
+    return castToUChar4(ptrMap->data);
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void ImageCapture::buildCommon()
+    {
+    Mat matCapture;
+    captureStream >> matCapture;
+
+    w = matCapture.cols;
+    h = matCapture.rows;
+    }
+
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

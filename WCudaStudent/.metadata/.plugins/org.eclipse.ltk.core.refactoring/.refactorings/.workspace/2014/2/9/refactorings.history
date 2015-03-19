@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Tuto_Boost/src/cpp/core/options/main.cpp&apos;" deleteContents="false" description="Delete resource &apos;Tuto_Boost/src/cpp/core/options/main.cpp&apos;" element1="/Tuto_Boost/src/cpp/core/options/main.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1393596394022"/>
+</session>

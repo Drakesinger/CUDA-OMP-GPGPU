@@ -1,0 +1,65 @@
+
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+ __global__ void toGray(uchar4* ptrDev1_image, int w, int h);
+static __device__ void modifyColor(int pixelI, int pixelJ, uchar4& color);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ void toGray(uchar4* ptrDev1_image, int w, int h)
+    {
+    int tid = Indice2D::tid();
+    int nbThread = Indice2D::nbThread();
+
+    uchar4 color;
+    color.w = 255; // alpha
+
+    int pixelI;
+    int pixelJ;
+
+    while(tid < w * h)
+	{
+	Indice2D::pixelIJ(tid, w, pixelI, pixelJ);
+
+	color=ptrDev1_image[tid];
+	modifyColor(pixelI, pixelJ, color);
+	ptrDev1_image[tid] = color;
+
+	tid += nbThread;
+	}
+    }
+
+__device__ void modifyColor(int pixelI, int pixelJ, uchar4& color)
+    {
+    unsigned char levelGray = (color.x + color.y + color.z) / 3;
+
+    color.x = levelGray;
+    color.y = levelGray;
+    color.z = levelGray;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

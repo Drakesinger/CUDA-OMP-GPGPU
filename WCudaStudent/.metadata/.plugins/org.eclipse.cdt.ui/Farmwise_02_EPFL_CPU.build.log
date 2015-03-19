@@ -1,0 +1,127 @@
+16:32:28 **** Incremental Build of configuration Visual for project Farmwise_02_EPFL_CPU ****
+makeVisual.bat all 
+init make
+init API-EXT
+init API-CBI
+-----------------------------------------------
+
+[VISUAL] : all  
+
+
+Microsoft (R) C/C++ Optimizing Compiler Version 18.00.30501 for x64
+usage: cl [ option... ] filename... [ /link linkoption... ]
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_EPFL_CPU_visual_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/cedric.bilat/Targets/Farmwise_EPFL_CPU/bin/Farmwise_EPFL_CPU_visual_64.lib
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /arch:AVX
+[CBI] ->              : /nologo
+[CBI] ->              : /openmp
+
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/01_image/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_algo/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_algo/io/Output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_algo/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/03_consomateur/
+[CBI] ->              : src/cpp/hearc/cpu/facade/
+[CBI] ->              : src/cpp/hearc/cpu/implementation/
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> API_INC :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+
+[CBI] -> API_LIB :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/lib
+
+[CBI] -> API_BIN :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/bin
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : opencv_contrib249.lib
+[CBI] ->              : opencv_core249.lib
+[CBI] ->              : opencv_features2d249.lib
+[CBI] ->              : opencv_flann249.lib
+[CBI] ->              : opencv_gpu249.lib
+[CBI] ->              : opencv_highgui249.lib
+[CBI] ->              : opencv_imgproc249.lib
+[CBI] ->              : opencv_legacy249.lib
+[CBI] ->              : opencv_ml249.lib
+[CBI] ->              : opencv_nonfree249.lib
+[CBI] ->              : opencv_objdetect249.lib
+[CBI] ->              : opencv_ocl249.lib
+[CBI] ->              : opencv_photo249.lib
+[CBI] ->              : opencv_stitching249.lib
+[CBI] ->              : opencv_superres249.lib
+[CBI] ->              : opencv_ts249.lib
+[CBI] ->              : opencv_video249.lib
+[CBI] ->              : opencv_videostab249.lib
+
+
+EPFL_CPU.cpp
+EPFL_Input.cpp
+EPFL_Output.cpp
+
+Microsoft (R) Library Manager Version 12.00.30501.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_EPFL_CPU_visual_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/Farmwise_EPFL_CPU/bin/Farmwise_EPFL_CPU_visual_64.lib
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl)
+[CBI] -> Task	      : End Compiling-Archive !
+[CBI] -> Time		  : 16:32:31
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Farmwise_EPFL_CPU_visual_64.lib
+
+[CBI] -> Farmwise_EPFL_CPU_visual_64 : End ALL!
+
+16:32:31 Build Finished (took 3s.266ms)
+

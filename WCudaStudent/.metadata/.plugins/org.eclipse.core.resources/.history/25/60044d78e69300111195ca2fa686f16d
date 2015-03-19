@@ -1,0 +1,96 @@
+#include "WorkGPU.h"
+#include <iostream>
+#include "cudaTools.h"
+#include "cudaTools.h"
+#include "Device.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern void modifyImage(uchar4* ptrDev0_Image, int w, int h);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+WorkGPU::WorkGPU(uchar4* ptrImage, int w, int h)
+    {
+    this->ptrImage = ptrImage;
+    this->w = w;
+    this->h = h;
+    }
+
+WorkGPU::~WorkGPU(void)
+    {
+    //rien
+    }
+
+void WorkGPU::run(void)
+    {
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev0_Image, sizeOctets()));
+
+    copyImageOnDevice0();
+    modifyImageOnDevice0();
+    copyImageFromDevice0();
+
+    HANDLE_ERROR(cudaFree(ptrDev0_Image));
+    }
+
+int WorkGPU::sizeOctets(void)
+    {
+    return w * h * sizeof(uchar4);
+    }
+
+void WorkGPU::copyImageOnDevice0(void)
+    {
+    cout << "copyImageOnDevice0" << endl;
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev0_Image, ptrImage, sizeOctets(), cudaMemcpyHostToDevice));
+    }
+
+void WorkGPU::modifyImageOnDevice0(void)
+    {
+
+
+    modifyImage(ptrDev0_Image, w, h);
+    }
+
+void WorkGPU::copyImageFromDevice0(void)
+    {
+    cout << "copyImageFromDevice0" << endl;
+
+    HANDLE_ERROR(cudaMemcpy(ptrImage, ptrDev0_Image, sizeOctets(), cudaMemcpyDeviceToHost));
+    }
+
+
+
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

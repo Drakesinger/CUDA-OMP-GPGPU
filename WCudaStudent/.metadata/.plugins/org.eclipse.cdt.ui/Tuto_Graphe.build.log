@@ -1,0 +1,95 @@
+16:14:51 **** Incremental Build of configuration Visual for project Tuto_Graphe ****
+makeVisual.bat all 
+
+[VISUAL] : all  
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Bilat_Graphe_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/cedric.bilat/Targets/Tuto_Bilat_Graphe/bin/Tuto_Bilat_Graphe_64.exe
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/INC
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/LIB/visual
+[CBI] ->              : ../API_Bilat_GL/INC
+[CBI] ->              : ../API_Bilat_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_Graph2D/INC
+[CBI] ->              : ../API_Bilat_Graph2D/LIB/visual
+[CBI] ->              : ../API_Bilat_Graph2D_FreeGlut/INC
+[CBI] ->              : ../API_Bilat_Graph2D_FreeGlut/LIB/visual
+[CBI] ->              : ../API_FreeGlut/INC_WIN
+[CBI] ->              : ../API_FreeGlut/LIB/visual
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -IC:/Soft/Boost/include
+[CBI] ->              : /DCBI_DISPLAYABLE_DLL
+[CBI] ->              : /DCBI_GRAPH_DLL
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /nologo
+[CBI] ->              : /openmp
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+
+AnimateManuel.cpp
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/Tuto_Bilat_Graphe/bin/Tuto_Bilat_Graphe_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->              : Bilat_Displayable_004_64.lib
+[CBI] ->              : Bilat_FreeGlut_Tools_005_64.lib
+[CBI] ->              : Bilat_GL_003_64.lib
+[CBI] ->              : Bilat_Graph2D_001_64.lib
+[CBI] ->              : Bilat_Graph2D_Freeglut_001_64.lib
+[CBI] ->              : freeglut64.lib
+[CBI] ->              : gdi32.lib
+[CBI] ->              : glew64.lib
+[CBI] ->              : glu32.lib
+[CBI] ->              : kernel32.lib
+[CBI] ->              : opengl32.lib
+[CBI] ->              : user32.lib
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Bilat_Graphe_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/Tuto_Bilat_Graphe/bin/Tuto_Bilat_Graphe_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl)
+[CBI] -> Task	      : End Compiling-Linking !
+[CBI] -> Time		  : 16:14:56
+==================================================================================
+
+cp: cannot create regular file `../RELEASE/bin/Tuto_Bilat_Graphe_64.exe': Permission denied
+
+[CBI] -> Deploying    : ../RELEASE/bin/Tuto_Bilat_Graphe_64.exe
+
+[CBI] -> Tuto_Bilat_Graphe_64 : End ALL!
+
+16:14:56 Build Finished (took 5s.21ms)
+

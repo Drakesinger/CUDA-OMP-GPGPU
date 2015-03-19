@@ -1,0 +1,83 @@
+#include <iostream>
+
+#include "cv.h" // opencv
+#include "highgui.h" // opencv
+using std::cerr;
+using std::cout;
+using std::endl;
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void);
+
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void initGPU(const Mat& matCapture);
+static void workGPU( uchar* ptrImage,int w,int h);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void)
+    {
+    int idCamera = 0;
+    VideoCapture capture(idCamera);
+
+    if (capture.isOpened())
+	{
+	Mat matCapture;
+	capture >> matCapture;
+	initGPU(matCapture);
+	while (true)
+	    {
+	    capture >> matCapture;
+	    workGPU(matCapture);
+	    }
+	}
+    else
+	{
+	cerr << "Camera Capture : failed : camera = " << idCamera << endl;
+	return false;
+	}
+
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void initGPU(const Mat& matCapture)
+    {
+    uchar* ptr = matCapture.data; // use cvtColor to change the colorSpace (HSB,GRAY,...)
+        int n = matCapture.rows;
+        int m = matCapture.cols;
+
+    }
+
+void workGPU( uchar* ptrImage,int w,int h)
+    {
+    uchar* ptr = matCapture.data; // use cvtColor to change the colorSpace (HSB,GRAY,...)
+    int n = matCapture.rows;
+    int m = matCapture.cols;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

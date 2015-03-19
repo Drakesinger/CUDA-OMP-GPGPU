@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Cuda/src/cpp/core/tools/cpp/indiceTools.cu&apos;" deleteContents="false" description="Delete resource &apos;Cuda/src/cpp/core/tools/cpp/indiceTools.cu&apos;" element1="/Cuda/src/cpp/core/tools/cpp/indiceTools.cu" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1298881625828"/>
+</session>

@@ -1,0 +1,55 @@
+20:46:54 **** Build of configuration IntelWin for project BilatToolsMKL ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeIntel.bat" all 
+
+[INTEL]
+
+Intel(R) Parallel Studio XE 2013
+Copyright (C) 1985-2013 Intel Corporation. All rights reserved.
+Intel(R) Composer XE 2013 Update 2 (package 149)
+
+
+==================================================================================
+[CBI]->Target Name	: BilatToolsMKL64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/BilatToolsMKL/bin/BilatToolsMKL64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: INTEL [CXX=icl]
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 20:46:55
+==================================================================================
+
+MKL.cpp
+main.cpp
+StringTools.cpp
+Chronos.cpp
+AleaTools.cpp
+LimitsTools.cpp
+VariateurF.cpp
+VariateurI.cpp
+MathTools.cpp
+
+[CBI]->linking to Q:/bilat/Targets/BilatToolsMKL/bin/BilatToolsMKL64.exe
+
+==================================================================================
+[CBI]->Target Name	: BilatToolsMKL64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/BilatToolsMKL/bin/BilatToolsMKL64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: INTEL [CXX=icl]
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 20:46:59
+==================================================================================
+
+
+[CBI]->Deploying  : ../Deploy/bin/BilatToolsMKL64.exe
+
+[CBI]->Q:/bilat/Targets/BilatToolsMKL/bin/BilatToolsMKL64.exe : End ALL!
+
+20:47:00 Build Finished (took 5s.665ms)
+

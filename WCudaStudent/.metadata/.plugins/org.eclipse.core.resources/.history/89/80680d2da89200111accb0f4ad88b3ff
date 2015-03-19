@@ -1,0 +1,260 @@
+#include <iostream>
+#include <stdlib.h>
+#include "limits.h"
+#include "Device.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern void helloCuda(void);
+extern bool isAddScalarGPU_Ok(void);
+
+extern bool isAddVectorBlockOk_01(int n);
+extern bool isAddVectorThreadOk_02(int n);
+extern bool isAddVectorBlockThreadOk_03(int n);
+extern bool isAddVectorMultiPassageOk_04(int n);
+
+extern void performanceTracerHello(void);
+extern bool isPerformanceTracerRacine2Ok(int n);
+
+extern bool isMathGPU01_Ok(int n);
+
+extern bool isIncrementerVector01_Ok(int n);
+
+extern bool isFillMatrice_Ok(void);
+
+extern bool isDotProd01_Ok(int n);
+extern bool isDotProd02_Ok(int n);
+
+extern bool isHistoSlow01_Ok(int n);
+extern bool isHistoFast02_Ok(int n);
+
+extern bool isIncrementerVectorPinnedMemory_Ok(int n);
+extern bool isBenchmarkPinnedMemory_Ok(int n);
+
+extern bool isHistoTurbo_Ok(int n);
+
+extern int useCublasSGEMM(void);
+extern int useCulaSystemSolve(void);
+extern int useCulaEigenValue(void);
+extern int versionCheckCudaCula(void);
+extern int useBenchmark(void);
+
+extern bool isPiOMPforReduction_Ok(int n);
+
+extern bool isMontecarloPi_partial_Ok(int n);
+extern bool isMontecarloPi_cudaFULL_Ok(int n);
+extern bool isMontecarloPi_multiGPU_Ok(long n);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainCore(int deviceId);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static bool useHello(void);
+static bool useAddVector(void);
+static bool usePerformanceTracer(void);
+static bool useMathGPU(void);
+static bool useIncrementer(void);
+static bool useMatrix(void);
+static bool useDotProd(void);
+static bool useHisto(void);
+static bool usePinnedMemory(void);
+static bool useZeroCopyMemory(void);
+static bool useMonteCarloPI(void);
+
+static bool useOMP(void);
+
+static void useCublas(void);
+static void useCula(void);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainCore(int deviceId)
+    {
+    Device::print(deviceId, "Execute on device : ");
+
+    bool isOk = true;
+    isOk &= useHello();
+    isOk &= useAddVector();
+    isOk &= usePerformanceTracer();
+    isOk &= useMathGPU();
+    isOk &= useIncrementer();
+    isOk &= useMatrix();
+    isOk &= useDotProd();
+    isOk &= useHisto();
+    isOk &= usePinnedMemory();
+    isOk &= useZeroCopyMemory();
+    isOk &= useOMP();
+
+    cout << "\nisOK = " << isOk << endl;
+
+    useCublas();
+    useCula();
+
+    cout << "\nEnd : mainCore" << endl;
+
+    return isOk ? EXIT_SUCCESS : EXIT_FAILURE;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+bool useHello(void)
+    {
+    helloCuda();
+    return isAddScalarGPU_Ok();
+    }
+
+bool useAddVector(void)
+    {
+    int n = 512;
+
+    bool isOk = true;
+    isOk &= isAddVectorBlockOk_01(n);
+    isOk &= isAddVectorThreadOk_02(n);
+    isOk &= isAddVectorBlockThreadOk_03(n);
+    isOk &= isAddVectorMultiPassageOk_04(n);
+
+    return isOk;
+    }
+
+bool usePerformanceTracer(void)
+    {
+    // launch timed out : about 2000 (ms)
+    // max : nvs140m : n=45
+    // max : gtx295  : n=1100
+    // max : quadrofx4600 : n=350
+
+    int n = 1000;
+
+    performanceTracerHello();
+    return isPerformanceTracerRacine2Ok(n);
+    }
+
+bool useMathGPU()
+    {
+    int n = INT_MAX / 1000; // pas plus grand!
+
+    return isMathGPU01_Ok(n);
+    }
+
+bool useIncrementer(void)
+    {
+    int n = INT_MAX / 100;
+
+    return isIncrementerVector01_Ok(n);
+    }
+
+bool useMatrix(void)
+    {
+    return isFillMatrice_Ok();
+    }
+
+bool useDotProd(void)
+    {
+    int n = 100;
+
+    bool isOk = true;
+    isOk &= isDotProd01_Ok(n);
+    isOk &= isDotProd02_Ok(n);
+
+    return isOk;
+    }
+
+bool useHisto(void)
+    {
+    int n = INT_MAX / 100;
+
+    bool isOk = true;
+    isOk &= isHistoSlow01_Ok(n);
+    isOk &= isHistoFast02_Ok(n);
+
+    return isOk;
+    }
+
+bool usePinnedMemory(void)
+    {
+    int n = INT_MAX / 100;
+
+    bool isOk = true;
+    isOk &= isIncrementerVectorPinnedMemory_Ok(n);
+    isOk &= isBenchmarkPinnedMemory_Ok(n);
+
+    return isOk;
+    }
+
+bool useZeroCopyMemory(void)
+    {
+    int n = INT_MAX / 100;
+
+    bool isOk = true;
+    isOk &= isHistoTurbo_Ok(n);
+
+    return isOk;
+    }
+
+void useCublas(void)
+    {
+    cout << "\nCublas : " << endl;
+    useCublasSGEMM(); //linux ko
+    }
+
+void useCula(void)
+    {
+    cout << "\nCula : " << endl;
+
+    versionCheckCudaCula();
+    useCulaSystemSolve(); // win ok, linux ok
+    useCulaEigenValue(); //linux ok
+    useBenchmark(); //  linux ok
+    }
+
+bool useOMP(void)
+    {
+    int n = INT_MAX - 1;
+
+    return isPiOMPforReduction_Ok(n);
+    }
+
+bool useMonteCarloPI(void)
+    {
+#ifdef _WIN32
+    long n=INT_MAX; // sous windows INT=LONG
+#else
+    long n = 2 * (LONG_MAX / 100000000);
+#endif
+
+    bool isOk = true;
+    isOk &= isMontecarloPi_partial_Ok(INT_MAX / 50);
+    isOk &= isMontecarloPi_cudaFULL_Ok(INT_MAX / 50);
+
+    isOk &= isMontecarloPi_multiGPU_Ok(n);
+
+    return isOk;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

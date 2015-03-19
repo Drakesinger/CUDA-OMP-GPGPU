@@ -1,0 +1,96 @@
+#include "ImageCircuit.h"
+#include "WorkGPU.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ImageCircuit::ImageCircuit(int cameraId) :
+	imageCapture(cameraId), imageViewer("Camera : circuit cpu-gpu-cpu")
+    {
+    isRunning = false;
+    }
+
+ImageCircuit::ImageCircuit(const string& videoName) :
+	imageCapture(videoName), imageViewer("Vide0 : circuit cpu-gpu-cpu")
+    {
+    isRunning = false;
+    }
+
+ImageCircuit::~ImageCircuit(void)
+    {
+    //rien
+    }
+
+bool ImageCircuit::start(void)
+    {
+    if (imageCapture.isOpened())
+	{
+	if (!isRunning)
+	    {
+	    isRunning = true;
+
+	    while (isRunning)
+		{
+		Mat matCapture = imageCapture.capture();
+		uchar4* ptrImage = ImageCapture::castToUChar4(&matCapture);
+
+		workGPU(ptrImage);
+
+		imageViewer.show(&matCapture);
+		cout << "fps=" << imageViewer.fps() << endl;
+
+		isRunning = !imageCapture.isStopAsked();
+		}
+
+	    }
+	return true;
+	}
+    else
+	{
+	cerr << " Capture : failed " << endl;
+	return false;
+	}
+
+    }
+
+void ImageCircuit::stop(void)
+    {
+    isRunning = false;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void ImageCircuit:: workGPU(uchar4* ptrImage)
+    {
+    cout << " work GPU " << endl;
+    WorkGPU workGPU(ptrImage,w,h);
+    workGPU.run();
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

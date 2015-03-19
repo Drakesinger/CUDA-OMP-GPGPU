@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;CalibreurCudas.h&apos; to &apos;INC&apos;" description="Move &apos;CalibreurCudas.h&apos; to &apos;INC&apos;" destination="INC" element1="/API_Bilat_Image_Cuda/INC/bilatCudaTools/CalibreurCudas.h" element2="/API_Bilat_Image_Cuda/INC/bilatCudaTools/ColorToolCuda.h" element3="/API_Bilat_Image_Cuda/INC/bilatCudaTools/Indice1D.h" element4="/API_Bilat_Image_Cuda/INC/bilatCudaTools/Indice2D.h" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="4" stamp="1391348769965" updateReferences="true"/>
+</session>

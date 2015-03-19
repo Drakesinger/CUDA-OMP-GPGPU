@@ -1,0 +1,67 @@
+11:18:11 **** Build of configuration Visual for project OMP ****
+makeVisual.bat all 
+
+[VISUAL] : all  
+
+==================================================================================
+[CBI] -> Target Name  : OMP64
+[CBI] ->
+[CBI] -> Build     	  : Q:/bilat/Targets/OMP
+[CBI] -> Deploy       : ../DEPLOY/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_CppTest/INC
+[CBI] ->              : ../API_CppTest/LIB_STATIC/visual
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_OMP/src/core
+[CBI] ->              : ../BilatUtil_CPP/src/core
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /nologo
+[CBI] ->              : /openmp
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+
+[CBI] -> Create folder : Q:/bilat/Targets/OMP/bin
+[CBI] -> Create folder : Q:/bilat/Targets/OMP/obj
+
+main.cpp
+mainCore.cpp
+01_helloOMP.cpp
+00_pi_tools.cpp
+05_pi_for_atomic.cpp
+06_pi_for_critical.cpp
+04_pi_entrelacer_atomic.cpp
+02_pi_entrelacer_promotionTab.cpp
+01_pi_sequentiel.cpp
+03_pi_entrelacer_critique.cpp
+07_pi_for_promotionTab.cpp
+08_pi_for_reduction.cpp
+03_dotProd_entrelacer_critique.cpp
+07_dotProd_for_promotionTab.cpp
+06_dotProd_for_atomique.cpp
+08_dotProd_for_reduction.cpp
+01_dotProd_sequential.cpp
+00_dotProd_tools.cpp
+05_dotProd_for_critical.cpp
+Command canceled
+
+11:18:21 Build Cancelled (took 9s.790ms)
+

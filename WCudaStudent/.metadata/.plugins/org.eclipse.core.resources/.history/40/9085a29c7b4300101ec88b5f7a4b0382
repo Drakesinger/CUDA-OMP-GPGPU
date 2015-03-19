@@ -1,0 +1,208 @@
+#include <iostream>
+#include <assert.h>
+#include "indiceTools.h"
+#include "cudaTools.h"
+#include "mathTools.h"
+#include "deviceTools.h"
+#include "alea.h"
+#include "vectorTools.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isHistoSlow01_Ok(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ static void histogrammeGPU(unsigned char* ptrTabData, long n, unsigned int* ptrTabFrequence);
+
+static void histogramme(unsigned char* tabData, long n, unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock);
+static void fillRandom(unsigned char* tabData, long n);
+static bool isHistoOk(unsigned char* tabData, long n, unsigned int* tabFrequenceGPU);
+static void histogrammeCPU(unsigned char* tabData, long n, unsigned int* tabFrequence);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isHistoSlow01_Ok(void)
+    {
+    cout << endl << "[Histogramme 01 : operation atomique : lent]" << endl;
+
+    // quadro 140m : 20
+    long n = 20* 1024 * 1024;
+    long gridDimX = getMultiprocessorCount() * 2; // Souvent bon pour performance!
+    long blockDimX=256;
+    assert(gridDimX*blockDimX>=256); // tid sera use pour init tabFrequenceGPU de taille 256
+
+    dim3 blockPerGrid(gridDimX, 1, 1);
+    dim3 threadPerBlock(blockDimX, 1, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    assertDimLegal(blockPerGrid, threadPerBlock);
+    cout<<"n="<<n<<endl;
+
+    unsigned char* tabData = new unsigned char[n];
+    unsigned int* tabFrequence = new unsigned int[256];
+
+    fillRandom(tabData, n);
+
+    histogramme(tabData, n, tabFrequence, blockPerGrid, threadPerBlock);
+
+    bool isOk = isHistoOk(tabData, n, tabFrequence);
+
+    delete[] tabData;
+    delete[] tabFrequence;
+
+    return isOk;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/**
+ * Observation : ce code GPU est plus lent qu'un code CPU
+ * Raison      : Trop de thread sont en concurence pour l'incrementation atomique de tabFrequence.
+ * 		 En fait, touts les threads de touts les blocks sont en concurence
+ * Optimisation: Mettre un tabFrequenceBlock en memoire shared. Ainsi seul les threads du blocks sont en concurence!
+ * 		 Reduire touts les tabFrequenceBlock dans tabFrequence en memoireGlobale
+ * 		 See 02_histogrammeFast.cu
+ */
+void histogramme(unsigned char* tabData, long n,unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock)
+    {
+    unsigned char* ptrDev_data = NULL;
+    unsigned int* ptrDev_frequence = NULL;
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_data, n * sizeof(unsigned char)));
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_frequence, 256 * sizeof(unsigned int)));
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev_data, tabData, n * sizeof(unsigned char), cudaMemcpyHostToDevice));
+
+    histogrammeGPU<<<blockPerGrid,threadPerBlock>>>(ptrDev_data,n,ptrDev_frequence);
+
+    HANDLE_ERROR(cudaMemcpy(tabFrequence, ptrDev_frequence, 256 * sizeof(unsigned int), cudaMemcpyDeviceToHost));
+
+    HANDLE_ERROR(cudaFree(ptrDev_frequence));
+    HANDLE_ERROR(cudaFree(ptrDev_data));
+    }
+
+/**
+ * char : 1 Octet
+ * unsigned char in [0,255]
+ * tabData contient des valeurs dans [0,255]
+ * tabFrequence est de taille 256
+ *
+ * hyp: nbThreadCuda>=256
+ */
+__global__ void histogrammeGPU(unsigned char* tabData, long n, unsigned int* tabFrequence)
+    {
+    // version indirecte
+    //long tid=tid0();
+    //long nbThreadCuda=nbThreadTotalCuda();
+    // version directe
+    long tid = threadIdx.x + (blockDim.x * blockIdx.x);
+    long nbThreadCuda = (gridDim.x * blockDim.x);
+
+    if (tid<256)
+	{
+	tabFrequence[tid]=0; // TODO: necessaire?
+	}
+    __syncthreads(); // pas dans if
+
+    // Les threadCuda tid explore
+    while (tid < n)
+	{
+	// Naif:
+	// 	tabFrequence[tabData[tid]]++;
+	// Cette aproche naive n'est pas thread safe. En effet, une opération d'incrementation comme
+	//	i++ (ie i=1+1)
+	// requiert 3 étapes:
+	//	(E1) Read value i
+	//	(E2) Add 1 to this value
+	// 	(E3) Store back the result in i
+	// Il s'agit d'un cycle
+	//	read-modify-write
+	// qui peut donner un résultat erroner si i++ est appelé par 2 threds en meme temps.
+	// Exemple Scenarion catastrophe:
+	//	Si deux threads A et B apellent i++, il n'est pas guarantit que le cycle read-modify-write soit
+	//	effectué complètement sur i par le threadA, puis complètement sur i par le threadB.
+	//	La probabilite que le cycle readA-modifyA-writeA opéré par le threadA soit entremeler
+	//	par le cycle readB-modifyB-writeB du threadB est grande.Comme i est partager par les 2 thread A et B,
+	//	le résultat final est alors erroné! Here a example where two thread increment i with interleaved operation.
+	//	i start with value 7
+	//		Steps					Consequences
+	//		-----					------------
+	//		Thread A read i				iA=7 (local value of i in stack of thread A)
+	//		Threas B read i				iB=7 (local value of i in stack of thread B)
+	//		Thread A modify iA			iA=8
+	//		Thread A store iA in i			i=8
+	//		Thread B modify iB			iB=8
+	//		Thread B store iB in i			i=8
+	//	Finaly i=8,but the true value should be 9 !!
+	//
+	// Solution	: void atomicAdd(ptr,y)
+	// Propriete    : Generate an atomic sequence of operations that
+	//			(1) Read the value at adress design by ptr
+	//			(2) Add y to this value
+	//			(3) Store the result back to the memory adress ptr
+	//		  The hardware guarantees us that no other thread can read or write the value at adress ptr
+	//		  while we perform the tree operation read-add-store
+
+	atomicAdd(&tabFrequence[tabData[tid]], (unsigned int) 1);
+	tid += nbThreadCuda;
+	}
+    }
+
+void fillRandom(unsigned char* ptrTabData, long n)
+    {
+    for (long i = 1; i <= n; i++)
+	{
+	*ptrTabData++ = uniformeAB((long) 0, (long) 255);
+	}
+    }
+
+bool isHistoOk(unsigned char* tabData, long n, unsigned int* tabFrequenceGPU)
+    {
+    unsigned int* tabFrequenceCPU = new unsigned int[256];
+
+    histogrammeCPU(tabData, n, tabFrequenceCPU);
+
+    bool isOk = isEgale(tabFrequenceCPU, tabFrequenceGPU, 256);
+
+//    print(tabFrequenceCPU,256,"HistoCPU");
+//    print(tabFrequenceGPU,256,"HistoGPU");
+
+    delete[] tabFrequenceCPU;
+
+    return isOk;
+    }
+
+void histogrammeCPU(unsigned char* tabData, long n, unsigned int* tabFrequence)
+    {
+    init(tabFrequence,256,0);
+
+    for (long i = 1; i <= n; i++)
+	{
+	tabFrequence[tabData[i - 1]]++; // tabData in [0,255]
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

@@ -1,0 +1,98 @@
+13:07:41 **** Build of configuration CudaVisual for project 06_Arrow_HelloWorld_Use ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Fri_Mar_14_19:30:01_PDT_2014
+Cuda compilation tools, release 6.0, V6.0.1
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Use_64
+[CBI] ->
+[CBI] -> Build        : Q:/bilat/Targets/Arrow_HelloWorld_Use
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../01_Arrow_HelloWorld_Specification/src
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Use/bin
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Use/obj
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Use/cubin
+
+main.obj
+main.cpp
+Acteur.obj
+Acteur.cpp
+Pipeline1.cu
+
+[CBI] -> Linking to   : Q:/bilat/Targets/Arrow_HelloWorld_Use/bin/Arrow_HelloWorld_Use_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lArrow_HelloWorld_ARM_64
+[CBI] ->              : -lArrow_HelloWorld_Bouchon_64
+[CBI] ->              : -lArrow_HelloWorld_FPGA_64
+[CBI] ->              : -lArrow_HelloWorld_GPU_64
+
+nvcc : warning : The 'compute_10' and 'sm_10' architectures are deprecated, and may be removed in a future release.
+   Creating library Q:/bilat/Targets/Arrow_HelloWorld_Use/bin/Arrow_HelloWorld_Use_64.lib and object Q:/bilat/Targets/Arrow_HelloWorld_Use/bin/Arrow_HelloWorld_Use_64.exp
+main.obj
+Acteur.obj
+Pipeline1.obj
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Use_64
+[CBI] -> Location     : Q:/bilat/Targets/Arrow_HelloWorld_Use/bin/Arrow_HelloWorld_Use_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 	      : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 13:07:56
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Arrow_HelloWorld_Use_64.exe
+
+[CBI] -> Arrow_HelloWorld_Use_64   : End ALL!
+
+13:07:58 Build Finished (took 16s.448ms)
+

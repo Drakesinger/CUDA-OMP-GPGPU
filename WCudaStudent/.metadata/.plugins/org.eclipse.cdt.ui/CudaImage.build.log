@@ -1,0 +1,87 @@
+23:14:14 **** Build of configuration CudaWin for project CudaImage ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeCudaVisual.bat" all 
+
+[CUDA VISUAL]
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI]->Target Name	: CudaImage64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/CudaImage/bin/CudaImage64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: VISUAL && nvcc
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 23:14:17
+==================================================================================
+
+[CBI]->compiling .cpp : src/cpp/main.cpp
+[CBI]->compiling .cpp : src/cpp/core/mainCore.cpp
+[CBI]->compiling .cpp : src/cpp/core/01_rippling/ripplingFreeGL.cpp
+[CBI]->compiling .cpp : src/cpp/core/01_rippling/01_imageAPI/RipplingImageMOO.cpp
+[CBI]->compiling .cpp : src/cpp/core/02_ripplingObjet/rippling2Sec.cpp
+[CBI]->compiling .cpp : src/cpp/core/02_ripplingObjet/01_imageAPI/Rippling2ImageMOO.cpp
+[CBI]->compiling .cpp : src/cpp/core/02_ripplingObjet/02_cuda/Rippling2.cpp
+[CBI]->compiling .cpp : src/cpp/core/03_mandelbrot/01_imageAPI/MandelbrotImageMOO.cpp
+[CBI]->compiling .cpp : src/cpp/core/04_raytracing/01_imageAPI/RaytracingImageMOO.cpp
+[CBI]->compiling .cpp : src/cpp/core/04_raytracing/02_cuda/Raytracing.cpp
+[CBI]->compiling .cpp : src/cpp/core/06_convolution/01_imageAPI/ConvolutionImageMOO.cpp
+[CBI]->compiling .cpp : src/cpp/core/06_convolution/02_cuda/Convolution.cpp
+[CBI]->compiling .cpp : ../BilatToolsCPP/src/core/tools/cpp/StringTools.cpp
+[CBI]->compiling .cpp : ../BilatToolsCPP/src/core/tools/cpp/Chronos.cpp
+[CBI]->compiling .cpp : ../BilatToolsCPP/src/core/tools/cpp/AleaTools.cpp
+[CBI]->compiling .cpp : ../BilatToolsCPP/src/core/tools/cpp/LimitsTools.cpp
+[CBI]->compiling .cpp : ../BilatToolsCPP/src/core/tools/cpp/VariateurF.cpp
+[CBI]->compiling .cpp : ../BilatToolsCPP/src/core/tools/cpp/VariateurI.cpp
+[CBI]->compiling .cpp : ../BilatToolsCPP/src/core/tools/cpp/MathTools.cpp
+[CBI]->compiling .cpp : ../BilatToolsCuda/src/core/cudatools/cpp/cudaTools.cpp
+[CBI]->compiling .cpp : ../BilatToolsCuda/src/core/cudatools/cpp/Device.cpp
+[CBI]->compiling .cpp : ../BilatToolsOpenCV/src/core/capture/cpp/Capture_A.cpp
+[CBI]->compiling .cpp : ../BilatToolsOpenCV/src/core/capture/cpp/CaptureVideo.cpp
+[CBI]->compiling .cpp : ../BilatToolsOpenCV/src/core/capture/cpp/CaptureCamera.cpp
+[CBI]->compiling .cpp : ../BilatToolsOpenCV/src/core/tuto/tuto.cpp
+[CBI]->compiling .cpp : ../BilatToolsOpenCV/src/core/viewer/image/ImageViever.cpp
+[CBI]->compiling .cpp : ../BilatToolsOpenCV/src/core/viewer/sequence/SequenceViever.cpp
+[CBI]->compiling .cu : src/cpp/core/01_rippling/02_cuda/rippling.cu
+src/cpp/core/01_rippling/02_cuda/rippling.cu(92): warning: function "kernelRipplingV3" was declared but never referenced
+
+src/cpp/core/01_rippling/02_cuda/rippling.cu(92): warning: function "kernelRipplingV3" was declared but never referenced
+
+[CBI]->compiling .cu : src/cpp/core/02_ripplingObjet/02_cuda/ripplingHost.cu
+[CBI]->compiling .cu : src/cpp/core/02_ripplingObjet/02_cuda/ripplingDevice.cu
+[CBI]->compiling .cu : src/cpp/core/03_mandelbrot/02_cuda/mandelbrot.cu
+[CBI]->compiling .cu : src/cpp/core/04_raytracing/02_cuda/raytracingHost.cu
+[CBI]->compiling .cu : src/cpp/core/04_raytracing/02_cuda/raytracingDevice.cu
+[CBI]->compiling .cu : src/cpp/core/06_convolution/02_cuda/convolutionHost.cu
+
+[CBI]->linking to Q:/bilat/Targets/CudaImage/bin/CudaImage64.exe
+
+==================================================================================
+[CBI]->Target Name	: CudaImage64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/CudaImage/bin/CudaImage64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: VISUAL && nvcc
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 23:15:31
+==================================================================================
+
+
+[CBI]->Deploying  : CudaImage64.exe
+
+[CBI]->Cleaning : Cuda temp files, excepted .cubin for JCuda
+
+
+
+23:15:33 Build Finished (took 1m:18s.128ms)
+

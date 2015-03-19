@@ -1,0 +1,114 @@
+15:28:16 **** Build of configuration CudaVisual for project Tuto_Canvas_Cuda_Linux_JNI ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2014 NVIDIA Corporation
+Built on Fri_Jul_25_06:28:08_CDT_2014
+Cuda compilation tools, release 6.5, V6.5.13
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Canvas_JNI_64
+[CBI] ->
+[CBI] -> Build        : Q:/cedric.bilat/Targets/Tuto_Canvas_JNI/bin/Tuto_Canvas_JNI_64.dll
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : SHARED_LIB
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : C:/Soft/java64/jdk/lib
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_Canvas_JNI/INC
+[CBI] ->              : ../API_Bilat_Canvas_JNI/LIB/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : -DCBI_DISPLAYABLE_DLL
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+[CBI] ->              : arch=compute_50,code=sm_50
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -shared
+
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Tuto_Canvas_JNI/bin
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Tuto_Canvas_JNI/obj
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Tuto_Canvas_JNI/cubin
+
+helloworld_jni.obj
+helloworld_jni.cpp
+helloworld.obj
+helloworld.cpp
+HelloWorldScenario.obj
+HelloWorldScenario.cpp
+HelloWorldGL.obj
+HelloWorldGL.cpp
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/Tuto_Canvas_JNI/bin/Tuto_Canvas_JNI_64.dll
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lBilat_Canvas_JNI_001_64
+[CBI] ->              : -lBilat_Displayable_004_64
+[CBI] ->              : -lOpenCL
+[CBI] ->              : -lcublas
+[CBI] ->              : -lcuda
+[CBI] ->              : -lcudadevrt
+[CBI] ->              : -lcudart
+[CBI] ->              : -lcudart_static
+[CBI] ->              : -lcufft
+[CBI] ->              : -lcufftw
+[CBI] ->              : -lcurand
+[CBI] ->              : -lcusparse
+[CBI] ->              : -lgdi32
+[CBI] ->              : -lglew64
+[CBI] ->              : -lglu32
+[CBI] ->              : -ljawt
+[CBI] ->              : -ljvm
+[CBI] ->              : -lkernel32
+[CBI] ->              : -lnppc
+[CBI] ->              : -lnppi
+[CBI] ->              : -lnpps
+[CBI] ->              : -lnvblas
+[CBI] ->              : -lnvcuvid
+[CBI] ->              : -lopengl32
+[CBI] ->              : -luser32
+
+The command line is too long.
+helloworld_jni.obj
+helloworld.obj
+HelloWorldScenario.obj
+HelloWorldGL.obj
+../BUILDER/makefile/private/cuda/makeCudaVisual.mk:335: recipe for target `Q:/cedric.bilat/Targets/Tuto_Canvas_JNI/bin/Tuto_Canvas_JNI_64.dll' failed
+make: *** [Q:/cedric.bilat/Targets/Tuto_Canvas_JNI/bin/Tuto_Canvas_JNI_64.dll] Error 1
+
+15:28:24 Build Finished (took 8s.177ms)
+

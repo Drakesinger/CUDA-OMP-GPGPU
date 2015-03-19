@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BilatTools_Cuda/src/core/cudatools/header/device/Indice_GPU.h&apos; to &apos;IndiceTools_GPU.h&apos;" description="Rename resource &apos;Indice_GPU.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/cudatools/header/device/Indice_GPU.h" name="IndiceTools_GPU.h" stamp="1406533469315" updateReferences="true"/>
+</session>

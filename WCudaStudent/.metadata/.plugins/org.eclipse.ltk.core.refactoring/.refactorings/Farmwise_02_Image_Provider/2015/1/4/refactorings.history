@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Farmwise_02_Image_Provider/src/cpp/hearc&apos; to &apos;imageprovider&apos;" description="Rename resource &apos;hearc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/hearc" name="imageprovider" stamp="1422010083915" updateReferences="true"/>
+</session>

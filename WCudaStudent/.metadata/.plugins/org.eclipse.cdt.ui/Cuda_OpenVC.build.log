@@ -1,0 +1,28 @@
+13:16:52 **** Incremental Build of configuration CudaWin for project Cuda_OpenVC ****
+make -f cudaWin.mk all 
+
+==================================================================================
+[CBI]->Target Name	: TutoCudaOpenCV64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Src_aux 		: ../PRODUCTION/commonExt/include ../PRODUCTION/commonExt/windows C:/Soft/OpenCV/include/opencv C:/Soft/OpenCV/build/include C:/Soft/OpenCV/build/x64/vc10/lib ../BilatToolsCPP/src/core ../BilatToolsCuda/src/core
+[CBI]->Location 	: target/bin/TutoCudaOpenCV64.exe
+[CBI]->Deploy 		: ../PRODUCTION/Deploy/bin
+[CBI]->Compilateur 	: VISUAL && nvcc
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 13:16:53
+==================================================================================
+
+main.cpp
+videoCaptureTools.cpp
+useTuto.cpp
+ImageCircuit.cpp
+src/cpp/core/02_demo/01_constant/ImageCircuit.cpp(67) : error C2039: 'isStopAsked' : is not a member of 'ImageCapture'
+        src/cpp/core/02_demo/tools/openCV\ImageCapture.h(35) : see declaration of 'ImageCapture'
+../PRODUCTION/MANAGER/makefile/private/makeFileCudaWin.mk:226: recipe for target `target/obj/ImageCircuit.obj' failed
+make: *** [target/obj/ImageCircuit.obj] Error 2
+
+13:17:01 Build Finished (took 9s.532ms)
+

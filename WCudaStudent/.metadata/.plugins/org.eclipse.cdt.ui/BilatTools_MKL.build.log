@@ -1,0 +1,83 @@
+17:15:17 **** Build of configuration IntelWin for project BilatTools_MKL ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeIntel.bat" all 
+
+[INTEL] : all  
+
+Intel(R) Parallel Studio XE 2013
+Copyright (C) 1985-2013 Intel Corporation. All rights reserved.
+Intel(R) Composer XE 2013 Update 2 (package 149)
+
+==================================================================================
+[CBI]->Target Name	 : BilatTools_MKL64
+[CBI]
+[CBI]->Build     	 : Q:/bilat/Targets/BilatTools_MKL
+[CBI]->Deploy        : ../Deploy/bin
+[CBI]
+[CBI]->Type	 		 : EXE
+[CBI]->Arch	 		 : 64
+[CBI]->OS	 		 : Win
+[CBI]->User	 		 : bilat
+[CBI]
+[CBI]->Task			 : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (-r) :
+[CBI] ->              : ../BilatTools_CPP/src/core
+
+[CBI] -> CXXFLAGS     :
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /O3
+[CBI] ->              : /Qmkl
+[CBI] ->              : /Qopenmp
+[CBI] ->              : /Qpar-threshold100
+[CBI] ->              : /Qparallel
+[CBI] ->              : /QxSSSE3
+[CBI] ->              : /fast
+[CBI] ->              : /nologo
+[CBI] ->              : /w
+
+[CBI] -> LDFLAGS      :
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+
+[CBI]->Create folder  : Q:/bilat/Targets/BilatTools_MKL/bin
+[CBI]->Create folder  : Q:/bilat/Targets/BilatTools_MKL/obj
+
+MKL.cpp
+main.cpp
+StringTools.cpp
+Chronos.cpp
+AleaTools.cpp
+LimitsTools.cpp
+VariateurF.cpp
+VariateurI.cpp
+MathTools.cpp
+
+[CBI] ->Linking to    : Q:/bilat/Targets/BilatTools_MKL/bin/BilatTools_MKL64.exe
+
+[CBI] ->Library Link  :
+
+==================================================================================
+[CBI]->Target Name	: BilatTools_MKL64
+[CBI]->Location 	: Q:/bilat/Targets/BilatTools_MKL/bin/BilatTools_MKL64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]
+[CBI]->Compilateur 	: INTEL
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 17:15:22
+==================================================================================
+
+
+[CBI]->Deploying      : ../Deploy/bin/BilatTools_MKL64.exe
+
+[CBI]->Q:/bilat/Targets/BilatTools_MKL/bin/BilatTools_MKL64.exe : End ALL!
+
+17:15:23 Build Finished (took 6s.634ms)
+

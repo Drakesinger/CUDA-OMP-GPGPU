@@ -1,0 +1,79 @@
+#include <iostream>
+#include <stdlib.h>
+#include "limits.h"
+#include "Device.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern int useCulaSystemSolve(void);
+extern int useCulaEigenValue(void);
+extern int versionCheckCudaCula(void);
+extern int useBenchmark(void);
+
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainCore(int deviceId);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+
+static bool useCula(void);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainCore(int deviceId)
+    {
+    Device::print(deviceId, "Execute on device : ");
+
+    bool isOk = true;
+
+    isOk &= useCula();
+
+    cout << "\nisOK = " << isOk << endl;
+    cout << "\nEnd : mainCore" << endl;
+
+    return isOk ? EXIT_SUCCESS : EXIT_FAILURE;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+
+bool useCula(void)
+    {
+    cout << "\nCula : " << endl;
+
+    versionCheckCudaCula();
+    useCulaSystemSolve(); // win ok, linux ok
+    useCulaEigenValue(); //linux ok
+    useBenchmark(); //  linux ok
+
+    return true;
+    }
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

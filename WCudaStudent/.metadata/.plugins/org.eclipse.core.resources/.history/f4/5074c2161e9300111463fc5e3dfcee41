@@ -1,0 +1,174 @@
+#include <iostream>
+#include "cudaTools.h"
+#include "Device.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isBenchmarkPinnedMemory_Ok(int n);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static double gigaSeconde(double miliSeconde, int n);
+static void benchmark(int n, bool isPinnedMemory);
+static void transfertDataGPU(int n, bool isPinnedMemory, float& timeHostToDeviceMS, float& timeDeviceToHostMS);
+static void deviceToHost(int n, bool isPinnedMemory, float& timeDeviceToHostMS, int*& ptrV, int*& ptrDev_v);
+static void hostToDevice(int n, bool isPinnedMemory, float& timeHostToDeviceMS, int*& ptrV, int*& ptrDev_v);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isBenchmarkPinnedMemory_Ok(int n) // n = 10 * 1024 * 1024;
+    {
+    cout << endl << "[Benchmark : Pageable Memory versus Pinned Memory]" << endl;
+    cout<<"n="<<n<<endl;
+
+    benchmark(n, false);
+    benchmark(n, true);
+
+    return true;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void benchmark(int n, bool isPinnedMemory)
+    {
+    int nbExperience = 100;
+
+    double sumTimeHostToDevice = 0;
+    double sumTimeDeviceToHost = 0;
+    for (int i = 1; i <= nbExperience; i++)
+	{
+	float timeHostToDevice;
+	float timeDeviceToHost;
+
+	transfertDataGPU(n, isPinnedMemory, timeHostToDevice, timeDeviceToHost);
+
+	sumTimeHostToDevice += timeHostToDevice;
+	sumTimeDeviceToHost += timeDeviceToHost;
+	}
+
+    double moyenneHostToDevice = sumTimeHostToDevice / nbExperience;
+    double moyenneDeviceToHost = sumTimeDeviceToHost / nbExperience;
+
+    double hostToDeviceDebitGS = gigaSeconde(moyenneHostToDevice, n);
+    double deviceToHostDebitGS = gigaSeconde(moyenneDeviceToHost, n);
+
+    cout << "isPinnedMemory      = " << isPinnedMemory << endl;
+    cout << "nbExperience        = " << nbExperience << endl;
+    cout << "moyenneHostToDevice = " << moyenneHostToDevice << " (ms)" << endl;
+    cout << "moyenneDeviceToHost = " << moyenneDeviceToHost << " (ms)" << endl;
+    cout << "hostToDeviceDebit   = " << hostToDeviceDebitGS << " (GB/s)" << endl;
+    cout << "deviceToHostDebit   = " << deviceToHostDebitGS << " (GB/s)" << endl;
+    }
+
+double gigaSeconde(double miliSeconde, int n)
+    {
+    int nbOctet = n * sizeof(int);
+
+    double octetMS = nbOctet / miliSeconde; // octet par miliseconde
+    double octetS = octetMS * 1000; // octet par seconde
+    double gigaS = octetS / 1024 / 1024 / 1024; // giga par seconde
+
+    return gigaS;
+    }
+
+void transfertDataGPU(int n, bool isPinnedMemory, float& timeHostToDeviceMS, float& timeDeviceToHostMS)
+    {
+    int* ptrV = NULL;
+    int* ptrDev_v = NULL;
+
+    // HostTodevice
+	{
+	hostToDevice(n, isPinnedMemory, timeHostToDeviceMS, ptrV, ptrDev_v);
+	//cout << "timeHostToDeviceMS = " << timeHostToDeviceMS << " (ms)" << endl;
+	}
+
+    // Aucun appel de kernel (pas necessaire ici)
+
+    // DeviceToHost
+	{
+	deviceToHost(n, isPinnedMemory, timeDeviceToHostMS, ptrV, ptrDev_v);
+	//cout << "timeDeviceToHostMS = " << timeDeviceToHostMS << " (ms)" << endl;
+	}
+    }
+
+void hostToDevice(int n, bool isPinnedMemory, float& timeHostToDeviceMS, int*& ptrV, int*& ptrDev_v)
+    {
+    cudaEvent_t start;
+    cudaEvent_t stop;
+
+    if (isPinnedMemory)
+	{
+	HANDLE_ERROR(cudaHostAlloc((void**) &ptrV, n * sizeof(int), cudaHostAllocDefault )); // cudaHostAllocWriteCombined ne permet pas gagner,pire on perd sou linux why?
+	}
+    else
+	{
+	ptrV = new int[n];
+	}
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_v, n * sizeof(int)));
+
+    HANDLE_ERROR(cudaEventCreate(&start));
+    HANDLE_ERROR(cudaEventCreate(&stop));
+    HANDLE_ERROR(cudaEventRecord(start, 0)); // 0 = idStream not explain here
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev_v, ptrV, n * sizeof(int), cudaMemcpyHostToDevice));
+
+    HANDLE_ERROR(cudaEventRecord(stop, 0)); // 0 = idStream not explain here
+    HANDLE_ERROR(cudaEventSynchronize(stop)); // wait the end of kernel, explicit barrier
+    HANDLE_ERROR(cudaEventElapsedTime(&timeHostToDeviceMS, start, stop));
+    HANDLE_ERROR(cudaEventDestroy(start));
+    HANDLE_ERROR(cudaEventDestroy(stop));
+    }
+
+void deviceToHost(int n, bool isPinnedMemory, float& timeDeviceToHostMS, int*& ptrV, int*& ptrDev_v)
+    {
+    cudaEvent_t start;
+    cudaEvent_t stop;
+
+    HANDLE_ERROR(cudaEventCreate(&start));
+    HANDLE_ERROR(cudaEventCreate(&stop));
+    HANDLE_ERROR(cudaEventRecord(start, 0)); // 0 = idStream not explain here
+
+    HANDLE_ERROR(cudaMemcpy(ptrV, ptrDev_v, n * sizeof(int), cudaMemcpyDeviceToHost));
+
+    HANDLE_ERROR(cudaEventRecord(stop, 0)); // 0 = idStream not explain here
+    HANDLE_ERROR(cudaEventSynchronize(stop)); // wait the end of kernel, explicit barrier
+    HANDLE_ERROR(cudaEventElapsedTime(&timeDeviceToHostMS, start, stop));
+    HANDLE_ERROR(cudaEventDestroy(start));
+    HANDLE_ERROR(cudaEventDestroy(stop));
+
+    HANDLE_ERROR(cudaFree(ptrDev_v));
+
+    if (isPinnedMemory)
+	{
+	HANDLE_ERROR(cudaFreeHost(ptrV));
+	}
+    else
+	{
+	delete[] ptrV;
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

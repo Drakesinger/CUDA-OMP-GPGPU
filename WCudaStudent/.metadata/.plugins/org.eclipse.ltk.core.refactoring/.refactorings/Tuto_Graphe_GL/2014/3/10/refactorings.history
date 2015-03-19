@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tuto_Graphe_X11/src/cpp/maincore.cpp&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;maincore.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/maincore.cpp" name="main.cpp" stamp="1393873170994" updateReferences="true"/>
+</session>

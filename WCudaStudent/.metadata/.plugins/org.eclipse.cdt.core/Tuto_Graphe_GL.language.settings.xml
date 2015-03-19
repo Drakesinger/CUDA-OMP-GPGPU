@@ -1,0 +1,1859 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="0.1224825506.1762710791.2082236498.843576231.703779183" name="MinGW">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="org.eclipse.cdt.managedbuilder.core.GCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.g++">
+					<resource project-relative-path="src/exemples/01_static/03_lignes/01_graphe/LinesGraphe.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/02_analytique_curve/01_graphe/SinusGraphe.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/01_discret_curve/02_glut/DiscretCurveGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/06_histogram/02_glut/HistoGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/01_discret_curve/01_graphe/DiscretCurveGraph.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/07_histogram_density/01_graphe/HistoAdjustGraphe.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/08_parametric_curve/02_glut/SpiraleGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/02_animation/02_animated_MultiThread/02_glut_tools/GLUTMultithreadWindow.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/02_animation/03_animation_Manuel/02_glut/AnimateManuelGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/02_analytique_curve/02_glut/SinusGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/07_histogram_density/02_glut/HistoAdjustGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/07_histogram_density/01_graphe/curve/GaussCurve.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/main.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/06_histogram/01_graphe/HistoGraphe.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/03_lignes/02_glut/LinesGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/04_polylines/02_glut/PolyligneGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/04_polylines/01_graphe/PolylinesGraphe.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/08_parametric_curve/01_graphe/SpiraleGraphe.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/02_animation/02_animated_MultiThread/03_glut/SinusAnimatedGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/05_nuage_points/01_graphe/NuagesPointsGraphe.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/05_nuage_points/02_glut/NuagePointGlut.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+					<resource project-relative-path="src/exemples/01_static/08_parametric_curve/01_graphe/curve/SpiraleCurve.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/Boost/001/include"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/dlltools/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/opengl/001/Bilat_OpenGL_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/model"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_GL/INC/view"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/fenetrage/001/Bilat_Fenetrage_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/graph2d/001/Bilat_Graph2D_FreeGlut/INC/freeglut"/>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/00_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/01_discret_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/02_analytique_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/03_lignes/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/04_polylines/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/05_nuage_points/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/06_histogram/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/07_histogram_density/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/01_graphe/curve">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/01_static/08_parametric_curve/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/02_glut_tools">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/02_animated_MultiThread/03_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/exemples/02_animation/03_animation_Manuel/02_glut">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="macro" name="CBI_GRAPH_DLL" value=""/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

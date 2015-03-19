@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BUILDER/makefile/public/cpp/cudaGCC_arm.mk&apos; to &apos;gcc_arm.mk&apos;" description="Rename resource &apos;cudaGCC_arm.mk&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="makefile/public/cpp/cudaGCC_arm.mk" name="gcc_arm.mk" stamp="1414761492759" updateReferences="true"/>
+</session>

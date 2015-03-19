@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;CudaImage/src/cpp/core/02_mandelbrot/cu/tools&apos;" deleteContents="false" description="Delete resource &apos;CudaImage/src/cpp/core/02_mandelbrot/cu/tools&apos;" element1="/CudaImage/src/cpp/core/02_mandelbrot/cu/tools" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1352728041193"/>&#x0A;<refactoring comment="Delete resource &apos;CudaOpenCV&apos;" deleteContents="false" description="Delete resource &apos;CudaOpenCV&apos;" element1="/CudaOpenCV" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1352731458008"/>
+</session>

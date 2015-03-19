@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BilatTools_Cuda_Image/src/core/cudatools/header/Color01_RGB.h&apos; to &apos;ColorRGB_01.h&apos;" description="Rename resource &apos;Color01_RGB.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/cudatools/header/Color01_RGB.h" name="ColorRGB_01.h" stamp="1392572180823" updateReferences="true"/>
+</session>

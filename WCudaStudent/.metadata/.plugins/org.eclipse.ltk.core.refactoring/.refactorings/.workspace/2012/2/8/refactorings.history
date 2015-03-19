@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;PRODUCTION/MANAGER/makefile/private/help/MakeFileNotice.txt&apos;" deleteContents="false" description="Delete resource &apos;PRODUCTION/MANAGER/makefile/private/help/MakeFileNotice.txt&apos;" element1="/PRODUCTION/MANAGER/makefile/private/help/MakeFileNotice.txt" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1329990829072"/>
+</session>

@@ -1,0 +1,211 @@
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+
+#include "GLUTImageCudaViewers.h"
+
+#include "Device.h"
+#include "cudaTools.h"
+
+#include "RipplingImageMOO.h"
+#include "Rippling2ImageMOO.h"
+#include "MandelbrotImageMOO.h"
+#include "RaytracingImageMOO.h"
+#include "ConvolutionImageMOO.h"
+
+using std::cout;
+using std::endl;
+using std::string;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern int ripplingFreeGL(int itmax);
+extern int rippling2FreeGL(int itmax);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainCore(int deviceId);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static int mainCoreGL(int deviceId);
+static int mainCoreFreeGL(int deviceId);
+
+static RipplingImageMOOs* ripplingMOO(void);
+static Rippling2ImageMOOs* rippling2MOO(void);
+static MandelbrotImageMOOs* mandelbrotMOO(void);
+static RaytracingImageMOOs* raytracingMOO(void);
+static ConvolutionImageMOOs* convolutionMOO(void);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainCore(int deviceId)
+    {
+    Device::printCurrent();
+
+    bool IS_GUI = false;
+
+    if (IS_GUI)
+	{
+	return mainCoreGL(deviceId);
+	}
+    else
+	{
+	return mainCoreFreeGL(deviceId);
+	}
+    }
+
+int mainCoreFreeGL(int deviceId)
+    {
+    cout << "[FPS] :  without GUI, please wait ..." << endl;
+
+    int fps = -1;
+    const int ITMAX = 100000; //itmax suffisamment grand pour que timeElapse soit significatif
+
+    ripplingFreeGL(ITMAX);
+    rippling2FreeGL(ITMAX);
+
+    //cout << "\nRippling  : " << ripplingFreeGL(ITMAX) << " fps" << endl;
+    //cout << "\nRippling Object : " << rippling2FreeGL(ITMAX) << " fps" << endl;
+
+    return EXIT_SUCCESS;
+    }
+
+int mainCoreGL(int deviceId)
+    {
+    RipplingImageMOOs* ptrRipplingMOO = ripplingMOO();
+    Rippling2ImageMOOs* ptrRippling2MOO = rippling2MOO();
+    MandelbrotImageMOOs* ptrMandelbrotMOO = mandelbrotMOO();
+    RaytracingImageMOOs* ptrRaytracingMOO = raytracingMOO();
+    ConvolutionImageMOOs* ptrConvolutionMOO = convolutionMOO();
+
+    bool isAnimation = true;
+    bool isSelection = true;
+
+    GLUTImageCudaViewers ripplingViewer(ptrRipplingMOO, isAnimation, false, 0, 0);
+    GLUTImageCudaViewers rippling2Viewer(ptrRippling2MOO, isAnimation, false, 30, 30);
+    GLUTImageCudaViewers mandelbrotViewer(ptrMandelbrotMOO, isAnimation, isSelection, 60, 60);
+    GLUTImageCudaViewers raytracingViewer(ptrRaytracingMOO, isAnimation, isSelection, 90, 90);
+    GLUTImageCudaViewers convolutionViewer(ptrConvolutionMOO, isAnimation, false, 120, 120);
+
+    GLUTImageCudaViewers::runALL(); // Bloquant
+
+    // destruction
+	{
+	delete ptrRipplingMOO;
+	delete ptrRippling2MOO;
+	delete ptrMandelbrotMOO;
+	delete ptrRaytracingMOO;
+	delete ptrConvolutionMOO;
+
+	ptrRipplingMOO = NULL;
+	ptrRippling2MOO = NULL;
+	ptrMandelbrotMOO = NULL;
+	ptrRaytracingMOO = NULL;
+	ptrConvolutionMOO = NULL;
+	}
+
+    return EXIT_SUCCESS; // Jamais atteind
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+RipplingImageMOOs* ripplingMOO(void)
+    {
+    float dt = 1;
+
+    int dw = 16 * 60; // =32*30=960
+    int dh = 16 * 60; // =32*30=960
+
+    return new RipplingImageMOOs(dw, dh, dt);
+    }
+
+Rippling2ImageMOOs* rippling2MOO(void)
+    {
+    float dt = 1;
+
+    int dw = 16 * 60; // =32*30=960
+    int dh = 16 * 60; // =32*30=960
+
+    return new Rippling2ImageMOOs(dw, dh, dt);
+    }
+
+MandelbrotImageMOOs* mandelbrotMOO(void)
+    {
+    int nMin = 10;
+    int nMax = 100;
+
+    double x1 = -2.1;
+    double y1 = -1.3;
+    double x2 = 0.8;
+    double y2 = 1.3;
+    DomaineMaths domaineMath(x1, y1, x2, y2);
+
+    int dw = 16 * 80;	// =32*40=1280;
+    int dh = 16 * 60; 	// =32*30 =960;
+
+    return new MandelbrotImageMOOs(dw, dh, domaineMath, nMin, nMax);
+    }
+
+RaytracingImageMOOs* raytracingMOO(void)
+    {
+    float dt = 2 * PI / 1000;
+
+    int dw = 16 * 80; // =32*40=1280
+    int dh = 16 * 60; // =32*30=960
+
+    int nbSpheres = 2300; // 2300 50
+
+    return new RaytracingImageMOOs(dw, dh, nbSpheres, dt);
+    }
+
+ConvolutionImageMOOs* convolutionMOO(void)
+    {
+    // neil pryde
+    //   int dw = 640;
+    //  int dh = 360;
+
+    // nasa
+    int dw = 1920;
+    int dh = 1080;
+
+#ifdef _WIN32
+    // Work
+    // string nameVideo ="Q:\\neilPryde.avi";
+    //  string nameVideo = "C:\\Users\\cedric.bilat\\Desktop\\neilPryde.avi"; // ok
+    //  string nameVideo="C:\\Users\\cedric.bilat\\Desktop\\nasaFHD_short.avi"; //ok
+
+    // Home
+    //  string nameVideo = "C:\\Users\\bilat\\Desktop\\neilPryde.avi"; // ok
+    string nameVideo="C:\\Users\\bilat\\Desktop\\nasaFHD_short.avi";// ok
+#else
+    //string nameVideo = "/media/Data/Video//neilPryde.avi"; // ok
+    string nameVideo = "/media/Data/Video/nasaFHD_short.avi"; // ok
+
+#endif
+
+    return new ConvolutionImageMOOs(dw, dh, nameVideo);
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

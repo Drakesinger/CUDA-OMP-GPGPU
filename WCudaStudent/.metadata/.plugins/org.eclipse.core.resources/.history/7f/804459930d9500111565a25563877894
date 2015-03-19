@@ -1,0 +1,100 @@
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
+
+#include "cudaTools.h"
+#include "Device.h"
+#include "stringTools.h"
+
+using std::string;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int threadPerBlock(int nbThreadTotal, int nbBlock)
+    {
+    //return ceil(nbThreadTotal / (double) nbBlock);
+
+    // mieux
+
+    return (nbThreadTotal + (nbBlock - 1)) / nbBlock;
+    }
+
+void print(const dim3& dim, string titrePre, string titrePost)
+    {
+    cout << titrePre << "(" << dim.x << "," << dim.y << "," << dim.z << ") " << titrePost << endl;
+    ;
+    }
+
+void print(const dim3& blockPerGrid, const dim3& threadPerBlock)
+    {
+    int mpCount = Device::getMPCount();
+    int warpSize = Device::getWarpSize();
+
+    int blockCount = dim(blockPerGrid);
+    int threadCountMP = dim(threadPerBlock);
+
+    string messageBlock = "";
+    string messageThread = "";
+
+    if (blockCount < mpCount || blockCount % mpCount != 0)
+	{
+	messageBlock = "blockCount = " + toString(blockCount) + " : Warning : For best performance, blockCount should be a multiple of #MP="
+		+ toString(mpCount);
+	}
+
+    if (threadCountMP < warpSize || threadCountMP % warpSize != 0)
+	{
+	messageThread = "threadCountMP = " + toString(threadCountMP) + " : Warning : For best performance, threadCountMP  be a multiple of |warp|="
+		+ toString(warpSize);
+	}
+
+    print(blockPerGrid, "BlockPerGrid   ", messageBlock);
+    print(threadPerBlock, "ThreadPerBlock ", messageThread);
+    }
+
+void cudaHandleError(cudaError_t error, const char *file, int line)
+    {
+    if (error != cudaSuccess)
+	{
+	cout << "[CUDA ERROR ] : " << cudaGetErrorString(error) << " in " << file << " at ligne " << line << endl;
+	exit (EXIT_FAILURE);
+	}
+    }
+
+void currandHandleError(curandStatus_t statut, const char *file, int line)
+    {
+    if (statut != CURAND_STATUS_SUCCESS)
+	{
+	cout << "[CURAND ERROR ] : " << statut << " in " << file << " at ligne " << line << endl;
+	exit (EXIT_FAILURE);
+	}
+    }
+
+void check_CUDA_Error(const char *message)
+    {
+    cudaError_t error = cudaGetLastError();
+    if (error != cudaSuccess)
+	{
+	fprintf(stderr, "ERROR: %s: %s\n", message, cudaGetErrorString(error));
+	exit(-1);
+	}
+    }
+
+int dim(const dim3& dim)
+    {
+    return dim.x * dim.y * dim.z;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

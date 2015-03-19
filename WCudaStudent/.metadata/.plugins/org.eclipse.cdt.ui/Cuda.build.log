@@ -1,0 +1,132 @@
+11:16:28 **** Build of configuration CudaVisual for project Cuda ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI] -> Target Name  : Cuda64
+[CBI] ->
+[CBI] -> Build        : Q:/bilat/Targets/Cuda
+[CBI] -> Deploy       : ../DEPLOY/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : ../BilatUtil_CPP/src/core
+[CBI] ->              : ../API_CppTest/INC
+[CBI] ->              : ../API_CppTest/LIB_STATIC/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /openmp
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -arch=sm_20
+[CBI] ->              : -use_fast_math
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+
+[CBI] -> Create folder  : Q:/bilat/Targets/Cuda/bin
+[CBI] -> Create folder  : Q:/bilat/Targets/Cuda/obj
+[CBI] -> Create folder  : Q:/bilat/Targets/Cuda/cubin
+
+[CBI] -> cl compiling .cpp : src/cpp/main.cpp
+[CBI] -> cl compiling .cpp : src/cpp/core/mainCore.cpp
+[CBI] -> cl compiling .cpp : src/cpp/core/03_montecarlo/host/multiGPU/MontecarloMultiGPU_A.cpp
+[CBI] -> cl compiling .cpp : src/cpp/core/03_montecarlo/host/multiGPU/boost/MontecarloBoost.cpp
+[CBI] -> cl compiling .cpp : src/cpp/core/03_montecarlo/host/multiGPU/omp/MontecarloOMP.cpp
+[CBI] -> cl compiling .cpp : src/cpp/core/03_montecarlo/host/multiGPU/stream/MontecarloStream.cpp
+[CBI] -> cl compiling .cpp : src/cpp/test/mainTest.cpp
+[CBI] -> cl compiling .cpp : src/cpp/test/junit/cpp/TestMontecarloPiJunit.cpp
+[CBI] -> cl compiling .cpp : src/cpp/test/junit/cpp/TestHistoJunit.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/StringTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/Chronos.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/AleaTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/LimitsTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurF.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurI.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/MathTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/cudaTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/Device.cpp
+[CBI] -> cl compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/vectorTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/tab1DTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/histo.cpp
+[CBI] -> cl compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/rawMajorTools.cpp
+[CBI] -> cl compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/tab2DTools.cpp
+[CBI] -> nvcc compiling .cu  : src/cpp/core/01_dotProd/device/dotProdDevice.cu
+[CBI] -> nvcc compiling .cu  : src/cpp/core/01_dotProd/host/DotProd.cu
+[CBI] -> nvcc compiling .cu  : src/cpp/core/03_montecarlo/device/montecarloDevice.cu
+[CBI] -> nvcc compiling .cu  : src/cpp/core/03_montecarlo/host/monoGPU/Montecarlo.cu
+
+[CBI] -> Linking to   : Q:/bilat/Targets/Cuda/bin/Cuda64.exe
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lCpp_Test64
+[CBI] ->              : -lOpenCL
+[CBI] ->              : -lcublas
+[CBI] ->              : -lcublas_device
+[CBI] ->              : -lcuda
+[CBI] ->              : -lcudadevrt
+[CBI] ->              : -lcudart
+[CBI] ->              : -lcudart_static
+[CBI] ->              : -lcufft
+[CBI] ->              : -lcufftw
+[CBI] ->              : -lcurand
+[CBI] ->              : -lcusparse
+[CBI] ->              : -lnppc
+[CBI] ->              : -lnppi
+[CBI] ->              : -lnpps
+[CBI] ->              : -lnvcuvenc
+[CBI] ->              : -lnvcuvid
+
+
+==================================================================================
+[CBI] -> Target Name  : Cuda64
+[CBI] -> Location     : Q:/bilat/Targets/Cuda/bin/Cuda64.exe
+[CBI] -> Deploy 	  : ../DEPLOY/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 	      : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 11:17:18
+==================================================================================
+
+
+[CBI] -> Deploying    : Cuda64.exe
+
+[CBI] -> Cleaning     : Cuda temp files, excepted .cubin for JCuda
+
+
+
+11:17:19 Build Finished (took 51s.120ms)
+

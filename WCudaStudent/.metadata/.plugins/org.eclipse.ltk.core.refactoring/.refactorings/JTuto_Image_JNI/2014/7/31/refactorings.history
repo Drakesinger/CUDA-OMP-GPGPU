@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JTuto_Image_JNI/runx86.sh&apos; to &apos;run.sh&apos;" description="Rename resource &apos;runx86.sh&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="runx86.sh" name="run.sh" stamp="1406549914616" updateReferences="true"/>
+</session>

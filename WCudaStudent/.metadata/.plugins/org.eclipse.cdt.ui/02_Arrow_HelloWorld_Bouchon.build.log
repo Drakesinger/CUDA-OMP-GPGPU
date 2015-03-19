@@ -1,0 +1,89 @@
+09:24:58 **** Build of configuration CudaVisual for project 02_Arrow_HelloWorld_Bouchon ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Fri_Mar_14_19:30:01_PDT_2014
+Cuda compilation tools, release 6.0, V6.0.1
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Bouchon_64
+[CBI] ->
+[CBI] -> Build        : Q:/bilat/Targets/Arrow_HelloWorld_Bouchon
+[CBI] -> Deploy       : ./release/static_lib
+[CBI] ->
+[CBI] -> Type	      : STATIC_LIB
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../01_Arrow_HelloWorld_Specification/src
+[CBI] ->              : ./release/inc
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Bouchon/bin
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Bouchon/obj
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Bouchon/cubin
+
+FactoryARM_Bouchon.obj
+FactoryARM_Bouchon.cpp
+FactoryFPGA_Bouchon.obj
+FactoryFPGA_Bouchon.cpp
+ARM_Bouchon.cu
+FPGA_Bouchon.cu
+
+Microsoft (R) Library Manager Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Bouchon_64
+[CBI] -> Location     : Q:/bilat/Targets/Arrow_HelloWorld_Bouchon/bin/Arrow_HelloWorld_Bouchon_64.lib
+[CBI] -> Deploy 	  : ./release/static_lib
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task	      : End Compiling-Archive !
+[CBI] -> Time		  : 09:25:25
+==================================================================================
+
+
+[CBI] -> Deploying    : ./release/static_lib/Arrow_HelloWorld_Bouchon_64.lib
+
+[CBI] -> Arrow_HelloWorld_Bouchon_64   : End ALL!
+
+09:25:26 Build Finished (took 27s.196ms)
+

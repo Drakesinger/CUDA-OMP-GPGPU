@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin>
+	<extension id="CudaCBI parser" name="CudaCBI parser" point="org.eclipse.cdt.core.ErrorParser">
+		<errorparser class="org.eclipse.cdt.core.errorparsers.RegexErrorParser" id="org.eclipse.cdt.ui.CudaCBI parser" name="CudaCBI parser">
+			<pattern description-expr="$6" eat-processed-line="true" file-expr="$1" line-expr="$2" regex="(.*?)\((\d+)\)?:\s*(([Ee]rror)|(ERROR)): (.*)" severity="Error"/>
+			<pattern description-expr="$6" eat-processed-line="true" file-expr="$1" line-expr="$2" regex="(.*?)\((\d+)\)?:\s*(([Ww]arning)|(WARNING)): (.*)" severity="Warning"/>
+			<pattern description-expr="$6" eat-processed-line="true" file-expr="$1" line-expr="$2" regex="(.+)\((\d+)\):\s*(([Ee]rror)|(ERROR))\s*:\s*(.*)" severity="Error"/>
+		</errorparser>
+	</extension>
+</plugin>

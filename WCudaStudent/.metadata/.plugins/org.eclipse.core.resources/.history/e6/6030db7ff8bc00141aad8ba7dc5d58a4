@@ -1,0 +1,23 @@
+#ifndef SRC_CPP_CORE_02_MANDELBROT_JULIA_D_PROVIDER_MANDEBROTPROVIDER_H_
+#define SRC_CPP_CORE_02_MANDELBROT_JULIA_D_PROVIDER_MANDEBROTPROVIDER_H_
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class MandebrotProvider
+    {
+    public:
+	MandebrotProvider();
+	virtual ~MandebrotProvider();
+    };
+
+#endif 
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

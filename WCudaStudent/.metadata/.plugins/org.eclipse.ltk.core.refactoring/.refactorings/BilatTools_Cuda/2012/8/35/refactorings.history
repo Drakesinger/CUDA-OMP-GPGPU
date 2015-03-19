@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BilatToolsCuda/src/tools&apos; to &apos;cudatools&apos;" description="Rename resource &apos;tools&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/tools" name="cudatools" stamp="1346412477037" updateReferences="true"/>
+</session>

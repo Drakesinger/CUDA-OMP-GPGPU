@@ -1,0 +1,6 @@
+#Fri Jan 28 14:54:37 CET 2011
+DELEGATES_PREFERENCE=delegateValidatorListorg.eclipse.wst.xsd.core.internal.validation.eclipse.XSDDelegatingValidator\=org.eclipse.wst.xsd.core.internal.validation.eclipse.Validator;
+USER_MANUAL_PREFERENCE=enabledManualValidatorListorg.eclipse.wst.xsd.core.internal.validation.eclipse.XSDDelegatingValidator;org.eclipse.wst.dtd.core.internal.validation.eclipse.Validator;org.eclipse.wst.common.componentcore.internal.ModuleCoreValidator;org.eclipse.wst.xml.core.internal.validation.eclipse.Validator;
+eclipse.preferences.version=1
+USER_BUILD_PREFERENCE=enabledBuildValidatorListorg.eclipse.wst.xsd.core.internal.validation.eclipse.XSDDelegatingValidator;org.eclipse.wst.dtd.core.internal.validation.eclipse.Validator;org.eclipse.wst.common.componentcore.internal.ModuleCoreValidator;org.eclipse.wst.xml.core.internal.validation.eclipse.Validator;
+USER_PREFERENCE=saveAutomaticallytrueprojectsCanOverridetruedisableAllValidationfalseversion1.1.101.v200706071630

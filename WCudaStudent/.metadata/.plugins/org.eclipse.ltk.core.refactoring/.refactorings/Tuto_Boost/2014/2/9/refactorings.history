@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Tuto_Boost/src/cpp/core/mainCore.cpp&apos; to &apos;useThread.cpp&apos;" description="Rename resource &apos;mainCore.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/mainCore.cpp" name="useThread.cpp" stamp="1393598702860" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Tuto_Boost/src/cpp/core/options/options.cpp&apos; to &apos;useOptions.cpp&apos;" description="Rename resource &apos;options.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/options/options.cpp" name="useOptions.cpp" stamp="1393598712635" updateReferences="true"/>
+</session>

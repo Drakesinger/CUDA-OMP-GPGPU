@@ -1,0 +1,106 @@
+#ifndef NEWTON_MATH_H_
+#define NEWTON_MATH_H_
+
+#include <math.h>
+#include "ColorTools_GPU.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class NewtonMath
+    {
+
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	__device__ NewtonMath(float _epsilon, int _n):epsilon(_epsilon),n(_n)
+	    {
+	    }
+
+	/*--------------------------------------*\
+	|*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+	__device__ void colorXY(uchar4* ptrColor, float x1, float x2, const DomaineMath& domaineMath)
+	    {
+
+	    bool converge = false;
+
+	    int index = 0;
+	    while(index++ <= n && !converge)
+		{
+		float x1Copy = x1;
+		float x2Copy = x2;
+
+		x1 = x1Next(x1, x2);
+		x2 = x2Next(x1Copy, x2);
+
+		computeIndiceArret(x1Copy, x2Copy, x1, x2, converge);
+		}
+
+	    ptrColor->x = 255;
+	    ptrColor->y = 0;
+	    ptrColor->z = 0;
+
+	    if(converge)
+		{
+		double distA = distance(x1, xa1()) + distance(x2, xa2());
+		double distB = distance(x1, xb1()) + distance(x2, xb2());
+		double distC = distance(x1, xc1()) + distance(x2, xc2());
+
+		if(distA < distB && distA < distC)
+		    ptrColor->x = ptrColor->y = ptrColor->z = 0;
+		else if(distB < distC)
+		    ptrColor->x = ptrColor->y = ptrColor->z = 128;
+		else
+		    ptrColor->x = ptrColor->y = ptrColor->z = 255;
+		}
+
+	    ptrColor->w = 255; // opaque
+	    }
+
+
+	__device__ void computeIndiceArret(double x1, double x2, double x1Next, double x2Next, bool& converge) const
+	    {
+	    converge = (distance(x1, x1Next) + distance(x2, x2Next))/(x1Next*x1Next+x2Next*x2Next) < epsilon;
+	    }
+	__device__ float distance(const float x1, const float x2) const {return (x2-x1)*(x2-x1);}
+
+	__device__ float x1Next(const float x1, const float x2) const {return (1/(float)3)*(x1-((2*x1*x1)/((x1*x1+x2*x2)*(x1*x1+x2*x2)) + ((1)/(x1*x1+x2*x2)) ));}
+	__device__ float x2Next(const float x1, const float x2) const {return ((1/ (float)3)) *x2* ( (1)+ ( (2*x1)/( (x1*x1+x2*x2)*(x1*x1+x2*x2) ) ) );}
+
+	// Ce système possède trois solutions
+	__device__ float xa1() const {return 1.0;}
+	__device__ float xa2() const {return 0.0;}
+	__device__ float xb1() const {return -0.5;}
+	__device__ float xb2() const {return sqrt(3.0)/2.0;}
+	__device__ float xc1() const {return -0.5;}
+	__device__ float xc2() const {return -sqrt(3.0)/2.0;}
+    private:
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+
+	// Inputs
+	int n;
+	float epsilon;
+    };
+
+#endif 
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

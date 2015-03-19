@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BilatTools_OMP/src/core/openMPTools&apos; to &apos;OMP_Tools&apos;" description="Rename resource &apos;openMPTools&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/openMPTools" name="OMP_Tools" stamp="1405605194405" updateReferences="true"/>
+</session>

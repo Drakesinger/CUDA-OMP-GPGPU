@@ -1,0 +1,27 @@
+23:08:10 **** Build of configuration Doc Win for project BilatToolsCPP ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeVisual.bat" doc 
+
+[VISUAL]
+
+==================================================================================
+[CBI]->Target              : BilatToolsCPP64
+[CBI]->Task			       : Doc
+[CBI]->Doc src			   : src
+[CBI]->Directory doc html  : Q:/bilat/Targets/BilatToolsCPP/doc/final
+[CBI]->Directory doc tar   : ../Deploy/doc
+==================================================================================
+
+[Tools]
+
+doxygen version : 
+1.8.6
+dot - graphviz version 2.36.0 (20140111.2315)
+
+[Purge]
+
+delete  Q:/bilat/Targets/BilatToolsCPP/doc
+delete  ../Deploy/doc/BilatToolsCPP64.doc.tar.gz
+Command canceled
+
+23:08:11 Build Cancelled (took 1s.106ms)
+

@@ -1,0 +1,147 @@
+#include <omp.h>
+#include <stdlib.h>
+#include <iostream>
+#include <limits.h>
+#include <math.h>
+#include "ChronoOMPs.h"
+
+#include "mathTools.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isPiOMPforReduction_Ok(int n);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static double piOMPforReduction(int n, bool& isRegionParallel);
+static double fpi(double x);
+static double perdreTemp(int i);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isPiOMPforReduction_Ok(int n)
+    {
+    cout << endl << "[OMP in cuda : pi hat]" << endl;
+    cout << "n=" << n << endl;
+
+    bool isRegionParallel = false;
+
+    ChronoOMPs chrono;
+    double piHat = piOMPforReduction(n, isRegionParallel);
+    cout << "Pi hat = " << piHat << endl;
+    chrono.stop();
+    chrono.print("time : ");
+
+
+    return isEgale(piHat, PI, 1e-6) && isRegionParallel;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/**
+ * pattern omp usefull : idem desyncronisation-promotionTab ,mais avec syntaxe plus courte!
+ * Si on enleve le pragma, le code est le meme que le sequentiel!
+ */
+double piOMPforReduction(int n, bool& isRegionParallel)
+    {
+    double sum = 0;
+    double x;
+    double dx = 1 / (double) n;
+
+    const int NB_THREAD = omp_get_num_procs();
+    omp_set_num_threads(NB_THREAD);
+
+    bool* tabIsParalel = new bool[NB_THREAD];
+    for (int i = 1; i <= NB_THREAD; i++)
+	{
+	tabIsParalel[i - 1] = false;
+	}
+
+#pragma omp parallel
+	{
+	int tid = omp_get_thread_num();// why 0 sous windows et cuda alors que "tid" sous windows openmp projet ok
+	bool isRegionParallel = omp_in_parallel();
+	tabIsParalel[tid] = isRegionParallel;
+
+	//cout<<"tid = "<<tid<<endl;
+	//cout<<"isRegionParallel = "<<isRegionParallel<<endl;
+
+#pragma omp for private(x) reduction(+:sum)
+	for (int i = 1; i <= n; i++)
+	    {
+	    x = dx * i;
+	    sum += fpi(x);
+
+	   // bidon+= perdreTemp(i);  // pour use sum2 sinon perdre temp perd pas temp!
+	    }
+	}
+
+    // hors omp
+    isRegionParallel = true;
+    for (int i = 1; i <= NB_THREAD; i++)
+	{
+	isRegionParallel &= tabIsParalel[i - 1];
+	cout <<"isParallel : ("<<i<<") = "<<tabIsParalel[i - 1] << endl; // why 0 sous windows et cuda alors que 1 sous windows openmp projet ok
+	}
+
+    delete[] tabIsParalel;
+
+    return sum / n;
+    }
+
+//double perdreTemp(int i)
+//    {
+//    return cos((double)i);
+//    }
+
+//double piOMPforReduction(int n,bool& isRegionParallel)
+//    {
+//    double sum = 0;
+//    double x;
+//    double dx = 1 / (double) n;
+//
+//    // Facultatif
+//	{
+//	const int NB_THREAD = omp_get_num_procs();
+//	omp_set_num_threads(NB_THREAD);
+//	}
+//
+//#pragma omp parallel for private(x) reduction(+:sum)
+//    for (int i = 1; i <= n; i++)
+//	{
+//	x = dx * i;
+//	sum += fpi(x);
+//	//sleep(10);
+//	}
+//
+//    return sum / n;
+//    }
+
+double fpi(double x)
+    {
+    return 4 / (1 + x * x);
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

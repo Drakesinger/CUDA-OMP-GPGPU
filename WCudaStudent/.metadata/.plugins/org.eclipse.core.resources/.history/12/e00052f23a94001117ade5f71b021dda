@@ -1,0 +1,214 @@
+#include "videoCaptureTools.h"
+#include "cudaTools.h"
+#include <assert.h>
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+
+
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/**
+ * http://opencv.willowgarage.com/wiki/VideoCodecs
+ *
+ * AVI 'I420' RAW I420 Uncompressed YUV, 4:2:0 chroma subsampled
+ *
+ * Soft convertion :
+ * 	(S1) mencoder
+ * 		http://www.mplayerhq.hu/design7/dload.html
+ * 			console:  mencoder in.avi -ovc raw -vf format=i420 -oac mp3lame -o out.avi
+ * 		http://smplayer.sourceforge.net/
+ * 	(S2) VirtualDub
+ */
+ bool videoCapture(const string& videoName)
+     {
+     cout<<"\nVideo Capture  : start : "<<videoName<<endl;
+
+     VideoCapture capture(videoName);     // the capture will be deinitialized automatically in VideoCapture destructor
+
+     if (capture.isOpened())
+ 	{
+ 	string idWindow = "videoCapture ['q' to quit]";
+ 	int delayMS=1;
+
+ 	printInfo(&capture);
+
+ 	//http://opencv.willowgarage.com/documentation/cpp/reading_and_writing_images_and_video.html#videocapture
+ 	int fps=capture.get(CV_CAP_PROP_FPS);
+ 	cout<<"\tfps = "<<fps<<endl;
+	delayMS=1000/fps;
+
+ 	play(&capture,idWindow,delayMS);
+
+ 	cout<<"Video Capture  : end   : "<<videoName<<endl;
+ 	return true;
+ 	}
+     else
+ 	{
+ 	cerr << "Video Capture  : failed " << videoName << endl;
+ 	return false;
+ 	}
+     }
+
+ /**
+  * idCamera : 0
+  */
+ bool cameraCapture(int idCamera)
+     {
+     cout<<"\nCamera Capture : start : camera = "<<idCamera<<endl;
+
+     VideoCapture capture(idCamera);     // the capture will be deinitialized automatically in VideoCapture destructor
+     if (capture.isOpened())
+ 	{
+ 	string idWindow = "cameraCapture : ['q' to quit]";
+ 	int delayMS=1;
+
+ 	capture.set(CV_CAP_PROP_FRAME_WIDTH,1280);
+	capture.set(CV_CAP_PROP_FRAME_HEIGHT ,720);
+
+ 	printInfo(&capture);
+ 	play(&capture,idWindow,delayMS);
+
+ 	 cout<<"Camera Capture : end   : camera = "<<idCamera<<endl;
+ 	return true;
+ 	}
+     else
+ 	{
+ 	cerr << "Camera Capture : failed : camera = " <<idCamera<< endl;
+ 	return false;
+ 	}
+     }
+
+ void printInfo(VideoCapture* ptrCaptureStream)
+     {
+     Mat matCapture;
+     (*ptrCaptureStream) >> matCapture;
+
+     uchar* ptr = matCapture.data; // use cvtColor to change the colorSpace (HSB,GRAY,...)
+     int n = matCapture.rows;
+     int m = matCapture.cols;
+
+     bool isEmpty = matCapture.empty();
+     int type = matCapture.type();
+     Size size = matCapture.size();
+     int nbChannel = matCapture.channels();
+
+     cout<<"Capture Info :"<<endl;
+     cout << "\t(n,m) = (" << n << "," << m << ")" << endl;
+     cout << "\tnbChannel = " << nbChannel << endl;
+//     cout << "size (width)=" << size.width << endl;
+//     cout << "size (height) =" << size.height  << endl;
+     cout << "\ttype      = " << type << endl;
+     cout << "\tisEmpty   = " << isEmpty << endl;
+
+     }
+
+ void play(VideoCapture* ptrCaptureStream, const string& idWindow,int delayMS)
+     {
+     cout<<"Play Capture   : start : "<<idWindow<<endl;
+    // cout<<"Format : "<< ptrCaptureStream->get(CV_CAP_PROP_FORMAT)<<endl;
+
+     Mat matCapture;
+    // namedWindow(idWindow, 1);
+     char key='a'; //disons
+     while (key != 'q')
+ 	{
+	 (*ptrCaptureStream) >> matCapture; // attention au nombre de channel 3 souvent et pas 4
+
+
+
+//	 int n = matCapture.rows;
+//	     int m = matCapture.cols;
+//
+	 //uchar* ptr=matCapture.data;
+//	 unsigned char* ptr4=(unsigned char*)ptr;
+
+	// cout<<"size uchar = "<<sizeof(uchar)<<endl;
+//	 cout<<"size unsigned char = "<<sizeof(unsigned char)<<endl;
+//	 cout<<"size uchar4 = "<<sizeof(uchar4)<<endl;
+//	 cout<<"n= "<<n<<endl;
+//	 cout<<"m= "<<m<<endl;
+
+//	 uchar* ptrCopy=new uchar[n*m];
+//	 uchar* ptrAgain=ptrCopy;
+//	 for(int i=1;i<=n*m*4;i++)
+//	 	    {
+//	     *ptr++=123;
+//	 	    }
+	 	     //cout<<"i"<<i<<endl;
+	// 	    *ptrCopy=*ptr4;
+////	 	     ptrCopy++;
+//	     *ptr4=123;
+//	 	     ptr4++;
+//
+////	 	     //*ptrCopy=*ptr4;
+////	 	     ptrCopy++;
+////	 	     ptr4++;
+////
+////	 	     //*ptrCopy=*ptr4;
+////	 	     ptrCopy++;
+////	 	     ptr4++;
+////
+////	 	     //*ptrCopy=*ptr4;
+////
+////	 	     if(i<n*m)
+////	 		 {
+////	 	     ptrCopy++;
+////
+////	 	     ptr4++;
+////	 		 }
+//	 	    }
+////	 for(int i=1;i<=n*m;i++)
+////	    {
+////	     //cout<<"i"<<i<<"\t";
+////	     assert(ptr[i-1]==ptrAgain[i-1]);
+////	    }
+
+
+
+	 // CV_8U : [0,255]
+	 // CV_16U : [0,65535]
+	 // CV_32F : [0,1] in R
+	//cvtColor(matCapture, matCapture, CV_8U,0); // 0 keep same chanel
+	 //cvtColor(matCapture, matCapture, CV_8U,4); // 0 keep same chanel // 4 permet par exemple d'ajouter la couche alpha à rvb (pour une video ou webcam)
+ 	imshow(idWindow, matCapture);
+
+// 	uchar* ptr = matCapture.data;
+// 	cout << "pixel 100=" <<(int) ptr[100] << endl;
+
+ 	//cout<<"sleep "<<delayMS<<endl;
+ 	key = cvWaitKey(delayMS); //sleep 100 ms
+ 	}
+
+     //TODO window detruit automatiqument?
+     cout<<"Play Capture   : end   : "<<idWindow<<endl;
+     }
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

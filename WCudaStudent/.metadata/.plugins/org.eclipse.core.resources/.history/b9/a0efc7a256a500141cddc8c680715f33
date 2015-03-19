@@ -1,0 +1,100 @@
+#include <iostream>
+
+#include "Pipeline.h"
+
+#include "FactoryRowFinder.h"
+#include "FactoryRowDriver.h"
+
+#include "FactoryImageProvider_File.h"
+#include "FactoryImageProvider_Webcam.h"
+#include "FactoryImageProvider_Video.h"
+
+#include "FactoryWeedsFinder_GPU.h"
+#include "FactoryWeedsFinder_CPU.h"
+
+#include "FactoryWeedsShower.h"
+#include "FactoryWeedsDestroyeur.h"
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void pipelineDebug();
+static void pipelineReal();
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int main(void)
+    {
+    pipelineDebug();// HEARC EPFL
+    //pipelineReal(); 	// ECOROBOTICS
+
+    return EXIT_SUCCESS;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void pipelineDebug()
+    {
+    //FactoryImageProvider_File factoryImageProvider = FactoryImageProvider_File();
+    FactoryImageProvider_Webcam factoryImageProvider=FactoryImageProvider_Webcam();
+    //FactoryImageProvider_Video factoryImageProvider=FactoryImageProvider_Video();
+
+    FactoryRowFinder factoryRowFinder=FactoryRowFinder();
+    FactoryRowDriver factoryRowDriver=FactoryRowDriver();
+
+    FactoryWeedsFinder_CPU factoryWeedsFinder=FactoryWeedsFinder_CPU();
+    //FactoryWeedsFinder_GPU factoryWeedsFinder= FactoryWeedsFinder_GPU();
+
+
+    FactoryWeedsShower factoryWeedsConsomateur=FactoryWeedsShower();
+    //FactoryWeedsDestroyeur factoryWeedsConsomateur=FactoryWeedsDestroyeur();
+
+    Pipeline pipeline(factoryImageProvider,factoryRowFinder,factoryRowDriver,factoryWeedsFinder,factoryWeedsConsomateur);
+    pipeline.run(); // bloquant
+    }
+
+static void pipelineReal()
+    {
+    //FactoryImageProvider_File factoryImageProvider = FactoryImageProvider_File();
+    FactoryImageProvider_Webcam factoryImageProvider=FactoryImageProvider_Webcam();
+    //FactoryImageProvider_Video factoryImageProvider=FactoryImageProvider_Video();
+
+    FactoryRowFinder factoryRowFinder=FactoryRowFinder();
+    FactoryRowDriver factoryRowDriver=FactoryRowDriver();
+
+    //FactoryWeedsFinder_CPU factoryWeedsFinder=FactoryWeedsFinder_CPU();
+    FactoryWeedsFinder_GPU factoryWeedsFinder= FactoryWeedsFinder_GPU();
+
+    //FactoryWeedsShower factoryWeedsConsomateur=FactoryWeedsShower();
+    FactoryWeedsDestroyeur factoryWeedsConsomateur=FactoryWeedsDestroyeur();
+
+    Pipeline pipeline(factoryImageProvider,factoryRowFinder,factoryRowDriver,factoryWeedsFinder,factoryWeedsConsomateur);
+    pipeline.run(); // bloquant
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

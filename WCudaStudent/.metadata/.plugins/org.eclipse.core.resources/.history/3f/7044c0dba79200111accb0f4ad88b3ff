@@ -1,0 +1,54 @@
+#include "TestMontecarloPiJunit.h"
+#include <limits.h>
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern bool isMontecarloPi_partial_Ok(int n);
+extern bool isMontecarloPi_cudaFULL_Ok(int n);
+extern bool isMontecarloPi_multiGPU_Ok(long n);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+// Peut poser probleme sous linux si autre test avant
+TestMontecarloPIJunit::TestMontecarloPIJunit(void)
+    {
+    TEST_ADD(TestMontecarloPIJunit::testPartial);
+    TEST_ADD(TestMontecarloPIJunit::testFull);
+    TEST_ADD(TestMontecarloPIJunit::testMultiGPU);
+    }
+
+void TestMontecarloPIJunit::testPartial(void)
+    {
+    int n = INT_MAX / 50;
+    TEST_ASSERT(isMontecarloPi_partial_Ok(n) == true);
+    }
+
+void TestMontecarloPIJunit::testFull(void)
+    {
+    int n = INT_MAX / 50;
+    TEST_ASSERT(isMontecarloPi_cudaFULL_Ok(n) == true);
+    }
+
+void TestMontecarloPIJunit::testMultiGPU(void)
+    {
+#ifdef WIN32
+    long n=2*(LONG_MAX/100000000);
+#else
+    long n=INT_MAX;
+#endif
+
+    TEST_ASSERT(isMontecarloPi_multiGPU_Ok(n) == true);
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

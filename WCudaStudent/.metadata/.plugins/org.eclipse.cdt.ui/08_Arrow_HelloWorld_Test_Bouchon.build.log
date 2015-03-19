@@ -1,0 +1,95 @@
+10:27:33 **** Incremental Build of configuration CudaVisual for project 08_Arrow_HelloWorld_Test_Bouchon ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Fri_Mar_14_19:30:01_PDT_2014
+Cuda compilation tools, release 6.0, V6.0.1
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Test_Bouchon_64
+[CBI] ->
+[CBI] -> Build        : Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../01_Arrow_HelloWorld_Specification/src
+[CBI] ->              : ../API_CppTest/INC
+[CBI] ->              : ../API_CppTest/LIB_STATIC/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon/bin
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon/obj
+[CBI] -> Create folder  : Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon/cubin
+
+main.obj
+main.cpp
+TestBouchon.cu
+
+[CBI] -> Linking to   : Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon/bin/Arrow_HelloWorld_Test_Bouchon_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lArrow_HelloWorld_Bouchon_64
+[CBI] ->              : -lCpp_Test_64
+
+nvcc : warning : The 'compute_10' and 'sm_10' architectures are deprecated, and may be removed in a future release.
+   Creating library Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon/bin/Arrow_HelloWorld_Test_Bouchon_64.lib and object Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon/bin/Arrow_HelloWorld_Test_Bouchon_64.exp
+main.obj
+TestBouchon.obj
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Test_Bouchon_64
+[CBI] -> Location     : Q:/bilat/Targets/Arrow_HelloWorld_Test_Bouchon/bin/Arrow_HelloWorld_Test_Bouchon_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 	      : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 10:27:48
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Arrow_HelloWorld_Test_Bouchon_64.exe
+
+[CBI] -> Arrow_HelloWorld_Test_Bouchon_64   : End ALL!
+
+10:27:50 Build Finished (took 16s.890ms)
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;05_Arrow_HelloWorld_ARM/src/arm/FactoryFPGA.cpp&apos; to &apos;FactoryARM.cpp&apos;" description="Rename resource &apos;FactoryFPGA.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/arm/FactoryFPGA.cpp" name="FactoryARM.cpp" stamp="1397660753474" updateReferences="true"/>
+</session>

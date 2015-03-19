@@ -1,0 +1,118 @@
+15:00:26 **** Incremental Build of configuration MinGW for project Farmwise_03_Weeds_Finder_GPU ****
+Info: Configuration "MinGW" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+makeMinGW.bat all 
+init make
+init API-EXT
+init API-CBI
+-----------------------------------------------
+
+[MINGW] : all  
+
+Set MinGW environement x64
+ 
+g++ (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 4.9.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_EPFL_GPU_mingw_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/cedric.bilat/Targets/Farmwise_EPFL_GPU/bin/libFarmwise_EPFL_GPU_mingw_64.a
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -O3
+[CBI] ->              : -fgcse
+[CBI] ->              : -fomit-frame-pointer
+[CBI] ->              : -fopenmp
+[CBI] ->              : -frerun-loop-opt
+[CBI] ->              : -march=native
+[CBI] ->              : -std=c++0x
+
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/01_image/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/Output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/02_weeds_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/hearc/specification/03_weeds_consomateur/
+[CBI] ->              : src/cpp/hearc/gpu/facade/
+[CBI] ->              : src/cpp/hearc/gpu/implementation/
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> API_INC :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+
+[CBI] -> API_LIB :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/mingw/lib
+
+[CBI] -> API_BIN :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/mingw/bin
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : opencv_contrib249
+[CBI] ->              : opencv_core249
+[CBI] ->              : opencv_features2d249
+[CBI] ->              : opencv_flann249
+[CBI] ->              : opencv_highgui249
+[CBI] ->              : opencv_imgproc249
+[CBI] ->              : opencv_legacy249
+[CBI] ->              : opencv_ml249
+[CBI] ->              : opencv_nonfree249
+[CBI] ->              : opencv_objdetect249
+[CBI] ->              : opencv_ocl249
+[CBI] ->              : opencv_photo249
+[CBI] ->              : opencv_stitching249
+[CBI] ->              : opencv_superres249
+[CBI] ->              : opencv_ts249
+[CBI] ->              : opencv_video249
+[CBI] ->              : opencv_videostab249
+
+
+[Farmwise_EPFL_GPU_mingw_64] -> g++ compiling .cpp : src/cpp/hearc/gpu/facade/FactoryWeedsFinder_GPU.cpp
+[Farmwise_EPFL_GPU_mingw_64] -> g++ compiling .cpp : src/cpp/hearc/gpu/implementation/WeedsFinder_GPU.cpp
+
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_EPFL_GPU_mingw_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/Farmwise_EPFL_GPU/bin/libFarmwise_EPFL_GPU_mingw_64.a
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : STATIC_LIB
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : MINGW (g++)
+[CBI] -> Task	      : End Compiling-Archive !
+[CBI] -> Time		  : 15:00:29
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/libFarmwise_EPFL_GPU_mingw_64.a
+
+[CBI] -> Farmwise_EPFL_GPU_mingw_64 : End ALL!
+
+15:00:30 Build Finished (took 3s.220ms)
+

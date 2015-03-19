@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Common/src/core/tools/cpp/tab1DTools.h&apos; to &apos;tab1DTools.cpp&apos;" description="Rename resource &apos;tab1DTools.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/tools/cpp/tab1DTools.h" name="tab1DTools.cpp" stamp="1330516582261" updateReferences="true"/>
+</session>

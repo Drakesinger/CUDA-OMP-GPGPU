@@ -1,0 +1,10 @@
+
+**** Clean-only build of configuration mingw for project Temp ****
+
+mingw32-make -f MakeFileGCC.mk clean 
+ls: cannot access src/resources: No such file or directory
+[CBI]->CXX
+[CBI]->g++
+[CBI]-> Clean Common64
+
+**** Build Finished ****

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Farmwise_03_Row_Finder/src/cpp/cpu&apos; to &apos;rowfinder&apos;" description="Rename resource &apos;cpu&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/cpu" name="rowfinder" stamp="1422010116767" updateReferences="true"/>
+</session>

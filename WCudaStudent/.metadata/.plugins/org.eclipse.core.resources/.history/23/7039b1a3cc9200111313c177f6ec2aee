@@ -1,0 +1,26 @@
+#ifndef VIDEO_CAPTURE_TOOLS_H_
+#define VIDEO_CAPTURE_TOOLS_H_
+
+#include "cv.h"
+#include "highgui.h"
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ bool videoCapture(const string& videoName);
+ bool cameraCapture(int idCamera);
+ void printInfo(const Mat& matCapture);
+ void play(const VideoCapture& VideoCapture, const string& idWindow);
+
+#endif 
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

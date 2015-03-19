@@ -1,0 +1,65 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+
+//video
+//#include <opencv2/imgproc/imgproc.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+//#include <opencv2/video/tracking.hpp>
+//#include <opencv2/gpu/gpu.hpp>
+
+
+#include "videoCaptureTools.h"
+
+using std::cout;
+using std::endl;
+using std::string;
+
+//using namespace cv;
+//using namespace cv::gpu;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+static bool useVideo(void);
+static bool useCamera(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useVideo(void)
+    {
+    string videoName = "videoCapture.avi";
+
+    return videoCapture(videoName);
+    }
+
+bool useCamera(void)
+    {
+    int idCamera = 0;
+
+    return cameraCapture(idCamera);
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

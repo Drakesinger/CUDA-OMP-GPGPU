@@ -1,0 +1,147 @@
+// Attention : Extension .cu
+
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
+#include "cudaTools.h"
+#include "vectorTools.h"
+#include "deviceTools.h"
+#include "exampleVectoAdd.h"
+#include "indiceTools.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+void addVectorMultiPassage_04(long* ptrA, long* ptrB, long* ptrC, long n, long blockMaxDimX, long threadMaxDimX);
+bool isAddVectorMultiPassageOk_04(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ static void addVectorMultiPassage(long* ptrA, long* ptrB, long* ptrC, long n);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/**
+ * Soit n la longueur de nos vecteurs
+ * soit N = gridMaxDimx*blockMaxDimx
+ * Si n>N alors chaque thread doit s'ocuper de plus que 1 case du vecteur!
+ */
+void addVectorMultiPassage_04(long* ptrA, long* ptrB, long* ptrC, long n, long blockMaxDimX, long threadMaxDimX)
+    {
+    dim3 blockPerGrid = dim3(blockMaxDimX, 1);
+    dim3 threadPerBlock = dim3(threadMaxDimX, 1, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    assertDimLegal(blockPerGrid, threadPerBlock);
+
+    long* ptrDev_A = NULL;
+    long* ptrDev_B = NULL;
+    long* ptrDev_C = NULL;
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_A, n * sizeof(long)));
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_B, n * sizeof(long)));
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_C, n * sizeof(long)));
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev_B, ptrB, n * sizeof(long), cudaMemcpyHostToDevice));
+    HANDLE_ERROR(cudaMemcpy(ptrDev_C, ptrC, n * sizeof(long), cudaMemcpyHostToDevice));
+
+    addVectorMultiPassage<<<blockPerGrid,threadPerBlock>>>(ptrDev_A, ptrDev_B, ptrDev_C, n); // Attention : Pointeur du device!
+
+    HANDLE_ERROR(cudaMemcpy(ptrA, ptrDev_A, n * sizeof(long), cudaMemcpyDeviceToHost));
+
+    HANDLE_ERROR(cudaFree(ptrDev_A));
+    HANDLE_ERROR(cudaFree(ptrDev_B));
+    HANDLE_ERROR(cudaFree(ptrDev_C));
+    }
+
+bool isAddVectorMultiPassageOk_04(void)
+    {
+    cout << endl << "[Add Vector MultiPassage]" << endl;
+
+    long blockMaxDimX = getMaxGridDim().x;
+    long threadMaxDimX = min(getMaxBlockDim().x, getMaxThreadPerBlock());
+    long nbIterationThread = 10;
+
+    // nvidia nvs140m : Pas assez memory
+    // blockDimX = 65;
+    long blockDimX = sqrt((double) LONG_MAX) / threadMaxDimX / nbIterationThread;
+    assert(blockDimX <= blockMaxDimX);
+
+    long nbThreadCuda = blockDimX * threadMaxDimX;
+    long n = nbThreadCuda * nbIterationThread;
+
+    cout << "addVector MultiPassage : n : " << n << endl;
+    cout << "addVector MultiPassage : nbIterationThread : " << nbIterationThread << endl;
+    assert(n <= sqrt((double) LONG_MAX));
+
+    long* tabB = new long[n];
+    long* tabC = new long[n];
+    long* tabA = new long[n];
+    long* tabATheorique = new long[n];
+
+    vectorB(tabB, n);
+    vectorC(tabC, n);
+    vectorBaddC(tabATheorique, n);
+
+    addVectorMultiPassage_04(tabA, tabB, tabC, n, blockDimX, threadMaxDimX);
+
+    //    print(tabA, n,"AddVectorBig");
+    //    print(tabATheorique, n,"AddVectorBig");
+
+    bool isOk = isEgale(tabA, tabATheorique, n);
+
+    delete[] tabB;
+    delete[] tabC;
+    delete[] tabA;
+    delete[] tabATheorique;
+
+    return isOk;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/**
+ * Hyp : n>nbThreadTotalCuda
+ * Consequence : 1 Thread doit s'occuper de plus que 1 case du vecteur
+ * Truc :
+ */
+__global__ void addVectorMultiPassage(long* ptrA, long* ptrB, long* ptrC, long n)
+    {
+    // Version indirect
+    // long tid=tid0();
+    // long nbThreadCuda=nbThreadTotalCuda();
+
+    // Version direct
+    long tid = threadIdx.x + blockIdx.x * blockDim.x;
+    long nbThreadCuda = gridDim.x * blockDim.x;
+
+    while (tid < n)
+	{
+	ptrA[tid] = ptrB[tid] + ptrC[tid];
+	tid += nbThreadCuda;
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

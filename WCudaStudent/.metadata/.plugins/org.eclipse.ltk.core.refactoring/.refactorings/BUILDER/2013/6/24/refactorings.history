@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;PRODUCTION/MANAGER&apos; to &apos;BUILDER&apos;" description="Rename resource &apos;MANAGER&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MANAGER" name="BUILDER" stamp="1371233144135" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;PRODUCTION/BUILDER/makefile/private/eclipse&apos; to &apos;environmentSetter&apos;" description="Rename resource &apos;eclipse&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="BUILDER/makefile/private/eclipse" name="environmentSetter" stamp="1371233496953" updateReferences="true"/>
+</session>

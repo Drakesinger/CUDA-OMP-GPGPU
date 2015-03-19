@@ -1,0 +1,21 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../src/main.cpp 
+
+ORG_ECLIPSE_CDT_MSVC_CL_OUTPUTTYPE_OUTPUTS += \
+./src/main.obj 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+src/%.obj: ../src/%.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: C++ Compiler (cl)'
+	cl /c /EHs /MD /Zi /nologo /Fo"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

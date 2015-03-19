@@ -1,0 +1,58 @@
+18:43:28 **** Build of configuration MinGW for project Tuto_Graphe_X11 ****
+makeMinGW.bat all 
+
+[MINGW] : all  
+
+Set MinGW environement x64
+ 
+g++ (x86_64-win32-seh, Built by MinGW-W64 project) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Graphe_X1164
+[CBI] ->
+[CBI] -> Build     	  : Q:/bilat/Targets/Tuto_Graphe_X11
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_Graphe_X11/INC
+[CBI] ->              : C:/Soft/BoostMinGW/lib_static/x64
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -O3
+[CBI] ->              : -fgcse
+[CBI] ->              : -fomit-frame-pointer
+[CBI] ->              : -frerun-loop-opt
+[CBI] ->              : -march=corei7
+[CBI] ->              : -mtune=corei7
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> Create folder : Q:/bilat/Targets/Tuto_Graphe_X11/bin
+[CBI] -> Create folder : Q:/bilat/Targets/Tuto_Graphe_X11/obj
+
+[Tuto_Graphe_X1164] -> g++ compiling .cpp : src/main.cpp
+In file included from ../API_Graphe_X11/INC/GraphX11API.h:22:0,
+                 from src/main.cpp:8:
+../API_Graphe_X11/INC/view/XGraph.h:4:22: fatal error: X11/Xlib.h: No such file or directory
+ #include <X11/Xlib.h>
+                      ^
+compilation terminated.
+../BUILDER/makefile/private/cpp/cpp.mk:242: recipe for target `Q:/bilat/Targets/Tuto_Graphe_X11/obj/main.obj' failed
+make: *** [Q:/bilat/Targets/Tuto_Graphe_X11/obj/main.obj] Error 1
+
+18:43:31 Build Finished (took 2s.519ms)
+

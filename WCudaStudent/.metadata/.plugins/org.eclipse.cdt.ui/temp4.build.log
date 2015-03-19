@@ -1,0 +1,14 @@
+
+**** Rebuild of configuration Default for project temp4 ****
+
+**** Internal Builder is used for build               ****
+****  WARNING: The "Default" Configuration may not build  ****
+****  because it uses the "MinGW GCC"  ****
+****  tool-chain that is unsupported on this system.  ****
+
+****  Attempting to build...  **** 
+
+g++ -O2 -g -Wall -c -fmessage-length=0 -o src\main.o ..\src\main.cpp
+g++ -o temp4 src\main.o
+Build complete for project temp4
+Time consumed: 297  ms.  

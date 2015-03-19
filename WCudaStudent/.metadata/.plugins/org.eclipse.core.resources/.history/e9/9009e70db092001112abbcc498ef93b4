@@ -1,0 +1,96 @@
+#include <stdlib.h>
+#include <iostream>
+#include <string>
+
+#include "cppTest+.h"
+#include "Device.h"
+#include "stringTools.h"
+
+#include "TestHelloJunit.h"
+#include "TestAddVectorJunit.h"
+#include "TestPerformanceTracerJunit.h"
+#include "TestMathGPUJunit.h"
+#include "TestIncrementerJunit.h"
+#include "TestMatrixJunit.h"
+#include "TestDotProdJunit.h"
+#include "TestHistoJunit.h"
+#include "TestPinnedMemoryJunit.h"
+#include "TestZeroCopyMemoryJunit.h"
+#include "TestOMPJunit.h"
+
+#include "TestMontecarloPiJunit.h"
+
+
+using std::string;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static bool testALL(int deviceId);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainTest(int deviceId);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainTest(int deviceId)
+    {
+    Device::print(deviceId, "Execute on device : ");
+
+    bool isOk = testALL(deviceId);
+
+    cout << "\nisOK = " << isOk << endl;
+
+    return isOk ? EXIT_SUCCESS : EXIT_FAILURE;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+bool testALL(int deviceId)
+    {
+    Test::Suite testSuite;
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestZeroCopyMemoryJunit())); // pose problem si pas tout seul
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestHelloJunit(deviceId)));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestAddVectorJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestPerformanceTracerJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestMathGPUJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestIncrementerJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestMatrixJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestDotProdJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestHistoJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestPinnedMemoryJunit()));
+
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestOMPJunit()));
+    testSuite.add(std::auto_ptr < Test::Suite > (new TestMontecarloPIJunit())); // pose problem si pas tout seul
+
+
+    string titre = "deviceId_" + toString(deviceId);
+
+    return runTestHtml(titre, testSuite); // Attention: html create in working directory!!
+    //return runTestConsole(titre, testSuite);
+    }
+
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

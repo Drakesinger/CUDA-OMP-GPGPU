@@ -1,0 +1,87 @@
+11:43:59 **** Incremental Build of configuration Visual for project Tuto_Image_Bilat ****
+makeVisual.bat all 
+
+[VISUAL] : all  
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Image_Bilat64
+[CBI] ->
+[CBI] -> Build     	  : Q:/bilat/Targets/Tuto_Image_Bilat
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/INC
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/LIB/visual
+[CBI] ->              : ../API_Bilat_Image/INC
+[CBI] ->              : ../API_Bilat_Image/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_FreeGlut/INC
+[CBI] ->              : ../API_Bilat_Image_FreeGlut/LIB/visual
+[CBI] ->              : ../API_FreeGlut/INC_WIN
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_OMP/src/core
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /nologo
+[CBI] ->              : /openmp
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+HelloFonctionelleMOO.cpp
+
+[CBI] -> Linking to   : Q:/bilat/Targets/Tuto_Image_Bilat/bin/Tuto_Image_Bilat64.exe
+
+[CBI] -> Library Link :
+[CBI] ->              : Bilat_Displayable_001_64.lib
+[CBI] ->              : Bilat_Image_FreeGlut_001_64.lib
+[CBI] ->              : Bilat_Image_GL_002_64.lib
+[CBI] ->              : bilatFreeGlutTools_002_64.lib
+[CBI] ->              : gdi32.lib
+[CBI] ->              : glew64.lib
+[CBI] ->              : glu32.lib
+[CBI] ->              : kernel32.lib
+[CBI] ->              : opengl32.lib
+[CBI] ->              : user32.lib
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Image_Bilat64
+[CBI] -> Location     : Q:/bilat/Targets/Tuto_Image_Bilat/bin/Tuto_Image_Bilat64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl)
+[CBI] -> Task	      : End Compiling-Linking !
+[CBI] -> Time		  : 11:44:01
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Tuto_Image_Bilat64.exe
+
+[CBI] -> Q:/bilat/Targets/Tuto_Image_Bilat/bin/Tuto_Image_Bilat64.exe : End ALL!
+
+11:44:02 Build Finished (took 3s.136ms)
+

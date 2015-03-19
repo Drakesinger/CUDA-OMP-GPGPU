@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BilatToolsCuda/src/test/kernel.cu&apos; to &apos;kernel.h&apos;" description="Rename resource &apos;kernel.cu&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/test/kernel.cu" name="kernel.h" stamp="1385312327033" updateReferences="true"/>
+</session>

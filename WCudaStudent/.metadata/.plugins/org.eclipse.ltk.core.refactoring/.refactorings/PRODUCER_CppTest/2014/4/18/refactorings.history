@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;PRODUCER_CppTest/src/core/extension/GPU.h&apos; to &apos;FloatTools.h&apos;" description="Rename resource &apos;GPU.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/extension/GPU.h" name="FloatTools.h" stamp="1398757082228" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;PRODUCER_CppTest/src/core/extension/testTools.cpp&apos; to &apos;FloatTools.cpp&apos;" description="Rename resource &apos;testTools.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/extension/testTools.cpp" name="FloatTools.cpp" stamp="1398757156228" updateReferences="true"/>
+</session>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Farmwise_12_Use/adaboost.xml&apos; to &apos;classifierModel.xml&apos;" description="Rename resource &apos;adaboost.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="adaboost.xml" name="classifierModel.xml" stamp="1421847983848" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Farmwise_12_Use/inputImage.JPG&apos; to &apos;farmwise0.jpg&apos;" description="Rename resource &apos;inputImage.JPG&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="inputImage.JPG" name="farmwise0.jpg" stamp="1422019110347" updateReferences="true"/>
+</session>

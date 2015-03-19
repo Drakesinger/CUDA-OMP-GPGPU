@@ -1,0 +1,65 @@
+#ifndef WORK_GPU_STREAM_H_
+#define WORK_GPU_STREAM_H_
+
+#include "cudaTools.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class WorkGPUStream
+    {
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	WorkGPUStream(uchar4* ptrImage1,uchar4* ptrImage2,int w,int h);
+	virtual ~WorkGPUStream(void);
+
+	/*--------------------------------------*\
+	|*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	void run(void);
+
+
+    private:
+
+	int sizeOctets(void);
+
+	void copyImageOnDevice0(void);
+	void modifyImageOnDevice0(void);
+	void copyImageFromDevice0(void);
+
+
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	uchar4* ptrImage1;
+	uchar4* ptrImage2;
+
+	uchar4* ptrDev0_Image1;
+	uchar4* ptrDev0_Image2;
+
+	int w;
+	int h;
+    };
+
+#endif
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

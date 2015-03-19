@@ -1,0 +1,89 @@
+#ifndef RIPPLING_MANUEL_MATH_H_
+#define RIPPLING_MANUEL_MATH_H_
+
+#include <math.h>
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class RipplingManuelMath
+    {
+
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	__device__ RipplingManuelMath(int w, int h)
+	    {
+	    dim2 = w / 2;
+	    }
+
+	__device__ RipplingManuelMath(const RipplingManuelMath& source)
+	    {
+	    dim2 = source.dim2;
+	    }
+
+	/*--------------------------------------*\
+	|*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	/**
+	 * x=pixelI
+	 * y=pixelJ
+	 */
+	__device__
+	void color(int i, int j, float t, uchar4* ptrColor)
+	    {
+	    float dxyResult;
+	    dxy(i, j, &dxyResult); // update dxyResult
+
+	    //float num = __cosf(dxyResult - t / 7);
+	    float num = cos(dxyResult - t / 7);
+	    float den = dxyResult + 1;
+	    //float quotient = __fdividef(num, den);
+	    float quotient = num / den;
+	    unsigned char levelGris = (unsigned char) (128 + 127 * quotient);
+
+	    ptrColor->x = levelGris;
+	    ptrColor->y = levelGris;
+	    ptrColor->z = levelGris;
+	    // ptrColor.w = 255;
+	    }
+
+    private:
+
+	__device__
+	void dxy(int i, int j, float* ptrResult)
+	    {
+	    float fx = i - dim2;
+	    float fy = j - dim2;
+
+	    *ptrResult=sqrt(fx * fx + fy * fy) / 10;
+	    // *ptrResult = __fsqrt_rd(fx * fx + fy * fy) / 10; //_rn _rz _ru _rd
+	    }
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	// Tools
+	float dim2;
+
+    };
+
+#endif 
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

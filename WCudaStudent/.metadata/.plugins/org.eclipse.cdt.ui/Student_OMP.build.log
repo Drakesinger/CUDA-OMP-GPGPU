@@ -1,0 +1,125 @@
+15:16:06 **** Incremental Build of configuration GCC for project Student_OMP ****
+makeGCC.sh all 
+
+--------------------------------------------------------
+[Runtime] : gcc x86
+--------------------------------------------------------
+
+[Runtime] : Cuda  : /usr/local/cuda/lib64
+[Runtime] : Cula  : /usr/local/cula/lib64
+[Runtime] : MKL   : /opt/intel/mkl/lib/intel64
+
+[Runtime] : GL/GLEW/GLU
+[Runtime] : FreeGlut
+[Runtime] : Java (JNI)
+[Runtime] : X11
+
+[Runtime] : BOOST   : /opt/api/ext/boost/[user-version]/lib/gcc
+[Runtime] : OpenCV  : /opt/api/ext/openCV/[user-version]/lib
+[Runtime] : CppTest : /opt/api/ext/cpptest/[user-version]/LIB-STATIC/gcc
+
+[Runtime] : bilat_tools
+[Runtime] : bilat_fenetrage
+[Runtime] : bilat_opengl
+[Runtime] : bilat_image
+[Runtime] : bilat_graphe2d
+[Runtime] : bilat_multicourbe_cuda
+
+--------------------------------------------------------
+[Runtime] : gcc x86 : Ready!
+--------------------------------------------------------
+
+
+g++ (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+[Make] : GCC : all
+
+==================================================================================
+[CBI] -> Target Name  : Student_OMP_gcc_x86_64
+[CBI] ->
+[CBI] -> Build     	  : /tmp/ramdrive/arc4/Targets/Student_OMP/bin/Student_OMP_gcc_x86_64.run
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : x86_64
+[CBI] -> OS	 		  : Linux
+[CBI] -> User	 	  : arc4
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_OMP/src/core
+[CBI] ->              : /opt/api/ext/cpptest/001/LIB_STATIC/gcc
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -O3
+[CBI] ->              : -fomit-frame-pointer
+[CBI] ->              : -fopenmp
+[CBI] ->              : -frerun-loop-opt
+[CBI] ->              : -march=native
+[CBI] ->              : -std=c++0x
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../BilatTools_CPP/src/core/tools/header/
+[CBI] ->              : ../BilatTools_CPP/src/core/tools/header/namespace_cpu/
+[CBI] ->              : ../BilatTools_OMP/src/core/OMP_Tools/header/
+[CBI] ->              : src/cpp/core/omp/02_pi/
+[CBI] ->              : src/cpp/core/omp/04_montecarto/
+[CBI] ->              : src/cpp/test/unit/01_Test_Hello/
+[CBI] ->              : src/cpp/test/unit/02_Test_Pi/
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> API_INC :
+[CBI] ->              : /opt/api/ext/cpptest/001/INC
+[CBI] ->              : /opt/api/ext/cpptest/001/INC/extension
+
+[CBI] -> API_LIB :
+
+[CBI] -> API_BIN :
+
+[CBI] -> API_LIBRARIES :
+
+
+[Student_OMP_gcc_x86_64] -> g++ compiling .cpp : src/cpp/core/omp/04_montecarto/00_montecarlo_Sequentiel.cpp
+[Student_OMP_gcc_x86_64] -> g++ compiling .cpp : src/cpp/core/omp/04_montecarto/02_montecarlo_Entrelacer_Atomic.cpp
+
+[CBI] -> Linking to   : /tmp/ramdrive/arc4/Targets/Student_OMP/bin/Student_OMP_gcc_x86_64.run
+
+[CBI] -> Library Link :
+[CBI] ->              : -lCpp_Test_gcc_x86_64
+[CBI] ->              : -lgomp
+
+==================================================================================
+[CBI] -> Target Name  : Student_OMP_gcc_x86_64
+[CBI] -> Location     : /tmp/ramdrive/arc4/Targets/Student_OMP/bin/Student_OMP_gcc_x86_64.run
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : x86_64
+[CBI] -> OS	 		  : Linux
+[CBI] -> User	 	  : arc4
+[CBI] ->
+[CBI] -> Compilateur  : g++ (g++)
+[CBI] -> Task	      : End Compiling-Linking !
+[CBI] -> Time		  : 15:16:06
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Student_OMP_gcc_x86_64.run
+
+[CBI] -> Student_OMP_gcc_x86_64 : End ALL!
+
+15:16:06 Build Finished (took 559ms)
+

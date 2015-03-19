@@ -1,0 +1,247 @@
+12:57:50 **** Build of configuration CudaGCC for project Student_Cuda ****
+makeCudaGCC.sh all 
+
+--------------------------------------------------------
+[Runtime] : gcc x86
+--------------------------------------------------------
+
+[Runtime] : Cuda  : /usr/local/cuda/lib64
+[Runtime] : Cula  : /usr/local/cula/lib64
+[Runtime] : MKL   : /opt/intel/mkl/lib/intel64
+
+[Runtime] : GL/GLEW/GLU
+[Runtime] : FreeGlut
+[Runtime] : Java (JNI)
+[Runtime] : X11
+
+[Runtime] : BOOST   : /opt/api/ext/boost/[user-version]/lib/gcc
+[Runtime] : OpenCV  : /opt/api/ext/openCV/[user-version]/lib
+[Runtime] : CppTest : /opt/api/ext/cpptest/[user-version]/LIB-STATIC/gcc
+
+[Runtime] : bilat_tools
+[Runtime] : bilat_fenetrage
+[Runtime] : bilat_opengl
+[Runtime] : bilat_image
+[Runtime] : bilat_graphe2d
+[Runtime] : bilat_multicourbe_cuda
+
+--------------------------------------------------------
+[Runtime] : gcc x86 : Ready!
+--------------------------------------------------------
+
+
+g++ (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2014 NVIDIA Corporation
+Built on Thu_Jul_17_21:41:27_CDT_2014
+Cuda compilation tools, release 6.5, V6.5.12
+
+
+[CUDA GCC] : all
+
+
+==================================================================================
+[CBI] -> Target Name  : Student_Cuda_gcc_cuda_65_x86_64
+[CBI] ->
+[CBI] -> Build        : /tmp/ramdrive/arc4/Targets/Student_Cuda/bin/Student_Cuda_gcc_cuda_65_x86_64.run
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : x86_64
+[CBI] -> OS	 		  : Linux
+[CBI] -> User	 	  : arc4
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : /opt/api/ext/cpptest/001/LIB_STATIC/gcc
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -std=c++0x
+[CBI] ->              : -fopenmp
+[CBI] ->              : -O3
+[CBI] ->              : -frerun-loop-opt
+[CBI] ->              : -fomit-frame-pointer
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../BilatTools_CPP/src/core/tools/header/
+[CBI] ->              : ../BilatTools_CPP/src/core/tools/header/namespace_cpu/
+[CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/both/
+[CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/device/
+[CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/device/curand/
+[CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/device/reduction/
+[CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/device/synchronisation/
+[CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/host/
+[CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/mixte/
+[CBI] ->              : src/cpp/test/junit/01_Test_Hello/
+
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> API_INC :
+[CBI] ->              : /opt/api/ext/boost/001/include
+[CBI] ->              : /opt/api/ext/cpptest/001/INC
+[CBI] ->              : /opt/api/ext/cpptest/001/INC/extension
+[CBI] ->              : /usr/local/cuda/include
+[CBI] ->              : /usr/local/cuda/include/CL
+[CBI] ->              : /usr/local/cuda/include/crt
+[CBI] ->              : /usr/local/cuda/include/thrust
+
+[CBI] -> API_LIB :
+[CBI] ->              : /opt/api/ext/boost/001/lib/gcc
+[CBI] ->              : /usr/local/cuda/lib64
+
+[CBI] -> API_BIN :
+[CBI] ->              : /opt/api/ext/boost/001/lib/gcc
+[CBI] ->              : /usr/local/cuda/lib64
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : boost_atomic
+[CBI] ->              : boost_chrono
+[CBI] ->              : boost_context
+[CBI] ->              : boost_date_time
+[CBI] ->              : boost_exception
+[CBI] ->              : boost_filesystem
+[CBI] ->              : boost_graph
+[CBI] ->              : boost_locale
+[CBI] ->              : boost_math_c99
+[CBI] ->              : boost_math_c99f
+[CBI] ->              : boost_math_c99l
+[CBI] ->              : boost_math_tr1
+[CBI] ->              : boost_math_tr1f
+[CBI] ->              : boost_math_tr1l
+[CBI] ->              : boost_prg_exec_monitor
+[CBI] ->              : boost_program_options
+[CBI] ->              : boost_random
+[CBI] ->              : boost_regex
+[CBI] ->              : boost_serialization
+[CBI] ->              : boost_signals
+[CBI] ->              : boost_system
+[CBI] ->              : boost_test_exec_monitor
+[CBI] ->              : boost_thread
+[CBI] ->              : boost_timer
+[CBI] ->              : boost_unit_test_framework
+[CBI] ->              : boost_wave
+[CBI] ->              : boost_wserialization
+[CBI] ->              : cublas
+[CBI] ->              : cudart
+[CBI] ->              : cufft
+[CBI] ->              : cuinj64
+[CBI] ->              : curand
+[CBI] ->              : cusparse
+[CBI] ->              : nvToolsExt
+[CBI] ->              : nvblas
+[CBI] ->              : rt
+
+[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda/bin
+[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda/obj
+[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda/cubin
+
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/main.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/mainCore.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/01_Hello/useHello.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/test/mainTest.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/test/junit/01_Test_Hello/TestHello.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/AleaTools.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/Chronos.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/LimitsTools.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/MathTools.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/StringTools.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/TabTools.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurF.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurI.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/namespace_cpu/ColorTools_CPU.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/namespace_cpu/IndiceTools_CPU.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/cudaTools.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/Device.cpp
+[Student_Cuda_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Hello/01_helloCuda.cu
+[Student_Cuda_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Hello/02_hello_add.cu
+[Student_Cuda_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/00_Addvector/addVecteur.cu
+
+[CBI] -> Linking to   : /tmp/ramdrive/arc4/Targets/Student_Cuda/bin/Student_Cuda_gcc_cuda_65_x86_64.run
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lCpp_Test_gcc_x86_64
+[CBI] ->              : -lboost_atomic
+[CBI] ->              : -lboost_chrono
+[CBI] ->              : -lboost_context
+[CBI] ->              : -lboost_date_time
+[CBI] ->              : -lboost_exception
+[CBI] ->              : -lboost_filesystem
+[CBI] ->              : -lboost_graph
+[CBI] ->              : -lboost_locale
+[CBI] ->              : -lboost_math_c99
+[CBI] ->              : -lboost_math_c99f
+[CBI] ->              : -lboost_math_c99l
+[CBI] ->              : -lboost_math_tr1
+[CBI] ->              : -lboost_math_tr1f
+[CBI] ->              : -lboost_math_tr1l
+[CBI] ->              : -lboost_prg_exec_monitor
+[CBI] ->              : -lboost_program_options
+[CBI] ->              : -lboost_random
+[CBI] ->              : -lboost_regex
+[CBI] ->              : -lboost_serialization
+[CBI] ->              : -lboost_signals
+[CBI] ->              : -lboost_system
+[CBI] ->              : -lboost_test_exec_monitor
+[CBI] ->              : -lboost_thread
+[CBI] ->              : -lboost_timer
+[CBI] ->              : -lboost_unit_test_framework
+[CBI] ->              : -lboost_wave
+[CBI] ->              : -lboost_wserialization
+[CBI] ->              : -lcublas
+[CBI] ->              : -lcudart
+[CBI] ->              : -lcufft
+[CBI] ->              : -lcuinj64
+[CBI] ->              : -lcurand
+[CBI] ->              : -lcusparse
+[CBI] ->              : -lgomp
+[CBI] ->              : -lnvToolsExt
+[CBI] ->              : -lnvblas
+[CBI] ->              : -lrt
+
+
+==================================================================================
+[CBI] -> Target Name  : Student_Cuda_gcc_cuda_65_x86_64
+[CBI] -> Location     : /tmp/ramdrive/arc4/Targets/Student_Cuda/bin/Student_Cuda_gcc_cuda_65_x86_64.run
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : x86_64
+[CBI] -> OS	 	      : Linux
+[CBI] -> User	 	  : arc4
+[CBI] ->
+[CBI] -> Compilateur  : g++) && nvcc
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 12:58:01
+==================================================================================
+
+
+[CBI] -> Deploying      : ../RELEASE/bin/Student_Cuda_gcc_cuda_65_x86_64.run
+
+[CBI] -> Student_Cuda_gcc_cuda_65_x86_64   : End ALL!
+
+12:58:01 Build Finished (took 11s.140ms)
+

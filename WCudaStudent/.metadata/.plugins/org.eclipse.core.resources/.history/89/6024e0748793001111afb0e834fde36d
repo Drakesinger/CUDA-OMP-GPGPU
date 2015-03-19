@@ -1,0 +1,306 @@
+#include <iostream>
+#include <assert.h>
+#include "Indice1D.h"
+#include "cudaTools.h"
+#include "mathTools.h"
+#include "histo.h"
+#include "ChronoOMPs.h"
+#include "Chronos.h"
+#include "Device.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isHistoTurbo_Ok(int n);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ static void histogrammeTurboGPU(unsigned char* ptrTabData, int n, unsigned int* ptrTabFrequence);
+
+static void histogramme(unsigned char* tabData, int n, unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock);
+static void init(unsigned int* ptrTab, int n, unsigned int value);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/**
+ * Special memory access pattern:
+ *
+ * 	In the case where, the kernel read/write only once element in tab data,
+ * 	it's no necessary to perform a complet full copy of tab from host to device, and at the end of kernel from device to host!
+ *
+ * Mapped Optimisation:
+ *
+ * 	In this case it's better to ask to device to directly acces to host memory.
+ * 	This can be done with "mapMemory" (cudaHostAllocMapped)
+ * 	This type of memory is call "ZeroCopy" memory, because there is not a full complet transfert of data between host<-->device before and afetr the call of kernel.
+ * 	For performance consideration,it's obvious that mapMemory is use in collabartion with pageLocked(pinned) memory.
+ * 	The collaboration between pageLocked and mapMemory it's not only for performance, it's required!
+ *
+ * Attention :
+ *
+ * 	To use cudaHostAllocMapped memory, the device must be before configured with
+ *
+ * 		HANDLE_ERROR(cudaSetDeviceFlags(cudaDeviceMapHost));
+ *
+ * 	before of the call of the kernel, by example in main function.
+ */
+bool isHistoTurbo_Ok(int n) //n = 20* 1024 * 1024;
+    {
+    cout << endl << "[Histogramme : MapMemory : Turbo]" << endl;
+    cout << "n=" << n << endl;
+
+    const int NB_BLOCK = Device::getMPCount();
+    const int NB_THREAD_BLOCK = 512;
+
+    assert(NB_THREAD_BLOCK >= 256); // sera use pour init tabFrequenceBlock de taille 256
+    assert((Device::getCapacityMajor() == 1 && Device::getCapacityMinor() >= 2) || Device::getCapacityMajor() >= 2); // atomic operation on shared Memory requiert a capacity of 1.2 or higher!
+
+    dim3 blockPerGrid(NB_BLOCK, 1, 1);
+    dim3 threadPerBlock(NB_THREAD_BLOCK, 1, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    Device::assertDim(blockPerGrid, threadPerBlock);
+
+    // Allocation memory standard:
+    //   unsigned char* tabData = new unsigned char[n];
+    //   unsigned int* tabFrequence = new unsigned int[256];
+
+    // Allocation memory special:
+    unsigned char* tabData = NULL;
+    unsigned int* tabFrequence = NULL;
+
+    HANDLE_ERROR(cudaHostAlloc((void**) &tabData, n * sizeof(unsigned char), cudaHostAllocMapped | cudaHostAllocWriteCombined));
+    // Good performance iff only one read by element in tabData
+    HANDLE_ERROR(cudaHostAlloc((void**) &tabFrequence, 256 * sizeof(unsigned int), cudaHostAllocMapped | cudaHostAllocWriteCombined));
+    // cudaHostAllocDefault : 	   Standard page-locked (pinned memory)
+    //
+    // cudaHostAllocMapped  : 	   Device(GPU) map memory of host (CPU)
+    //			      	   Good performance iff
+    //					(1) MotherBoard integrate GPU (where gpu has no memory,avoid double copy)
+    //					(2) Read data only once
+    //			      	   Very poor performance in other condition.
+    //
+    // cudaHostAllocWriteCombined :  By default page-locked host memory is allocated as cacheable
+    //				    cudaHostAllocWriteCombined host-memory cannot be cached on  CPU L1-cache or l2-cache
+    //				    Advantage : This feature Optimize Device(GPU) access to  host(CPU) memory, cause the cache is not snooped during transfert in pci-express (not necessary to deal with cpu-cache)
+    //				    Inconvenient : Give poor performance in CPU side, when cpu code must performed operation on this memory (here we see the advantage of cpu-cache)
+    //				    Good performance, if only GPU acced to this memory,poor performance for cpu-side
+    //
+    // Benchmark : gpu-Performance can be increase from 30% to 50% with cudaHostAllocWriteCombined, cpu-performance dramaticly decrease on this aera of memory
+
+    fillRandom(tabData, n);
+
+    // v1
+	{
+	init(tabFrequence, 256, 0);
+
+	ChronoOMPs chrono;
+	histogrammev1(tabData, n, tabFrequence, blockPerGrid, threadPerBlock);
+	chrono.stop();
+	chrono.print("histogrammeTurbo      : ");
+
+	bool isOk = isHistoOk(tabData, n, tabFrequence);
+	}
+
+    //v2
+	{
+	init(tabFrequence, 256, 0);
+
+	ChronoOMPs chrono;
+	histogrammev2(tabData, n, tabFrequence, blockPerGrid, threadPerBlock);
+	chrono.stop();
+	chrono.print("histogrammeTurbo      : ");
+
+	bool isOk = isHistoOk(tabData, n, tabFrequence);
+	}
+
+    // v3
+    if (Device::isUVAEnable())
+	{
+	init(tabFrequence, 256, 0);
+
+	ChronoOMPs chrono;
+	histogrammeUVA(tabData, n, tabFrequence, blockPerGrid, threadPerBlock);
+	chrono.stop();
+	chrono.print("histogrammeTurbo      : ");
+	}
+
+    // Performance Observation:
+    //
+    // Performance Histo GPU : cudaHostAllocMapped | cudaHostAllocWriteCombined : 0.49 (s)
+    // Performance Histo GPU : cudaHostAllocMapped  : 0.501 (s)
+    // Performance Histo GPU : standard memory (pageable memory) : 0.544 (s)
+    //
+    // Performance Histo CPU sequentiel : standard memory (pageable memory) :  0.541s
+    // Performance Histo CPU sequentiel : cudaHostAllocMapped | cudaHostAllocWriteCombined : 60 (s) !!! 120x plus lent que normal
+    // Performance Histo CPU sequentiel : cudaHostAllocMapped : 0.54 (s)
+    //
+    // Observation: On  gagne pas en performance cote GPU (why), mais on perd en performance cote CPU (normal)
+    //
+    // Conclusion : pas au point? FIXME cudaHostAllocWriteCombined
+
+    cout << endl;
+    cout << "Warning     : sequential time is 120X more slow than previous version!" << endl;
+    cout << "Cause       : The cpu ram where date is store is here of type : cudaHostAllocWriteCombined" << endl;
+    cout << "Conseuqnece : CPU is slowier, buy GPU is faster" << endl;
+
+    // Liberation memory cpu standard
+    // delete[] tabData;
+    // delete[] tabFrequence;
+
+    // Liberation memory cpu special
+    HANDLE_ERROR(cudaFreeHost(tabData));
+    HANDLE_ERROR(cudaFreeHost(tabFrequence));
+
+    return isOk;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void init(unsigned int* ptrTab, int n, unsigned int value)
+    {
+    for (int i = 1; i <= n; i++)
+	{
+	*ptrTab++ = value;
+	}
+    }
+
+void histogrammev1(unsigned char* tabData, int n, unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock)
+    {
+    cout << "\nWithout UVA : chrono event" << endl;
+
+    cudaEvent_t start;
+    cudaEvent_t stop;
+    float elapseTimeMS;
+
+    cudaStream_t streamID = 0;
+
+    HANDLE_ERROR(cudaEventCreate(&start));
+    HANDLE_ERROR(cudaEventCreate(&stop));
+    HANDLE_ERROR(cudaEventRecord(start, streamID));
+    // 0 = idStream not explain here
+
+    unsigned char* ptrDev_data = NULL;
+    unsigned int* ptrDev_frequence = NULL;
+
+    // Pas d'allocation sur le GPU! La ram du host est mapper
+    // Seul tabFrequenceBlock reste sur le GPU
+    HANDLE_ERROR(cudaHostGetDevicePointer(&ptrDev_data, tabData, 0));
+    // Mapping entre tabData<-> ptrDev_data
+    HANDLE_ERROR(cudaHostGetDevicePointer(&ptrDev_frequence, tabFrequence, 0));
+    // Mapping entre tabFrequence<-> ptrDev_frequence
+
+histogrammeTurboGPU<<<blockPerGrid,threadPerBlock>>>(ptrDev_data,n,ptrDev_frequence);
+       // On ne peut  pas chronométrer avec ChronoOMP car il n'y a plus d'appel au GPU ensuite, donc pas de barrier pour le CPU!
+
+       				                HANDLE_ERROR(cudaEventRecord(stop, streamID));
+    // 0 = idStream not explain here
+    HANDLE_ERROR(cudaEventSynchronize(stop));
+    // wait the end of kernel, explicit barrier
+    HANDLE_ERROR(cudaEventElapsedTime(&elapseTimeMS, start, stop));
+    HANDLE_ERROR(cudaEventDestroy(start));
+    HANDLE_ERROR(cudaEventDestroy(stop));
+
+    cout << "ElapseTime  = " << elapseTimeMS << " (ms)" << endl << endl;
+    }
+
+void histogrammev2(unsigned char* tabData, int n, unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock)
+    {
+    cout << "\nWithout UVA : chrono omp " << endl;
+    ChronoOMPs chrono;
+
+    init(tabFrequence, 256, 0);
+
+    unsigned char* ptrDev_data = NULL;
+    unsigned int* ptrDev_frequence = NULL;
+
+    HANDLE_ERROR(cudaHostGetDevicePointer(&ptrDev_data, tabData, 0));
+    HANDLE_ERROR(cudaHostGetDevicePointer(&ptrDev_frequence, tabFrequence, 0));
+
+histogrammeTurboGPU<<<blockPerGrid,threadPerBlock>>>(ptrDev_data,n,ptrDev_frequence); // asynchrone
+			            HANDLE_ERROR(cudaDeviceSynchronize());
+
+    cout << "ElapseTime  = " << chrono.timeElapse() * 1000 << " (ms)" << endl << endl;
+    }
+
+void histogramme(unsigned char* tabData, int n, unsigned int* tabFrequence, const dim3& blockPerGrid, const dim3& threadPerBlock)
+    {
+    if (Device::isUVAEnable())
+	{
+	cout << "\nWith UVA (syntaxe simplified)" << endl;
+	ChronoOMPs chrono;
+
+	init(tabFrequence, 256, 0);
+
+histogrammeTurboGPU<<<blockPerGrid,threadPerBlock>>>(tabData,n,tabFrequence);
+
+
+	    		HANDLE_ERROR(cudaDeviceSynchronize());
+
+	cout << "ElapseTime  = " << chrono.timeElapse() * 1000 << " (ms)" << endl;
+	}
+
+    cout << "\n";
+    }
+
+/**
+ * Same code of histogrammeFast
+ * see 02_histogrammeFast
+ */
+__global__ void histogrammeTurboGPU(unsigned char* tabData, int n, unsigned int* tabFrequenceGlobal)
+    {
+    __shared__
+    unsigned int tabFrequenceBlock[256];
+
+// version indirecte
+//int tid=Indice1D::tid();
+//int nbThreadCuda=Indice1D::nbThread();
+
+// version directe
+    int tid = threadIdx.x + (blockDim.x * blockIdx.x);
+    int nbThreadCuda = (gridDim.x * blockDim.x);
+
+// Hyp : NB_THREAD_BLOCK>=256=tabFrequenceBlock.size()
+    if (threadIdx.x < 256)
+	{
+	tabFrequenceBlock[threadIdx.x] = 0; // hyp : blockDim.x=256 Rappel: tabFrequence de taille 256
+	}
+    __syncthreads(); // or du if !!
+
+// Les threadCuda tid explore tabData
+    while (tid < n)
+	{
+	atomicAdd(&tabFrequenceBlock[tabData[tid]], (unsigned int) 1);
+	tid += nbThreadCuda;
+	}
+
+// Reduction
+    __syncthreads();
+    if (threadIdx.x < 256) // tabFrequenceGlobal et tabFrequenceBlock ont 256 cases, car les valeur de l'input tabData dont on cherche la fréquence sont in [0,255]
+	{
+	atomicAdd(&tabFrequenceGlobal[threadIdx.x], tabFrequenceBlock[threadIdx.x]);
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

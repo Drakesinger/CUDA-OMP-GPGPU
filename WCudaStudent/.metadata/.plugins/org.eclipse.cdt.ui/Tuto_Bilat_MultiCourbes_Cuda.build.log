@@ -1,0 +1,149 @@
+15:18:20 **** Incremental Build of configuration CudaVisual for project Tuto_Bilat_MultiCourbes_Cuda ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Fri_Mar_14_19:30:01_PDT_2014
+Cuda compilation tools, release 6.0, V6.0.1
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Bilat_Cuda_MultiCourbes_64
+[CBI] ->
+[CBI] -> Build        : Q:/cedric.bilat/Targets/Tuto_Bilat_Cuda_MultiCourbes/bin/Tuto_Bilat_Cuda_MultiCourbes_64.exe
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_GL/INC
+[CBI] ->              : ../API_Bilat_GL/LIB/visual
+[CBI] ->              : ../API_FreeGlut/INC_WIN
+[CBI] ->              : ../API_FreeGlut/LIB/visual
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/INC
+[CBI] ->              : ../API_Bilat_FreeGlut_Tools/LIB/visual
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_MultiCourbes_Cuda/INC
+[CBI] ->              : ../API_Bilat_MultiCourbes_Cuda/LIB/visual
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../API_FreeGlut/INC_WIN
+[CBI] ->              : ../API_FreeGlut/LIB/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /openmp
+[CBI] ->              : /MD
+[CBI] ->              : -DCBI_DISPLAYABLE_DLL
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+[CBI] ->              : arch=compute_50,code=sm_50
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+
+DataProviderSampleKernel.cu
+DataProviderSample.cu
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/Tuto_Bilat_Cuda_MultiCourbes/bin/Tuto_Bilat_Cuda_MultiCourbes_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lBilat_Displayable_004_64
+[CBI] ->              : -lBilat_FreeGlut_Tools_005_64
+[CBI] ->              : -lBilat_GL_003_64
+[CBI] ->              : -lBilat_MultiCourbes_Cuda_55_001_64
+[CBI] ->              : -lOpenCL
+[CBI] ->              : -lcublas
+[CBI] ->              : -lcublas_device
+[CBI] ->              : -lcuda
+[CBI] ->              : -lcudadevrt
+[CBI] ->              : -lcudart
+[CBI] ->              : -lcudart_static
+[CBI] ->              : -lcufft
+[CBI] ->              : -lcufftw
+[CBI] ->              : -lcurand
+[CBI] ->              : -lcusparse
+[CBI] ->              : -lfreeglut64
+[CBI] ->              : -lgdi32
+[CBI] ->              : -lglew64
+[CBI] ->              : -lglu32
+[CBI] ->              : -lkernel32
+[CBI] ->              : -lnppc
+[CBI] ->              : -lnppi
+[CBI] ->              : -lnpps
+[CBI] ->              : -lnvcuvenc
+[CBI] ->              : -lnvcuvid
+[CBI] ->              : -lopengl32
+[CBI] ->              : -luser32
+
+nvcc : warning : The 'compute_10' and 'sm_10' architectures are deprecated, and may be removed in a future release.
+main.obj
+mainCore.obj
+ProviderMultiCourbeGL.obj
+MutliCourbeSampleGL.obj
+GLUTMultiCourbes.obj
+StringTools.obj
+TabTools.obj
+Chronos.obj
+AleaTools.obj
+LimitsTools.obj
+VariateurF.obj
+VariateurI.obj
+MathTools.obj
+cudaTools.obj
+Device.obj
+DataProviderSampleKernel.obj
+DataProviderSample.obj
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Bilat_Cuda_MultiCourbes_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/Tuto_Bilat_Cuda_MultiCourbes/bin/Tuto_Bilat_Cuda_MultiCourbes_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 	      : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 15:18:46
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Tuto_Bilat_Cuda_MultiCourbes_64.exe
+
+[CBI] -> Tuto_Bilat_Cuda_MultiCourbes_64   : End ALL!
+
+15:18:47 Build Finished (took 26s.544ms)
+

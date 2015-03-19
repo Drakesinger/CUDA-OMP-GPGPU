@@ -1,0 +1,101 @@
+#ifndef DEVICE_H
+#define DEVICE_H
+
+#include "cuda_runtime.h"
+#include <string>
+
+using std::string;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/**
+ * idDevice in [0,nbDevice-1]
+ *
+ * dim3.x
+ * dim3.y
+ * dim3.z
+ *
+ * sm=1.2 major=1 minor=2
+ */
+class Device
+    {
+	/*--------------------------------------*\
+	 |*		Constructor		*|
+	 \*-------------------------------------*/
+    public:
+
+	/*--------------------------------------*\
+	 |*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	static bool isCuda(void);
+
+	static int getDeviceCount(void);
+	static int getDeviceId(void);
+
+	static cudaDeviceProp getDeviceProp(void);
+	static cudaDeviceProp getDeviceProp(int idDevice);
+
+	static dim3 getMaxGridDim(int idDevice);
+	static dim3 getMaxGridDim();
+	static dim3 getMaxBlockDim(int idDevice);
+	static dim3 getMaxBlockDim();
+
+	static int getWarpSize(int idDevice);
+	static int getWarpSize(void);
+
+	static int getMaxThreadPerBlock(int idDevice);
+	static int getMaxThreadPerBlock();
+
+	static int getMPCount(void);
+	static int getMPCount(int idDevice);
+
+	static int getCapacityMajor();
+	static int getCapacityMajor(int idDevice);
+
+	static int getCapacityMinor();
+	static int getCapacityMinor(int idDevice);
+
+	static void print(string titre);
+	static void print(int idDevice, string titre);
+	static void printALL(string titre);
+
+	static void assertDim(const dim3& threadPerGrid, const dim3& threadPerBlock);
+
+	static bool isUVAEnable(int idDevice);
+	static bool isUVAEnable();
+
+	static bool isAtomicShareMemoryEnable(int idDevice);
+	static bool isAtomicShareMemoryEnable();
+
+	/**
+	 * Force load
+	 */
+	static void loadCudaDriver(int deviceID);
+	/**
+	 * Force load
+	 */
+	static void loadCudaDriver(void);
+	/**
+	 * Force load
+	 */
+	static void loadCudaDriverDeviceAll(void);
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

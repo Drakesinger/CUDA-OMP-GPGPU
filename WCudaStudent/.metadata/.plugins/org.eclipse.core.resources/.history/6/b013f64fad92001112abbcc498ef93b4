@@ -1,0 +1,62 @@
+#include "TestCulaJunit.h"
+"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern int useCulaSystemSolve(void);
+extern int useCulaEigenValue(void);
+extern int versionCheckCudaCula(void);
+extern int useBenchmark(void);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Constructor		*|
+ \*-------------------------------------*/
+
+TestCulaJunit::TestCulaJunit(int deviceId)
+    {
+    this->deviceId=deviceId;
+
+    TEST_ADD(TestCulaJunit::testSpectre);
+    TEST_ADD(TestCulaJunit::testSystemSolve);
+    TEST_ADD(TestCulaJunit::testVersion);
+    TEST_ADD(TestCulaJunit::testBenchmark);
+    }
+
+/*--------------------------------------*\
+ |*		Methodes		*|
+ \*-------------------------------------*/
+
+void TestCulaJunit::testSpectre(void)
+    {
+    useCulaEigenValue();
+    }
+
+void TestCulaJunit::testSystemSolve(void)
+    {
+    useCulaSystemSolve();
+    }
+
+void TestCulaJunit::testVersion(void)
+    {
+    versionCheckCudaCula();
+    }
+
+void TestCulaJunit::testBenchmark(void)
+    {
+    useBenchmark();
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

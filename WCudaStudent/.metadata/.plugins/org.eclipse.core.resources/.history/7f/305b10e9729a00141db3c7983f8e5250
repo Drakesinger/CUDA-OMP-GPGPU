@@ -1,0 +1,121 @@
+#include <iostream>
+#include "Pipeline.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Constructeur		*|
+ \*-------------------------------------*/
+
+Pipeline::Pipeline(FactoryImageProvider_I& factoryImageProvider, FactoryRowFinder_I& factoryRowFinder, FactoryRowConsomateur_I& factoryRowConsomateur,
+	FactoryWeedsFinder_I& factoryWeedsFinder, FactoryWeedsConsomateur_I& factoryWeedsConsomateur)
+    {
+    this->ptrImageProvider = factoryImageProvider.create();
+
+    this->ptrRowFinder = factoryRowFinder.create();
+    this->ptrRowConsomateur = factoryRowConsomateur.create();
+
+    this->ptrWeedsFinder = factoryWeedsFinder.create();
+    this->ptrWeedsConsomateur = factoryWeedsConsomateur.create();
+    }
+
+Pipeline::~Pipeline(void)
+    {
+    delete ptrImageProvider;
+
+    delete ptrRowFinder;
+    delete ptrRowConsomateur;
+
+    delete ptrWeedsFinder;
+    delete ptrWeedsConsomateur;
+    }
+
+/*--------------------------------------*\
+ |*		Override		*|
+ \*-------------------------------------*/
+
+void Pipeline::run()
+    {
+    int i = 1;
+    while (true)
+	{
+	cout << "Processing image " << i << endl;
+
+	Mat matImageSrc = ptrImageProvider->provide();
+
+	RowIn* ptrRowIn = new RowIn(matImageSrc);
+	RowOut* ptrRowOut = ptrRowFinder->process(ptrRowIn);
+
+	parallel(matImageSrc,ptrRowOut);
+	//sequantial(matImageSrc,ptrRowOut);
+
+	i++;
+	}
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void Pipeline::processRow(Mat& matImageSrc,RowOut* ptrRowOut)
+    {
+    ptrRowConsomateur->process(ptrRowOut);
+    }
+
+void Pipeline::processWeeds(Mat& matImageSrc,RowOut* ptrRowOut)
+    {
+    WeedsIn* ptrWeedsIn = new WeedsIn(matImageSrc);
+    WeedsOut* ptrWeedsOut = ptrWeedsFinder->process(ptrWeedsIn);
+
+    ptrWeedsConsomateur->process(ptrWeedsIn, ptrWeedsOut);
+
+    delete ptrWeedsIn;
+    delete ptrWeedsOut;
+    }
+
+void Pipeline::parallel(Mat& matImageSrc,RowOut* ptrRowOut)
+    {
+    #pragma omp sections
+	{
+	#pragma omp section
+	    {
+	    processRow();
+	    }
+
+	#pragma omp section
+	    {
+	    processWeeds();
+	    }
+	}
+    }
+
+void Pipeline::sequential(Mat& matImageSrc,RowOut* ptrRowOut)
+    {
+    processRow();
+    processWeeds();
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

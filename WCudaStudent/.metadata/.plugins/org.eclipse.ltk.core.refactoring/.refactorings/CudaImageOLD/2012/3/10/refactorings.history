@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CudaImage/src/cpp/core/01_rippling/temp.cu&apos; to &apos;RipplingKernel.cu&apos;" description="Rename resource &apos;temp.cu&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/01_rippling/temp.cu" name="RipplingKernel.cu" stamp="1330962372059" updateReferences="true"/>
+</session>

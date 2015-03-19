@@ -1,0 +1,57 @@
+20:53:01 **** Build of configuration IntelWin for project CppTestAPI ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeIntel.bat" all 
+
+[INTEL]
+
+Intel(R) Parallel Studio XE 2013
+Copyright (C) 1985-2013 Intel Corporation. All rights reserved.
+Intel(R) Composer XE 2013 Update 2 (package 149)
+
+
+==================================================================================
+[CBI]->Target Name	: cppTestApi64
+[CBI]->Type	 		: STATIC_LIB
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/cppTestApi/bin/cppTestApi64.lib
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: INTEL [CXX=icl]
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 20:53:01
+==================================================================================
+
+suite.cpp
+htmloutput.cpp
+compileroutput.cpp
+textoutput.cpp
+collectoroutput.cpp
+time.cpp
+utils.cpp
+missing.cpp
+source.cpp
+testTools.cpp
+
+[CBI]->linking to Q:/bilat/Targets/cppTestApi/bin/cppTestApi64.lib
+xilib: executing 'lib'
+Microsoft (R) Library Manager Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/OUT:Q:/bilat/Targets/cppTestApi/bin/cppTestApi64.lib 
+rv 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo3\suite.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo2\htmloutput.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo4\compileroutput.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo5\textoutput.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo6\collectoroutput.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo7\time.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo8\utils.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo9\missing.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo10\source.obj 
+C:\Users\bilat\AppData\Local\Temp\10724_ipo11\testTools.obj 
+make: *** [Q:/bilat/Targets/cppTestApi/bin/cppTestApi64.lib] Error 1181
+LINK : fatal error LNK1181: cannot open input file 'rv'
+../BUILDER/makefile/private/cpp/cpp.mk:148: recipe for target `Q:/bilat/Targets/cppTestApi/bin/cppTestApi64.lib' failed
+
+20:53:12 Build Finished (took 11s.299ms)
+

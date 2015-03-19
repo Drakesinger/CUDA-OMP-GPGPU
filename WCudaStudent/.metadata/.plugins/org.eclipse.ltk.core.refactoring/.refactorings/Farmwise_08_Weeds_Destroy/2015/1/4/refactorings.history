@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Farmwise_08_Weeds_Destroy/src/cpp/destroyeur&apos; to &apos;weedsdestroyeur&apos;" description="Rename resource &apos;destroyeur&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/destroyeur" name="weedsdestroyeur" stamp="1422010240288" updateReferences="true"/>
+</session>

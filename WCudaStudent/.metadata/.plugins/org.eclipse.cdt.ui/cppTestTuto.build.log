@@ -1,0 +1,21 @@
+21:17:08 **** Clean-only build of configuration Visual for project CppTestTuto ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeVisual.bat" clean 
+
+[VISUAL]
+
+
+==================================================================================
+[CBI]->Target            : TutoCPPTest64
+[CBI]->Task			     : DELETE
+[CBI]
+[CBI]->Delete .obj       : Q:/bilat/Targets/TutoCPPTest/obj
+[CBI]->Delete .bin       : Q:/bilat/Targets/TutoCPPTest/bin
+[CBI]->Delete doc        : Q:/bilat/Targets/TutoCPPTest/doc
+[CBI]
+[CBI]->Delete deploy     : ../Deploy/bin/TutoCPPTest64.exe
+[CBI]->Delete deploy doc : ../Deploy/doc/TutoCPPTest64.doc.tar.gz
+==================================================================================
+
+
+21:17:09 Build Finished (took 1s.244ms)
+

@@ -1,0 +1,82 @@
+#include "ImageCircuit.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+//:imageViewer("circuit cpu-gpu-cpu")
+// imageCapture(0)
+ImageCircuit::ImageCircuit() :
+	imageCapture(0),imageViewer("circuit cpu-gpu-cpu")
+    {
+    isRunning = false;
+    }
+
+ImageCircuit::~ImageCircuit(void)
+    {
+    //rien
+    }
+
+bool ImageCircuit::start(void)
+    {
+    if (imageCapture.isOpened())
+	{
+	if (!isRunning)
+	    {
+	    isRunning = true;
+
+	    for (int i = 1; i <= 1000; i++)
+		{
+		//cout<<i<<endl;
+
+		 Mat matCapture= imageCapture.capture();
+		// uchar4* ptrImage= ImageCapture::castToUChar4(&matCapture);
+		imageViewer.show(&matCapture);
+
+		cout<<"fps="<<imageViewer.fps()<<endl;
+		}
+
+	    }
+	return true;
+	}
+    else
+	{
+	cerr << " Capture : failed " << endl;
+	return false;
+	}
+
+    }
+
+void ImageCircuit::stop(void)
+    {
+    isRunning = false;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

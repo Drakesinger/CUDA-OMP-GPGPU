@@ -1,0 +1,110 @@
+00:46:56 **** Build of configuration Visual for project OpenMP ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeVisual.bat" all 
+
+[VISUAL]
+
+
+==================================================================================
+[CBI]->Target Name	: OMP64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/OMP/bin/OMP64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: VISUAL [CXX=cl]
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 00:46:57
+==================================================================================
+
+main.cpp
+mainCore.cpp
+01_helloOMP.cpp
+00_pi_tools.cpp
+05_pi_for_atomic.cpp
+06_pi_for_critical.cpp
+04_pi_entrelacer_atomic.cpp
+02_pi_entrelacer_promotionTab.cpp
+01_pi_sequentiel.cpp
+03_pi_entrelacer_critique.cpp
+07_pi_for_promotionTab.cpp
+08_pi_for_reduction.cpp
+03_dotProd_entrelacer_critique.cpp
+07_dotProd_for_promotionTab.cpp
+06_dotProd_for_atomique.cpp
+08_dotProd_for_reduction.cpp
+01_dotProd_sequential.cpp
+00_dotProd_tools.cpp
+05_dotProd_for_critical.cpp
+04_dotProd_entrelacer_atomic.cpp
+02_dotProd_entrelacer_promotionTab.cpp
+02_histogramme_entrelacer_promotionTab.cpp
+01_histogramme_sequentiel.cpp
+04_histogramme_for_PromotionTab.cpp
+03_histogramme_for_atomic.cpp
+00_montecarlo_tools.cpp
+03_montecarlo_omp_forReduction.cpp
+02_montecarlo_omp_entrelacer_promotionTab.cpp
+01_montecarlo_sequentiel.cpp
+03_addVector_for.cpp
+00_addVectorTools.cpp
+01_addVector_sequentiel.cpp
+02_addVector_entrelacer.cpp
+02_racine2_nonAlterner.cpp
+04_racine2_alterner.cpp
+01_racine2_nonAlterner.cpp
+03_racine2_alterner.cpp
+mainTest.cpp
+07_TestMontecarloPiJunit.cpp
+01_TestHelloJunit.cpp
+05_TestHistoJunit.cpp
+04_TestVectorDotProdJunit.cpp
+03_TestVectorAddJunit.cpp
+06_TestRacine2Junit.cpp
+02_TestPiJunit.cpp
+StringTools.cpp
+Chronos.cpp
+AleaTools.cpp
+LimitsTools.cpp
+VariateurF.cpp
+VariateurI.cpp
+MathTools.cpp
+OmpTools.cpp
+vectorTools.cpp
+tab1DTools.cpp
+histo.cpp
+rawMajorTools.cpp
+tab2DTools.cpp
+suite.cpp
+htmloutput.cpp
+compileroutput.cpp
+textoutput.cpp
+collectoroutput.cpp
+time.cpp
+utils.cpp
+missing.cpp
+source.cpp
+testTools.cpp
+
+[CBI]->linking to Q:/bilat/Targets/OMP/bin/OMP64.exe
+
+==================================================================================
+[CBI]->Target Name	: OMP64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/OMP/bin/OMP64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: VISUAL [CXX=cl]
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 00:47:27
+==================================================================================
+
+
+[CBI]->Deploying  : ../Deploy/bin/OMP64.exe
+
+[CBI]->Q:/bilat/Targets/OMP/bin/OMP64.exe : End ALL!
+
+00:47:27 Build Finished (took 31s.612ms)
+

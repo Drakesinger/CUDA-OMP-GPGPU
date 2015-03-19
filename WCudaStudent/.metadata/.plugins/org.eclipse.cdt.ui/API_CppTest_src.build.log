@@ -1,0 +1,78 @@
+14:24:02 **** Build of configuration MinGW for project API_CppTest_src ****
+makeMinGW.bat all 
+
+[MINGW] : all  
+
+Set MinGW environement x64
+ 
+g++ (x86_64-win32-seh, Built by MinGW-W64 project) 4.8.2
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==================================================================================
+[CBI]->Target Name	 : Cpp_Test64
+[CBI]
+[CBI]->Build     	 : Q:/bilat/Targets/Cpp_Test
+[CBI]->Deploy        : ../DEPLOY/bin
+[CBI]
+[CBI]->Type	 		 : STATIC_LIB
+[CBI]->Arch	 		 : 64
+[CBI]->OS	 		 : Win
+[CBI]->User	 		 : bilat
+[CBI]
+[CBI]->Task			 : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (-r) :
+
+[CBI] -> CXXFLAGS     :
+-w -mtune=core2 -O3 -frerun-loop-opt -fgcse -fomit-frame-pointer -Isrc -Isrc/core -Isrc/core/extension -I. -I./.settings -I./src -I./src/core -I./src/core/extension
+[CBI] ->              : -O3
+[CBI] ->              : -fgcse
+[CBI] ->              : -fomit-frame-pointer
+[CBI] ->              : -frerun-loop-opt
+[CBI] ->              : -mtune=core2
+[CBI] ->              : -w
+
+
+
+[CBI]->Create folder  : Q:/bilat/Targets/Cpp_Test/bin
+[CBI]->Create folder  : Q:/bilat/Targets/Cpp_Test/obj
+
+[CBI]->compiling .cpp : src/core/suite.cpp
+[CBI]->compiling .cpp : src/core/htmloutput.cpp
+[CBI]->compiling .cpp : src/core/compileroutput.cpp
+[CBI]->compiling .cpp : src/core/textoutput.cpp
+[CBI]->compiling .cpp : src/core/collectoroutput.cpp
+[CBI]->compiling .cpp : src/core/time.cpp
+[CBI]->compiling .cpp : src/core/utils.cpp
+[CBI]->compiling .cpp : src/core/missing.cpp
+[CBI]->compiling .cpp : src/core/source.cpp
+[CBI]->compiling .cpp : src/core/extension/testTools.cpp
+
+ar: creating Q:/bilat/Targets/Cpp_Test/bin/libCpp_Test64.a
+
+==================================================================================
+[CBI]->Target Name	: Cpp_Test64
+[CBI]->Location 	: Q:/bilat/Targets/Cpp_Test/bin/libCpp_Test64.a
+[CBI]->Deploy 		: ../DEPLOY/bin
+[CBI]
+[CBI]->Type	 		: STATIC_LIB
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]
+[CBI]->Compilateur 	: MINGW
+[CBI]->Archiveur 	: ar
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 14:24:08
+==================================================================================
+
+
+[CBI]->Deploying      : ../DEPLOY/bin/libCpp_Test64.a
+
+[CBI]->Q:/bilat/Targets/Cpp_Test/bin/libCpp_Test64.a : End ALL!
+
+14:24:09 Build Finished (took 6s.629ms)
+

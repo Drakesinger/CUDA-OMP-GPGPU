@@ -1,0 +1,129 @@
+#ifndef MANDELBROT_MATH_H_
+#define MANDELBROT_MATH_H_
+
+#include "CalibreurF.h"
+#include "ColorTools.h"
+#include <math.h>
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/**
+ * Dans un header only pour preparer la version cuda
+ */
+class MandelbrotMath
+    {
+	/*--------------------------------------*\
+	 |*		Constructeur		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	/**
+	 * calibreurColor : transformation affine entre [-1,1] (l'output de f(x,y)) et [0,1] (le spectre hsb)
+	 */
+	MandelbrotMath(int n,float c1=0.0,float c2=0.0) : calibreur(IntervalF(-1, 1), IntervalF(0, 1))
+	    {
+	    this->n = n;
+	    this->c1 = c1;
+	    this->c2 = c2;
+	    }
+
+	virtual ~MandelbrotMath(void)
+	    {
+	    // rien
+	    }
+
+	/*--------------------------------------*\
+	|*		Methode			*|
+	 \*-------------------------------------*/
+
+    public:
+
+	void colorXY(uchar4* ptrColor, double x, double y, const DomaineMath& domaineMath, double t)
+	    {
+	    int k = 0;
+
+	    if (this->c1 != 0.0){
+		float a = x;
+		float b = y;
+		while (!isDivergent(a, b) && k <= this->n)
+		    {
+		    float aCopy = a;
+		    a = (pow(a, 2) - pow(b, 2)) + c1;
+		    b = 2 * aCopy * b + c2;
+		    k += 1;
+		    }
+	    }else{
+
+		float a = 0.0;
+		float b = 0.0;
+		while (!isDivergent(a, b) && k <= this->n)
+		    {
+		    float aCopy = a;
+		    a = (pow(a, 2) - pow(b, 2)) + x;
+		    b = 2 * aCopy * b + y;
+		    k += 1;
+		    }
+	    }
+
+
+	    if (k <= this->n)
+		{
+		float color = h(k);
+		ptrColor->x = 255;
+		ptrColor->y = color * 255;
+		}
+	    else
+		{
+		ptrColor->x = 0;
+		ptrColor->y = 0;
+		}
+
+	    ptrColor->z = 0;
+	    ptrColor->w = 255; // opaque
+	    }
+
+    private:
+
+	double f(double x, double y, double t)
+	    {
+	    return sin(x * n + t) * cos(y * n + t); // t para animation
+	    }
+
+	bool isDivergent(float a, float b)
+	    {
+	    return pow(a, 2) + pow(b, 2) > 4;
+	    }
+	float h(int k)
+	    {
+	    return (1.0 / this->n) * k;
+	    }
+	/*--------------------------------------*\
+	|*		Attribut		*|
+	 \*-------------------------------------*/
+
+    protected:
+
+	// Inputs
+	int n;
+
+	// Indices de Julia
+	float c1;
+	float c2;
+	// Tools
+	CalibreurF calibreur;
+    }
+;
+
+
+#endif 
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

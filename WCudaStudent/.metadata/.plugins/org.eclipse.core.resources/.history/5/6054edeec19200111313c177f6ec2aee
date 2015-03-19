@@ -1,0 +1,149 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+
+//video
+//#include <opencv2/imgproc/imgproc.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+//#include <opencv2/video/tracking.hpp>
+//#include <opencv2/gpu/gpu.hpp>
+
+//webcam
+#include "cv.h"
+#include "highgui.h"
+
+using std::cout;
+using std::endl;
+using std::string;
+
+using namespace cv;
+//using namespace cv::gpu;
+
+static void videoCapture(const string& videoName)
+static void cameraCapture(int idCamera);
+static void printInfo(const Mat& matCapture);
+static void play(const VideoCapture& VideoCapture);
+
+int main(int argc, char** argv)
+    {
+    int idCamera=0;
+    string videoName = "videoCapture.avi";
+
+    videoCapture(idCamera);
+    cameraCapture(videoName);
+
+    return 0;
+    }
+
+void videoCapture(const string& videoName)
+    {
+    VideoCapture capture(videoName);
+
+    if (capture.isOpened())
+	{
+	play(capture);
+	}
+    else
+	{
+	cerr << "Failed to open video = " << videoName << endl;
+	}
+
+    }
+
+
+
+
+/**
+ * idCamera : 0
+ */
+void cameraCapture(int idCamera)
+    {
+    VideoCapture capture(idCamera);
+    if (capture.isOpened())
+	{
+	play(capture);
+	}
+    else
+	{
+	cerr << "Failed to open camera = " << endl;
+	}
+
+//    if (!cap.isOpened()) // check if we succeeded
+//	return -1;
+//    CvCapture *capture = 0;
+//    IplImage *frame = 0;
+//    int key = 0;
+//
+//    /* initialize camera */
+//    capture = cvCaptureFromCAM(0);
+//
+//    /* always check */
+//    if (!capture)
+//	{
+//	fprintf(stderr, "Cannot open initialize webcam!\n");
+//	return 1;
+//	}
+//
+//    /* create a window for the video */
+//    cvNamedWindow("result", CV_WINDOW_AUTOSIZE);
+//
+//    while (key != 'q')
+//	{
+//	/* get a frame */
+//	frame = cvQueryFrame(capture);
+//
+//	/* always check */
+//	if (!frame)
+//	    break;
+//
+//	/* display current frame */
+//	cvShowImage("result", frame);
+//
+//	/* exit if user press 'q' */
+//	key = cvWaitKey(1);
+//	}
+//
+//    /* free memory */
+//    cvDestroyWindow("result");
+//    cvReleaseCapture(&capture);
+//
+//    return 0;
+    }
+
+void printInfo(const Mat& matCapture)
+    {
+    uchar* ptr = matCapture.data;
+    int n = matCapture.rows;
+    int m = matCapture.cols;
+
+    bool isEmpty = matCapture.empty;
+    int type = matCapture.type;
+    int size = matCapture.size;
+    int nbChannel = matCapture.channels;
+
+    cout << "(n,m)=(" << n << "," << m << ")" << endl;
+    cout << "nbChannel=" << nbChannel << endl;
+    cout << "size=" << size << endl;
+    cout << "type=" << type << endl;
+    cout << "isEmpty=" << isEmpty << endl;
+    }
+
+void play(const VideoCapture& VideoCapture)
+    {
+    Mat matCapture;
+    	videoCapture >> matCapture;
+    	printInfo(matCapture);
+
+    	string idWindow = "videoCapture";
+    	namedWindow(idWindow, 1);
+    	while (true)
+    	    {
+    	    videoCapture >> matCapture;
+    	    cout << "pixel 0=" << ptr[0] << endl;
+    	    imshow(idWindow, matCapture);
+    	    }
+
+    	// the capture will be deinitialized automatically in VideoCapture destructor
+    }
+
+}

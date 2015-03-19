@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tuto_Image_Cuda_JNI/src/cpp/core/gl/01_Hello/01_cpp&apos; to &apos;01_toScenario&apos;" description="Rename resource &apos;01_cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/gl/01_Hello/01_cpp" name="01_toScenario" stamp="1405936975569" updateReferences="true"/>
+</session>

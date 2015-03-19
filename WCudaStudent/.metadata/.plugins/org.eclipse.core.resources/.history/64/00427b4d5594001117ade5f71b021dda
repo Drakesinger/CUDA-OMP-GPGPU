@@ -1,0 +1,105 @@
+#include "WorkGPUStream.h"
+#include <iostream>
+#include "cudaTools.h"
+#include "cudaTools.h"
+#include "Device.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern void modifyImage(uchar4* ptrDev0_Image, int w, int h);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+WorkGPUStream::WorkGPUStream(uchar4* ptrImage1, uchar4* ptrImage2,int w, int h)
+    {
+    this->ptrImage1 = ptrImage1;
+    this->ptrImage2 = ptrImage2;
+    this->w = w;
+    this->h = h;
+    }
+
+WorkGPUStream::~WorkGPUStream(void)
+    {
+    //rien
+    }
+
+void WorkGPUStream::run(void)
+    {
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev0_Image1, sizeOctets()));
+    HANDLE_ERROR(cudaMemset(ptrDev0_Image1, sizeOctets(),0));
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev0_Image2, sizeOctets()));
+    HANDLE_ERROR(cudaMemset(ptrDev0_Image2, sizeOctets(),0));
+
+    copyImageOnDevice0();
+    modifyImageOnDevice0();
+    copyImageFromDevice0();
+
+    HANDLE_ERROR(cudaFree(ptrDev0_Image)); // TODO one allocation
+    HANDLE_ERROR(cudaFree(ptrDev1_Image));
+    }
+
+int WorkGPUStream::sizeOctets(void)
+    {
+    return w * h * sizeof(uchar4);
+    }
+
+void WorkGPUStream::copyImageOnDevice0(void)
+    {
+    //cout << "CPU->GPU" << endl;
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev0_Image1, ptrImage1, sizeOctets(), cudaMemcpyHostToDevice));
+    HANDLE_ERROR(cudaMemcpy(ptrDev0_Image2, ptrImage2, sizeOctets(), cudaMemcpyHostToDevice));
+    }
+
+void WorkGPUStream::modifyImageOnDevice0(void)
+    {
+    //cout << "GPU<->GPU" << endl;
+
+    modifyImage(ptrDev0_Image1, w, h);
+    modifyImage(ptrDev0_Image2, w, h);
+    }
+
+void WorkGPUStream::copyImageFromDevice0(void)
+    {
+    //cout << "CPU<-GPU" << endl;
+
+    HANDLE_ERROR(cudaMemcpy(ptrImage1, ptrDev0_Image1, sizeOctets(), cudaMemcpyDeviceToHost));
+    HANDLE_ERROR(cudaMemcpy(ptrImage2, ptrDev0_Image2, sizeOctets(), cudaMemcpyDeviceToHost));
+    }
+
+
+
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

@@ -1,0 +1,8 @@
+1330443024940	Delete resource 'OpenMP/src/cpp/core/omp/01_base/pi/Copy (5) of pi.cpp'
+1330444622565	Delete resource 'OpenMP/src/cpp/core/omp/01_base'
+1330522802116	Delete resource 'OpenMP/src/cpp/core/omp/10_consolidation/01_normeVector.cpp'
+1330525594447	Delete resource 'OpenMP/src/cpp/core/omp/07_montecarlo/image'
+1330525598447	Delete resource 'OpenMP/src/cpp/core/omp/07_montecarlo/calculIntegrale'
+1330536808365	Delete resource 'OpenMP/intelLinux.mk'
+1330536917253	Delete resource 'Common/intelLinux.mk'
+1330536956643	Delete resource 'cppTestTuto/intelLinux.mk'

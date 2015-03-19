@@ -1,0 +1,25 @@
+18:35:34 **** Clean-only build of configuration CudaWin for project BilatToolsCuda ****
+"..\\BUILDER\\makefile\\private\\environmentSetter\\makeCudaVisual.bat" clean 
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI]->Target            : BilatToolsCuda64
+[CBI]->Task			     : DELETE
+[CBI]
+[CBI]->Delete .obj       : Q:/bilat/Targets/BilatToolsCuda/obj
+[CBI]->Delete .bin       : Q:/bilat/Targets/BilatToolsCuda/bin
+[CBI]->Delete .cubin     : Q:/bilat/Targets/BilatToolsCuda/cubin
+[CBI]->Delete doc        : Q:/bilat/Targets/BilatToolsCuda/doc
+[CBI]
+[CBI]->Delete deploy     : ../Deploy/bin/BilatToolsCuda64.exe
+[CBI]->Delete deploy doc : ../Deploy/doc/BilatToolsCuda64.doc.tar.gz
+==================================================================================
+
+
+18:35:40 Build Finished (took 6s.119ms)
+

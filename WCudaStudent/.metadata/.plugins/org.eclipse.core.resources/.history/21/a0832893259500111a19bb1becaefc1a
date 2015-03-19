@@ -1,0 +1,168 @@
+#include <iostream>
+#include "ImageCapture.h"
+#include "limits.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ImageCapture::ImageCapture(const string& videoName, bool isFullSpeed) :
+	captureStream(videoName)
+    {
+    buildCommon();
+
+    int fps = captureStream.get(CV_CAP_PROP_FPS);
+
+    cout << "fps video source (" << videoName << ") = ";
+    if (fps != 0)
+	{
+	cout << fps;
+	}
+
+    else
+	{
+	cout << "unknown";
+	}
+    cout << endl << endl;
+
+    if (!isFullSpeed && fps != 0)
+	{
+	delayMS = 1000 / fps;
+	}
+    else
+	{
+	delayMS = 1;
+	}
+    }
+
+ImageCapture::ImageCapture(int idCamera, int wAsk, int hAsk) :
+	captureStream(idCamera)
+    {
+    initCamera(wAsk, hAsk);
+    buildCommon();
+    delayMS = 1;
+    }
+
+ImageCapture::~ImageCapture(void)
+    {
+    // rien
+    }
+
+Mat ImageCapture::capture(void)
+    {
+    captureStream >> matCapture;
+
+    //printInfo();
+    cvtColor(matCapture, matCapture, CV_8U, 4); // 0 keep same chanel // 4 permet par exemple d'ajouter la couche alpha à rvb (pour une video ou webcam)
+//    printInfo();
+
+    // imshow("temp2", matCapture);
+
+    char key = cvWaitKey(delayMS);
+
+    isStopAsk = (key == 'q');
+
+    return matCapture; //castToUChar4(matCapture.data);
+    }
+
+bool ImageCapture::isOpened(void)
+    {
+    return captureStream.isOpened();
+    }
+
+int ImageCapture::nbOctet()
+    {
+    return w * h * sizeof(uchar4);
+    }
+
+int ImageCapture::getW(void)
+    {
+    return w;
+    }
+
+int ImageCapture::getH(void)
+    {
+    return h;
+    }
+
+bool ImageCapture::isStopAsked(void)
+    {
+    return isStopAsk;
+    }
+
+/**
+ * uchar = unsigned char
+ * uchar4 = 4 char sequentiel
+ */
+uchar4* ImageCapture::castToUChar4(uchar* ptrTab)
+    {
+    return (uchar4*) ptrTab;
+    }
+
+uchar4* ImageCapture::castToUChar4(Mat* ptrMap)
+    {
+    return castToUChar4(ptrMap->data);
+    }
+
+void ImageCapture::printInfo(void)
+    {
+    cout << "Capture Info :" << endl;
+    cout << "\t(h,w) = (" << h << "," << w << ")" << endl;
+    cout << "\tnbChannel = " << matCapture.channels() << endl;
+    cout << "\ttype      = " << matCapture.type() << endl;
+    cout << "\tisEmpty   = " << matCapture.empty() << endl;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void ImageCapture::initCamera(int wAsk, int hAsk)
+    {
+    if (wAsk != -1)
+	{
+	captureStream.set(CV_CAP_PROP_FRAME_WIDTH, wAsk);
+	}
+
+    if (hAsk != -1)
+	{
+	captureStream.set(CV_CAP_PROP_FRAME_HEIGHT, hAsk);
+	}
+    }
+
+void ImageCapture::buildCommon(void)
+    {
+    captureStream >> matCapture;
+
+    w = matCapture.cols;
+    h = matCapture.rows;
+
+    cout << "\t(h,w) = (" << h << "," << w << ")" << endl;
+
+    isStopAsk = false;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

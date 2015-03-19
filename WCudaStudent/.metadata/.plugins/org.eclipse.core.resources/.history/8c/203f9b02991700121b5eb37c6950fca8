@@ -1,0 +1,51 @@
+#ifndef JULIA_MOO_H_
+#define JULIA_MOO_H_
+
+#include "ImageFonctionelMOOs_A.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class JuliaMOOs: public ImageFonctionelMOOs_A
+    {
+    public:
+
+	JuliaMOOs(unsigned int w, unsigned int h, DomaineMaths domaineMath, double c1, double c2,int nMin , int nMax);
+	virtual ~JuliaMOOs(void);
+
+    protected:
+
+	void fillImage(const DomaineMaths& domaineMath); // redefinition
+	void animationStep(bool& isNeedUpdateView); // redefinition
+	//void paintPrimitives(Graphic2Ds& graphic2D); // redefinition //tODO visual problem
+
+    private:
+
+	void setPixel(int i, int j, const DomaineMaths& domaine);
+	int  suite(int x, int y);
+	bool isDivergent(double xk, double yk);
+	void toXY(int i,int j, double& x, double& y,const DomaineMaths& domaineMath);
+
+    private:
+
+	// Inputs
+	int nMax;
+	int nMin;
+	double c1;
+	double c2;
+
+	// Tools
+	int n;
+
+    };
+
+#endif 
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

@@ -1,0 +1,1 @@
+../../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/animateurFonctionel/AnimateurFonctionel.h

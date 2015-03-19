@@ -1,0 +1,112 @@
+#include "ImageStream.h"
+#include "WorkGPUStream.h"
+#include "ChronoOMPs.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ImageStream::ImageStream(int cameraId) :
+	imageCapture(cameraId), imageViewer("Camera : stream cpu-gpu-cpu [q to quit]")
+    {
+    isRunning = false;
+    }
+
+ImageStream::ImageStream(const string& videoName) :
+	imageCapture(videoName), imageViewer("Video : stream cpu-gpu-cpu [q to quit]")
+    {
+    isRunning = false;
+    }
+
+ImageStream::~ImageStream(void)
+    {
+    //rien
+    }
+
+bool ImageStream::start(void)
+    {
+    if (imageCapture.isOpened())
+	{
+	if (!isRunning)
+	    {
+	    isRunning = true;
+
+	    int w = imageCapture.getW();
+	    int h = imageCapture.getH();
+
+	    long i = 1;
+	    while (isRunning)
+		{
+		Mat matCapture1 = imageCapture.capture();
+		Mat matCapture2 = imageCapture.capture();
+
+		isRunning = !imageCapture.isStopAsked();
+
+		uchar4* ptrImage1 = ImageCapture::castToUChar4(&matCapture1);
+		uchar4* ptrImage2 = ImageCapture::castToUChar4(&matCapture2);
+
+		workGPU(ptrImage1, ptrImage2, w, h);
+
+//		imageViewer.show(&matCapture1);
+//		imageViewer.show(&matCapture2);
+
+		if (i % 100 == 0) //disons
+		    {
+		    cout << "Frame = " << i << " : fps=" << imageViewer.fps() << endl;
+		    }
+
+		i++;
+		}
+
+	    }
+	return true;
+	}
+    else
+	{
+	cerr << " Capture : failed " << endl;
+	return false;
+	}
+
+    }
+
+void ImageStream::stop(void)
+    {
+    isRunning = false;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void ImageStream::workGPU(uchar4* ptrImage1, uchar4* ptrImage2, int w, int h)
+    {
+    //ChronoOMPs chrono;
+    WorkGPUStream workGPU(ptrImage1, ptrImage2, w, h);
+    workGPU.run();
+    //cout<<"gpu work delay = "<<chrono.timeElapse()<<" (s)"<<endl;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

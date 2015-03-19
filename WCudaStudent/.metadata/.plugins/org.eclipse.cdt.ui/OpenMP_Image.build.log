@@ -1,0 +1,70 @@
+00:47:44 **** Incremental Build of configuration Visual for project OpenMP_Image ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeVisual.bat" all 
+
+[VISUAL]
+
+
+==================================================================================
+[CBI]->Target Name	: OMP_Image64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/OMP_Image/bin/OMP_Image64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: VISUAL [CXX=cl]
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 00:47:45
+==================================================================================
+
+
+[CBI]->Create folder : Q:/bilat/Targets/OMP_Image/bin
+[CBI]->Create folder : Q:/bilat/Targets/OMP_Image/obj
+
+main.cpp
+mainCore.cpp
+RipplingMOO.cpp
+EFractaleMOO.cpp
+MandelbrotMOO.cpp
+JuliaMOO.cpp
+StringTools.cpp
+Chronos.cpp
+AleaTools.cpp
+LimitsTools.cpp
+VariateurF.cpp
+VariateurI.cpp
+MathTools.cpp
+OmpTools.cpp
+suite.cpp
+htmloutput.cpp
+compileroutput.cpp
+textoutput.cpp
+collectoroutput.cpp
+time.cpp
+utils.cpp
+missing.cpp
+source.cpp
+testTools.cpp
+
+[CBI]->linking to Q:/bilat/Targets/OMP_Image/bin/OMP_Image64.exe
+
+==================================================================================
+[CBI]->Target Name	: OMP_Image64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/OMP_Image/bin/OMP_Image64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: VISUAL [CXX=cl]
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 00:48:00
+==================================================================================
+
+
+[CBI]->Deploying  : ../Deploy/bin/OMP_Image64.exe
+
+[CBI]->Q:/bilat/Targets/OMP_Image/bin/OMP_Image64.exe : End ALL!
+
+00:48:00 Build Finished (took 16s.177ms)
+

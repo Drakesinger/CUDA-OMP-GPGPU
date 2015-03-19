@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ResizableDialogBounds">
+		<item value="2276" key="width"/>
+		<item value="284" key="x"/>
+		<item value="0" key="y"/>
+		<item value="1416" key="height"/>
+	</section>
+	<section name="PatchWizard">
+		<item value="716" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="803" key="DIALOG_HEIGHT"/>
+		<item value="107" key="DIALOG_Y_ORIGIN"/>
+		<item value="478" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="PreviewPatchPage">
+	</section>
+</section>

@@ -1,0 +1,99 @@
+17:17:25 **** Incremental Build of configuration CudaWin for project Cula ****
+"..\\BUILDER\\makefile\\private\\makeLauncher\\win\\makeCudaVisual.bat" all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI]->Target Name	  : Cula64
+[CBI]
+[CBI]->Build          : Q:/bilat/Targets/Cula
+[CBI]->Deploy 		  : ../Deploy/bin
+[CBI]
+[CBI]->Type	 		  : EXE
+[CBI]->Arch	 		  : 64
+[CBI]->OS	 		  : Win
+[CBI]->User	 		  : bilat
+[CBI]
+[CBI]->Task			  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (-r) :
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : ../BilatUtil_CPP/src/core
+[CBI] ->              : ../API_CppTest/INC
+[CBI] ->              : ../API_CppTest/LIB_STATIC/visual
+
+[CBI] -> CXXFLAGS     :
+[CBI] ->              : /openmp
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS   :
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS    :
+[CBI] ->              : --fmad=true
+[CBI] ->              : -arch=sm_20
+[CBI] ->              : -use_fast_math
+
+[CBI] -> NVCCLDFLAGS  :
+[CBI] ->              : cula_lapack.lib
+
+
+[CBI]->Create folder  : Q:/bilat/Targets/Cula/bin
+[CBI]->Create folder  : Q:/bilat/Targets/Cula/obj
+[CBI]->Create folder  : Q:/bilat/Targets/Cula/cubin
+
+[CBI]->compiling .cpp : src/cpp/main.cpp
+[CBI]->compiling .cpp : src/cpp/core/mainCore.cpp
+[CBI]->compiling .cpp : src/cpp/core/01_CuLa/versionCheck.cpp
+[CBI]->compiling .cpp : src/cpp/core/01_CuLa/systemSolve.cpp
+[CBI]->compiling .cpp : src/cpp/test/mainTest.cpp
+[CBI]->compiling .cpp : src/cpp/test/junit/cpp/TestCulaJunit.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/StringTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/Chronos.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/AleaTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/LimitsTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurF.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurI.cpp
+[CBI]->compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/MathTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/cudaTools.cpp
+[CBI]->compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/Device.cpp
+[CBI]->compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/vectorTools.cpp
+[CBI]->compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/tab1DTools.cpp
+[CBI]->compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/histo.cpp
+[CBI]->compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/rawMajorTools.cpp
+[CBI]->compiling .cpp : ../BilatUtil_CPP/src/core/utils/cpp/tab2DTools.cpp
+[CBI]->compiling .cu  : src/cpp/core/01_CuLa/culaEigenValues.cu
+
+[CBI]->linking to Q:/bilat/Targets/Cula/bin/Cula64.exe
+
+==================================================================================
+[CBI]->Target Name	: Cula64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: bilat
+[CBI]->Location 	: Q:/bilat/Targets/Cula/bin/Cula64.exe
+[CBI]->Deploy 		: ../Deploy/bin
+[CBI]->Compilateur 	: VISUAL && nvcc
+[CBI]->Task			: End Compiling-Linking !
+[CBI]->Time			: 17:17:51
+==================================================================================
+
+
+[CBI]->Deploying  : Cula64.exe
+
+[CBI]->Cleaning : Cuda temp files, excepted .cubin for JCuda
+
+
+
+17:17:52 Build Finished (took 27s.798ms)
+

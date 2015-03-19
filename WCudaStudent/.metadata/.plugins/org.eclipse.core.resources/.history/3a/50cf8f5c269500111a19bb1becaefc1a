@@ -1,0 +1,56 @@
+#ifndef IMAGE_CIRCUIT_H_
+#define IMAGE_CIRCUIT_H_
+
+#include "ImageViever.h"
+#include "ImageCapture.h"
+#include "limits.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class ImageCircuit
+    {
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	ImageCircuit(int cameraID,int wAsk=INT_MAX, int hAsk=INT_MAX);//wAsk=-1 hAsk=-1 valeur par default camera
+	ImageCircuit(const string& videoName);
+	virtual ~ImageCircuit(void);
+
+	/*--------------------------------------*\
+	|*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	bool start(void);
+	void stop(void);
+
+    private:
+
+	void workGPU(uchar4* ptrImage,int w,int h);
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	ImageViever imageViewer;
+	ImageCapture imageCapture;
+	bool isRunning;
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

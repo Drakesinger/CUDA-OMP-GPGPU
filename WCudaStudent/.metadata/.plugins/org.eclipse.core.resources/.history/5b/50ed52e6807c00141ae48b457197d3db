@@ -1,0 +1,193 @@
+# Version 	: 0.0.5
+# Author 	: Cedric.Bilat@he-arc.ch
+#
+
+ifndef __API__MK__
+__API__MK__=true
+
+##########################################
+#   			 API		   			 #
+##########################################
+
+#remove space
+override API_INC:=$(strip ${API_INC})
+override API_LIB:=$(strip ${API_LIB})
+override API_LIB_STATIC:=$(strip ${API_LIB_STATIC})
+override API_LIBRARIES:=$(strip ${API_LIBRARIES})
+override API_BIN:=$(strip ${API_BIN})
+
+#${info API_INC=[${API_INC}]}
+#${info API_LIB=[${API_LIB}]}
+#${info API_LIB_STATIC=[${API_LIB_STATIC}]}
+#${info API_LIBRARIES=[${API_LIBRARIES}]}
+#${info API_BIN=[${API_BIN}]}
+
+ESPACE:=#
+ESPACE+=#astice de guere
+
+#########################
+# 		 WINDOWS		#
+#########################
+
+ifeq ($(OS),Win)
+
+############
+# commmon   #
+############
+
+#compilation
+ifdef API_INC
+	override CXXFLAGS+= -I$(subst ${ESPACE}, -I,${API_INC})
+endif
+
+#link (link static lib)
+ifdef API_LIB_STATIC
+	SRC_AUX+= ${API_LIB_STATIC}
+endif
+
+#${info CXXFLAGS=${CXXFLAGS}}
+
+############
+# Visual   #
+############
+
+ifeq ($(COMPILATEUR),VISUAL)
+
+	#link (link shared lib)
+	ifdef API_LIBRARIES
+		#ajouter .lib
+		API_LIBRARIES_MODIFIED:=$(addsuffix .lib,${API_LIBRARIES})
+		override API_LIBRARIES:=${API_LIBRARIES_MODIFIED}
+	endif
+	
+	ifdef API_LIB
+		override LDFLAGS_AUX+= /LIBPATH:$(subst ${ESPACE}, /LIBPATH:,${API_LIB}) 
+	endif
+	
+	override LDFLAGS_AUX+= ${API_LIBRARIES}
+	
+	#link (link static lib)
+	ifdef API_LIB_STATIC
+		override LDFLAGS_AUX+= /LIBPATH:$(subst ${ESPACE}, /LIBPATH:,${API_LIB_STATIC}) 
+	endif
+endif
+
+############
+# Intel   #
+############
+
+ifeq  ($(COMPILATEUR),INTEL)
+
+	#link (link shared lib)
+	ifdef API_LIB
+		override LDFLAGS_AUX+= /LIBPATH:$(subst ${ESPACE}, /LIBPATH:,${API_LIB}) 
+	endif
+	
+	override LDFLAGS_AUX+= ${API_LIBRARIES}
+
+	#link (link static lib)
+	ifdef API_LIB_STATIC
+		override LDFLAGS_AUX+= /LIBPATH:$(subst ${ESPACE}, /LIBPATH:,${API_LIB_STATIC}) 
+	endif
+	
+endif
+
+############
+# MINGW   #
+############
+
+ifeq  ($(COMPILATEUR),MINGW)
+	
+	#link (shared)
+	ifdef API_LIB
+		override LDFLAGS+= -L$(subst ${ESPACE}, -L,${API_LIB})#sans extension
+	endif
+	
+	ifdef API_LIBRARIES
+		override LDFLAGS+= -l$(subst ${ESPACE}, -l,${API_LIBRARIES})
+	endif 
+	
+	#link (link static lib)
+	ifdef API_LIB_STATIC
+		override SRC_AUX+= ${API_LIB_STATIC}
+		#override LDFLAGS+= -L$(subst ${ESPACE}, -L,${API_LIB_STATIC})#ko
+	endif 
+	
+endif
+
+endif#end win
+
+
+#########################
+# 		 LINUX			#
+#########################
+
+ifeq ($(OS),Linux)
+
+############
+# common   #
+############
+
+#compilation
+CXXFLAGS+= -I$(subst :, -I,${API_INC})
+	
+#linkage
+LDFLAGS+= -l$(subst :, -l,${API_LIBRARIES}) 
+	
+#linkage
+LDFLAGS+= -L$(subst :, -L,${API_LIB})
+
+#link (link static lib)
+SRC_AUX+= ${API_LIB_STATIC}
+	
+############
+# GCC   #
+############
+
+ifeq  ($(COMPILATEUR),g++)
+	#rien
+endif
+
+############
+# INTEL   #
+############
+
+ifeq  ($(COMPILATEUR),INTEL)
+	#rien
+endif
+
+############
+# ARM   #
+############
+
+ifeq  ($(ARCH),arm)
+	#rien
+endif
+
+endif#end linux
+
+#########################
+# 		 common			#
+#########################
+
+#remove space
+override CXXFLAGS:=$(strip ${CXXFLAGS})
+override LDFLAGS:=$(strip ${LDFLAGS})
+override SRC_AUX:=$(strip ${SRC_AUX})
+
+override LDFLAGS_AUX:=$(strip ${LDFLAGS_AUX})
+override ADD_LIBRARY_FILES:=$(strip ${ADD_LIBRARY_FILES})
+
+#call unique
+override CXXFLAGS:=$(call uniq,${CXXFLAGS})
+override LDFLAGS:=$(call uniq,${LDFLAGS})
+override SRC_AUX:=$(call uniq,${SRC_AUX})
+
+override LDFLAGS_AUX:=$(call uniq,${LDFLAGS_AUX})
+override ADD_LIBRARY_FILES:=$(call uniq,${ADD_LIBRARY_FILES})
+
+##########################################
+#   			 END 		   			 #
+##########################################
+
+endif#__API__MK__

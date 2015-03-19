@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;API_CppTest/LIB_STATIC/intel&apos; to &apos;intelWin&apos;" description="Rename resource &apos;intel&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LIB_STATIC/intel" name="intelWin" stamp="1393872017700" updateReferences="true"/>
+</session>

@@ -1,0 +1,91 @@
+#include "WorkGPU.h"
+#include "cudaTools.h"
+#include "cudaTools.h"
+#include "Device.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern __global__ void modifyImage(uchar4* ptrDev1_image, int w, int h);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+WorkGPU::WorkGPU(uchar4* ptrImage, int w, int h)
+    {
+    this->ptrImage = ptrImage;
+    this->w = w;
+    this->h = h;
+    }
+
+WorkGPU::~WorkGPU(void)
+    {
+    //rien
+    }
+
+void WorkGPU::run(void)
+    {
+    copyImageOnDevice0();
+    modifyImageOnDevice0();
+    copyImageFromDevice0();
+    }
+
+int WorkGPU::sizeOctets(void)
+    {
+    return w * h * sizeof(uchar4);
+    }
+
+void WorkGPU::copyImageOnDevice0(void)
+    {
+    cout << "copyImageOnDevice0" << endl;
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev0_Image, ptrImage, sizeOctets(), cudaMemcpyHostToDevice));
+    }
+
+void WorkGPU::modifyImageOnDevice0(void)
+    {
+    dim3 blockPerGrid = dim3(8, 8, 1);
+    dim3 threadPerBlock = dim3(16, 16, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    Device::assertDim(blockPerGrid, threadPerBlock);
+
+modifyImage    <<<blockPerGrid,threadPerBlock>>>(ptrDev0_Image, w, h);
+    }
+
+void WorkGPU::copyImageFromDevice0(void)
+    {
+    cout << "copyImageFromDevice1" << endl;
+
+    HANDLE_ERROR(cudaMemcpy(ptrImage, ptrDev0_image, sizeOctets, cudaMemcpyDeviceToHost));
+    }
+
+
+
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

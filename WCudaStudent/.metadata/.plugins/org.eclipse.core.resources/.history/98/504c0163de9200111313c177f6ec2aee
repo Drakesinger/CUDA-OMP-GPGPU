@@ -1,0 +1,65 @@
+#include <iostream>
+#include <stdlib.h>
+#include "Device.h"
+#include "Rippling.h"
+#include "GLUTWindowManagers.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int mainCore(int deviceId)
+    {
+    Device::print(deviceId, "Execute on device : ");
+
+    int dw = 32*10*4;
+    int dh = 32*10*4;
+
+    uchar* ptrTemp1;
+    uchar* ptrTemp2;
+    HANDLE_ERROR(cudaMalloc((void**) &ptrTemp, n * sizeof(uchar)));
+    HANDLE_ERROR(cudaMalloc((void**) &ptrTemp, n * sizeof(uchar)));
+
+    Rippling* ptrRippling = new Rippling(dw, dh);
+   // GLImageCudas* ptrJulia = new Julias(dw, dh);
+
+    GLUTWindowManagers* ptrGLUTWindowManager=GLUTWindowManagers::getInstance();
+
+    ptrGLUTWindowManager->createWindow(ptrRippling);
+   // ptrGLUTWindowManager->createWindow(ptrJulia);
+
+    ptrGLUTWindowManager->runALL(); // bloquant
+    return EXIT_SUCCESS;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

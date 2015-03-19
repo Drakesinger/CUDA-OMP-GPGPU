@@ -1,0 +1,55 @@
+
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ void copyImageOnDevice1(uchar* ptrImage,  uchar* ptrDev0_image,int w, int h);
+ void modifyImageOnDevice1( uchar* ptrDev0_image,int w, int h);
+ void  transfertImageFromDevice1ToDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h);
+ void copyImageFromDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+void copyImageOnDevice1(uchar* ptrImage,  uchar* ptrDev0_image,int w, int h)
+    {
+
+    }
+
+void modifyImageOnDevice1( uchar* ptrDev0_image,int w, int h)
+    {
+
+    }
+
+void  transfertImageFromDevice1ToDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h)
+    {
+
+    }
+
+void copyImageFromDevice0(uchar* ptrDev0_image,uchar* ptrDev1_image,int w, int h)
+    {
+
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

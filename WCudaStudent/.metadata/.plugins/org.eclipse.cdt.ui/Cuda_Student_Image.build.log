@@ -1,0 +1,25 @@
+18:32:27 **** Clean-only build of configuration CudaWin for project Cuda_Student_Image ****
+"..\\BUILDER\\makefile\\private\\environmentSetter\\makeCudaVisual.bat" clean 
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Wed_Jul_10_13:36:45_PDT_2013
+Cuda compilation tools, release 5.5, V5.5.0
+
+==================================================================================
+[CBI]->Target            : CudaStudentImage64
+[CBI]->Task			     : DELETE
+[CBI]
+[CBI]->Delete .obj       : Q:/bilat/Targets/CudaStudentImage/obj
+[CBI]->Delete .bin       : Q:/bilat/Targets/CudaStudentImage/bin
+[CBI]->Delete .cubin     : Q:/bilat/Targets/CudaStudentImage/cubin
+[CBI]->Delete doc        : Q:/bilat/Targets/CudaStudentImage/doc
+[CBI]
+[CBI]->Delete deploy     : ../Deploy/bin/CudaStudentImage64.exe
+[CBI]->Delete deploy doc : ../Deploy/doc/CudaStudentImage64.doc.tar.gz
+==================================================================================
+
+
+18:32:35 Build Finished (took 8s.151ms)
+

@@ -1,0 +1,87 @@
+15:29:08 **** Build of configuration CudaVisual for project Tuto_Image_Cuda_Linux_JNI ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2014 NVIDIA Corporation
+Built on Fri_Jul_25_06:28:08_CDT_2014
+Cuda compilation tools, release 6.5, V6.5.13
+
+==================================================================================
+[CBI] -> Target Name  : Tuto_Image_CUDA_JNI_64
+[CBI] ->
+[CBI] -> Build        : Q:/cedric.bilat/Targets/Tuto_Image_CUDA_JNI/bin/Tuto_Image_CUDA_JNI_64.dll
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : SHARED_LIB
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../BilatTools_CPP/src/core
+[CBI] ->              : ../BilatTools_Cuda/src/core
+[CBI] ->              : ../BilatTools_OMP/src/core
+[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core
+[CBI] ->              : ../API_GL/INC_WIN
+[CBI] ->              : ../API_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_DLL_Tools/INC
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_GL/INC
+[CBI] ->              : ../API_Bilat_Image_GL/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_GL_Cuda/INC
+[CBI] ->              : ../API_Bilat_Image_GL_Cuda/LIB/visual
+[CBI] ->              : C:/Soft/java64/jdk/lib
+[CBI] ->              : ../API_Bilat_Displayable/INC
+[CBI] ->              : ../API_Bilat_Displayable/LIB/visual
+[CBI] ->              : ../API_Bilat_Canvas_JNI/INC
+[CBI] ->              : ../API_Bilat_Canvas_JNI/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_JNI/INC
+[CBI] ->              : ../API_Bilat_Image_JNI/INC
+[CBI] ->              : ../API_Bilat_Image_JNI/LIB/visual
+[CBI] ->              : ../API_Bilat_Image_JNI_Cuda/INC
+[CBI] ->              : ../API_Bilat_Image_JNI_Cuda/LIB/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /openmp
+[CBI] ->              : /MD
+[CBI] ->              : -DCBI_DISPLAYABLE_DLL
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+[CBI] ->              : arch=compute_50,code=sm_50
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -shared
+
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Tuto_Image_CUDA_JNI/bin
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Tuto_Image_CUDA_JNI/obj
+[CBI] -> Create folder  : Q:/cedric.bilat/Targets/Tuto_Image_CUDA_JNI/cubin
+
+nvcc fatal   : No input files specified; use option --help for more information
+../BUILDER/makefile/private/cuda/makeCudaVisual.mk:396: recipe for target `Q:/cedric.bilat/Targets/Tuto_Image_CUDA_JNI/obj/hello_jni.obj' failed
+make: *** [Q:/cedric.bilat/Targets/Tuto_Image_CUDA_JNI/obj/hello_jni.obj] Error 1
+
+15:29:15 Build Finished (took 6s.322ms)
+

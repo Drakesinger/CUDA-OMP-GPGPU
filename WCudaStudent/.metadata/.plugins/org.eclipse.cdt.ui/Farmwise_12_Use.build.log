@@ -1,0 +1,278 @@
+10:00:58 **** Build of configuration Visual for project Farmwise_12_Use ****
+makeVisual.bat all 
+init make
+init API-EXT
+init API-CBI
+
+[VISUAL] : all  
+
+
+usage: cl [ option... ] filename... [ /link linkoption... ]
+Microsoft (R) C/C++ Optimizing Compiler Version 18.00.30501 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Use_visual_64
+[CBI] ->
+[CBI] -> Build     	  : Q:/bilat/Targets/Farmwise_Use/bin/Farmwise_Use_visual_64.exe
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider
+[CBI] ->              : ../Farmwise_03_Row_Finder/src/cpp/rowfinder
+[CBI] ->              : ../Farmwise_04_Row_Driver/src/cpp/rowdriver
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu
+[CBI] ->              : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/weedsfinder/gpu
+[CBI] ->              : ../Farmwise_08_Weeds_Destroy/src/cpp/weedsdestroyeur
+[CBI] ->              : ../Farmwise_09_Weeds_Shower/src/cpp/weedsshower
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/tools
+[CBI] ->              : ../Farmwise_11_Pipeline/src/cpp/pipeline
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : -Ic:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+[CBI] ->              : /EHsc
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+[CBI] ->              : /arch:AVX
+[CBI] ->              : /nologo
+[CBI] ->              : /openmp
+
+[CBI] -> LDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /link
+[CBI] ->              : /nologo
+
+[CBI] -> INC_PATH (auto detect):
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/01_image_provider/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/io/Output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/io/array/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/02_weeds_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/03_weeds_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/03_weeds_consomateur/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/io/input/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/io/output/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/04_row_finder/row/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/05_row_consomateur/
+[CBI] ->              : ../Farmwise_01_Specification/src/cpp/specification/05_row_consomateur/input/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/catalogue/facade/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/catalogue/implementation/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/file/facade/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/file/implementation/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/video/facade/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/video/implementation/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/webcam/facade/
+[CBI] ->              : ../Farmwise_02_Image_Provider/src/cpp/imageprovider/webcam/implementation/
+[CBI] ->              : ../Farmwise_03_Row_Finder/src/cpp/rowfinder/facade/
+[CBI] ->              : ../Farmwise_03_Row_Finder/src/cpp/rowfinder/implementation/
+[CBI] ->              : ../Farmwise_04_Row_Driver/src/cpp/rowdriver/facade/
+[CBI] ->              : ../Farmwise_04_Row_Driver/src/cpp/rowdriver/implementation/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/01_segmentation/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/01_segmentation/io/input/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/01_segmentation/io/output/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/02_keypointExtraction/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/02_keypointExtraction/io/input/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/02_keypointExtraction/io/output/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/02_keypointExtraction/keypoint/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/02_keypointExtraction/keypoint/array/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/03_classification/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/03_classification/io/input/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/03_classification/io/output/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/04_postprocessing/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/04_postprocessing/io/input/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/04_postprocessing/io/output/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/05_gravity/
+[CBI] ->              : ../Farmwise_05_Weeds_Finder_Specification/src/cpp/weedsfinder/specification/05_gravity/io/input/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/facade/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/01_segmentation/facade/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/01_segmentation/implementation/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/02_keypointExtraction/facade/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/02_keypointExtraction/implementation/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/02_keypointExtraction/implementation/sous_algo/coordinate/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/02_keypointExtraction/implementation/sous_algo/feature/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/02_keypointExtraction/implementation/sous_algo/feature/color/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/02_keypointExtraction/implementation/sous_algo/feature/shape/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/03_classification/facade/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/03_classification/implementation/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/04_postprocessing/facade/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/04_postprocessing/implementtaion/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/05_gravity/facade/
+[CBI] ->              : ../Farmwise_06_Weeds_Finder_CPU/src/cpp/weedsfinder/cpu/implementation/pipeline/05_gravity/implementation/
+[CBI] ->              : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/weedsfinder/gpu/facade/
+[CBI] ->              : ../Farmwise_07_Weeds_Finder_GPU/src/cpp/weedsfinder/gpu/implementation/
+[CBI] ->              : ../Farmwise_08_Weeds_Destroy/src/cpp/weedsdestroyeur/facade/
+[CBI] ->              : ../Farmwise_08_Weeds_Destroy/src/cpp/weedsdestroyeur/implementation/
+[CBI] ->              : ../Farmwise_09_Weeds_Shower/src/cpp/weedsshower/facade/
+[CBI] ->              : ../Farmwise_09_Weeds_Shower/src/cpp/weedsshower/implementation/
+[CBI] ->              : ../Farmwise_10_Hearc_tools/src/cpp/tools/
+[CBI] ->              : ../Farmwise_11_Pipeline/src/cpp/pipeline/
+
+[CBI] -> LIB_PATH (auto detect):
+
+[CBI] -> API_INC :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/core
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/include/opencv2/video
+
+[CBI] -> API_LIB :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/lib
+
+[CBI] -> API_BIN :
+[CBI] ->              : c:/Soft_API/ext/OpenCV/001/build/x64/vc12/bin
+
+[CBI] -> API_LIBRARIES :
+[CBI] ->              : opencv_contrib249.lib
+[CBI] ->              : opencv_core249.lib
+[CBI] ->              : opencv_features2d249.lib
+[CBI] ->              : opencv_flann249.lib
+[CBI] ->              : opencv_gpu249.lib
+[CBI] ->              : opencv_highgui249.lib
+[CBI] ->              : opencv_imgproc249.lib
+[CBI] ->              : opencv_legacy249.lib
+[CBI] ->              : opencv_ml249.lib
+[CBI] ->              : opencv_nonfree249.lib
+[CBI] ->              : opencv_objdetect249.lib
+[CBI] ->              : opencv_ocl249.lib
+[CBI] ->              : opencv_photo249.lib
+[CBI] ->              : opencv_stitching249.lib
+[CBI] ->              : opencv_superres249.lib
+[CBI] ->              : opencv_ts249.lib
+[CBI] ->              : opencv_video249.lib
+[CBI] ->              : opencv_videostab249.lib
+
+[CBI] -> Create folder : Q:/bilat/Targets/Farmwise_Use/bin
+[CBI] -> Create folder : Q:/bilat/Targets/Farmwise_Use/obj
+
+main.cpp
+ArrayPoint2i.cpp
+WeedsIn.cpp
+WeedsOut.cpp
+WeedsData.cpp
+RowIn.cpp
+RowOut.cpp
+Row.cpp
+RowData.cpp
+FactoryImageProvider_Catalogue.cpp
+ImageProvider_Catalogue.cpp
+Catalogue.cpp
+FactoryImageProvider_File.cpp
+ImageProvider_File.cpp
+FactoryImageProvider_Video.cpp
+ImageProvider_Video.cpp
+FactoryImageProvider_Webcam.cpp
+ImageProvider_Webcam.cpp
+FactoryRowFinder.cpp
+RowFinder.cpp
+FactoryRowDriver.cpp
+RowDriver.cpp
+PipelineWeeds.cpp
+SegmentationIn.cpp
+SegmentationOut.cpp
+KeypointExtractionIn.cpp
+KeypointExtractionOut.cpp
+Keypoint.cpp
+ArrayKeypoint.cpp
+ClassificationIn.cpp
+ClassificationOut.cpp
+PostProcessingIn.cpp
+PostProcessingOut.cpp
+GravityIn.cpp
+FactoryWeedsFinder_CPU.cpp
+WeedsFinder_CPU.cpp
+FactorySegmentation_CPU.cpp
+Segmentation_CPU.cpp
+FactoryKeypointExtraction_CPU.cpp
+KeypointExtraction_CPU.cpp
+KeypointCoordinateGrid.cpp
+KeypointFeatureExtract.cpp
+KeypointFeatureColorExtract.cpp
+KeypointFeatureShapeExtract.cpp
+FactoryClassification_CPU.cpp
+ClassificationModel_CPU.cpp
+Classification_CPU.cpp
+FactoryPostProcessing_CPU.cpp
+PostProcessing_CPU.cpp
+FactoryGravity_CPU.cpp
+Gravity_CPU.cpp
+FactoryWeedsFinder_GPU.cpp
+WeedsFinder_GPU.cpp
+FactoryWeedsDestroyeur.cpp
+WeedsDestroyeur.cpp
+FactoryWeedsShower.cpp
+WeedsShower.cpp
+StringTools.cpp
+OpenCVTools.cpp
+Fps.cpp
+Chrono.cpp
+Pipeline.cpp
+
+[CBI] -> Linking to   : Q:/bilat/Targets/Farmwise_Use/bin/Farmwise_Use_visual_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->              : opencv_contrib249.lib
+[CBI] ->              : opencv_core249.lib
+[CBI] ->              : opencv_features2d249.lib
+[CBI] ->              : opencv_flann249.lib
+[CBI] ->              : opencv_gpu249.lib
+[CBI] ->              : opencv_highgui249.lib
+[CBI] ->              : opencv_imgproc249.lib
+[CBI] ->              : opencv_legacy249.lib
+[CBI] ->              : opencv_ml249.lib
+[CBI] ->              : opencv_nonfree249.lib
+[CBI] ->              : opencv_objdetect249.lib
+[CBI] ->              : opencv_ocl249.lib
+[CBI] ->              : opencv_photo249.lib
+[CBI] ->              : opencv_stitching249.lib
+[CBI] ->              : opencv_superres249.lib
+[CBI] ->              : opencv_ts249.lib
+[CBI] ->              : opencv_video249.lib
+[CBI] ->              : opencv_videostab249.lib
+
+==================================================================================
+[CBI] -> Target Name  : Farmwise_Use_visual_64
+[CBI] -> Location     : Q:/bilat/Targets/Farmwise_Use/bin/Farmwise_Use_visual_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl)
+[CBI] -> Task	      : End Compiling-Linking !
+[CBI] -> Time		  : 10:01:43
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Farmwise_Use_visual_64.exe
+
+[CBI] -> Farmwise_Use_visual_64 : End ALL!
+
+10:01:44 Build Finished (took 46s.131ms)
+

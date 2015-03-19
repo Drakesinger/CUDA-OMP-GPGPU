@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;API_Bilat_Displayable/LIB&apos; to &apos;LIB_STATIC&apos;" description="Rename resource &apos;LIB&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LIB" name="LIB_STATIC" stamp="1395599180582" updateReferences="true"/>
+</session>

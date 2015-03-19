@@ -1,0 +1,18 @@
+1406033523124	Delete element
+1406033535376	Delete element
+1406033546283	Rename package 'com.bilat.tuto.graph.jni.gui.atome.details.sin'
+1406033558377	Rename package 'com.bilat.tuto.graph.jni.gui.atome.details'
+1406033571159	Rename type 'CanvaSinus'
+1406033576253	Move compilation unit
+1406033596036	Rename type 'SinusNative'
+1406033605446	Rename package 'com.bilat.tuto.graph.jni.natif.sinus'
+1406033712876	Rename package 'com.bilat.tuto.graph.jni.gui.atome'
+1406033734549	Delete element
+1406033738471	Move compilation unit
+1406033752660	Rename package 'com.bilat.tuto.graph.jni.gui.atome.sin'
+1406033782646	Rename field 'sinusCanvas'
+1406034088177	Delete element
+1406034148641	Rename field 'sinusCanvas'
+1406035301478	Rename type 'Interval'
+1406038087365	Move compilation unit
+1406038090912	Move compilation unit

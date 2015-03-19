@@ -1,0 +1,45 @@
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/video/tracking.hpp>
+#include <opencv2/gpu/gpu.hpp>
+#include <stdlib.h>
+#include <stdio.h>
+
+using namespace cv;
+using namespace cv::gpu;
+
+Mat cpuSrc;
+GpuMat src, dst;
+
+
+
+
+
+int main( int argc, char** argv )
+{
+
+    VideoCapture capture("TwoManLoiter.avi");
+
+    //create windows for output images
+    namedWindow("Open/Close",1);
+   while(true)
+    {
+
+         capture >> cpuSrc;
+         src.upload(cpuSrc);
+         GpuMat grey;
+         cv::gpu::cvtColor(src, grey, CV_BGR2GRAY); 
+         src = grey;
+
+        int c;
+
+        ErodeDilate(erode_dilate_pos);
+        c = cvWaitKey(25);
+
+        if( (char)c == 27 )
+            break;
+
+    }
+
+    return 0;
+}

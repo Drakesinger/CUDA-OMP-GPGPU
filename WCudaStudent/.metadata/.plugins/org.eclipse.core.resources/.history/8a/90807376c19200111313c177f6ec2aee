@@ -1,0 +1,151 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+
+//video
+//#include <opencv2/imgproc/imgproc.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+//#include <opencv2/video/tracking.hpp>
+//#include <opencv2/gpu/gpu.hpp>
+
+//webcam
+#include "cv.h"
+#include "highgui.h"
+
+using std::cout;
+using std::endl;
+using std::string;
+
+using namespace cv;
+//using namespace cv::gpu;
+
+static void videoCapture(void);
+static void cameraCapture(void);
+static void printInfo(const Mat& matCapture);
+
+int main(int argc, char** argv)
+    {
+    videoCapture();
+    cameraCapture();
+
+    return 0;
+    }
+
+void videoCapture(void)
+    {
+    string videoName = "videoCapture.avi";
+    VideoCapture videoCapture(videoName);
+
+    if (videoCapture.isOpened())
+	{
+	Mat matCapture;
+	videoCapture >> matCapture;
+	printInfo(matCapture);
+
+	string idWindow = "videoCapture";
+	namedWindow(idWindow, 1);
+	while (true)
+	    {
+	    videoCapture >> matCapture;
+	    cout << "pixel 0=" << ptr[0] << endl;
+	    imshow(idWindow, matCapture);
+	    }
+
+	// the capture will be deinitialized automatically in VideoCapture destructor
+	}
+    else
+	{
+	cerr << "Failed to open video = " << videoName << endl;
+	}
+
+    }
+
+void printInfo(const Mat& matCapture)
+    {
+    uchar* ptr = matCapture.data;
+    int n = matCapture.rows;
+    int m = matCapture.cols;
+
+    bool isEmpty = matCapture.empty;
+    int type = matCapture.type;
+    int size = matCapture.size;
+    int nbChannel = matCapture.channels;
+
+    cout << "(n,m)=(" << n << "," << m << ")" << endl;
+    cout << "nbChannel=" << nbChannel << endl;
+    cout << "size=" << size << endl;
+    cout << "type=" << type << endl;
+    cout << "isEmpty=" << isEmpty << endl;
+    }
+
+void cameraCapture(void)
+    {
+
+    VideoCapture cameraCapture(0); // open the default camera
+
+    if (cameraCapture.isOpened())
+	{
+	Mat edges;
+	namedWindow("edges", 1);
+	while (true)
+	    {
+	    Mat frame;
+	    cameraCapture >> frame; // get a new frame from camera
+	    cvtColor(frame, edges, CV_BGR2GRAY);
+	    GaussianBlur(edges, edges, Size(7, 7), 1.5, 1.5);
+	    Canny(edges, edges, 0, 30, 3);
+	    imshow("edges", edges);
+	    if (waitKey(30) >= 0)
+		break;
+	    }
+
+	// the camera will be deinitialized automatically in VideoCapture destructor
+	}
+    else
+	{
+	cerr << "Failed to open camera = " << endl;
+	}
+
+//    if (!cap.isOpened()) // check if we succeeded
+//	return -1;
+//    CvCapture *capture = 0;
+//    IplImage *frame = 0;
+//    int key = 0;
+//
+//    /* initialize camera */
+//    capture = cvCaptureFromCAM(0);
+//
+//    /* always check */
+//    if (!capture)
+//	{
+//	fprintf(stderr, "Cannot open initialize webcam!\n");
+//	return 1;
+//	}
+//
+//    /* create a window for the video */
+//    cvNamedWindow("result", CV_WINDOW_AUTOSIZE);
+//
+//    while (key != 'q')
+//	{
+//	/* get a frame */
+//	frame = cvQueryFrame(capture);
+//
+//	/* always check */
+//	if (!frame)
+//	    break;
+//
+//	/* display current frame */
+//	cvShowImage("result", frame);
+//
+//	/* exit if user press 'q' */
+//	key = cvWaitKey(1);
+//	}
+//
+//    /* free memory */
+//    cvDestroyWindow("result");
+//    cvReleaseCapture(&capture);
+//
+//    return 0;
+    }
+
+}

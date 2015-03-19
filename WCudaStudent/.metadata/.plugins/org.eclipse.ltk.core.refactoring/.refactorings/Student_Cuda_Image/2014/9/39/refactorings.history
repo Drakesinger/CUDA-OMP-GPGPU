@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Student_Cuda_Image/src/cpp/core/mainFreeGL.cpp&apos; to &apos;mainMOO.cpp&apos;" description="Rename resource &apos;mainFreeGL.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/mainFreeGL.cpp" name="mainMOO.cpp" stamp="1411729154301" updateReferences="true"/>
+</session>

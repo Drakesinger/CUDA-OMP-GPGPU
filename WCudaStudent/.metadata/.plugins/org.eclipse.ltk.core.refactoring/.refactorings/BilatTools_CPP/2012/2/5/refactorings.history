@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Common/src/core/testApi/core/config.h.in&apos; to &apos;config.h&apos;" description="Rename resource &apos;config.h.in&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/core/testApi/core/config.h.in" name="config.h" stamp="1328373787659" updateReferences="true"/>
+</session>

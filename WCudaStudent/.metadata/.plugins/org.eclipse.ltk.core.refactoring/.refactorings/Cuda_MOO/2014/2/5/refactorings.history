@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Cuda/cudaWin.mk&apos; to &apos;cudaVisual.mk&apos;" description="Rename resource &apos;cudaWin.mk&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="cudaWin.mk" name="cudaVisual.mk" stamp="1391280125285" updateReferences="true"/>
+</session>

@@ -1,0 +1,15 @@
+covered_line_stylePreferences=NONE
+covered_line_text=false
+eclipse.preferences.version=1
+indexResultIndication=false
+indexResultIndicationInOverviewRuler=false
+indexResultIndicationInVerticalRuler=false
+isWarningGoToNextNavigationTarget=false
+lineNumberRuler=true
+line_not_covered_stylePreferences=NONE
+line_not_covered_text=false
+org.eclipse.jdt.ui.CompilationUnitEditor.internal.delegateSaveAs=true
+org.eclipse.ptp.rdt.ui.hasRun=true
+overviewRuler_migration=migrated_3.1
+spellingEnabled=false
+spellingEngine=org.eclipse.jdt.internal.ui.text.spelling.DefaultSpellingEngine

@@ -1,0 +1,127 @@
+#include <iostream>
+#include "ImageCapture.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+ImageCapture::ImageCapture(const string& videoName):captureStream(videoName)
+    {
+    buildCommon();
+    }
+
+ImageCapture::ImageCapture(int idCamera):captureStream(idCamera)
+    {
+    buildCommon();
+    }
+
+ImageCapture::~ImageCapture(void)
+    {
+    // rien
+    }
+
+Mat ImageCapture::capture()
+    {
+    captureStream >> matCapture;
+
+    //printInfo();
+    cvtColor(matCapture, matCapture, CV_8U, 4); // 0 keep same chanel // 4 permet par exemple d'ajouter la couche alpha à rvb (pour une video ou webcam)
+//    printInfo();
+   // imshow("temp2", matCapture);
+    int delayMS=100;
+    char key = cvWaitKey(delayMS);
+
+    isStopAsk=(key=='q');
+
+
+    return matCapture;//castToUChar4(matCapture.data);
+    }
+
+bool ImageCapture::isOpened(void)
+    {
+    return captureStream.isOpened();
+    }
+
+int ImageCapture::nbOctet()
+    {
+    return w*h*sizeof(uchar4);
+    }
+
+int ImageCapture::getW(void)
+    {
+    return w;
+    }
+
+int ImageCapture::getH(void)
+    {
+    return h;
+    }
+
+bool isStopAsked(void)
+    {
+    return isStopAsk;
+    }
+
+/**
+ * uchar = unsigned char
+ * uchar4 = 4 char sequentiel
+ */
+uchar4* ImageCapture::castToUChar4(uchar* ptrTab)
+    {
+    return (uchar4*) ptrTab;
+    }
+
+uchar4* ImageCapture::castToUChar4(Mat* ptrMap)
+    {
+    return castToUChar4(ptrMap->data);
+    }
+
+void ImageCapture::printInfo(void)
+    {
+    cout<<"Capture Info :"<<endl;
+    cout << "\t(h,w) = (" << h<< "," << w << ")" << endl;
+    cout << "\tnbChannel = " <<  matCapture.channels() << endl;
+    cout << "\ttype      = " <<  matCapture.type() << endl;
+    cout << "\tisEmpty   = " << matCapture.empty() << endl;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void ImageCapture::buildCommon()
+    {
+    captureStream >> matCapture;
+
+    w = matCapture.cols;
+    h = matCapture.rows;
+
+    isStopAsk=false;
+    }
+
+
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

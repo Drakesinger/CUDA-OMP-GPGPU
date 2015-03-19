@@ -1,0 +1,17 @@
+
+**** Clean-only build of configuration Visual for project TutoCppTest ****
+
+mingw32-make -f visual.mk clean 
+
+==================================================================================
+[CBI]->Target Name	: TutoUnitTest64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->Location 	: target/bin/TutoUnitTest64.exe
+[CBI]->Src_aux 		: ../Common/src/core/testAPI ../Common/src/core/tools
+[CBI]->Compilateur 	: VISUAL - cl
+[CBI]->End			: cleaning full folder : target
+==================================================================================
+
+
+**** Build Finished ****

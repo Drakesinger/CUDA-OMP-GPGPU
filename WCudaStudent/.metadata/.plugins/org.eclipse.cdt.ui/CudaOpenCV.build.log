@@ -1,0 +1,26 @@
+19:32:33 **** Incremental Build of configuration CudaWin for project CudaOpenCV ****
+make -f cudaWin.mk all 
+
+==================================================================================
+[CBI]->Target Name	: TutoCudaOpenCV64
+[CBI]->Type	 		: EXE
+[CBI]->Arch	 		: 64
+[CBI]->OS	 		: Win
+[CBI]->User	 		: cedric.bilat
+[CBI]->Src_aux 		: ../PRODUCTION/commonExt/include ../PRODUCTION/commonExt/windows ../BilatToolsCPP/src/core ../BilatToolsCuda/src/core C:/Soft/OpenCV/include/opencv C:/Soft/OpenCV/build/include C:/Soft/OpenCV/build/x64/vc9/lib
+[CBI]->Location 	: target/bin/TutoCudaOpenCV64.exe
+[CBI]->Deploy 		: ../PRODUCTION/Deploy/bin
+[CBI]->Compilateur 	: VISUAL && nvcc
+[CBI]->Task			: Start Compiling-Linking !
+[CBI]->Time			: 17:32:34
+==================================================================================
+
+
+[CBI]->Deploying  : TutoCudaOpenCV64.exe
+
+[CBI]->Cleaning : Cuda temp files, excepted .cubin for JCuda
+
+
+
+19:32:37 Build Finished (took 4s.164ms)
+

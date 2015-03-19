@@ -1,0 +1,118 @@
+# Version 	: 0.0.7
+# Date		: 20.01.2014
+# Author 	: Cedric.Bilat@he-arc.ch
+
+ifndef __CUDA_GCC_ARM_MK__
+__CUDA_GCC_ARM_MK__=true
+
+##############################################
+#   			 Variables     				 #
+##############################################
+
+########
+#arm #
+########
+
+ifeq (${ARCH},arm)	
+
+	ARM=true
+
+	# rpath-link : begin
+	#
+	# Context: 
+	#		liba.so depend de libb.so
+	#		on link que liba.so avec
+	#			-la
+	# Probleme:
+	#		linker pas content car trouve pas libb.so
+	#		warning ou carrement refuse linker!
+	#
+	# Solution1:
+	#		Mettre le folder contenant libb.so dans -rpathlink
+	#
+	# Solution2:
+	#		Flag pour ignorer les dependances seconadires
+	#
+	#		Observation: Cette technique semble écraser la précédente (pas de cumul entre les deux)
+	#
+	# link: 
+	#		http://ftp.gnu.org/pub/old-gnu/Manuals/ld-2.9.1/html_node/ld_3.html
+	#
+	ESPACE:=#
+	ESPACE+=#astuce de guere
+	
+	RPATH_LINK_PATH:=$(strip ${RPATH_LINK_PATH})#replaces each internal sequence of one or more whitespace characters with a single space
+	RPATH_LINK_PATH:=$(subst ${ESPACE},:,${RPATH_LINK_PATH})# ESPACE -> :
+
+	RPATH_LINK_PATH:=${RPATH_LINK_PATH}:/opt/arm/${PLATFORME}/arm-linux-gnueabihf/usr_lib#ici pour garantir unicite, si manque warning only, pas error
+	RPATH_LINK_PATH:=${RPATH_LINK_PATH}:/opt/arm/${PLATFORME}/arm-linux-gnueabihf/lib#ici pour garantir unicite, si manque warning only, pas error
+	#RPATH_LINK_PATH:=${RPATH_LINK_PATH}:/opt/arm/${PLATFORME}/system/lib#ici pour garantir unicite, si manque warning only, pas error
+		
+	RPATH_LINK:= -rpath-link=${RPATH_LINK_PATH} -L${RPATH_LINK_PATH}#-rpath-link pourrait apparaitre plusieurs fois, on met -L aussi !
+	
+	override CXXLDFLAGS:= ${RPATH_LINK} ${CXXLDFLAGS}
+	#rpath-link : end
+	
+	override ARMFLAGS:= -ccbin g++ARM ${ARMFLAGS}
+	override ARMFLAGS:= -m32 ${ARMFLAGS}
+	override ARMFLAGS:= -target-cpu-arch ARM ${ARMFLAGS}
+	
+	override NVCCFLAGS:= ${ARMFLAGS} ${NVCCFLAGS}
+	override NVCCLDFLAGS:= ${ARMFLAGS} ${NVCCLDFLAGS}
+		 
+	override NVCCFLAGS_EXCLUDE+= -m64#
+	 
+	override CXXFLAGS+= ${ARM_CXXFLAGS}
+else
+	
+	ifeq (${DEBUG},false)	 
+		override CXXFLAGS+= ${X86_CXX_OPTIMISATION}
+	endif
+	
+endif
+
+ifeq (${DEBUG},false)	
+	override CXXFLAGS+= ${CXX_OPTIMISATION}
+endif
+
+#####################
+# 		Target 		#
+#####################
+
+########
+# Copy #
+########
+
+.PHONY: toPlatforme
+toPlatforme:
+	@echo ""
+	@echo "[CBI] -> Copy to ${PLATFORME}(${PLATFORME_IP}) : "$(TARGET_DEPLOY)
+	@echo ""
+	@echo scp $(TARGET_DEPLOY) ${PLATFORME_USER}@${PLATFORME_IP}:${PLATFORME_BIN}
+	@scp $(TARGET_DEPLOY) ${PLATFORME_USER}@${PLATFORME_IP}:${PLATFORME_BIN}
+	@echo "[CBI] -> ..."
+	@echo "[CBI] -> Sucess!"
+	@echo ""
+	#va define in public folder
+
+########
+# execute #
+########
+
+.PHONY: runARM
+runPlatforme:
+	@echo ""
+	@echo "[CBI] -> Run on ${PLATFORME}(${PLATFORME_IP}) : $(TARGET_NAME).run"
+	@echo ""
+	@echo "[CBI] -> ssh -X ${PLATFORME_USER}@${PLATFORME_IP} cbirt ${PLATFORME_BIN}/$(TARGET_NAME).run"
+	@echo ""
+	@ssh ${PLATFORME_USER}@${PLATFORME_IP} cbirt ${PLATFORME_BIN}/$(TARGET_NAME).run
+	@echo ""
+	#va define in public folder
+	
+#############################################
+#       			 END     			    #
+#############################################
+
+endif#__OCUDA_GCC_ARM_MK__
+

@@ -1,0 +1,63 @@
+#ifndef ImageCapture_H_
+#define ImageCapture_H_
+
+#include <string>
+
+#include "cv.h"
+#include "highgui.h"
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class ImageCapture
+    {
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	ImageCapture(const string& videoName);
+	ImageCapture(int idCamera);
+	virtual ~ImageCapture(void);
+
+	int getW(void);
+	int getH(void);
+
+	bool opened(void);
+
+	uchar4* capture(void);
+
+	/*--------------------------------------*\
+	|*		Methodes		*|
+	 \*-------------------------------------*/
+
+    protected:
+
+
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	float w;
+	int h;
+
+	VideoCapture captureStream;
+
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BUILDER_API/public/postinstall/jni_fenetrage.sh&apos; to &apos;jni_YYY.sh&apos;" description="Rename resource &apos;jni_fenetrage.sh&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="public/postinstall/jni_fenetrage.sh" name="jni_YYY.sh" stamp="1422814083574" updateReferences="true"/>
+</session>

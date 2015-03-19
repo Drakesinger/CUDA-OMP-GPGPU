@@ -1,0 +1,16 @@
+14:22:57 **** Clean-only build of configuration Visual for project BilatToolsOpenCV_NEW ****
+"..\\PRODUCTION\\BUILDER\\makefile\\private\\environmentSetter\\makeVisual.bat" -f visual.mk clean 
+
+find: `../BilatToolsOpenCV/src': No such file or directory
+
+==================================================================================
+[CBI]->Target          : BilatToolsOpenCV64
+[CBI]->Task			   : DELETE
+[CBI]->Delete .obj     : Q:/bilat/Targets/BilatToolsOpenCV/obj
+[CBI]->Delete .bin     : Q:/bilat/Targets/BilatToolsOpenCV/bin
+[CBI]->Delete deploy   : ../PRODUCTION/Deploy/bin/BilatToolsOpenCV64.lib
+==================================================================================
+
+
+14:23:00 Build Finished (took 2s.153ms)
+

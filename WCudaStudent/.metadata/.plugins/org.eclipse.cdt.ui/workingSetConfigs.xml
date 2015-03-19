@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.cdt.ui.workingSetConfigurations>
+<workingSet name="Tuto_Base"/>
+<workingSet name="Student"/>
+<workingSet name="API"/>
+<workingSet name="Target"/>
+<workingSet name="Cuda"/>
+<workingSet name="API_PRODUCER"/>
+<workingSet name="OMP"/>
+<workingSet name="Tuto_API"/>
+<workingSet name="Etude"/>
+<workingSet name="Tuto_API_JNI"/>
+<workingSet name="Tools"/>
+<workingSet name="Make"/>
+</org.eclipse.cdt.ui.workingSetConfigurations>

@@ -1,0 +1,55 @@
+#ifndef IMAGE_STREAM_H_
+#define IMAGE_STREAM_H_
+
+#include "ImageViever.h"
+#include "ImageCapture.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class ImageStream
+    {
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	ImageStream(int cameraID);
+	ImageStream(const string& videoName);
+	virtual ~ImageStream(void);
+
+	/*--------------------------------------*\
+	|*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	bool start(void);
+	void stop(void);
+
+    private:
+
+	void workGPU(uchar4* ptrImage1,uchar4* ptrImage2, int w, int h);
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	ImageViever imageViewer;
+	ImageCapture imageCapture;
+	bool isRunning;
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

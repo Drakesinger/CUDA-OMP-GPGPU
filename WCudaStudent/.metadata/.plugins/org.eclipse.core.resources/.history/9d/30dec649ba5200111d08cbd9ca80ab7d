@@ -1,0 +1,266 @@
+# Version 	: 0.0.1
+# Date		: 26.01.2012
+# Author 	: Cedric.Bilat@he-arc.ch
+#
+# See 		: OptionCompilateur.txt
+#			  MakeFileNotice.txt
+#
+# Hyp		: Application that must be in path
+#				nvcc
+#				make
+#				g++
+#				gcc
+
+#######################
+#    Temp	       #
+######################
+
+# Hyp		: Environement Variables must be set
+#
+#				ARCHI_32_64	: 32 or 64
+
+######################
+#    Variables       #
+######################
+
+#OS:=$(shell uname)
+#MACHINE:=${shell uname -m}
+
+########
+#32/64 #
+########
+
+TARGET_NAME:=$(TARGET_NAME)$(ARCHI_32_64)
+
+########
+#setfile #
+########
+
+OBJ_FILES:= $(SRC_CPP_FILES:.cpp=.$(EXTENSION_OBJ))
+
+##########
+# TARGET #
+##########
+
+TARGET_NAME_EXE:=$(TARGET_NAME).${EXTENSION_EXE}
+TARGET_NAME_DLL:=${LIB_PREFIXE}$(TARGET_NAME).$(EXTENSION_DLL)
+TARGET_NAME_LIB:=${LIB_PREFIXE}$(TARGET_NAME).${EXTENSION_LIB}
+
+
+TARGET_EXE:=${TARGET_BIN_PATH}/$(TARGET_NAME_EXE)
+TARGET_DLL:=${TARGET_BIN_PATH}/$(TARGET_NAME_DLL)
+TARGET_LIB:=${TARGET_BIN_PATH}/$(TARGET_NAME_LIB)
+TARGET_OBJ:=$(addprefix $(TARGET_OBJ_PATH)/,$(notdir $(OBJ_FILES)))
+
+#Selection de la target en fonction TARGET_MODE
+ifeq ($(TARGET_MODE),EXE)
+	TARGET:=${TARGET_EXE}
+	TARGET_DEPLOY:=$(TARGET_DEPLOY_PATH)/$(TARGET_NAME_EXE)
+endif
+
+ifeq ($(TARGET_MODE),SHARED_LIB)
+	TARGET:=${TARGET_DLL}
+	TARGET_DEPLOY:=$(TARGET_DEPLOY_PATH)/$(TARGET_NAME_DLL)
+	override LDFLAGS += $(LINK_FLAG_DLL)
+endif
+
+ifeq ($(TARGET_MODE),STATIC_LIB)
+	TARGET:=${TARGET_LIB}
+	TARGET_DEPLOY:=$(TARGET_DEPLOY_PATH)/$(TARGET_NAME_LIB)
+endif
+
+nbFileRessources:=$(shell ls $(RESOURCES_PATH) | wc -l )
+
+VPATH := $(SRC_PATH_ALL) 
+
+######################
+#        Rules       #
+######################
+
+# tabulation obligatoire before @
+
+################
+#   .o->.exe   #
+################
+
+${TARGET_EXE}:$(TARGET_OBJ)
+	@echo "debug link: "$(CXX) $(OUT_FILE_LINK)${TARGET_EXE} $^ $(LDFLAGS)
+	@echo ""
+	@echo "[CBI]->linking to "$(TARGET)
+	@$(CXX)  $^ $(LDFLAGS)
+	@echo ""
+#Only for Visual (include .manifest in .exe)
+ifdef EMBED_MANIFEST 
+	@$(EMBED_MANIFEST) -manifest $@.manifest -outputresource:$@
+endif
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI]->Target Name	: "$(TARGET_NAME)
+	@echo "[CBI]->Type	 		: "$(TARGET_MODE)
+	@echo "[CBI]->Arch	 		: "$(ARCHI_32_64)
+	@echo "[CBI]->Location 	: "$(TARGET)
+	@echo "[CBI]->Src_aux 		: "$(SRC_AUX)
+	@echo "[CBI]->Compilateur 	: "${COMPILATEUR}  -  $(CXX)
+	@echo "[CBI]->End			: Compiling-Linking !"
+	@echo "=================================================================================="
+	@echo ""
+	
+################
+#   .o->.dll   #
+################
+
+${TARGET_DLL}:$(TARGET_OBJ)
+#@echo "debug link: "$(CXX) $(OUT_FILE_LINK)${TARGET_DLL} $^ $(LDFLAGS)
+	@echo ""
+	@echo "[CBI]->linking to "$(TARGET)
+	@$(CXX) $(OUT_FILE_LINK)${TARGET_DLL} $^ $(LDFLAGS)
+	@echo ""
+ifdef EMBED_MANIFEST 	#Only for Visual (include .manifest in .dll)
+	@$(EMBED_MANIFEST) -manifest $@.manifest -outputresource:$@
+endif
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI]->Target Name	: "$(TARGET_NAME)
+	@echo "[CBI]->Type	 		: "$(TARGET_MODE)
+	@echo "[CBI]->Arch	 		: "$(ARCHI_32_64)
+	@echo "[CBI]->Location 	: "$(TARGET)
+	@echo "[CBI]->Src_aux 		: "$(SRC_AUX)
+	@echo "[CBI]->Compilateur 	: "$(COMPILATEUR)  -  $(CXX)
+	@echo "[CBI]->End			: Compiling-Linking !"
+	@echo "=================================================================================="
+	@echo ""
+	
+################
+#  .o->.lib    #
+################
+
+${TARGET_LIB}:$(TARGET_OBJ)
+#@echo "debug link: "${AR} ${AR_OUT_FLAG}${TARGET_LIB} ${ARFLAGS} $^
+	@echo ""
+	@echo "[CBI]->linking to "$(TARGET)
+	@${AR} ${AR_OUT_FLAG}${TARGET_LIB} ${ARFLAGS} $^
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI]->Target Name	: "$(TARGET_NAME)
+	@echo "[CBI]->Type	 		: "$(TARGET_MODE)
+	@echo "[CBI]->Arch	 		: "$(ARCHI_32_64)
+	@echo "[CBI]->Location 	: "$(TARGET)
+	@echo "[CBI]->Src_aux 		: "$(SRC_AUX)
+	@echo "[CBI]->Compilateur 	: "${COMPILATEUR}  -  $(CXX)
+	@echo "[CBI]->Archiveur 	: "$(AR)
+	@echo "[CBI]->End			: Compiling-Linking !"
+	@echo "=================================================================================="
+	@echo ""
+	
+################
+#   .cpp->.o   #
+################
+
+$(TARGET_OBJ_PATH)/%.$(EXTENSION_OBJ):%.cpp  
+#@echo "debug : compil" $(CXX) $(CXXFLAGS) $(OUT_FILE_COMPILE)$@ -c  $< 
+ifeq (${COMPILATEUR},mingw)
+	@echo "[CBI]->compiling .cpp : "$<
+endif
+ifeq (${COMPILATEUR},g++)
+	@echo "[CBI]->compiling .cpp : "$<
+endif
+	@$(CXX) $(CXXFLAGS) $(OUT_FILE_COMPILE)$@ -c  $< 
+	
+# -c = compilation
+
+######################
+#        TARGET      #
+######################
+
+all: echoing $(TARGET) deploy
+	@echo ""
+	@echo "[CBI]->"$(TARGET)" : End ALL!"
+	
+version:
+	@echo ""
+	@$(VERSION_CXX)
+	@echo ""
+
+help:
+	@echo ""
+	@$(CXX_HELP)
+	@echo ""
+
+deploy:
+ifdef TARGET_DEPLOY_PATH
+	@$(shell cp $(TARGET) $(TARGET_DEPLOY))
+	@echo ""
+	@echo "[CBI]->Deploying  : "$(TARGET_NAME_FULL)
+endif
+
+# -v verbose
+# -r recursif
+# -f ecrase destination
+
+.PHONY: clean 
+clean:
+	@rm -f $(TARGET_OBJ_PATH)/*.o
+	@rm -f $(TARGET_OBJ_PATH)/*.obj
+	@rm -f $(TARGET_BIN_PATH)/*.exp
+	@rm -f $(TARGET_BIN_PATH)/*.html
+	@rm -f $(TARGET_BIN_PATH)/*.lib
+	@rm -f $(TARGET_BIN_PATH)/*.a
+	@rm -f $(TARGET_BIN_PATH)/*.def
+	@rm -f $(TARGET_BIN_PATH)/*.map
+	@rm -f $(TARGET_BIN_PATH)/*.manifest
+	@rm -f $(TARGET)
+	@rm -f $(TARGET_DEPLOY)
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI]->Target Name	: "$(TARGET_NAME)
+	@echo "[CBI]->Type	 		: "$(TARGET_MODE)
+	@echo "[CBI]->Arch	 		: "$(ARCHI_32_64)
+	@echo "[CBI]->Location 	: "$(TARGET)
+	@echo "[CBI]->Src_aux 		: "$(SRC_AUX)
+	@echo "[CBI]->Compilateur 	: "${COMPILATEUR}  -  $(CXX)
+	@echo "[CBI]->End			: cleaning full folder : "$(TARGET_PATH)
+	@echo "=================================================================================="
+	@echo ""
+	
+#rm -rf #serait recursif (dangereux!!)
+
+echoing:
+	@echo ""
+	@echo "=================================================================================="
+	@echo "[CBI]->Target Name	: "$(TARGET_NAME)
+	@echo "[CBI]->Type	 		: "$(TARGET_MODE)
+	@echo "[CBI]->Arch	 		: "$(ARCHI_32_64)
+	@echo "[CBI]->Location 	: "$(TARGET)
+	@echo "[CBI]->Src_aux 		: "$(SRC_AUX)
+	@echo "[CBI]->Compilateur 	: "${COMPILATEUR} -  $(CXX)
+	@echo "[CBI]->Start		: Compiling-Linking ..."
+	@echo "=================================================================================="
+	@echo ""
+#@echo "[CBI]->CXXFLAGS"
+#@echo "[CBI]->"$(CXXFLAGS)
+#@echo ""
+#@echo "[CBI]->LDFLAGS"
+#@echo "[CBI]->"$(LDFLAGS)
+#@echo ""
+
+		
+######################
+#        HELP        #
+######################
+
+# target : dependencies
+#
+# $@ = name of the target
+# $^ = all dependencie of a target
+# $< =first (unique dependency of a target) (rm, compilation,linking)
+#
+# @ = diminue verbosite commande
+#
+# Attention : tabulation obligatoire avant commande dans rule!!
+#
+# http://www.gnu.org/software/make/manual/
+
+######################
+#        END         #
+######################
+

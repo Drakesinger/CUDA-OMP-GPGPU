@@ -1,0 +1,102 @@
+16:39:47 **** Build of configuration CudaVisual for project Arrow_HelloWorld_Bouchon ****
+makeCudaVisual.bat all 
+
+[CUDA VISUAL] : all  
+
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2013 NVIDIA Corporation
+Built on Fri_Mar_14_19:30:01_PDT_2014
+Cuda compilation tools, release 6.0, V6.0.1
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Bouchon_64
+[CBI] ->
+[CBI] -> Build        : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Bouchon
+[CBI] -> Deploy       : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	      : EXE
+[CBI] -> Arch	      : 64
+[CBI] -> OS	 		  : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Task		  : Compiling-Linking !
+==================================================================================
+
+[CBI] -> SRC AUX (Recursif) :
+[CBI] ->
+[CBI] ->              : ../API_CppTest/INC
+[CBI] ->              : ../API_CppTest/LIB_STATIC/visual
+
+[CBI] -> CXXFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /MD
+[CBI] ->              : /Ox
+
+[CBI] -> CXXLDFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : /NODEFAULTLIB:LIBCMT
+
+[CBI] -> NVCCFLAGS (Partial) :
+[CBI] ->
+[CBI] ->              : --fmad=true
+[CBI] ->              : -gencode
+[CBI] ->              : -m64
+[CBI] ->              : -use_fast_math
+[CBI] ->              : arch=compute_20,code=sm_20
+[CBI] ->              : arch=compute_30,code=sm_30
+[CBI] ->              : arch=compute_35,code=sm_35
+
+[CBI] -> NVCCLDFLAGS (Partial) :
+[CBI] ->
+
+
+debug : compil cpp : nvcc -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -m64 -use_fast_math --fmad=true -Isrc -Isrc/01_specification -Isrc/01_specification/arm -Isrc/01_specification/fpga -Isrc/01_specification/gpu -Isrc/02_factory -Isrc/03_bouchon -Isrc/03_bouchon/arm -Isrc/03_bouchon/fpga -Isrc/04_implementation -Isrc/04_implementation/arm -Isrc/04_implementation/fpga -Isrc/04_implementation/gpu -Isrc/05_example_pipeline -Isrc/05_example_pipeline/01_exemple1 -I../API_CppTest/INC -I../API_CppTest/LIB_STATIC/visual -odir Q:/cedric.bilat/Targets/Arrow_HelloWorld_Bouchon/obj -Xcompiler  /MD /Ox			    -c src/main.cpp -o Q:/cedric.bilat/Targets/Arrow_HelloWorld_Bouchon/obj/main.obj
+[Arrow_HelloWorld_Bouchon_64] -> cl compiling .cpp : src/main.cpp
+main.obj
+main.cpp
+[Arrow_HelloWorld_Bouchon_64] -> nvcc compiling .cu : src/03_bouchon/arm/ARM_Bouchon.cu
+ARM_Bouchon.cu
+[Arrow_HelloWorld_Bouchon_64] -> nvcc compiling .cu : src/03_bouchon/fpga/FPGA_Bouchon.cu
+FPGA_Bouchon.cu
+[Arrow_HelloWorld_Bouchon_64] -> nvcc compiling .cu : src/04_implementation/gpu/GPU.cu
+GPU.cu
+[Arrow_HelloWorld_Bouchon_64] -> nvcc compiling .cu : src/05_example_pipeline/01_exemple1/Pipeline1.cu
+Pipeline1.cu
+
+[CBI] -> Linking to   : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Bouchon/bin/Arrow_HelloWorld_Bouchon_64.exe
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lCpp_Test64
+
+nvcc : warning : The 'compute_10' and 'sm_10' architectures are deprecated, and may be removed in a future release.
+   Creating library Q:/cedric.bilat/Targets/Arrow_HelloWorld_Bouchon/bin/Arrow_HelloWorld_Bouchon_64.lib and object Q:/cedric.bilat/Targets/Arrow_HelloWorld_Bouchon/bin/Arrow_HelloWorld_Bouchon_64.exp
+main.obj
+ARM_Bouchon.obj
+FPGA_Bouchon.obj
+GPU.obj
+Pipeline1.obj
+
+==================================================================================
+[CBI] -> Target Name  : Arrow_HelloWorld_Bouchon_64
+[CBI] -> Location     : Q:/cedric.bilat/Targets/Arrow_HelloWorld_Bouchon/bin/Arrow_HelloWorld_Bouchon_64.exe
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : 64
+[CBI] -> OS	 	      : Win
+[CBI] -> User	 	  : cedric.bilat
+[CBI] ->
+[CBI] -> Compilateur  : VISUAL (cl) && NVIDIA (nvcc)
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 16:40:23
+==================================================================================
+
+
+[CBI] -> Deploying    : ../RELEASE/bin/Arrow_HelloWorld_Bouchon_64.exe
+
+[CBI] -> Arrow_HelloWorld_Bouchon_64   : End ALL!
+
+16:40:24 Build Finished (took 36s.705ms)
+

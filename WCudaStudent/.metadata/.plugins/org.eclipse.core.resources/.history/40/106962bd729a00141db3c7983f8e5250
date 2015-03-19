@@ -1,0 +1,69 @@
+#ifndef PIPELINE_H_
+#define PIPELINE_H_
+
+#include "FactoryImageProvider_I.h"
+
+#include "FactoryRowFinder_I.h"
+#include "FactoryRowConsomateur_I.h"
+
+#include "FactoryWeedsFinder_I.h"
+#include "FactoryWeedsConsomateur_I.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class Pipeline
+    {
+
+	/*--------------------------------------*\
+	|*		Constructeur		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	Pipeline(FactoryImageProvider_I& factoryImageProvider,FactoryRowFinder_I& factoryRowFinder,FactoryRowConsomateur_I& factoryRowConsomateur , FactoryWeedsFinder_I& factoryWeedsFinder, FactoryWeedsConsomateur_I&  factoryWeedsConsomateur);
+	virtual ~Pipeline(void);
+
+	/*--------------------------------------*\
+	 |*		Methode			*|
+	 \*-------------------------------------*/
+
+    public:
+
+	void run();
+
+
+    private:
+
+	void processRow();
+	void processWeeds();
+
+	void parallel();
+	void sequential();
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	// Tools
+	ImageProvider_I* ptrImageProvider;
+
+	RowFinder_I* ptrRowFinder;
+	RowConsomateur_I* ptrRowConsomateur;
+
+	WeedsFinder_I* ptrWeedsFinder;
+	WeedsConsomateur_I* ptrWeedsConsomateur;
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

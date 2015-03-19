@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/CPATH/delimiter=;
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/CPATH/operation=remove
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/CPLUS_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/append=true
+environment/buildEnvironmentInclude/org.eclipse.linuxtools.cdt.autotools.core.toolChain.401708067/appendContributed=true

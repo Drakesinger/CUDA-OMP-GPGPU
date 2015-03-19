@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Cuda/src/cpp/core/15_CuBlas/01_cublas_produitMatriciel&apos; to &apos;01_cublas_produitMatriciel.cpp&apos;" description="Rename resource &apos;01_cublas_produitMatriciel&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/cpp/core/15_CuBlas/01_cublas_produitMatriciel" name="01_cublas_produitMatriciel.cpp" stamp="1342772903932" updateReferences="true"/>
+</session>

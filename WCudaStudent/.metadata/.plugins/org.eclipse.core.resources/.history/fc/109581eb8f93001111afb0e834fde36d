@@ -1,0 +1,89 @@
+#include <iostream>
+
+#include "cv.h" // opencv
+#include "highgui.h" // opencv
+
+#include "cudaTools.h"
+#include "Device.h"
+
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void workImage(uchar* ptrImage, int w, int h);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useCamreaGPU(void)
+    {
+    int idCamera = 0;
+    VideoCapture capture(idCamera);
+
+    if (capture.isOpened())
+	{
+	Mat matCapture;
+	capture >> matCapture;
+
+	// init
+	uchar* ptrImage = matCapture.data; // use cvtColor to change the colorSpace (HSB,GRAY,...)
+	int w = matCapture.cols;
+	int h = matCapture.rows;
+
+	int sizeImageOctet=w*h*sizeof(uchar);
+
+	uchar* ptrDev_image=null;
+	HANDLE_ERROR(cudaSetDevice(1));
+	HANDLE_ERROR(cudaMalloc((void**) &ptrDev_image, sizeImageOctet));
+	HANDLE_ERROR(cudaDeviceSynchronize());
+
+
+	while (true)
+	    {
+	    capture >> matCapture;
+	    workImage(ptrImage, w, h);
+	    }
+	}
+    else
+	{
+	cerr << "Camera Capture : failed : camera = " << idCamera << endl;
+	return false;
+	}
+
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void workImage(uchar* ptrImage, int w, int h)
+    {
+    //cout<<(int)ptrImage[w*h-1]<<endl;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

@@ -1,0 +1,2221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="0.1224825506.1762710791.2082236498.843576231" name="MinGW">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="org.eclipse.cdt.managedbuilder.core.GCCBuildCommandParser">
+				<language id="org.eclipse.cdt.core.g++">
+					<resource project-relative-path="src/core/tools/cpp/AleaTools.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/VariateurF.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/Chronos.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/MathTools.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/cpp/core/mainMOO.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/image/Image.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/cpp/main.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/animateur/Animateur.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/image/ImageFonctionel.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/animateurFonctionel/AnimateurFonctionel.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/capture/cpp/CaptureVideo.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/viewer/image/ImageViewerCV.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/cpp/core/01_Rippling/d_provider/RipplingProvider.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tuto/tuto.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/LimitsTools.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/TabTools.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/VariateurI.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/capture/cpp/CaptureCamera.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/cpp/core/01_Rippling/b_moo/RipplingMOO.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/viewer/sequence/SequenceViewerCV.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/OMP_Tools/cpp/OmpTools.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/cpp/core/mainGL.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/capture/cpp/Capture_A.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/StringTools.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/namespace_cpu/IndiceTools_CPU.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+					<resource project-relative-path="src/core/tools/cpp/namespace_cpu/ColorTools_CPU.cpp">
+						<entry kind="includePath" name="C:/Soft_API/ext/GL/001/INC"/>
+						<entry kind="includePath" name="/API_Bilat_DLL_Tools/INC">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Displayable/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_GL/INC/extra"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/FreeGlut/001/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_FreeGlut_Tools/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/cpu"/>
+						<entry kind="includePath" name="C:/Soft_API/cbi/image/002/API_Bilat_Image_FreeGlut/INC/common"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/highgui"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/core"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/flann"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/imgproc"/>
+						<entry kind="includePath" name="C:/Soft_API/ext/OpenCV/001/build/include/opencv2/video"/>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/b_moo">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/c_math">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/${ProjName}/src/cpp/core/01_Rippling/d_provider">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_CPP/src/core/tools/header/namespace_cpu">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OMP/src/core/OMP_Tools/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Cuda_smart_switch/src/core/switch/header/type">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateur">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/animateurFonctionel">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_Image/src/core/tools/interface">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/capture/header">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/image">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/BilatTools_OpenCV/src/core/viewer/sequence">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="CBI_DISPLAYABLE_DLL" value=""/>
+						<entry kind="macro" name="CBI_NO_CUDA" value=""/>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

@@ -1,0 +1,117 @@
+#include <iostream>
+
+#include "cudaTools.h"
+#include "Device.h"
+
+using std::cerr;
+using std::cout;
+using std::endl;
+
+typedef unsigned char uchar;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+void workGPU(uchar* ptrImage, uchar* ptrDev0_image, uchar* ptrDev1_image, int w, int h);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void copyImageOnDevice1(uchar* ptrImage, uchar* ptrDev1_image, int w, int h);
+static void modifyImageOnDevice1(uchar* ptrDev1_image, int w, int h);
+static void transfertImageFromDevice1ToDevice0(uchar* ptrDev0_image, uchar* ptrDev1_image, int w, int h);
+static void copyImageFromDevice0(uchar* ptrImage, uchar* ptrDev0_image, int w, int h);
+
+static __global__  voif modifyImage(uchar* ptrDev1_image, int w, int h);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+void workGPU(uchar* ptrImage, uchar* ptrDev0_image, uchar* ptrDev1_image, int w, int h)
+    {
+    cout << "workGPU" << endl;
+
+    copyImageOnDevice1(ptrImage, ptrDev1_image, w, h);
+    modifyImageOnDevice1(ptrDev1_image, w, h);
+    transfertImageFromDevice1ToDevice0(ptrDev0_image, ptrDev1_image, w, h);
+    copyImageFromDevice0(ptrImage, ptrDev0_image, w, h);
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void copyImageOnDevice1(uchar* ptrImage, uchar* ptrDev1_image, int w, int h)
+    {
+    cout << "copyImageOnDevice1" << endl;
+
+    int size = w * h * sizeof(uchar);
+    HANDLE_ERROR(cudaMemcpy(ptrDev1_image, ptrImage, size, cudaMemcpyHostToDevice));
+    }
+
+void modifyImageOnDevice1(uchar* ptrDev1_image, int w, int h)
+    {
+    dim3 blockPerGrid = dim3(8, 8, 1);
+    dim3 threadPerBlock = dim3(16, 16, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    Device::assertDim(blockPerGrid, threadPerBlock);
+
+    modifyImage<<<blockPerGrid,threadPerBlock>>>(ptrDev1_image, w, h);
+    }
+
+void transfertImageFromDevice1ToDevice0(uchar* ptrDev0_image, uchar* ptrDev1_image, int w, int h)
+    {
+    cout << "transfertImageFromDevice1ToDevice0" << endl;
+
+    int size = w * h * sizeof(uchar);
+    HANDLE_ERROR(cudaMemcpy(ptrDev0_image, ptrDev1_image, size, cudaMemcpyDeviceToDevice));
+    }
+
+void copyImageFromDevice0(uchar* ptrImage, uchar* ptrDev0_image, int w, int h)
+    {
+    cout << "copyImageFromDevice0" << endl;
+
+    int size = w * h * sizeof(uchar);
+    HANDLE_ERROR(cudaMemcpy(ptrImage, ptrDev0_image, size, cudaMemcpyDeviceToHost));
+    }
+
+__global__ void modifyImage(uchar* ptrDev1_image, int w, int h)
+    {
+    int tid = Indice2D::tid();
+       int nbThread = Indice2D::nbThread();
+
+//       uchar4 color;
+//       color.w = 255; // alpha
+
+       int pixelI;
+       int pixelJ;
+       //double dim2 = w / 2;
+
+       while (tid < w * h)
+   	{
+   	Indice2D::pixelIJ(tid, w, pixelI, pixelJ);
+
+//   	modifyColor(pixelI, pixelJ,  t, color); // gtx295 same fps
+//   	//f(pixelI, pixelJ, t, color, w); // gtx295 same fps
+//   	ptrDevPixels[tid] = color;
+
+   	tid += nbThread;
+   	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

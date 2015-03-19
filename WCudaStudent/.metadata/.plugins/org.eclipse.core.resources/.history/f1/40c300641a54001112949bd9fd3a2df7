@@ -1,0 +1,116 @@
+// Attention : Extension .cu
+
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
+#include "cudaTools.h"
+#include "vectorTools.h"
+#include "exampleVectoAdd.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+void addVectorBlock_01(long* ptrA, long* ptrB, long* ptrC, long n);
+bool isAddVectorBlockOk_01(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ static void addVectorBlock(long* ptrA, long* ptrB, long* ptrC, long n);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/**
+ * n block de 1 Thread
+ */
+void addVectorBlock_01(long* ptrA, long* ptrB, long* ptrC, long n)
+    {
+    dim3 blockPerGrid = dim3(n, 1);
+    dim3 threadPerBlock = dim3(1, 1, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    assertDimLegal(blockPerGrid, threadPerBlock);
+
+    long* ptrDev_A = NULL;
+    long* ptrDev_B = NULL;
+    long* ptrDev_C = NULL;
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_A, n * sizeof(long)));
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_B, n * sizeof(long)));
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_C, n * sizeof(long)));
+
+    HANDLE_ERROR(cudaMemcpy(ptrDev_B, ptrB, n * sizeof(long), cudaMemcpyHostToDevice));
+    HANDLE_ERROR(cudaMemcpy(ptrDev_C, ptrC, n * sizeof(long), cudaMemcpyHostToDevice));
+
+    addVectorBlock<<<blockPerGrid,threadPerBlock>>>(ptrDev_A, ptrDev_B, ptrDev_C, n); // Attention : Pointeur du device!
+
+    HANDLE_ERROR(cudaMemcpy(ptrA, ptrDev_A, n * sizeof(long), cudaMemcpyDeviceToHost));
+
+    HANDLE_ERROR(cudaFree(ptrDev_A));
+    HANDLE_ERROR(cudaFree(ptrDev_B));
+    HANDLE_ERROR(cudaFree(ptrDev_C));
+    }
+
+bool isAddVectorBlockOk_01(void)
+    {
+    cout << endl << "[Add Vector Block]" << endl;
+
+    long n = (long) sqrt((double) LONG_MAX);// < max gridDim.x (LONG_MAX de math.h)
+    assert(n <= sqrt((double) LONG_MAX));
+
+    long* tabA = new long[n];
+    long* tabB = new long[n];
+    long* tabC = new long[n];
+    long* tabATheorique = new long[n];
+
+    vectorB(tabB, n);
+    vectorC(tabC, n);
+    vectorBaddC(tabATheorique, n);//vi= i*(i-1)
+
+    addVectorBlock_01(tabA, tabB, tabC, n);
+
+    //    print(tabA, N,"AddVectorBlock");
+    //    print(tabATheorique, N,"AddVectorBlock");
+
+    bool isOk = isEgale(tabA, tabATheorique, n);
+
+    delete[] tabA;
+    delete[] tabB;
+    delete[] tabC;
+    delete[] tabATheorique;
+
+    return isOk;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ void addVectorBlock(long* ptrA, long* ptrB, long* ptrC, long n)
+    {
+    long tid = blockIdx.x;
+    if (tid < n)// facultatif car tid in [0,n-1]
+	{
+	ptrA[tid] = ptrB[tid] + ptrC[tid];
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

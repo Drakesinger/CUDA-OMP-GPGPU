@@ -1,0 +1,78 @@
+#ifndef IMAGE_CAPTURE_H_
+#define IMAGE_CAPTURE_H_
+
+#include <string>
+
+#include "cv.h"
+#include "highgui.h"
+#include "cudaTools.h"
+
+
+using namespace cv;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class ImageCapture
+    {
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	ImageCapture(const string& videoName);
+	ImageCapture(int idCamera);
+	virtual ~ImageCapture(void);
+
+	/*--------------------------------------*\
+	|*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	int getW(void);
+	int getH(void);
+	int nbOctet();
+
+	bool isOpened(void);
+	bool isStopAsked(void);
+	Mat capture(Map* ptrMap);
+
+	void printInfo(void);
+
+	static uchar4* castToUChar4(uchar* ptrTab);
+	static uchar4* castToUChar4(Mat* ptrMap);
+
+    protected:
+
+    private:
+
+	void buildCommon();
+
+
+	/*--------------------------------------*\
+	|*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	float w;
+	int h;
+
+	VideoCapture captureStream;
+	Mat matCapture2;
+	bool isStopAsk;
+
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

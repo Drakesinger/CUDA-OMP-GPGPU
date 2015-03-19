@@ -1,0 +1,59 @@
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/video/tracking.hpp>
+#include <opencv2/gpu/gpu.hpp>
+
+#include <stdlib.h>
+#include <stdio.h>
+
+using namespace cv;
+//using namespace cv::gpu;
+
+static void videoCapture(void);
+static void cameraCapture(void);
+
+int main(int argc, char** argv)
+    {
+    videoCapture();
+    cameraCapture();
+
+    return 0;
+    }
+
+void videoCapture(void)
+    {
+
+    VideoCapture videoCapture("TwoManLoiter.avi");
+
+    //create windows for output images
+    namedWindow("Open/Close", 1);
+
+    Mat matCapture;
+    while (true)
+	{
+
+	videoCapture >> matCapture;
+	uchar* ptr = matCapture.ptr;
+
+	}
+
+    }
+
+void videoCapture(void)
+    {
+
+    VideoCapture videoCapture("TwoManLoiter.avi");
+
+    //create windows for output images
+    namedWindow("Open/Close", 1);
+
+    Mat matCapture;
+    while (true)
+	{
+
+	videoCapture >> matCapture;
+	uchar* ptr = matCapture.ptr;
+
+	}
+
+    }

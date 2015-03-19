@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;CudaImage_OpenCV/src/cpp/core/common/cuda/new&apos;" deleteContents="false" description="Delete resource &apos;CudaImage_OpenCV/src/cpp/core/common/cuda/new&apos;" element1="/CudaImage_OpenCV/src/cpp/core/common/cuda/new" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1355837756073"/>
+</session>

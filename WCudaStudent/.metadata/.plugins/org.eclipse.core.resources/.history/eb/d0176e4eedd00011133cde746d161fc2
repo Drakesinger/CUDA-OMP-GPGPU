@@ -1,0 +1,178 @@
+#include <iostream>
+#include "vectorTools.h"
+#include "cudaTools.h"
+#include "Indice1D.h"
+#include "tab1DTools.h"
+#include "Device.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool isIncrementerVectorPinnedMemory_Ok(int n);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+__global__ static void incrementerVector1DPinnedMemory(int* ptrTab, int n, int delta);
+
+static bool isIncrementationOK(int* ptrV, int n, int delta);
+static void incrementerVector(int* ptrV, int n, int delta,const dim3& blockPerGrid, const dim3& threadPerBlock);
+static void fill(int* ptrV, int n);
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/**
+ * Memory Consideration:
+ *
+ * 	In host side (CPU), the OS can use two big type of memory:
+ * 		(M1) "Standard memory"
+ * 		(M2) pageLocked(pinned) memory
+ *
+ * 	Standard memory:
+ * 		In the case of "standard memory", small zone of area (name page) can be move by the OS, in the same time a process use(read/write) in this page.
+ * 		By example, page can be moved on HD during a swap operation, or set of pages can be "deframented".
+ * 		To allow process to acced to this page without trouble, a indirect (and transparently) acces is required!
+ * 		This indirect acces is safe,but required time and decrease performance!
+ *
+ *  	PageLocked(pinned) memory:
+ *		With pin memory,the pages can't me moved. Swap and defragmentation is impossible with this type of memory.
+ *		As the page can't physicaly move after allocation,a direct acces is allow (named DMA=Direct Acces memory)
+ *		The property of pin memory is that the OS never paged this memory out of the disk.
+ *		The Pinned memory always stay in physical memory.
+ *		A buffer is use, and the buffer can't be evicted or relocated by the OS.
+ *		The gpu can use DMA to performed operations as copy,read,write... in this pin memory.
+ *		The access is a direct acess, DMA don't use the CPU to acced pinned memory!
+ *		During a DMA operation practice by the GPU, CPU can make something else (very usefull with the use of cuda stream)
+ *		It's the reason pageLocked memory is so fast!
+ *
+ * Memory Optimisation:
+ *
+ * 	You can improve the performance of your application with the use of  PageLocked(pinned) memory.
+ *
+ * Warning:
+ *
+ * 	But be carreful, in the case where your os don't have enough memory, as swap and defragmentation!! are no more allowed,
+ * 	the os can become in a critical state! It's the reason, not all software use pageLocked(pinned) memory!
+ *
+ * Benchmark
+ *
+ * 	PageLocked(pinned) memory versus pageable memory(standard memory) can be increase the performance of your application by 2!
+ */
+bool isIncrementerVectorPinnedMemory_Ok(int n)
+    {
+    cout << endl << "[Incrementer Vector : Pinned Memory]" << endl;
+    cout << "n=" << n << endl;
+
+    dim3 blockPerGrid(32, 1);
+    dim3 threadPerBlock(256, 1, 1);
+
+    print(blockPerGrid, threadPerBlock);
+    Device::assertDim(blockPerGrid, threadPerBlock);
+
+    // nbIterationThread:
+    // gtx295 : max nbIterationThread : 5
+    // fx4600 : max nbIterationThread : 4
+    // nvs140m : max nbIterationThread : 1
+    // gt 430  : max nbIterationThread : 3
+//    long nbIterationThread = 1;
+//    long n = blockPerGrid.x * threadPerBlock.x * nbIterationThread;
+
+
+   // cout << "nbIterationThread : " << nbIterationThread << endl;
+
+    // Slow (old)
+    //int* ptrV = new int[n];
+
+    // Fast (new)
+    int* ptrV=NULL;
+    HANDLE_ERROR(cudaHostAlloc((void**)&ptrV,n*sizeof(int),cudaHostAllocDefault));
+
+    int delta = 1;
+    fill(ptrV, n);
+
+    incrementerVector(ptrV, n, delta, blockPerGrid, threadPerBlock);
+
+    bool isOk = isIncrementationOK(ptrV, n, delta);
+
+    // Old
+    //delete[] ptrV;
+
+    // New
+    HANDLE_ERROR(cudaFreeHost(ptrV));
+
+    return isOk;
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void incrementerVector(int* ptrV, int n, int delta, const dim3& blockPerGrid, const dim3& threadPerBlock)
+    {
+    int* ptrDev_v = NULL;
+
+    HANDLE_ERROR(cudaMalloc((void**) &ptrDev_v, n * sizeof(int)));
+    HANDLE_ERROR(cudaMemcpy(ptrDev_v, ptrV, n * sizeof(int), cudaMemcpyHostToDevice));
+
+    incrementerVector1DPinnedMemory<<<blockPerGrid,threadPerBlock>>>(ptrDev_v, n,delta);
+
+    HANDLE_ERROR(cudaMemcpy(ptrV, ptrDev_v, n * sizeof(int), cudaMemcpyDeviceToHost));
+    HANDLE_ERROR(cudaFree(ptrDev_v));
+    }
+
+bool isIncrementationOK(int* ptrV, int n, int delta)
+    {
+    int* ptrVJuste = new int[n];
+    fill(ptrVJuste, n);
+    incrementer(ptrVJuste, n, delta); // CPU
+
+    bool isOk = isEgale(ptrV, ptrVJuste, n);
+    delete[] ptrVJuste;
+
+    return isOk;
+    }
+
+void fill(int* ptrV, int n)
+    {
+    for (int i = 1; i <= n; i++)
+	{
+	*ptrV++ = i;
+	}
+    }
+
+__global__ void incrementerVector1DPinnedMemory(int* ptrTab, int n, int delta)
+    {
+    // Version indirect
+    // int tid=Indice1D::tid();
+    // int nbThreadCuda=Indice1D::nbThread();
+
+    // Version direct
+    int tid = threadIdx.x + (blockDim.x * blockIdx.x);
+    int nbThreadCuda = gridDim.x * blockDim.x
+
+    while (tid < n)
+	{
+	ptrTab[tid] += delta;
+	tid += nbThreadCuda;
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

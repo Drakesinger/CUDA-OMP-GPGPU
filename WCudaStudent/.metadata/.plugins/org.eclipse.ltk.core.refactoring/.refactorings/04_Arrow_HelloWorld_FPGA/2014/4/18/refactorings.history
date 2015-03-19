@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;04_Arrow_HelloWorld_FPGA/src/fpga/FPGA.cu&apos; to &apos;FPGA_provisoire.cu&apos;" description="Rename resource &apos;FPGA.cu&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/fpga/FPGA.cu" name="FPGA_provisoire.cu" stamp="1398695097294" updateReferences="true"/>
+</session>

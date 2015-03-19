@@ -1,0 +1,93 @@
+#include <iostream>
+#include <stdlib.h>
+#include <assert.h>
+
+#include "cudaTools.h"
+#include "Device.h"
+#include "ImageCircuit.h"
+#include "ImageStream.h"
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+extern bool useVideo(void);
+extern bool useCamera(void);
+
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+static void rappelTypeSize(void);
+static bool useTutoOpencv(void);
+static bool useGPUOpencv(void);
+static bool useGPUSteam(void);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+int main(void)
+    {
+    rappelTypeSize();
+
+   //return useTutoOpencv();
+    return useGPUOpencv();
+   //return useGPUSteam();
+    }
+
+bool useTutoOpencv(void)
+    {
+    bool isOk = true;
+    isOk &= useVideo();
+    isOk &= useCamera();
+
+    return isOk ? EXIT_SUCCESS : EXIT_FAILURE;
+    }
+
+ bool useGPUOpencv(void)
+    {
+    //ImageCircuit animation("example.avi");
+     // ImageCircuit animation("C:/Users/bilat/Desktop/nasaFHD.avi");
+     //ImageCircuit animation(0);
+     //ImageCircuit animation(0,1280,960);
+     ImageCircuit animation(0,2000,2000);
+
+    return  animation.start();
+    }
+
+ bool useGPUSteam(void)
+    {
+    //ImageStream animation("example.avi");
+      ImageStream animation("C:/Users/bilat/Desktop/nasaFHD.avi");
+     //ImageCircuit animation(0);
+
+    return  animation.start();
+    }
+
+void rappelTypeSize(void)
+    {
+    cout << endl;
+    cout << "Rappel type size (from limits.h) " << endl;
+    cout << "SHORT_MAX = " << SHRT_MAX << "      : " << sizeof(short) << " Octets" << endl;
+    cout << "INT_MAX   = " << INT_MAX << " : " << sizeof(int) << " Octets" << endl;
+    cout << "LONG_MAX  = " << LONG_MAX << " : " << sizeof(long) << " Octets" << endl;
+    cout << endl;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

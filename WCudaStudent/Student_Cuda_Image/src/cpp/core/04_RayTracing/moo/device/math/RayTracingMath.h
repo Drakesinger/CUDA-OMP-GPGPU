@@ -55,7 +55,7 @@ class RayTracingMath
 		    float dz = sphere.dz(h2);
 		    float dist = sphere.distance(dz);
 
-		    if(dist  min)
+		    if(dist < min)
 			{
 			min = dist;
 			hueMin = sphere.hueT(t);

@@ -6,6 +6,8 @@
 #include "MathTools.h"
 #include "DomaineMath.h"
 #include "../device/math/Sphere.h"
+#include "ConstantMemoryLink.h"
+
 
 /*----------------------------------------------------------------------*\
  |*			Declaration 					*|
@@ -23,7 +25,7 @@ class RayTracing: public AnimableFonctionel_I
 
     public:
 
-	RayTracing(int w, int h, DomaineMath* domaineMath, const int NB_SPHERE, float dt);
+	RayTracing(int w, int h, DomaineMath* domaineMath, float dt);
 	virtual ~RayTracing(void);
 
 	/*--------------------------------------*\
@@ -47,8 +49,6 @@ class RayTracing: public AnimableFonctionel_I
 	virtual float getT(void);
 	virtual string getTitle(void);
 
-
-
 	static float randomMinMax(float min, float max);
 
     private:
@@ -60,7 +60,6 @@ class RayTracing: public AnimableFonctionel_I
     private:
 
 	// Inputs
-	const int NB_SPHERE;
 	int w;
 	int h;
 	float t; // para animation

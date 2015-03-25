@@ -11,12 +11,9 @@
 using std::cout;
 using std::endl;
 
-__host__ Sphere* instanciateSpheres(Sphere*,int);
-__host__ void destructSpheres(Sphere*);
-
-__global__ void rayTracing(uchar4* ptrDevPixels, int w, int h, Sphere* ptrDevSpheres, DomaineMath domaineMath, const int NB_SPHERE, float t)
+__global__ void rayTracing(uchar4* ptrDevPixels, int w, int h, Sphere* ptrDevSpheres, DomaineMath domaineMath,int length, float t)
     {
-    RayTracingMath rayTracingMath(ptrDevSpheres,NB_SPHERE);
+    RayTracingMath rayTracingMath(ptrDevSpheres,length);
 
     int tid = Indice2D::tid();
     int nbThread = Indice2D::nbThread();
@@ -33,21 +30,6 @@ __global__ void rayTracing(uchar4* ptrDevPixels, int w, int h, Sphere* ptrDevSph
 	rayTracingMath.colorXY(x, y, t, &ptrDevPixels[s]);
 	s += nbThread;
 	}
-    }
-
-__host__ Sphere* instanciateSpheres(Sphere* ptrSpheres, int n)
-    {
-    Sphere* ptrDevSpheres;
-
-    HANDLE_ERROR(cudaMalloc((void**)&ptrDevSpheres, sizeof(Sphere)*n));
-    HANDLE_ERROR(cudaMemcpy(ptrDevSpheres, ptrSpheres, sizeof(Sphere)*n, cudaMemcpyHostToDevice));
-
-    return ptrDevSpheres;
-    }
-
-__host__ void destructSpheres(Sphere* ptrDevSpheres)
-    {
-    HANDLE_ERROR(cudaFree(ptrDevSpheres));
     }
 
 /*----------------------------------------------------------------------*\

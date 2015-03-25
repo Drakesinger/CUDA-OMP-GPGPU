@@ -10,6 +10,8 @@ class RayTracingProvider
 
 	static RayTracing* create(void);
 	static ImageFonctionel* createGL(void);
+	__host__ Sphere* instanciateSpheres(Sphere*,int);
+	__host__ void destructSpheres(Sphere*);
     };
 
 #endif

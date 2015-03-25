@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
 <entry loc="/usr/lib/jvm/java-7-openjdk-amd64" stamp="1423059868000"/>
-<entry loc="C:\Soft\java\jre" stamp="1404484829557"/>
 <entry loc="C:\Soft\java64\jdk" stamp="1423069384412"/>
-<entry loc="C:\Program Files\Java\jre6" stamp="1308216714896"/>
+<entry loc="C:\Soft\java\jre" stamp="1404484829557"/>
 <entry loc="/usr/lib/jvm/java-6-openjdk" stamp="1328896468000"/>
-<entry loc="C:\Soft\java64" stamp="1305139946745"/>
+<entry loc="C:\Program Files\Java\jre6" stamp="1308216714896"/>
 <entry loc="C:\Program Files\Java\jre7" stamp="1377170951634"/>
+<entry loc="C:\Soft\java64" stamp="1305139946745"/>
 <entry loc="C:\Soft\java64\jdk\jre" stamp="1410775081614"/>
-<entry loc="C:\Soft\java" stamp="1404484864784"/>
 <entry loc="/usr/lib/jvm/java-7-oracle" stamp="1359657527000"/>
+<entry loc="C:\Soft\java" stamp="1404484864784"/>
 <entry loc="C:\Soft\java32\jdk" stamp="1287955527437"/>
 </dirs>

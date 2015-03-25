@@ -1,6 +1,5 @@
 #include "RayTracingProvider.h"
 #include "MathTools.h"
-#include "DomaineMath.h"
 #include <limits>
 
 RayTracing* RayTracingProvider::create()
@@ -9,15 +8,14 @@ RayTracing* RayTracingProvider::create()
     int dh = 16 * 60;
 
     float dt = 0.01;
-    DomaineMath *domaineMath = new DomaineMath(0, 0, dw, dh);
 
-    return new RayTracing(dw, dh, domaineMath, dt);
+    return new RayTracing(dw, dh, dt);
     }
 
-ImageFonctionel* RayTracingProvider::createGL(void)
+Image* RayTracingProvider::createGL(void)
     {
     ColorRGB_01* ptrColorTitre = new ColorRGB_01(255, 0, 128);
-    return new ImageFonctionel(create(),ptrColorTitre);
+    return new Image(create(),ptrColorTitre);
     }
 
 /*--------------------------------------*\

@@ -49,7 +49,7 @@ int mainGL(void)
     //Image* ptrRippling = RipplingProvider::createGL();
     //ImageFonctionel* ptrMandelbrot = MandelbrotProvider::createGL();
     //ImageFonctionel* ptrNewton = NewtonProvider::createGL();
-    ImageFonctionel_A* ptrRaytracing = RayTracingProvider::createGL();
+    Image* ptrRaytracing = RayTracingProvider::createGL();
 
     //ImageViewer : (boolean,boolean) : (isAnimation,isSelectionEnable)
     //GLUTImageViewers ripplingViewer(ptrRippling, true, false, 10, 10);

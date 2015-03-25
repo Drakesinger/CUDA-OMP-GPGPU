@@ -1,4 +1,4 @@
-14:22:58 **** Incremental Build of configuration CudaGCC for project Student_Cuda_Image ****
+14:51:46 **** Incremental Build of configuration CudaGCC for project Student_Cuda_Image ****
 makeCudaGCC.sh all 
 
 --------------------------------------------------------
@@ -399,7 +399,7 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->
 [CBI] -> Compilateur  : g++) && nvcc
 [CBI] -> Task		  : End Compiling-Linking !
-[CBI] -> Time	      : 14:23:31
+[CBI] -> Time	      : 14:52:20
 ==================================================================================
 
 
@@ -407,5 +407,5 @@ Cuda compilation tools, release 6.5, V6.5.12
 
 [CBI] -> Student_Cuda_Image_gcc_cuda_65_x86_64   : End ALL!
 
-14:23:31 Build Finished (took 33s.388ms)
+14:52:20 Build Finished (took 34s.313ms)
 

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <assert.h>
 
-#include "DomaineMath.h"
 #include "RayTracing.h"
 #include "Device.h"
 
@@ -12,21 +11,18 @@
 #define LENGTH 500
 __constant__ Sphere TAB_DATA_CM[LENGTH];
 
+
 using std::cout;
 using std::endl;
 using std::string;
 
-extern __global__ void rayTracing(uchar4* ptrDevPixels, int w, int h, Sphere* ptrDevSpheres, DomaineMath domaineMath, int length, float t);
+extern __global__ void rayTracing(uchar4* ptrDevPixels, int w, int h, Sphere* ptrDevSpheres, int length, float t);
 
-extern Sphere* instanciateSpheres(Sphere*,int);
-extern void destructSpheres(Sphere*);
-
-RayTracing::RayTracing(int w, int h, DomaineMath* domaineMath, float dt)
+RayTracing::RayTracing(int w, int h, float dt)
     {
     // Inputs
     this->w = w;
     this->h = h;
-    this->ptrDomaineMathInit = domaineMath;
     this->t = 0;
     this->dt = dt;
 
@@ -54,7 +50,7 @@ RayTracing::RayTracing(int w, int h, DomaineMath* domaineMath, float dt)
 
 RayTracing::~RayTracing()
     {
-    destructSpheres(ptrDevSpheres);
+    //destructSpheres(ptrDevSpheres);
     delete[] ptrSpheres;
     }
 
@@ -62,9 +58,9 @@ RayTracing::~RayTracing()
  |*     Methode override    *|
  \*-------------------------*/
 
-void RayTracing::process(uchar4* ptrDevPixels, int w, int h, const DomaineMath& domaineMath)
+void RayTracing::process(uchar4* ptrDevPixels, int w, int h)
     {
-    rayTracing<<<dg,db>>>(ptrDevPixels, w, h, ptrDevSpheres, domaineMath,LENGTH ,t);
+    rayTracing<<<dg,db>>>(ptrDevPixels, w, h, ptrDevSpheres,LENGTH ,t);
     }
 
 float RayTracing::getAnimationPara(void)
@@ -80,10 +76,6 @@ void RayTracing::animationStep()
  /*--------------*\
  |* get override *|
  \*--------------*/
-DomaineMath* RayTracing::getDomaineMathInit(void)
-    {
-    return ptrDomaineMathInit;
-    }
 float RayTracing::getT(void)
     {
     return t;
@@ -119,7 +111,7 @@ __host__ ConstantMemoryLink constantMemoryLink(void)
     return cmLink;
 }
 
-__host__ Sphere* instanciateSpheres(Sphere* ptrSpheres, int n)
+__host__ Sphere* RayTracing::instanciateSpheres(Sphere* ptrSpheres, int n)
     {
     ConstantMemoryLink cmLink = constantMemoryLink();
     Sphere* ptrDevSpheres = (Sphere*)cmLink.ptrDevTab;
@@ -130,10 +122,10 @@ __host__ Sphere* instanciateSpheres(Sphere* ptrSpheres, int n)
     return ptrDevSpheres;
     }
 
-__host__ void destructSpheres(Sphere* ptrDevSpheres)
+/*__host__ void destructSpheres(Sphere* ptrDevSpheres)
     {
     HANDLE_ERROR(cudaFree(ptrDevSpheres));
-    }
+    }*/
 
 /*--------------------------------------*\
  |*		Private			*|

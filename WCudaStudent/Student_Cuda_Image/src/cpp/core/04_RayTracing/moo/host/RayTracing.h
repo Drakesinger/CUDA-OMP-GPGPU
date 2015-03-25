@@ -2,9 +2,8 @@
 #define RAYTRACING_H_
 
 #include "cudaTools.h"
-#include "AnimableFonctionel_I.h"
+#include "Animable_I.h"
 #include "MathTools.h"
-#include "DomaineMath.h"
 #include "../device/math/Sphere.h"
 #include "ConstantMemoryLink.h"
 
@@ -17,7 +16,7 @@
  |*		Public			*|
  \*-------------------------------------*/
 
-class RayTracing: public AnimableFonctionel_I
+class RayTracing: public Animable_I
     {
 	/*--------------------------------------*\
 	|*		Constructor		*|
@@ -25,7 +24,9 @@ class RayTracing: public AnimableFonctionel_I
 
     public:
 
-	RayTracing(int w, int h, DomaineMath* domaineMath, float dt);
+	RayTracing(int w, int h, float dt);
+	Sphere* instanciateSpheres(Sphere*,int);
+	//void destructSpheres(Sphere*);
 	virtual ~RayTracing(void);
 
 	/*--------------------------------------*\
@@ -40,12 +41,11 @@ class RayTracing: public AnimableFonctionel_I
 
 	virtual void animationStep(void);
 
-	virtual void process(uchar4* ptrDevPixels, int w, int h, const DomaineMath& domaineMath);
+	virtual void process(uchar4* ptrDevPixels, int w, int h);
 	virtual float getAnimationPara();
 
 	virtual int getW(void);
 	virtual int getH(void);
-	virtual DomaineMath* getDomaineMathInit(void);
 	virtual float getT(void);
 	virtual string getTitle(void);
 
@@ -64,7 +64,6 @@ class RayTracing: public AnimableFonctionel_I
 	int h;
 	float t; // para animation
 	float dt; // para animation
-	DomaineMath* ptrDomaineMathInit;
 	Sphere* ptrSpheres;
 	Sphere* ptrDevSpheres;
 

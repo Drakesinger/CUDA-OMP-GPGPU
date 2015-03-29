@@ -1,0 +1,70 @@
+#ifndef JULIA_MATH_H_
+#define JULIA_MATH_H_
+
+#include <math.h>
+#include "ColorTools_GPU.h"
+
+class JuliaMath
+    {
+    public:
+
+	__device__ JuliaMath(int _n, int _nMin, float _cx, float _cy):n(_n),nMin(_nMin),fact(0.2/n),cx(_cx),cy(_cy)
+	    {
+	    }
+
+    public:
+	__device__ void colorXY(uchar4* ptrColor, float x1, float x2, const DomaineMath& domaineMath)
+	    {
+	    color.w = 255;
+
+	    int iConverge;
+	    bool isConvergent = zk(x, y, iConverge);
+
+	    if(isConvergent)
+		color.x = color.y = color.z = 0;
+	    else
+		ColorTools::HSB_TO_RVB(fact*iConverge, 1.0, 1.0, &color);
+	    }
+
+    private:
+	__device__ bool zk(const float x, const float y, int& iConverge) const
+	    {
+	    float zx = z0x(0);
+	    float zy = z0y(0);
+
+	    bool isDiver = false;
+	    iConverge = 0;
+
+	    for(int i = nMin; !isDiver && i <= n; ++i)
+		{
+		float zxCopy = zx;
+		zx = zx*zx - zy*zy + x;
+		zy = 2*zxCopy*zy + y;
+
+		isDiver = isDivergent(zx, zy);
+
+		if(isDiver)//We leave the loop with the flag, doesn't need to test isConverge == 0
+		    iConverge = i;
+		}
+
+	    return !isDiver;
+	    }
+
+	__device__ float zkx(const unsigned int x) const {return x;}
+	__device__ float zky(const unsigned int y) const {return y;}
+	__device__ float z0x(const float x) const {return 0.0;}
+	__device__ float z0y(const float y) const {return 0.0;}
+
+	__device__ bool isDivergent(const float zx, const float zy) const {return zx*zx + zy*zy > 4.0;}
+
+    private:
+
+	int n;
+	int nMin;
+	float fact;
+	float cx;
+	float cy;
+
+    };
+
+#endif 

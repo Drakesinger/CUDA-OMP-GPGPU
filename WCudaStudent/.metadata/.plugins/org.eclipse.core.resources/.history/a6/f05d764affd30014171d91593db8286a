@@ -1,0 +1,27 @@
+#include "RayTracingSMProvider.h"
+#include "MathTools.h"
+#include <limits>
+
+RayTracing* RayTracingSMProvider::create()
+    {
+    int dw = 16 * 80;
+    int dh = 16 * 60;
+
+    float dt = 0.01;
+
+    return new RayTracing(dw, dh, dt);
+    }
+
+Image* RayTracingSMProvider::createGL(void)
+    {
+    ColorRGB_01* ptrColorTitre = new ColorRGB_01(255, 0, 128);
+    return new Image(create(),ptrColorTitre);
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

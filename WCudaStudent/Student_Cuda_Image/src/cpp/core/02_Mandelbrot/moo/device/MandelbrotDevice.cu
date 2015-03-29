@@ -1,0 +1,41 @@
+#include <iostream>
+
+#include "Indice2D.h"
+#include "cudaTools.h"
+#include "Device.h"
+#include "IndiceTools.h"
+#include "DomaineMath.h"
+#include "ImageFonctionel.h"
+
+#include "MandelbrotMath.h"
+
+using std::cout;
+using std::endl;
+
+__global__ void mandelbrot(uchar4* ptrDevPixels, int w, int h, DomaineMath domaineMath, int n, int nMin);
+
+__global__ void mandelbrot(uchar4* ptrDevPixels, int w, int h, DomaineMath domaineMath, int n, int nMin)
+    {
+    MandelbrotMath mandelbrotMath(n);
+
+    int tid = Indice2D::tid();
+    int nbThread = Indice2D::nbThread();
+    const int MAX = w*h;
+
+    int i,j;
+    double x,y;
+    int s = tid;
+    while(s < MAX)
+	{
+	IndiceTools::toIJ(s,w,&i,&j);
+	domaineMath.toXY(i,j,&x,&y);
+
+	mandelbrotMath.colorXY(&ptrDevPixels[s],x, y,domaineMath);
+	s += nbThread;
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
+

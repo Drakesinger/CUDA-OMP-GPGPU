@@ -1,4 +1,4 @@
-14:51:46 **** Incremental Build of configuration CudaGCC for project Student_Cuda_Image ****
+16:47:56 **** Incremental Build of configuration CudaGCC for project Student_Cuda_Image ****
 makeCudaGCC.sh all 
 
 --------------------------------------------------------
@@ -122,15 +122,21 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->              : src/cpp/core/01_Rippling/moo/device/math/
 [CBI] ->              : src/cpp/core/01_Rippling/moo/host/
 [CBI] ->              : src/cpp/core/01_Rippling/provider/
-[CBI] ->              : src/cpp/core/02_Mandelbrot_Julia/moo/device/math/
-[CBI] ->              : src/cpp/core/02_Mandelbrot_Julia/moo/host/
-[CBI] ->              : src/cpp/core/02_Mandelbrot_Julia/provider/
+[CBI] ->              : src/cpp/core/02_Julia/moo/device/math/
+[CBI] ->              : src/cpp/core/02_Julia/moo/host/
+[CBI] ->              : src/cpp/core/02_Julia/provider/
+[CBI] ->              : src/cpp/core/02_Mandelbrot/moo/device/math/
+[CBI] ->              : src/cpp/core/02_Mandelbrot/moo/host/
+[CBI] ->              : src/cpp/core/02_Mandelbrot/provider/
 [CBI] ->              : src/cpp/core/03_Newton/moo/device/math/
 [CBI] ->              : src/cpp/core/03_Newton/moo/host/
 [CBI] ->              : src/cpp/core/03_Newton/provider/
 [CBI] ->              : src/cpp/core/04_RayTracing/moo/device/math/
 [CBI] ->              : src/cpp/core/04_RayTracing/moo/host/
 [CBI] ->              : src/cpp/core/04_RayTracing/provider/
+[CBI] ->              : src/cpp/core/04_RayTracingSM/moo/device/math/
+[CBI] ->              : src/cpp/core/04_RayTracingSM/moo/host/
+[CBI] ->              : src/cpp/core/04_RayTracingSM/provider/
 
 
 [CBI] -> LIB_PATH (auto detect):
@@ -266,55 +272,8 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->              : opencv_videostab
 [CBI] ->              : rt
 
-[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/bin
-[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/obj
-[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/cubin
 
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/main.cpp
 [Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/mainGL.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/mainMOO.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/01_Rippling/provider/RipplingProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/03_Newton/provider/NewtonProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/02_Mandelbrot_Julia/provider/MandelbrotProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/04_RayTracing/provider/RayTracingProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/AleaTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/Chronos.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/LimitsTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/MathTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/StringTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/TabTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurF.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurI.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/namespace_cpu/ColorTools_CPU.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/namespace_cpu/IndiceTools_CPU.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/cudaTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/Device.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/animateurFonctionel/AnimateurFonctionel.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/animateur/Animateur.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/Image.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/tuto/tuto.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/Capture_A.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/CaptureCamera.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/CaptureVideo.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/viewer/image/ImageViewerCV.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/viewer/sequence/SequenceViewerCV.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Rippling/moo/host/Rippling.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Rippling/moo/device/ripplingDevice.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/03_Newton/moo/host/Newton.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/03_Newton/moo/device/NewtonDevice.cu
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Mandelbrot_Julia/moo/host/Mandelbrot.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Mandelbrot_Julia/moo/device/MandelbrotDevice.cu
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/04_RayTracing/moo/host/RayTracing.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/04_RayTracing/moo/device/RayTracingDevice.cu
 
 [CBI] -> Linking to   : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/bin/Student_Cuda_Image_gcc_cuda_65_x86_64.run
 
@@ -399,7 +358,7 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->
 [CBI] -> Compilateur  : g++) && nvcc
 [CBI] -> Task		  : End Compiling-Linking !
-[CBI] -> Time	      : 14:52:20
+[CBI] -> Time	      : 16:47:57
 ==================================================================================
 
 
@@ -407,5 +366,5 @@ Cuda compilation tools, release 6.5, V6.5.12
 
 [CBI] -> Student_Cuda_Image_gcc_cuda_65_x86_64   : End ALL!
 
-14:52:20 Build Finished (took 34s.313ms)
+16:47:57 Build Finished (took 1s.311ms)
 

@@ -33,8 +33,8 @@
 
 Newton* NewtonProvider::create()
     {
-    int dw = 16 * 80;
-    int dh = 16 * 60;
+    int dw = 300;
+    int dh = 300;
 
     int nMin = 0;
     int nMax = 100;

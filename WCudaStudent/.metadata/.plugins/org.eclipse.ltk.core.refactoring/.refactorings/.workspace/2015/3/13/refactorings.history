@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Student_Cuda_Image/src/cpp/core/02_Mandelbrot_Julia&apos;" deleteContents="false" description="Delete resource &apos;Student_Cuda_Image/src/cpp/core/02_Mandelbrot_Julia&apos;" element1="/Student_Cuda_Image/src/cpp/core/02_Mandelbrot_Julia" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1427551456034"/>
+</session>

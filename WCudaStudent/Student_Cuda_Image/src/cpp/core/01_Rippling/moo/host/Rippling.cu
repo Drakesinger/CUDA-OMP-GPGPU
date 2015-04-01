@@ -47,8 +47,8 @@ Rippling::Rippling(int w, int h, float dt)
     this->dt = dt;
 
     // Tools
-    this->dg = dim3(16,2,1);
-    this->db = dim3(32,2,1);
+    this->dg = dim3(16,4,1);
+    this->db = dim3(32,8,1);
     this->t = 0;
 
     // Outputs

@@ -14,6 +14,7 @@
 #include "RayTracingSMProvider.h"
 #include "JuliaProvider.h"
 #include "MandelbrotProvider.h"
+#include "HeatTransfertProvider.h"
 
 using std::cout;
 using std::endl;
@@ -55,6 +56,7 @@ int mainGL(void)
     //ImageFonctionel* ptrNewton = NewtonProvider::createGL();
     //Image* ptrRaytracing = RayTracingProvider::createGL();
     //Image* ptrRaytracingSM = RayTracingSMProvider::createGL();
+    Image* ptrheattransfert = HeatTransfertProvider::createGL();
 
     //ImageViewer : (boolean,boolean) : (isAnimation,isSelectionEnable)
     //GLUTImageViewers ripplingViewer(ptrRippling, true, false, 10, 20);
@@ -64,10 +66,10 @@ int mainGL(void)
     //GLUTImageViewers raytracingViewer(ptrRaytracing, true, false, 10,10);
     //GLUTImageViewers raytracingSMViewer(ptrRaytracingSM, true, false, 10,10);
 
-
+    GLUTImageViewers heattransfertViewer(ptrheattransfert, true, false, 10,10);
 
     /* Lancer toutes les animations à la fois */
-    Image* ptrRippling = RipplingProvider::createGL();
+    /*Image* ptrRippling = RipplingProvider::createGL();
     ImageFonctionel* ptrJulia = JuliaProvider::createGL();
     ImageFonctionel* ptrMandelbrot = MandelbrotProvider::createGL();
     ImageFonctionel* ptrNewton = NewtonProvider::createGL();
@@ -80,24 +82,26 @@ int mainGL(void)
     GLUTImageViewers mandelbrotViewer(ptrMandelbrot, true,true,700,0);
     GLUTImageViewers newtonViewer(ptrNewton, true,true,0,370);
     GLUTImageViewers raytracingViewer(ptrRaytracing, true, false, 350,370);
-    GLUTImageViewers raytracingSMViewer(ptrRaytracingSM, true, false, 700,370);
+    GLUTImageViewers raytracingSMViewer(ptrRaytracingSM, true, false, 700,370);*/
 
     GLUTImageViewers::runALL(); // Bloquant, Tant qu'une fenetre est ouverte
     // destruction
 	{
-	delete ptrRippling;
-	delete ptrJulia;
-	delete ptrMandelbrot;
-	delete ptrNewton;
-	delete ptrRaytracing;
-	delete ptrRaytracingSM;
+	//delete ptrRippling;
+	//delete ptrJulia;
+	//delete ptrMandelbrot;
+	//delete ptrNewton;
+	//delete ptrRaytracing;
+	//delete ptrRaytracingSM;
+	delete ptrheattransfert;
 
-	ptrRippling = NULL;
-	ptrJulia = NULL;
-	ptrMandelbrot = NULL;
-	ptrNewton = NULL;
-	ptrRaytracing = NULL;
-	ptrRaytracingSM = NULL;
+	//ptrRippling = NULL;
+	//ptrJulia = NULL;
+	//ptrMandelbrot = NULL;
+	//ptrNewton = NULL;
+	//ptrRaytracing = NULL;
+	//ptrRaytracingSM = NULL;
+	ptrheattransfert = NULL;
 	}
 
     return EXIT_SUCCESS;

@@ -33,8 +33,8 @@ Rippling* RipplingProvider::createMOO()
     {
     float dt = 1;
 
-    int dw = 300;
-    int dh = 300;
+    int dw = 800;
+    int dh = 800;
 
     return new Rippling(dw, dh, dt);
     }

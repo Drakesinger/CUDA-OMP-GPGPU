@@ -66,6 +66,7 @@ class Sphere
 	float rSquare;
 	float hue;
 	float T;
+	uchar padding[50];
     };
 
 

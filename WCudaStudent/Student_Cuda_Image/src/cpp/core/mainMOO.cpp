@@ -8,6 +8,8 @@
 #include "RipplingProvider.h"
 #include "MandelbrotProvider.h"
 #include "NewtonProvider.h"
+#include "RayTracingSMProvider.h"
+
 
 using std::cout;
 using std::endl;
@@ -56,8 +58,11 @@ int mainFreeGL(void)
 	//Animable_I* ptrMandelbrot = MandelbrotProvider::createMOO();
 	//animer(ptrMandelbrot, NB_ITERATION);
 
-	AnimableFonctionel_I* ptrNewton = NewtonProvider::create();
-    	animer(ptrNewton, NB_ITERATION);
+	//AnimableFonctionel_I* ptrNewton = NewtonProvider::create();
+    	//animer(ptrNewton, NB_ITERATION);
+
+	Animable_I* ptrRayTracingSM = RayTracingSMProvider::create();
+	animer(ptrRayTracingSM, NB_ITERATION);
 	}
 
     cout << "\n[FreeGL] end" << endl;

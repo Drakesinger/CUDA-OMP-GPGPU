@@ -55,7 +55,7 @@ int main(int argc, char** argv)
 
 	// Server Cuda1: in [0,5]
 	// Server Cuda2: in [0,2]
-	int deviceId = 2;
+	int deviceId = 4;
 
 	initCuda(deviceId);
 

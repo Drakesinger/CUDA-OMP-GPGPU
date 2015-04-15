@@ -1,0 +1,21 @@
+#include <iostream>
+#include <limits.h>
+#include "saucissonSMHost.h"
+
+using std::cout;
+using std::endl;
+
+//extern bool saucissonSM_host(long);
+
+bool useSaucisson(void)
+    {
+    cout << endl << "[SaucissonSM]" << endl;
+
+    bool isOk = true;
+    saucissonSMHost saucisson = new saucissonSMHost(256);
+
+    isOk&= saucissonSMHost(256);
+
+    return true;
+    }
+

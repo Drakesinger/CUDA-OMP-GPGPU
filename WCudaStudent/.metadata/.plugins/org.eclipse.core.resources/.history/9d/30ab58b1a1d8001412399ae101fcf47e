@@ -1,0 +1,28 @@
+#include "HeatTransfertProvider.h"
+#include "MathTools.h"
+#include <limits>
+
+HeatTransfert* HeatTransfertProvider::create()
+    {
+    int dw = 800;
+    int dh = 800;
+
+    int iteration = 10;
+    float k = 0.025;
+
+    return new HeatTransfert(dw, dh, iteration, k);
+    }
+
+Image* HeatTransfertProvider::createGL(void)
+    {
+    ColorRGB_01* ptrColorTitre = new ColorRGB_01(255, 0, 128);
+    return new Image(create(),ptrColorTitre);
+    }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

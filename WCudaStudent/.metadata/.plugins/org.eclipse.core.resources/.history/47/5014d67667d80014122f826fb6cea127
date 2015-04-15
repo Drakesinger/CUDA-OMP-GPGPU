@@ -1,0 +1,78 @@
+#ifndef HEATTRANSFERT_H_
+#define HEATFRANSFERT_H_
+
+#include "cudaTools.h"
+#include "Animable_I.h"
+#include "MathTools.h"
+#include "../device/math/Sphere.h"
+
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class HeatTransfert: public Animable_I
+    {
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	HeatTransfert(int w, int h, float dt, float k);
+	virtual ~HeatTransfert(void);
+
+	/*--------------------------------------*\
+	 |*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	/*----------------*\
+	|*  Override	  *|
+	 \*---------------*/
+
+	virtual void animationStep(void);
+
+	virtual void process(uchar4* ptrDevPixels, int w, int h);
+	virtual float getAnimationPara();
+
+	virtual int getW(void);
+	virtual int getH(void);
+	virtual float getT(void);
+	virtual string getTitle(void);
+
+	static float randomMinMax(float min, float max);
+
+    private:
+
+	/*--------------------------------------*\
+	 |*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	// Inputs
+	int w;
+	int h;
+	float t; // para animation
+	float dt; // para animation
+	float k;
+
+	// Tools
+	dim3 dg;
+	dim3 db;
+
+	//Outputs
+	string title;
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

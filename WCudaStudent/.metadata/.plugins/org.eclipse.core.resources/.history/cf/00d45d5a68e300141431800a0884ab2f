@@ -1,0 +1,36 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+
+#define PI 3.14159265358979323846264338
+
+__host__ bool saucissonSM_host::saucissonSM_host(long n)
+    {
+	this->resultatEmp = 0;
+	this->resultatThe = PI;
+
+	this->dg = dim3(256, 1, 1);
+	this->db = dim3(256, 1, 1);
+
+	size_t sizeOctet = db.x * sizeof(float);
+	Device::assertDim(this->dg, this->db);
+
+	this->ptrDevAireGM;
+
+	HANDLE_ERROR(cudaMemset(ptrDevAireGM,0,sizeOctet));
+
+    }
+
+/**
+ * Override
+ */
+void saucissonSM_host::process(float* ptrSM, long n)
+    {
+
+    }
+
+void saucissonSM_host::~saucissonSM_host(void)
+    {
+
+    }

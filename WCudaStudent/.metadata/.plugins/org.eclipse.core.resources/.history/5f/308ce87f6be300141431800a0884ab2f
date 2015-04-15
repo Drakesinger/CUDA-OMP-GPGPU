@@ -1,0 +1,13 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+
+/**
+* Hyp : dimension(tabSM) est une puissance de 2
+**/
+
+__device__ void reductionIntraBlock(float* tabSM)
+   {
+
+   }

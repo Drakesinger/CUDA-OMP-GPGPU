@@ -1,0 +1,28 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+
+#define PI 3.14159265358979323846264338
+
+__host__ bool saucissonSM_host(long n)
+    {
+	dim3 dg = dim3(256, 1, 1);
+	dim3 db = dim3(256, 1, 1);
+
+	size_t sizeBlock = db.x*sizeof(float);
+	Device::assertDim(dg, db);
+    }
+
+/**
+ * Override
+ */
+void saucissonSM_host::process(float* ptrSM, long n)
+    {
+
+    }
+
+void saucissonSM_host::~saucissonSM_host(void)
+    {
+
+    }

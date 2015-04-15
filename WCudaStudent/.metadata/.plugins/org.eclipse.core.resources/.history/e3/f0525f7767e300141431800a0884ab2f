@@ -1,0 +1,69 @@
+#ifndef SAUCISSONSM_HOST_H_
+#define SAUCISSONSM_HOST_H_
+
+#include "cudaTools.h"
+#include "MathTools.h"
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+class saucissonSM_host
+    {
+	/*--------------------------------------*\
+	|*		Constructor		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	saucissonSM_host(int w, int h, float dt);
+	virtual ~saucissonSM_host(void);
+
+	/*--------------------------------------*\
+	 |*		Methodes		*|
+	 \*-------------------------------------*/
+
+    public:
+
+	/*-------------------------*\
+	|*   Override Animable_I   *|
+	 \*------------------------*/
+
+	/**
+	 * Call periodicly by the api
+	 */
+	virtual void process(uchar4* ptrDevPixels, int w, int h);
+
+	/**
+	 * Call periodicly by the api
+	 */
+	virtual string getTitle();
+
+    private:
+
+	/*--------------------------------------*\
+	 |*		Attributs		*|
+	 \*-------------------------------------*/
+
+    private:
+
+	// Inputs
+
+	// Tools
+	dim3 dg;
+	dim3 db;
+	float t;
+
+	//Outputs
+	string title;
+    };
+
+#endif
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

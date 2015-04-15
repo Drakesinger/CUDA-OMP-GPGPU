@@ -1,4 +1,4 @@
-14:14:21 **** Incremental Build of configuration CudaGCC for project Student_Cuda_Image ****
+14:27:57 **** Incremental Build of configuration CudaGCC for project Student_Cuda ****
 makeCudaGCC.sh all 
 
 --------------------------------------------------------
@@ -46,9 +46,9 @@ Cuda compilation tools, release 6.5, V6.5.12
 
 
 ==================================================================================
-[CBI] -> Target Name  : Student_Cuda_Image_gcc_cuda_65_x86_64
+[CBI] -> Target Name  : Student_Cuda_gcc_cuda_65_x86_64
 [CBI] ->
-[CBI] -> Build        : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/bin/Student_Cuda_Image_gcc_cuda_65_x86_64.run
+[CBI] -> Build        : /tmp/ramdrive/arc4/Targets/Student_Cuda/bin/Student_Cuda_gcc_cuda_65_x86_64.run
 [CBI] -> Deploy       : ../RELEASE/bin
 [CBI] ->
 [CBI] -> Type	      : EXE
@@ -63,16 +63,7 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->
 [CBI] ->              : ../BilatTools_CPP/src/core
 [CBI] ->              : ../BilatTools_Cuda/src/core
-[CBI] ->              : ../BilatTools_Cuda_Image/src/core
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core
-[CBI] ->              : ../BilatTools_Image/src/core
-[CBI] ->              : ../BilatTools_OpenCV/src/core
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_Displayable/BIN/gcc
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/BIN/gcc
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_FreeGlut_Tools/BIN/gcc
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut/BIN/gcc
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL_Cuda/BIN/gcc_cuda
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut_Cuda/BIN/gcc_cuda
+[CBI] ->              : /opt/api/ext/cpptest/001/LIB_STATIC/gcc
 
 [CBI] -> CXXFLAGS (Partial) :
 [CBI] ->
@@ -101,98 +92,18 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/device/synchronisation/
 [CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/host/
 [CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/mixte/
-[CBI] ->              : ../BilatTools_Cuda_Image/src/core/cudaImageTools/
-[CBI] ->              : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/animateur/
-[CBI] ->              : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/animateurFonctionel/
-[CBI] ->              : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core/switch/header/Image_FreeGlut/
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core/switch/header/Image_GL/indirect/
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core/switch/header/Image_Jni/
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core/switch/header/tools_GPU/
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core/switch/header/tools_switch/
-[CBI] ->              : ../BilatTools_Cuda_smart_switch/src/core/switch/header/type/
-[CBI] ->              : ../BilatTools_Image/src/core/tools/animateur/
-[CBI] ->              : ../BilatTools_Image/src/core/tools/animateurFonctionel/
-[CBI] ->              : ../BilatTools_Image/src/core/tools/image/
-[CBI] ->              : ../BilatTools_Image/src/core/tools/interface/
-[CBI] ->              : ../BilatTools_OpenCV/src/core/capture/header/
-[CBI] ->              : ../BilatTools_OpenCV/src/core/viewer/image/
-[CBI] ->              : ../BilatTools_OpenCV/src/core/viewer/sequence/
-[CBI] ->              : src/cpp/core/01_Rippling/moo/device/math/
-[CBI] ->              : src/cpp/core/01_Rippling/moo/host/
-[CBI] ->              : src/cpp/core/01_Rippling/provider/
-[CBI] ->              : src/cpp/core/02_Julia/moo/device/math/
-[CBI] ->              : src/cpp/core/02_Julia/moo/host/
-[CBI] ->              : src/cpp/core/02_Julia/provider/
-[CBI] ->              : src/cpp/core/02_Mandelbrot/moo/device/math/
-[CBI] ->              : src/cpp/core/02_Mandelbrot/moo/host/
-[CBI] ->              : src/cpp/core/02_Mandelbrot/provider/
-[CBI] ->              : src/cpp/core/03_Newton/moo/device/math/
-[CBI] ->              : src/cpp/core/03_Newton/moo/host/
-[CBI] ->              : src/cpp/core/03_Newton/provider/
-[CBI] ->              : src/cpp/core/04_RayTracing/moo/device/math/
-[CBI] ->              : src/cpp/core/04_RayTracing/moo/host/
-[CBI] ->              : src/cpp/core/04_RayTracing/provider/
-[CBI] ->              : src/cpp/core/04_RayTracingSM/moo/device/math/
-[CBI] ->              : src/cpp/core/04_RayTracingSM/moo/host/
-[CBI] ->              : src/cpp/core/04_RayTracingSM/provider/
-[CBI] ->              : src/cpp/core/05_HeatTransfert/moo/host/
-[CBI] ->              : src/cpp/core/05_HeatTransfert/provider/
+[CBI] ->              : src/cpp/core/04_Saucisson/Host/
+[CBI] ->              : src/cpp/test/junit/01_Test_Hello/
 
 
 [CBI] -> LIB_PATH (auto detect):
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_Displayable/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_FreeGlut_Tools/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut_Cuda/BIN/gcc_cuda/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL_Cuda/BIN/gcc_cuda/
 
 [CBI] -> LIB_PATH (auto detect):
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_Displayable/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_FreeGlut_Tools/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut_Cuda/BIN/gcc_cuda/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/BIN/gcc/
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL_Cuda/BIN/gcc_cuda/
 
 [CBI] -> API_INC :
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_Displayable/INC
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_FreeGlut_Tools/INC
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut/INC
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut/INC/common
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut/INC/cpu
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut_Cuda/INC
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/INC
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/INC/common
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/INC/cpu
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/INC/extra
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL_Cuda/INC
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL_Cuda/INC/gpu
-[CBI] ->              : /opt/api/cbi/tools/002/Bilat_tools_dll/INC
 [CBI] ->              : /opt/api/ext/boost/001/include
-[CBI] ->              : /opt/api/ext/openCV/001/include
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/calib3d
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/contrib
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/core
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/features2d
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/flann
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/gpu
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/highgui
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/imgproc
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/legacy
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/ml
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/nonfree
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/photo
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/stitching
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/superres
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/ts
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/video
-[CBI] ->              : /opt/api/ext/openCV/001/include/opencv2/videostab
-[CBI] ->              : /usr/include/X11
+[CBI] ->              : /opt/api/ext/cpptest/001/INC
+[CBI] ->              : /opt/api/ext/cpptest/001/INC/extension
 [CBI] ->              : /usr/local/cuda/include
 [CBI] ->              : /usr/local/cuda/include/CL
 [CBI] ->              : /usr/local/cuda/include/crt
@@ -200,26 +111,13 @@ Cuda compilation tools, release 6.5, V6.5.12
 
 [CBI] -> API_LIB :
 [CBI] ->              : /opt/api/ext/boost/001/lib/gcc
-[CBI] ->              : /opt/api/ext/openCV/001/lib
-[CBI] ->              : /usr/lib/x86_64-linux-gnu
 [CBI] ->              : /usr/local/cuda/lib64
 
 [CBI] -> API_BIN :
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_Displayable/BIN/gcc
-[CBI] ->              : /opt/api/cbi/fenetrage/002/Bilat_Fenetrage_FreeGlut_Tools/BIN/gcc
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut/BIN/gcc
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_FreeGlut_Cuda/BIN/gcc_cuda
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL/BIN/gcc
-[CBI] ->              : /opt/api/cbi/image/002/Bilat_Image_GL_Cuda/BIN/gcc_cuda
 [CBI] ->              : /opt/api/ext/boost/001/lib/gcc
-[CBI] ->              : /opt/api/ext/openCV/001/lib
 [CBI] ->              : /usr/local/cuda/lib64
 
 [CBI] -> API_LIBRARIES :
-[CBI] ->              : GL
-[CBI] ->              : GLEW
-[CBI] ->              : GLU
-[CBI] ->              : X11
 [CBI] ->              : boost_atomic
 [CBI] ->              : boost_chrono
 [CBI] ->              : boost_context
@@ -255,175 +153,11 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->              : cusparse
 [CBI] ->              : nvToolsExt
 [CBI] ->              : nvblas
-[CBI] ->              : opencv_calib3d
-[CBI] ->              : opencv_contrib
-[CBI] ->              : opencv_core
-[CBI] ->              : opencv_features2d
-[CBI] ->              : opencv_flann
-[CBI] ->              : opencv_gpu
-[CBI] ->              : opencv_highgui
-[CBI] ->              : opencv_imgproc
-[CBI] ->              : opencv_legacy
-[CBI] ->              : opencv_ml
-[CBI] ->              : opencv_nonfree
-[CBI] ->              : opencv_objdetect
-[CBI] ->              : opencv_photo
-[CBI] ->              : opencv_stitching
-[CBI] ->              : opencv_superres
-[CBI] ->              : opencv_video
-[CBI] ->              : opencv_videostab
 [CBI] ->              : rt
 
-[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/bin
-[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/obj
-[CBI] -> Create folder : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/cubin
 
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/main.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/mainGL.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/mainMOO.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/02_Mandelbrot/provider/MandelbrotProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/01_Rippling/provider/RipplingProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/05_HeatTransfert/provider/HeatTransfertProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/02_Julia/provider/JuliaProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/04_RayTracingSM/provider/RayTracingSMProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/03_Newton/provider/NewtonProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/04_RayTracing/provider/RayTracingProvider.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/AleaTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/Chronos.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/LimitsTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/MathTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/StringTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/TabTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurF.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/VariateurI.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/namespace_cpu/ColorTools_CPU.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_CPP/src/core/tools/cpp/namespace_cpu/IndiceTools_CPU.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/cudaTools.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda/src/core/cudatools/cpp/Device.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/animateurFonctionel/AnimateurFonctionel.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/animateur/Animateur.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/Image.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/tuto/tuto.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/Capture_A.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/CaptureCamera.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/capture/cpp/CaptureVideo.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/viewer/image/ImageViewerCV.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> g++ compiling .cpp : ../BilatTools_OpenCV/src/core/viewer/sequence/SequenceViewerCV.cpp
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Mandelbrot/moo/host/Mandelbrot.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Mandelbrot/moo/device/MandelbrotDevice.cu
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Rippling/moo/host/Rippling.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Rippling/moo/device/ripplingDevice.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/05_HeatTransfert/moo/host/HeatTransfert.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/05_HeatTransfert/moo/device/HeatTransfertDevice.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Julia/moo/host/Julia.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Julia/moo/device/JuliaDevice.cu
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/04_RayTracingSM/moo/host/RayTracingSM.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/04_RayTracingSM/moo/device/RayTracingSMDevice.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/03_Newton/moo/host/Newton.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/03_Newton/moo/device/NewtonDevice.cu
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
-
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/04_RayTracing/moo/host/RayTracing.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/04_RayTracing/moo/device/RayTracingDevice.cu
-
-[CBI] -> Linking to   : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/bin/Student_Cuda_Image_gcc_cuda_65_x86_64.run
-
-[CBI] -> Library Link :
-[CBI] ->
-[CBI] ->              : -L/usr/lib/x86_64-linux-gnu
-[CBI] ->              : -lBilat_Fenetrage_Displayable_002_gcc_x86_64
-[CBI] ->              : -lBilat_Fenetrage_FreeGlut_Tools_002_gcc_x86_64
-[CBI] ->              : -lBilat_Image_FreeGlut_002_gcc_x86_64
-[CBI] ->              : -lBilat_Image_FreeGlut_Cuda_002_gcc_cuda_65_x86_64
-[CBI] ->              : -lBilat_Image_GL_002_gcc_x86_64
-[CBI] ->              : -lBilat_Image_GL_Cuda_002_gcc_cuda_65_x86_64
-[CBI] ->              : -lGL
-[CBI] ->              : -lGLEW
-[CBI] ->              : -lGLU
-[CBI] ->              : -lX11
-[CBI] ->              : -lboost_atomic
-[CBI] ->              : -lboost_chrono
-[CBI] ->              : -lboost_context
-[CBI] ->              : -lboost_date_time
-[CBI] ->              : -lboost_exception
-[CBI] ->              : -lboost_filesystem
-[CBI] ->              : -lboost_graph
-[CBI] ->              : -lboost_locale
-[CBI] ->              : -lboost_math_c99
-[CBI] ->              : -lboost_math_c99f
-[CBI] ->              : -lboost_math_c99l
-[CBI] ->              : -lboost_math_tr1
-[CBI] ->              : -lboost_math_tr1f
-[CBI] ->              : -lboost_math_tr1l
-[CBI] ->              : -lboost_prg_exec_monitor
-[CBI] ->              : -lboost_program_options
-[CBI] ->              : -lboost_random
-[CBI] ->              : -lboost_regex
-[CBI] ->              : -lboost_serialization
-[CBI] ->              : -lboost_signals
-[CBI] ->              : -lboost_system
-[CBI] ->              : -lboost_test_exec_monitor
-[CBI] ->              : -lboost_thread
-[CBI] ->              : -lboost_timer
-[CBI] ->              : -lboost_unit_test_framework
-[CBI] ->              : -lboost_wave
-[CBI] ->              : -lboost_wserialization
-[CBI] ->              : -lcublas
-[CBI] ->              : -lcudart
-[CBI] ->              : -lcufft
-[CBI] ->              : -lcuinj64
-[CBI] ->              : -lcurand
-[CBI] ->              : -lcusparse
-[CBI] ->              : -lgomp
-[CBI] ->              : -lnvToolsExt
-[CBI] ->              : -lnvblas
-[CBI] ->              : -lopencv_calib3d
-[CBI] ->              : -lopencv_contrib
-[CBI] ->              : -lopencv_core
-[CBI] ->              : -lopencv_features2d
-[CBI] ->              : -lopencv_flann
-[CBI] ->              : -lopencv_gpu
-[CBI] ->              : -lopencv_highgui
-[CBI] ->              : -lopencv_imgproc
-[CBI] ->              : -lopencv_legacy
-[CBI] ->              : -lopencv_ml
-[CBI] ->              : -lopencv_nonfree
-[CBI] ->              : -lopencv_objdetect
-[CBI] ->              : -lopencv_photo
-[CBI] ->              : -lopencv_stitching
-[CBI] ->              : -lopencv_superres
-[CBI] ->              : -lopencv_video
-[CBI] ->              : -lopencv_videostab
-[CBI] ->              : -lrt
-
-
-==================================================================================
-[CBI] -> Target Name  : Student_Cuda_Image_gcc_cuda_65_x86_64
-[CBI] -> Location     : /tmp/ramdrive/arc4/Targets/Student_Cuda_Image/bin/Student_Cuda_Image_gcc_cuda_65_x86_64.run
-[CBI] -> Deploy 	  : ../RELEASE/bin
-[CBI] ->
-[CBI] -> Type	 	  : EXE
-[CBI] -> Arch	 	  : x86_64
-[CBI] -> OS	 	      : Linux
-[CBI] -> User	 	  : arc4
-[CBI] ->
-[CBI] -> Compilateur  : g++) && nvcc
-[CBI] -> Task		  : End Compiling-Linking !
-[CBI] -> Time	      : 14:15:10
-==================================================================================
-
-
-[CBI] -> Deploying      : ../RELEASE/bin/Student_Cuda_Image_gcc_cuda_65_x86_64.run
-
-[CBI] -> Student_Cuda_Image_gcc_cuda_65_x86_64   : End ALL!
+[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/04_Saucisson/useSaucisson.cpp
+In file included from src/cpp/core/04_Saucisson/useSaucisson.cpp:3:0:
+src/cpp/core/04_Saucisson/Host/saucissonSMHost.h:45:10: error: ‘string’ does not name a type
+src/cpp/core/04_Saucisson/Host/saucissonSMHost.h:65:2: error: ‘string’ does not name a type
+make: *** [/tmp/ramdrive/arc4/Targets/Student_Cuda/obj/useSaucisson.o] Error 1

@@ -43,37 +43,41 @@
 			<item value="isNormeOk"/>
 		</list>
 	</section>
-	<section name="RenameInformationPopup">
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="700" key="size.width"/>
+		<item value="174" key="size.height"/>
 	</section>
 	<section name="NewClassWizardPage">
 		<item value="true" key="stubSelected1"/>
-		<item value="false" key="testFileSelected"/>
 		<item value="true" key="namespaceSelected"/>
+		<item value="false" key="testFileSelected"/>
 		<item value="false" key="stubInline1"/>
 		<item value="true" key="stubVirtual1"/>
 		<item value="false" key="stubInline0"/>
-		<item value="true" key="stubSelected0"/>
 		<item value="montecarlo" key="namespace"/>
+		<item value="true" key="stubSelected0"/>
 	</section>
-	<section name="CRenameRefactoringInputPage">
-		<item value="false" key="macroDefinition"/>
-		<item value="5" key="scope"/>
-		<item value="false" key="comment"/>
-		<item value="" key="workingset"/>
-		<item value="false" key="references_inv"/>
+	<section name="RenameInformationPopup">
 	</section>
 	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
 		<item value="398" key="DIALOG_WIDTH"/>
 		<item value="455" key="DIALOG_Y_ORIGIN"/>
-		<item value="1089" key="DIALOG_X_ORIGIN"/>
 		<item value="437" key="DIALOG_HEIGHT"/>
+		<item value="1089" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="CRenameRefactoringInputPage">
+		<item value="5" key="scope"/>
+		<item value="false" key="macroDefinition"/>
+		<item value="false" key="comment"/>
+		<item value="false" key="references_inv"/>
+		<item value="" key="workingset"/>
 	</section>
 	<section name="org.eclipse.cdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
 		<item value="598" key="DIALOG_WIDTH"/>
 		<item value="312" key="DIALOG_Y_ORIGIN"/>
-		<item value="509" key="DIALOG_X_ORIGIN"/>
 		<item value="352" key="DIALOG_HEIGHT"/>
+		<item value="509" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">

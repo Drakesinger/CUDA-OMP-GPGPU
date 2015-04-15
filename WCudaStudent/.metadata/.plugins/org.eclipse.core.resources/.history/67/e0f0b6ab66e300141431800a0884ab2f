@@ -1,0 +1,6 @@
+
+/**
+* Hyp : dimension(tabSM) est une puissance de 2
+**/
+
+__device__ void reductionIntraBlock(float* tabSM) ;

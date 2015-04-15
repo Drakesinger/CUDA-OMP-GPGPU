@@ -1,0 +1,11 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+
+#define const 3.14159265358979323846264338
+
+__host__ bool saucissonSM_host(long n)
+    {
+
+    }

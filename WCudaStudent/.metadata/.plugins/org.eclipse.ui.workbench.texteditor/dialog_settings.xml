@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="313" key="DIALOG_WIDTH"/>
+		<item value="296" key="DIALOG_WIDTH"/>
 		<item value="233" key="DIALOG_Y_ORIGIN"/>
-		<item value="967" key="DIALOG_X_ORIGIN"/>
-		<item value="419" key="DIALOG_HEIGHT"/>
-		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="405" key="DIALOG_HEIGHT"/>
+		<item value="899" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Ubuntu|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="ptrDevPixels" key="selection"/>
 		<list key="findhistory">
+			<item value="ptrDevPixels"/>
+			<item value="proce"/>
+			<item value="consta"/>
 			<item value="pelo"/>
 			<item value="kill"/>
 			<item value="lib"/>
 			<item value="LIB_FLAG"/>
 			<item value="opencv_gpu249.lib"/>
-			<item value="C:/Soft_API/ext/OpenCV/build/include/opencv2"/>
-			<item value="Cpp_Test_intel_64"/>
-			<item value="Cpp_Test_visual_64"/>
 		</list>
 		<list key="replacehistory">
 			<item value="WorkGPUStream"/>
@@ -35,8 +35,8 @@
 	<section name="org.eclipse.cdt.internal.ui.preferences.CTemplatePreferencePage$CEditTemplateDialog_dialogBounds">
 		<item value="1600" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="8" key="DIALOG_X_ORIGIN"/>
 		<item value="968" key="DIALOG_HEIGHT"/>
+		<item value="8" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

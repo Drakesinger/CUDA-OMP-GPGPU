@@ -1,0 +1,33 @@
+#include <iostream>
+
+#include "Indice2D.h"
+#include "cudaTools.h"
+#include "Device.h"
+#include "IndiceTools.h"
+
+using std::cout;
+using std::endl;
+
+__global__ void heatEcrasement(float* ptrDevImage, float* ptrDevHeater, int w, int h);
+
+__global__ void heatEcrasement(float* ptrDevImage, float* ptrDevHeater, int w, int h)
+    {
+
+    int tid = Indice2D::tid();
+    int nbThread = Indice2D::nbThread();
+    const int MAX = w*h;
+
+    int s = tid;
+    while(s < MAX)
+	{
+	if (ptrDevHeater[s] != 0){
+	    ptrDevImage[s] = ptrDevHeater[s];
+	}
+
+	 s += nbThread;
+	}
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

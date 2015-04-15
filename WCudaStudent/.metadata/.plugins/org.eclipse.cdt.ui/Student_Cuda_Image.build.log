@@ -1,4 +1,4 @@
-14:14:21 **** Incremental Build of configuration CudaGCC for project Student_Cuda_Image ****
+21:02:56 **** Incremental Build of configuration CudaGCC for project Student_Cuda_Image ****
 makeCudaGCC.sh all 
 
 --------------------------------------------------------
@@ -319,7 +319,9 @@ Cuda compilation tools, release 6.5, V6.5.12
 [Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Rippling/moo/host/Rippling.cu
 [Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/01_Rippling/moo/device/ripplingDevice.cu
 [Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/05_HeatTransfert/moo/host/HeatTransfert.cu
-[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/05_HeatTransfert/moo/device/HeatTransfertDevice.cu
+[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/05_HeatTransfert/moo/device/diffusion.cu
+[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/05_HeatTransfert/moo/device/ecrasement.cu
+[Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/05_HeatTransfert/moo/device/imageHSB.cu
 [Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Julia/moo/host/Julia.cu
 [Student_Cuda_Image_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/02_Julia/moo/device/JuliaDevice.cu
 ../BilatTools_Cuda_Image/src/core/cudaImageTools/bitmap/image/ImageFonctionel.h(44): warning: function "gpu::Image_A::fillImageGL(uchar4 *, int, int)" is hidden by "ImageFonctionel::fillImageGL" -- virtual function override intended?
@@ -420,7 +422,7 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->
 [CBI] -> Compilateur  : g++) && nvcc
 [CBI] -> Task		  : End Compiling-Linking !
-[CBI] -> Time	      : 14:15:10
+[CBI] -> Time	      : 21:03:50
 ==================================================================================
 
 
@@ -428,5 +430,5 @@ Cuda compilation tools, release 6.5, V6.5.12
 
 [CBI] -> Student_Cuda_Image_gcc_cuda_65_x86_64   : End ALL!
 
-14:15:10 Build Finished (took 49s.680ms)
+21:03:50 Build Finished (took 53s.780ms)
 

@@ -1,0 +1,145 @@
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+#include "Chronos.h"
+#include "cudaTools.h"
+#include <cfloat>
+
+#define NB_DATA 1000000l
+#define SIZE_DATA sizeof(float)*NB_DATA
+#define NB_TIME 1000l
+
+bool useBandwidthCPU_GPU(bool isChronoCuda, bool isPageLockedRam);
+static void H2D(bool isChronoCuda, bool isPageLockedRam);
+
+bool useBandwidthCPU_GPU(bool isChronoCuda, bool isPageLockedRam)
+    {
+    H2D(isChronoCuda, isPageLockedRam);
+    return true;
+    }
+
+void H2D(bool isChronoCuda, bool isPageLockedRam)
+    {
+    float* ptrData;
+
+    if (isPageLockedRam){
+	HANDLE_ERROR(cudaHostAlloc((void**)&ptrData, SIZE_DATA, cudaHostAllocDefault));
+    }
+    else{
+	ptrData = new float[NB_DATA];
+    }
+
+    for (int i = 0; i < NB_DATA; ++i)
+	ptrData[i] = rand();
+
+    float* ptrDevData;
+    HANDLE_ERROR(cudaMalloc((void**)&ptrDevData, SIZE_DATA));
+
+    float avgH2D = 0, minH2D = FLT_MIN, maxH2D = FLT_MAX;
+    float avgD2H = 0, minD2H = FLT_MIN, maxD2H = FLT_MAX;
+    float time = 0;
+
+    if (isChronoCuda)
+	{
+	    // HOST TO DEVICE SECTION
+	    {
+	    cudaEvent_t start, stop;
+
+	    HANDLE_ERROR(cudaEventCreate(&start));
+	    HANDLE_ERROR(cudaEventCreate(&stop));
+
+	    for (int i = 0; i < NB_TIME; ++i)
+		{
+		HANDLE_ERROR(cudaEventRecord(start, 0));
+		HANDLE_ERROR(cudaMemcpy(ptrDevData, ptrData, SIZE_DATA, cudaMemcpyHostToDevice));
+		HANDLE_ERROR(cudaEventRecord(stop, 0));
+
+		HANDLE_ERROR(cudaEventSynchronize(stop));
+
+		HANDLE_ERROR(cudaEventElapsedTime(&time, start, stop));
+
+		avgH2D += time;
+		if (time < maxH2D)
+		    maxH2D = time;
+		if (time > minH2D)
+		    minH2D = time;
+		}
+	    HANDLE_ERROR(cudaEventDestroy(start));
+	    HANDLE_ERROR(cudaEventDestroy(stop));
+	    }
+
+	    // DEVICE TO HOST SECTION
+	    {
+	    cudaEvent_t start, stop;
+	    HANDLE_ERROR(cudaEventCreate(&start));
+	    HANDLE_ERROR(cudaEventCreate(&stop));
+
+	    for (int i = 0; i < NB_TIME; ++i)
+		{
+		HANDLE_ERROR(cudaEventRecord(start, 0));
+		HANDLE_ERROR(cudaMemcpy(ptrData, ptrDevData, SIZE_DATA, cudaMemcpyDeviceToHost));
+		HANDLE_ERROR(cudaEventRecord(stop, 0));
+
+		HANDLE_ERROR(cudaEventSynchronize(stop));
+		HANDLE_ERROR(cudaEventElapsedTime(&time, start, stop));
+
+		avgD2H += time;
+		if (time < maxD2H)
+		    maxD2H = time;
+		if (time > minD2H)
+		    minD2H = time;
+		}
+	    HANDLE_ERROR(cudaEventDestroy(start));
+	    HANDLE_ERROR(cudaEventDestroy(stop));
+	    }
+	}
+    else
+	{
+	for (int i = 0; i < NB_TIME; ++i)
+	    {
+	    Chronos chronoHostToDevice;
+	    HANDLE_ERROR(cudaMemcpy(ptrDevData, ptrData, SIZE_DATA, cudaMemcpyHostToDevice));
+	    HANDLE_ERROR(cudaThreadSynchronize());
+	    chronoHostToDevice.stop();
+
+	    time = chronoHostToDevice.getDeltaTime() * 1000;
+	    avgH2D += time;
+	    if (time < maxH2D)
+		maxH2D = time;
+	    if (time > minH2D)
+		minH2D = time;
+	    }
+
+	for (int i = 0; i < NB_TIME; ++i)
+	    {
+	    Chronos chronoDeviceToHost;
+	    HANDLE_ERROR(cudaMemcpy(ptrData, ptrDevData, SIZE_DATA, cudaMemcpyDeviceToHost));
+	    HANDLE_ERROR(cudaThreadSynchronize());
+	    chronoDeviceToHost.stop();
+
+	    time = chronoDeviceToHost.getDeltaTime() * 1000;
+	    avgD2H += time;
+	    if (time < maxD2H)
+		maxD2H = time;
+	    if (time > minD2H)
+		minD2H = time;
+	    }
+	}
+
+    std::cout << std::setprecision(6);
+    std::cout << "\n-------------------- RESULTS --------------------\n";
+    std::cout << "Host to Device  : data " << NB_TIME * NB_DATA / 1024 / 1024 << " mb    in " << avgH2D << " ms" << std::endl
+    << "\tmin     : " << SIZE_DATA / (1024 * 1024 * minH2D) << " gb/s  in " << minH2D << " ms" << std::endl
+    << "\tmax     : " << SIZE_DATA / (1024 * 1024 * maxH2D) << " gb/s  in " << maxH2D << " ms" << std::endl
+    << "\taverage : " << SIZE_DATA / (1024 * 1024 * avgH2D / NB_TIME) << " gb/s  in " << avgH2D / NB_TIME << " ms" << std::endl << std::endl;
+
+    std::cout << "Device to Host  : data " << NB_TIME * NB_DATA / 1024 / 1024 << " mb    in " << avgD2H << " ms" << std::endl
+    << "\tmin     : " << SIZE_DATA / (1024 * 1024 * minD2H) << " gb/s  in " << minD2H << " ms" << std::endl
+    << "\tmax     : " << SIZE_DATA / (1024 * 1024 * maxD2H) << " gb/s  in " << maxD2H << " ms" << std::endl
+    << "\taverage : " << SIZE_DATA / (1024 * 1024 * avgD2H / NB_TIME) << " gb/s  in " << avgD2H / NB_TIME << " ms" << std::endl << std::endl;
+
+    if (isPageLockedRam)
+	HANDLE_ERROR(cudaFreeHost(ptrData));
+    else
+	delete ptrData;
+    }

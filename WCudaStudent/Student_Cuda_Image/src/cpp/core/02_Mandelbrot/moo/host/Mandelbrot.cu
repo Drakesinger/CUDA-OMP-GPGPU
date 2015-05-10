@@ -4,6 +4,7 @@
 #include "DomaineMath.h"
 #include "Mandelbrot.h"
 #include "Device.h"
+#include "cudaTools.h"
 
 using cpu::IntervalI;
 
@@ -60,7 +61,38 @@ void Mandelbrot::animationStep()
 
 void Mandelbrot::process(uchar4* ptrDevPixels,int w, int h,const DomaineMath& domaineMath)
     {
-    mandelbrot<<<dg,db>>>(ptrDevPixels, w, h, domaineMath, n, nMin);
+    //mandelbrot<<<dg,db>>>(ptrDevPixels, w, h, domaineMath, n, nMin);
+
+	#pragma omp parallel sections
+	{
+	    #pragma omp section
+	    {
+	    mandelbrot<<<dg,db>>>(ptrDevPixels, w, h/2, domaineMath, n, nMin);
+	    }
+
+	    #pragma omp section
+	    {
+	    int currentID = Device::getDeviceId();
+
+	    HANDLE_ERROR(cudaSetDevice(1));
+
+	    uchar4* ptrDevImage1 = NULL;
+	    uchar4* ptrDevBottomImage0 = ptrDevPixels + w*(h/2);
+	    size_t size=(w*h/2)*sizeof(uchar4);
+
+	    HANDLE_ERROR(cudaMalloc(&ptrDevImage1, size));
+	    HANDLE_ERROR(cudaMemset(ptrDevImage1, 0,  size));
+
+	    DomaineMath math = domaineMath;
+	    math.y0 = domaineMath.dy()/2 + domaineMath.y0;
+	    mandelbrot<<<dg,db>>>(ptrDevImage1, w, (h/2), math, n, nMin);
+
+	    HANDLE_ERROR(cudaMemcpy(ptrDevBottomImage0, ptrDevImage1, size, cudaMemcpyDeviceToDevice));
+	    HANDLE_ERROR(cudaFree(ptrDevImage1));
+
+	    HANDLE_ERROR(cudaSetDevice(currentID));
+	    }
+	}
     }
 float Mandelbrot::getAnimationPara(void)
     {

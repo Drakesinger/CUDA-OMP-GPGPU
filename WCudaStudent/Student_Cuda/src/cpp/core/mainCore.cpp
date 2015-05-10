@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
 
-
 using std::cout;
 using std::endl;
 
@@ -14,7 +13,10 @@ using std::endl;
  \*-------------------------------------*/
 
 extern bool useHello(void);
-
+extern bool useSaucisson(void);
+extern bool useMonteCarlo(void);
+extern bool useHistogramme(void);
+extern bool useBandwidth(void);
 /*--------------------------------------*\
  |*		Public			*|
  \*-------------------------------------*/
@@ -38,8 +40,11 @@ int mainCore();
 int mainCore()
     {
     bool isOk = true;
-    isOk &= useHello();
-
+    //isOk &= useHello();
+    //isOk &= useSaucisson();
+    //isOk &= useMonteCarlo();
+    //isOk &= useHistogramme();
+    isOk &= useBandwidth();
     cout << "\nisOK = " << isOk << endl;
     cout << "\nEnd : mainCore" << endl;
 

@@ -1,0 +1,104 @@
+#include "MonteCarlo.h"
+#include "ReductionTools.h"
+#include <iostream>
+#include <stdlib.h>
+#include "Device.h"
+
+
+using std::cout;
+using std::endl;
+
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+extern __global__ void monteCarloDevice(float* ptrDevResult,curandState* ptrDevTabGeneratorThread,int nbFleche,int n);
+extern __global__ void setup_kernel_rand(curandState* ptrDevTabGeneratorThread, int deviceId);
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+MonteCarlo::MonteCarlo(int nbFleche)
+    {
+	this->nbFleche = nbFleche;
+	    this->n = 1024;
+	    this->sizeSM = n*sizeof(float);
+	    memoryManagement();
+	    this->dg = dim3(10,1,1);
+	    this->db = dim3(1,1,1);
+
+	    ptrDevTabTabGeneratorThread=new curandState*[Device::getDeviceCount()];
+	    ptrDevResult = new float*[Device::getDeviceCount()];
+
+	    size_t generatorSize = sizeof(curandState) * n;
+	    for(int i=0;i<Device::getDeviceCount();i++)
+		{
+		HANDLE_ERROR(cudaSetDevice(i));
+		HANDLE_ERROR(cudaMalloc(&ptrDevResult[i],sizePI));
+
+		HANDLE_ERROR(cudaMemset(ptrDevResult[i],0,sizePI));
+
+
+		HANDLE_ERROR(cudaMalloc(&ptrDevTabTabGeneratorThread[i],generatorSize));
+		setup_kernel_rand<<<dg,db>>>(ptrDevTabTabGeneratorThread[i],Device::getDeviceId());
+		}
+
+
+    }
+MonteCarlo::~MonteCarlo()
+    {
+    	HANDLE_ERROR(cudaFree(*ptrDevResult));
+    	HANDLE_ERROR(cudaFree(*ptrDevTabTabGeneratorThread));
+    	ptrDevResult=NULL;
+    	ptrDevTabTabGeneratorThread=NULL;
+    }
+
+void MonteCarlo::process()
+    {
+    int nbDevice = Device::getDeviceCount();
+#pragma omp parallel for
+    for(int i = 0; i < nbDevice;i++)
+	{
+	    float tmp;
+	    HANDLE_ERROR(cudaSetDevice(i));
+	    monteCarloDevice<<<dg,db,sizeSM>>>(ptrDevResult[i],ptrDevTabTabGeneratorThread[i],nbFleche/nbDevice,n);
+	    HANDLE_ERROR(cudaMemcpy(&tmp,ptrDevResult[i],sizePI,cudaMemcpyDeviceToHost));
+    #pragma omp atomic
+	pi += tmp;
+	}
+    pi /= nbDevice;
+}
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+void MonteCarlo::memoryManagement()
+    {
+    ptrDevResult = NULL;
+    sizePI = sizeof(float);
+    HANDLE_ERROR(cudaMalloc(&ptrDevResult,sizePI));
+
+    HANDLE_ERROR(cudaMemset(ptrDevResult,0,sizePI));
+    }
+float MonteCarlo::getPi()
+    {
+    return pi;
+    }
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/

@@ -1,0 +1,63 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+#include "Indice2D.h"
+#include "ReductionTools.h"
+
+__global__ void saucisson(float* ptrDevPI, long nsaucisson, long tabSize);
+
+__device__ void peupler(int nsaucisson, float* tabForBlock);
+__device__ void init(float* tabForBlock, int tabSize);
+__device__ float fpi(float x);
+
+/**
+* Hyp : dimension(ptrDevPI) est une puissance de 2
+**/
+__global__ void saucisson(float* ptrDevPI, long nsaucisson, long tabSize)
+   {
+	extern __shared__ float tabForBlock[];
+	init(tabForBlock, tabSize);
+	__syncthreads();
+	peupler(nsaucisson, tabForBlock);
+	__syncthreads();
+	ReductionTools::reduce(tabForBlock,tabSize,ptrDevPI);
+   }
+
+__device__ void init(float* tabForBlock, int tabSize)
+    {
+    const int TID = Indice1D::tidLocalBlock();
+    const int NB_THREADS = Indice1D::nbThreadBlock();
+    int s = TID;
+
+    while (s < tabSize)
+	{
+	tabForBlock[s] = 0.;
+	s += NB_THREADS;
+	}
+    }
+
+__device__ void peupler(int nsaucisson, float* tabForBlock)
+    {
+	const int tid = Indice2D::tid();
+	const int tidlocal = Indice2D::tidLocal();
+	const int NB_THREAD = Indice2D::nbThread();
+
+	int s = tid;
+
+	const float DX = 1.0 / nsaucisson;
+
+	float localSum = 0;
+	while (s < nsaucisson)
+	    {
+		localSum += fpi(DX * s) * DX;
+		s += NB_THREAD;
+	    }
+
+	tabForBlock[tidlocal] = localSum;
+    }
+
+__device__ float fpi(float x)
+    {
+    return 4 / (1 + x * x);
+    }

@@ -7,7 +7,7 @@ HeatTransfert* HeatTransfertProvider::create()
     int dw = 800;
     int dh = 800;
 
-    int iteration = 100;
+    int iteration = 10;
     float k = 0.025;
 
     return new HeatTransfert(dw, dh, iteration, k);

@@ -1,0 +1,69 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+#include "Indice2D.h"
+
+__global__ void saucisson(float* ptrDevPI, long nsaucisson, long n);
+__device__ void reduction (float* tabSM, int n);
+__device__ void ecrasement(float* tabSM, int moitie);
+__device__ float calcul(long i, float dx);
+
+
+/**
+* Hyp : dimension(ptrDevPI) est une puissance de 2
+**/
+__global__ void saucisson(float* ptrDevPI, long nsaucisson, long n)
+   {
+	extern __shared__ float tabForBlock[];
+
+	init();
+	work();
+
+	//reductionIntraThread();
+	//reductionInterBlock();
+   }
+__device__ void work(float* ptrDevPI)
+    {
+	int tid = Indice2D::tid();
+	int tidlocal = Indice2D::tidLocal();
+	const int NB_THREAD = Indice2D::nbThread();
+
+	long s = tid;
+
+	while(s < n)
+	{
+	    ptrDevPI[tidlocal] += calcul(s, dx);
+	    s += NB_THREAD;
+	}
+    }
+
+__device__ float calcul(long i, float dx)
+    {
+    return fpi(i*dx);
+    }
+
+__device__ void reduction (float* tabSM, int n)
+    {
+	int moitie = n/2;
+	while(moitie >=1)
+	    {
+		ecrasement(tabSM, moitie);
+		moitie = moitie /2;
+		__syncthreads();
+	    }
+    }
+
+__device__ void ecrasement(float* tabSM, int moitie)
+    {
+	const int tidLocal = Indice2D::tidLocal();
+	const int NB_THREAD_LOCAL = Indice2D::nbThreadBlock();
+
+	int s  = tidLocal;
+
+	while(s < moitie)
+	    {
+		tabSM[s]+= tabSM[s + moitie];
+		s += NB_THREAD_LOCAL;
+	    }
+    }

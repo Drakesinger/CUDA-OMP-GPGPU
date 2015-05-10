@@ -1,19 +1,64 @@
 #include <iostream>
 #include <limits.h>
-#include "saucissonSMHost.h"
+#include <math.h>
+#include "MathTools.h"
+#include "Saucisson.h"
 
 using std::cout;
 using std::endl;
 
+/*----------------------------------------------------------------------*\
+ |*			Declaration 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Imported	 	*|
+ \*-------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+bool useSaucisson(void);
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------*\
+ |*			Implementation 					*|
+ \*---------------------------------------------------------------------*/
+
+/*--------------------------------------*\
+ |*		Public			*|
+ \*-------------------------------------*/
+
+
+
 bool useSaucisson(void)
     {
-    cout << endl << "[SaucissonSM]" << endl;
+    cout << endl << "[Saucisson]" << endl;
 
     bool isOk = true;
-    saucissonSMHost saucisson = saucissonSMHost(256);
 
-    isOk&= saucisson.isOk();
+    int n = INT_MAX/1000;
+    Saucisson saucisson(n);
+    saucisson.process();
 
-    return isOk;
+    cout << "saucisson pi: " << saucisson.getPi() << endl;
+
+    isOk &= MathTools::isEquals(saucisson.getPi(), M_PI, 1e-3);
+
+    return true;
     }
+
+/*--------------------------------------*\
+ |*		Private			*|
+ \*-------------------------------------*/
+
+/*----------------------------------------------------------------------*\
+ |*			End	 					*|
+ \*---------------------------------------------------------------------*/
 

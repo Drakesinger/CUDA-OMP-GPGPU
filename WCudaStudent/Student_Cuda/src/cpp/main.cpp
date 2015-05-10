@@ -92,7 +92,7 @@ int start(void)
     {
     Device::printCurrent();
 
-    bool IS_TEST = true;
+    bool IS_TEST = false;
 
     if (IS_TEST)
 	{

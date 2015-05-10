@@ -1,4 +1,4 @@
-14:27:57 **** Incremental Build of configuration CudaGCC for project Student_Cuda ****
+15:53:50 **** Incremental Build of configuration CudaGCC for project Student_Cuda ****
 makeCudaGCC.sh all 
 
 --------------------------------------------------------
@@ -92,7 +92,9 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/device/synchronisation/
 [CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/host/
 [CBI] ->              : ../BilatTools_Cuda/src/core/cudatools/header/mixte/
+[CBI] ->              : src/cpp/core/
 [CBI] ->              : src/cpp/core/04_Saucisson/Host/
+[CBI] ->              : src/cpp/core/05_MonteCarlo/Host/
 [CBI] ->              : src/cpp/test/junit/01_Test_Hello/
 
 
@@ -156,8 +158,68 @@ Cuda compilation tools, release 6.5, V6.5.12
 [CBI] ->              : rt
 
 
-[Student_Cuda_gcc_cuda_65_x86_64] -> g++ compiling .cpp : src/cpp/core/04_Saucisson/useSaucisson.cpp
-In file included from src/cpp/core/04_Saucisson/useSaucisson.cpp:3:0:
-src/cpp/core/04_Saucisson/Host/saucissonSMHost.h:45:10: error: ‘string’ does not name a type
-src/cpp/core/04_Saucisson/Host/saucissonSMHost.h:65:2: error: ‘string’ does not name a type
-make: *** [/tmp/ramdrive/arc4/Targets/Student_Cuda/obj/useSaucisson.o] Error 1
+[Student_Cuda_gcc_cuda_65_x86_64] -> nvcc compiling .cu : src/cpp/core/06_Bandwidth/Bandwidth.cu
+
+[CBI] -> Linking to   : /tmp/ramdrive/arc4/Targets/Student_Cuda/bin/Student_Cuda_gcc_cuda_65_x86_64.run
+
+[CBI] -> Library Link :
+[CBI] ->
+[CBI] ->              : -lCpp_Test_gcc_x86_64
+[CBI] ->              : -lboost_atomic
+[CBI] ->              : -lboost_chrono
+[CBI] ->              : -lboost_context
+[CBI] ->              : -lboost_date_time
+[CBI] ->              : -lboost_exception
+[CBI] ->              : -lboost_filesystem
+[CBI] ->              : -lboost_graph
+[CBI] ->              : -lboost_locale
+[CBI] ->              : -lboost_math_c99
+[CBI] ->              : -lboost_math_c99f
+[CBI] ->              : -lboost_math_c99l
+[CBI] ->              : -lboost_math_tr1
+[CBI] ->              : -lboost_math_tr1f
+[CBI] ->              : -lboost_math_tr1l
+[CBI] ->              : -lboost_prg_exec_monitor
+[CBI] ->              : -lboost_program_options
+[CBI] ->              : -lboost_random
+[CBI] ->              : -lboost_regex
+[CBI] ->              : -lboost_serialization
+[CBI] ->              : -lboost_signals
+[CBI] ->              : -lboost_system
+[CBI] ->              : -lboost_test_exec_monitor
+[CBI] ->              : -lboost_thread
+[CBI] ->              : -lboost_timer
+[CBI] ->              : -lboost_unit_test_framework
+[CBI] ->              : -lboost_wave
+[CBI] ->              : -lboost_wserialization
+[CBI] ->              : -lcublas
+[CBI] ->              : -lcudart
+[CBI] ->              : -lcufft
+[CBI] ->              : -lcuinj64
+[CBI] ->              : -lcurand
+[CBI] ->              : -lcusparse
+[CBI] ->              : -lgomp
+[CBI] ->              : -lnvToolsExt
+[CBI] ->              : -lnvblas
+[CBI] ->              : -lrt
+
+
+==================================================================================
+[CBI] -> Target Name  : Student_Cuda_gcc_cuda_65_x86_64
+[CBI] -> Location     : /tmp/ramdrive/arc4/Targets/Student_Cuda/bin/Student_Cuda_gcc_cuda_65_x86_64.run
+[CBI] -> Deploy 	  : ../RELEASE/bin
+[CBI] ->
+[CBI] -> Type	 	  : EXE
+[CBI] -> Arch	 	  : x86_64
+[CBI] -> OS	 	      : Linux
+[CBI] -> User	 	  : arc4
+[CBI] ->
+[CBI] -> Compilateur  : g++) && nvcc
+[CBI] -> Task		  : End Compiling-Linking !
+[CBI] -> Time	      : 15:53:53
+==================================================================================
+
+
+[CBI] -> Deploying      : ../RELEASE/bin/Student_Cuda_gcc_cuda_65_x86_64.run
+
+[CBI] -> Student_Cuda_gcc_cuda_65_x86_64   : End ALL!

@@ -1,0 +1,52 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+#include "saucissonSMHost.h"
+
+using std::cout;
+using std::endl;
+
+extern __global__ void saucisson(float* ptrDevPI, long nsaucisson, long n);
+
+saucissonSMHost::saucissonSMHost(long n)
+    {
+	this->n = n;
+
+    	this->resultatThe = PI;
+    	this->retultatPI = 0;
+
+    	this->dg = dim3(16, 1, 1);
+	this->db = dim3(16, 1, 1);
+
+	this->sizeOctetPI = sizeof(float);
+
+	HANDLE_ERROR(cudaMalloc(&ptrDevPI, this->sizeOctetPI));
+	HANDLE_ERROR(cudaMemset(ptrDevPI,0,sizeOctetPI));
+    }
+
+saucissonSMHost::~saucissonSMHost()
+    {
+	HANDLE_ERROR(cudaFree(ptrDevPI));
+    }
+
+bool saucissonSMHost::isOk()
+    {
+
+    cout << "this->retultatPI" << this->retultatPI;
+    cout << "this->resultatThe" << this->resultatThe;
+    if (this->retultatPI == this->resultatThe)
+	{
+	    return 1;
+	}
+
+    return 0;
+    }
+/**
+ * Override
+ */
+void saucissonSMHost::process()
+    {
+    saucisson<<<this->dg, this->db, 128>>>(this->ptrDevPI, this->n, 128);
+    HANDLE_ERROR(cudaMemcpy(&retultatPI,this->ptrDevPI, this->sizeOctetPI, cudaMemcpyDeviceToHost));
+    }

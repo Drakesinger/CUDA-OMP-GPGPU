@@ -52,7 +52,7 @@ int mainGL(void)
     /* Lanceur originaux - 1 à la fois */
     //Image* ptrRippling = RipplingProvider::createGL();
     //ImageFonctionel* ptrJulia = JuliaProvider::createGL();
-    //ImageFonctionel* ptrMandelbrot = MandelbrotProvider::createGL();
+    ImageFonctionel* ptrMandelbrot = MandelbrotProvider::createGL();
     //ImageFonctionel* ptrNewton = NewtonProvider::createGL();
     //Image* ptrRaytracing = RayTracingProvider::createGL();
     //Image* ptrRaytracingSM = RayTracingSMProvider::createGL();
@@ -66,42 +66,42 @@ int mainGL(void)
     //GLUTImageViewers raytracingViewer(ptrRaytracing, true, false, 10,10);
     //GLUTImageViewers raytracingSMViewer(ptrRaytracingSM, true, false, 10,10);
 
-    GLUTImageViewers heattransfertViewer(ptrheattransfert, true, false, 10,10);
+    //GLUTImageViewers heattransfertViewer(ptrheattransfert, true, false, 10,10);
 
     /* Lancer toutes les animations à la fois */
     /*Image* ptrRippling = RipplingProvider::createGL();
-    ImageFonctionel* ptrJulia = JuliaProvider::createGL();
-    ImageFonctionel* ptrMandelbrot = MandelbrotProvider::createGL();
-    ImageFonctionel* ptrNewton = NewtonProvider::createGL();
+    ImageFonctionel* ptrJulia = JuliaProvider::createGL();*/
+    //ImageFonctionel* ptrMandelbrot = MandelbrotProvider::createGL();
+  /*  ImageFonctionel* ptrNewton = NewtonProvider::createGL();
     Image* ptrRaytracing = RayTracingProvider::createGL();
-    Image* ptrRaytracingSM = RayTracingSMProvider::createGL();
+    Image* ptrRaytracingSM = RayTracingSMProvider::createGL();*/
 
     //ImageViewer : (boolean,boolean) : (isAnimation,isSelectionEnable)
-    GLUTImageViewers ripplingViewer(ptrRippling, true, false, 0, 0);
-    GLUTImageViewers juliaViewer(ptrJulia, true,true,350,0);
-    GLUTImageViewers mandelbrotViewer(ptrMandelbrot, true,true,700,0);
-    GLUTImageViewers newtonViewer(ptrNewton, true,true,0,370);
+    //GLUTImageViewers ripplingViewer(ptrRippling, true, false, 0, 0);
+    //GLUTImageViewers juliaViewer(ptrJulia, true,true,350,0);*/
+    GLUTImageViewers mandelbrotViewer(ptrMandelbrot, true,true,0,0);
+   /* GLUTImageViewers newtonViewer(ptrNewton, true,true,0,370);
     GLUTImageViewers raytracingViewer(ptrRaytracing, true, false, 350,370);
     GLUTImageViewers raytracingSMViewer(ptrRaytracingSM, true, false, 700,370);*/
-
+    GLUTImageViewers heattransfertViewer(ptrheattransfert, true, false, 350,0);
     GLUTImageViewers::runALL(); // Bloquant, Tant qu'une fenetre est ouverte
     // destruction
 	{
 	//delete ptrRippling;
 	//delete ptrJulia;
-	//delete ptrMandelbrot;
+	delete ptrMandelbrot;
 	//delete ptrNewton;
 	//delete ptrRaytracing;
 	//delete ptrRaytracingSM;
-	delete ptrheattransfert;
+	//delete ptrheattransfert;
 
 	//ptrRippling = NULL;
 	//ptrJulia = NULL;
-	//ptrMandelbrot = NULL;
+	ptrMandelbrot = NULL;
 	//ptrNewton = NULL;
 	//ptrRaytracing = NULL;
 	//ptrRaytracingSM = NULL;
-	ptrheattransfert = NULL;
+	//ptrheattransfert = NULL;
 	}
 
     return EXIT_SUCCESS;

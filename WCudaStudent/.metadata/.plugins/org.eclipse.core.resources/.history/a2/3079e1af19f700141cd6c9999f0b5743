@@ -1,0 +1,19 @@
+#include <iostream>
+#include <limits.h>
+#include "MathTools.h"
+
+using std::cout;
+using std::endl;
+
+extern bool useBrandwidthCPU_GPU(bool ,bool);
+
+bool useBandwidth(void)
+    {
+    cout << endl << "[Bandwidth]" << endl;
+
+    bool isOk = true;
+
+    isOk &= useBrandwidthCPU_GPU(true,true);
+
+    return isOk;
+    }

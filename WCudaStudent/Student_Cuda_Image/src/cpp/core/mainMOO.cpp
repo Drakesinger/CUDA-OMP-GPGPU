@@ -9,6 +9,7 @@
 #include "MandelbrotProvider.h"
 #include "NewtonProvider.h"
 #include "RayTracingSMProvider.h"
+#include "HeatTransfertProvider.h"
 
 
 using std::cout;
@@ -61,8 +62,14 @@ int mainFreeGL(void)
 	//AnimableFonctionel_I* ptrNewton = NewtonProvider::create();
     	//animer(ptrNewton, NB_ITERATION);
 
-	Animable_I* ptrRayTracingSM = RayTracingSMProvider::create();
-	animer(ptrRayTracingSM, NB_ITERATION);
+	//Animable_I* ptrRayTracingSM = RayTracingSMProvider::create();
+	//animer(ptrRayTracingSM, NB_ITERATION);
+
+	//Animable_I* ptrHeatTransfert = HeatTransfertProvider::create();
+    	//animer(ptrHeatTransfert, NB_ITERATION);
+
+	AnimableFonctionel_I* ptrMandelBrot = MandelbrotProvider::create();
+    	animer(ptrMandelBrot, NB_ITERATION);
 	}
 
     cout << "\n[FreeGL] end" << endl;

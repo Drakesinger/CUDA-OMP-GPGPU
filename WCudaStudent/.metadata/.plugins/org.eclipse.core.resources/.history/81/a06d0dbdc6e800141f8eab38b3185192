@@ -1,0 +1,14 @@
+#include "Device.h"
+#include <iostream>
+#include "MathTools.h"
+#include "cudaTools.h"
+
+__global__ void saucisson(float* ptrDevPI, long nsaucisson);
+
+/**
+* Hyp : dimension(ptrDevPI) est une puissance de 2
+**/
+__global__ void saucisson(float* ptrDevPI, long nsaucisson)
+   {
+
+   }
